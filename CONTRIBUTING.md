@@ -15,7 +15,8 @@
    * Epic (Main Issue)
    * Subissues
    * Example
-6. Branch Management
+6. FDND Agency Conventions
+7. Branch Management
 
 ---
 
@@ -30,6 +31,8 @@ The website and all internal documentation are written in English.
 ## 3. Task Distribution
 
 Tasks are divided into issues. Each team member picks up new issues only after their previous issues have been tested and merged into the `dev` branch.
+
+At all times, the **FDND Agency conventions** are followed. This applies to workflows, code style, naming conventions, documentation, and collaboration practices throughout the project.
 
 ## 4. Project Board & Issues
 
@@ -126,7 +129,19 @@ To maintain clarity, we use a clear structure with **Epics** and **Subissues**.
 2. `Validate login credentials` – validation and error handling
 3. `Redirect after login` – redirect to `/dashboard` and testing
 
-## 6. Branch Management
+## 6. FDND Agency Conventions
+
+At all times, the **FDND Agency conventions** are followed. This includes, but is not limited to:
+
+* Project workflow and collaboration agreements
+* Code style and formatting
+* Naming conventions (branches, commits, files)
+* Documentation standards
+* Review and merge practices
+
+These conventions are leading and apply to the entire project lifecycle.
+
+## 7. Branch Management
 
 * Delete branches that have already been merged or are no longer in use.
 * Keep branch names consistent with the FDND Agency guidelines.
