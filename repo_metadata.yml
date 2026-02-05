@@ -1,5 +1,7 @@
 title: "Digital Proof Empowerment"
-status: "in progress"
+client: "FairWork"
+status: "active"
+years: [2]
 main_link: "https://digitalproofempowerment.agency.fdnd.nl/"
 dev_link: "https://digitalproofempowerment.dev.fdnd.nl/"
 tech_stack: ["SvelteKit", "Directus"]
