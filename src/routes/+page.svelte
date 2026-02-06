@@ -61,7 +61,7 @@
 
 <Button buttonText="Discreet mode"/>
 
-<FileInput inputField="Photo or video"/>
+<FileInput inputField="Photo or video (Camera)"/>
 
 
 
