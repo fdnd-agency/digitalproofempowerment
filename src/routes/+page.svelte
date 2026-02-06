@@ -196,22 +196,7 @@
 
  
 
-    .select-button-container {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-sm);
-        padding: var(--spacing-xl);
-    }
-
-    .language-select {
-        border: 1px solid rgba(0, 0, 0, 0.146);
-        border-radius: var(--radius-xs);
-        font: var(--main-font);
-        font-size: clamp(5px, 3vw, 15px);
-        padding: 0.3rem;
-        padding-right: 1rem;
-        background-color: #ffffffff;
-    }
+   
 
     .heading {
         display: flex;
