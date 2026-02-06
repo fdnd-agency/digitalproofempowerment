@@ -1,7 +1,12 @@
 <script>
+    // Components
     import InformationCard from "$lib/components/molecules/InformationCard.svelte";
-	import { onMount } from 'svelte';
+    import FileInput from "$lib/components/atoms/FileInput.svelte";
+    import Button from "$lib/components/atoms/Button.svelte";
+    import SelectButton from "$lib/components/atoms/SelectButton.svelte";
+    import Title from "$lib/components/atoms/Title.svelte";
 
+    // Icons
     import {
         CheckedIcon,
         LanguageIcon,
@@ -11,39 +16,8 @@
         PhotoUpload
     } from "$lib";
 
-    // onMount(() =>  {
-    //     let test = document.getElementById('file');
-    //     let down = document.getElementById('down');
-
-
-    //     files() {
-    //         if (test.files.length === 0) {
-    //         down.innerHTML = "No files selected"; 
-    //         } else {
-    //         down.innerHTML = "file selected";
-
-    //         }
-	// });
-
-    let files = null;
-
-
-    // function empty() {
-    //     if (message === 0) {
-    //     return value = "no value" 
-    //     } else {
-    //     return value = "value fkjsf"
-
-    // } 
-
-    // }
-
-    
-
-
 </script>
 
-<p id="down"></p>
 
 
 <h1>Digital Proof Empowerment</h1>
@@ -67,10 +41,8 @@
     digital divide.
 </p>
 
-<div class="heading">
-    <CheckedIcon />
-    <h2 class="h2">How to collect usable evidence</h2>
-</div>
+
+<Title headingText="This is an heading text"/>
 
 <section class="card-container">
     <InformationCard
@@ -84,47 +56,12 @@
     />
 </section>
 
-<div class="select-button-container">
-    <label for="language"><LanguageIcon /></label>
-
-    <select id="language" name="" class="language-select">
-        <option value="english">English</option>
-        <option value="dutch">Dutch</option>
-        <option value="german">German</option>
-        <option value="italian">Italian</option>
-    </select>
-</div>
-
-<button class="basic-button btn-white">
-    <EyeIcon/>
-    Discreet mode
-</button>
-
-<button class="basic-button btn-red">
-    <CloseIcon/>
-    Quick Exit
-</button>
-
-<button class="basic-button btn-black">
-    <UploadIcon/>
-    Secure upload to Fairwork
-</button>
+<SelectButton/>
 
 
-<div class="upload-field">
-    <label for="file">
-        <PhotoUpload/>
-        <span>Photos & Video (Camera)</span>
-    </label>
-    <input id="file" bind:files type="file" class="share-button visually-hidden"/>
-</div>
+<Button buttonText="Discreet mode"/>
 
-
-{#if files?.length}
-    <p>{files.length} chosen</p>
-{:else}
-    <p>niks</p>
-{/if}
+<FileInput inputField="Photo or video"/>
 
 
 
@@ -132,81 +69,6 @@
 
     
 <style>
-
-
-.upload-field {
-    display: flex;
-    align-items: center;
-    border-radius: var(--radius-xl);
-    border: 1px solid rgba(0, 0, 0, 0.146);
-    font-weight: 400;
-    padding: 0.6rem;
-    background-color: #ffffffff;
-    width: fit-content;
-    font-size: clamp(5px, 3vw, 15px);
-    cursor: pointer;
-
-
-    label {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-xs);
-        cursor: pointer;
-
-    }
-
-}
-
-.share-button {
-    all: unset;
-}
-
-
-
-
-    .share-button::-webkit-file-upload-button {
-        visibility: hidden;
-    }
-
-    .visually-hidden {
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  height: 1px;
-  overflow: hidden;
-  position: absolute;
-  white-space: nowrap;
-  width: 1px;
-}
-
-    /* .share-button::before {
-        content:  url(../lib/assets/svg/UploadIcon.svelte);
-
-        content: "Photos & video (camera)";
-        display: inline-block;
-        background-color: #ffffffff;
-        padding: 0.6rem;
-        border-radius: var(--radius-xl);
-        border: 1px solid rgba(0, 0, 0, 0.146);
-        font-weight: 400;
-        outline: none;
-        white-space: nowrap;
-        -webkit-user-select: none;
-        cursor: pointer;
-    } */
-
- 
-
-   
-
-    .heading {
-        display: flex;
-        flex-direction: row;
-        gap: var(--spacing-sm);
-        align-items: center;
-        padding-left: var(--spacing-xl);
-        padding: var(--spacing-md) var(--spacing-xl) var(--spacing-xs);
-    }
-
     .card-container {
         padding: var(--spacing-xl);
 

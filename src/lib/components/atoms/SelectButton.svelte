@@ -1,5 +1,5 @@
 <script>
-    import { EyeIcon } from "$lib";
+    import { LanguageIcon } from "$lib";
 
     let { buttonText } = $props();
 </script>
