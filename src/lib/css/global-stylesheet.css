@@ -98,42 +98,43 @@
 html,
 Body {
 
+
     font-family: var(--main-font);
     color: var(--main-text-color);
     background-color: var(--main-background-color);
 
 
-    .h1, h1 {
+    & .h1, h1 {
         font-size: clamp(24px, 5vw, 48px);
         line-height: 1.2;
     }
 
-    .h2, h2 {
+    & .h2, h2 {
         font-size: clamp(20px, 4.5vw, 36px);
         line-height: 1.3;
     }
 
-    .h3, h3 {
+   & .h3, h3 {
         font-size: clamp(16px, 3vw, 25px);
         line-height: 1.4;
     }
 
-    .h4, h4 {
+   & .h4, h4 {
         font-size: clamp(14px, 2.5vw, 18px);
         line-height: 1.5;
     }
 
-    .h5, h5 {
+   & .h5, h5 {
         font-size: clamp(14px, 2vw, 16px);
         line-height: 1.6;
     }
 
-    .h6, h6 {
+   & .h6, h6 {
         font-size: clamp(12px, 1.5vw, 14px);
         line-height: 1.4;
     }
 
-    .paragraph, p {
+   & .paragraph, p {
         font-size: clamp(16px, 3vw, 20px);
         line-height: 1.5;
     }
