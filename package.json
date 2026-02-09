@@ -18,6 +18,7 @@
 	},
 	"dependencies": {
 		"dependency-lint": "^7.1.0",
+		"postcss": "^8.5.6",
 		"prettier": "^3.8.1"
 	}
 }
