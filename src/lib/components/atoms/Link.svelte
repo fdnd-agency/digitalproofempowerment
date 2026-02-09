@@ -18,7 +18,6 @@ class={className}
 <style>
 
 .footer-link{
-background-color: rgb(4, 4, 48);
 color : white;
 font-weight: 500;
 text-decoration: none;
