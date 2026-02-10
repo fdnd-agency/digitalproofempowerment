@@ -18,23 +18,25 @@
 <style>
   .link:focus {
     outline: 1px solid var(--accent-neutral);
-    font-size: clamp(14px, 2.5vw, 18px)
   }
   .footer-link {
-    /* background-color:var(--primary-darkest) ; */
-    color: black;
-    font-weight: 500;
+    color: white;
+    font-weight: 300;
     text-decoration: none;
-    margin: 2rem;
-    padding: 0.5rem;
-    letter-spacing: 0.03rem;
+    margin-right: var(--spacing-xs);
+    padding: var(--spacing-xs);
+    padding-left: 0;
+    letter-spacing: 0.05rem;
     border: none;
+    text-wrap: wrap;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease-in-out;
   }
 
   .footer-link:visited {
-    color: black;
+    color: white;
   }
   .footer-link:hover {
-    font-size: larger;
+    border-bottom: solid 1px white;
   }
 </style>
