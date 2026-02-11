@@ -11,14 +11,25 @@
         NotesIconCard,
         AudioIconCard,
         ChatLogIconCard,
+        Link,
     } from "$lib";
 
+    import { onMount } from "svelte";
+    import { browser } from "$app/environment";
+
     let { cardText } = $props();
+
+    onMount(() => {
+        function checkForWindowResize() {
+            if (window.innerWidth > 600) {
+                document.getElementById("nav-toggle").checked = false;
+            }
+        }
+        window.addEventListener("resize", checkForWindowResize);
+    });
 </script>
 
-
 <nav class="nav-container">
-
     <input type="checkbox" class="visually-hidden" id="nav-toggle" />
     <label class="nav-button" for="nav-toggle">
         <span></span>
@@ -28,14 +39,14 @@
 
     <ul class="nav-list-container">
         <li class="nav-item logo"><a>Logo</a></li>
-        <li class="nav-item"><a>Home</a></li>
-        <li class="nav-item"><a>About us</a></li>
-        <li class="nav-item"><a>Help</a></li>
+        <li class="nav-item"><Link href="/about-us" text="About us" ariaLabel="Lean more about Digital Proof Empowerment" rel="canonical" className="footer-link"/></li>
+        <li class="nav-item"><Link href="/contact" text="Contact" ariaLabel="contact information" rel="help" className="footer-link"/></li>
+        <li class="nav-item"><Link href="/proof-tips" text="Proof Tips" ariaLabel="Learn more about what is a strong Proof" rel="canonical" className="footer-link"/></li>
+        <li class="nav-item"><Link href="/help-others" text="Help Others" ariaLabel="Help someone submit proof" rel="help" className="footer-link"/></li>
+        <li class="nav-item"><Link href="/submit-proof" text="Submit Proof" ariaLabel="Submit documents form" rel="canonical" className="footer-link"/></li>
         <li class="nav-item"><Button Icon={PhoneIcon} buttonType="btn-red" buttonText="Call 112"/></li>
     </ul>
 </nav>
-
-
 
 <style>
     .nav-list-container {
@@ -46,11 +57,6 @@
         padding: var(--spacing-md);
         background-color: var(--primary-darkest);
         color: var(--secondary-text-color);
-    }
-
-    .nav-item:not(:last-child):hover {
-        background-color: var(--accent-neutral);
-        border-radius: var(--radius-xs);
     }
 
     .nav-item {
@@ -77,8 +83,8 @@
     .nav-list-container {
         transform: translateY(-110%);
         transition:
-        transform 0.3s ease,
-        opacity 0.3s ease;
+            transform 0.3s ease,
+            opacity 0.3s ease;
         position: absolute;
         top: 0;
         left: 0;
@@ -127,21 +133,36 @@
     /* --------------------------------- */
 
     /* navbar big screens */
-    @media (min-width: 768px) {
+    @media (min-width: 900px) {
+        #nav-toggle:checked + .nav-button + .nav-list-container {
+            transform: translateY(0rem);
+        }
+
+        .nav-container {
+            padding: 0;
+        }
+
         .nav-button {
             display: none;
         }
 
         .nav-list-container {
+            display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
             gap: var(--spacing-md);
             position: static;
             transform: translateY(0);
+            transition: unset;
             margin: 0;
-            padding: 0;
+            padding: var(--spacing-xs);
             z-index: auto;
+            width: 100%;
+            margin-top: 0;
+            gap: 0;
+            background-color: var(--primary-darkest);
+            color: var(--secondary-text-color);
         }
 
         .logo {
@@ -156,4 +177,6 @@
             margin-left: auto;
         }
     }
+
+    
 </style>
