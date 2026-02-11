@@ -6,6 +6,7 @@
   import SelectButton from "$lib/components/atoms/SelectButton.svelte";
   import Title from "$lib/components/atoms/Title.svelte";
   import Link from "$lib/components/atoms/Link.svelte";
+  import Footer from "$lib/components/organisms/Footer.svelte";
 
   // Icons
   import {
@@ -60,6 +61,8 @@
 <FileInput inputField="Photo or video (Camera)" />
 
 <Link text="I'm a link" className="footer-link" />
+
+<Footer/>
 
 <style>
   .card-container {
