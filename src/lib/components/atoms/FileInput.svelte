@@ -25,13 +25,15 @@
         display: flex;
         align-items: center;
         border-radius: var(--radius-xl);
-        border: 1px solid rgba(0, 0, 0, 0.146);
+        border: var(--border);
         font-weight: 400;
-        padding: 0.6rem;
-        background-color: #ffffffff;
+        padding: var(--spacing-xs);
+        background-color: var(--main-background-color);
         width: fit-content;
         font-size: clamp(5px, 3vw, 15px);
         cursor: pointer;
+        box-shadow: var(--box-shadow);
+        -webkit-box-shadow: var(--box-shadow-webkit);
 
         label {
             display: flex;

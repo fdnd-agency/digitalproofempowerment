@@ -43,6 +43,16 @@
 <Title headingText="This is an heading text" />
 
 <section class="card-container">
+    <InformationCard
+        cardText="Always keep ORIGINAL files (no edits/filters). Keep location and date/time on."
+    />
+    <InformationCard
+        cardText="Always keep ORIGINAL files (no edits/filters). Keep location and date/time on."
+    />
+    <InformationCard
+     Icon={PhotoUpload}   cardTitle="Always keep ORIGINAL files (no edits/filters). Keep location and date/time on." cardSubText="lorem10"
+    />
+
   <InformationCard
     cardText="Always keep ORIGINAL files (no edits/filters). Keep location and date/time on."
   />
@@ -56,6 +66,7 @@
 
 <SelectButton />
 
+<Button buttonText="Discreet mode" buttonType="btn-white"/>
 <Button buttonText="Discreet mode" />
 
 <FileInput inputField="Photo or video (Camera)" />

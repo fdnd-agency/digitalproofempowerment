@@ -6,10 +6,10 @@
     stroke-width="2"
     stroke-linecap="round"
     stroke-linejoin="round"
-    class="lucide lucide-languages-icon lucide-languages"
-    ><path d="m5 8 6 6" /><path d="m4 14 6-6 2-3" /><path d="M2 5h12" /><path
-        d="M7 2h1"
-    /><path d="m22 22-5-10-5 10" /><path d="M14 18h6" /></svg
+    class="lucide lucide-folder-plus-icon lucide-folder-plus"
+    ><path d="M12 10v6" /><path d="M9 13h6" /><path
+        d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"
+    /></svg
 >
 
 <style>

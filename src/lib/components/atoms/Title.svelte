@@ -1,13 +1,15 @@
 <script>
     import { CheckedIcon } from "$lib";
 
-    let { headingText } = $props();
+    let { headingText, Icon } = $props();
 </script>
 
 
 <div class="heading">
-    <CheckedIcon/>
-    <h2 class="h2">{headingText}</h2>
+    {#if Icon}
+        <Icon class="icon"/>
+    {/if}
+    <h2 class="h1">{headingText}</h2>
 </div>
 
 <style>
@@ -16,7 +18,6 @@
         flex-direction: row;
         gap: var(--spacing-sm);
         align-items: center;
-        padding-left: var(--spacing-xl);
-        padding: var(--spacing-md) var(--spacing-xl) var(--spacing-xs);
+        padding: var(--spacing-md) var(--spacing-xs) var(--spacing-xl) 0rem;
     }
 </style>

@@ -1,7 +1,5 @@
 <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="17"
-    height="17"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -13,3 +11,12 @@
         d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
     /></svg
 >
+
+<style>
+    svg {
+        flex-shrink: 0;
+        height: 15px;
+        width: 15px;
+        display: block;
+    }
+</style>
