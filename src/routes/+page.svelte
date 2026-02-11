@@ -16,8 +16,13 @@
     CloseIcon,
     UploadIcon,
     PhotoUpload,
+    Nav,
+
+    
   } from "$lib";
 </script>
+
+<Nav/>
 
 <h1>Digital Proof Empowerment</h1>
 <p>From Underutilized to Empowered</p>
