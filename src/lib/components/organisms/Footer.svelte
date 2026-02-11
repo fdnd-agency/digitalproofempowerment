@@ -3,7 +3,7 @@
   import { text } from "@sveltejs/kit";
   import LinkGroup from "../molecules/LinkGroup.svelte";
 
-  const footerLinksGropes = [
+  const footerLinksGroups = [
     {
       groupName: "About",
       className: "footer-links",
@@ -32,14 +32,14 @@
           text: "Proof Tips",
           href: "/proof-info",
           rel: "canonical",
-          ariaLabel: "Lean more about  what is a strong Proof",
+          ariaLabel: "Learn more about what is a strong Proof",
           className: "footer-link",
         },
         {
           text: "Help Others",
           href: "/help-others",
           rel: "help",
-          ariaLabel: "Help some submit proof",
+          ariaLabel: "Help someone submit proof",
           className: "footer-link",
         },
       ],
@@ -68,7 +68,6 @@
 </script>
 
 <footer class="footer">
-
   <div class="footer-top-section">
     <div class="description">
       <h3>Digital proof Empowerment</h3>
@@ -79,7 +78,7 @@
     </div>
 
     <div class="links-section">
-      {#each footerLinksGropes as group (group.groupName)}
+      {#each footerLinksGroups as group (group.groupName)}
         <LinkGroup
           className={group.className}
           groupName={group.groupName}
@@ -99,7 +98,7 @@
     display: flex;
     flex-direction: column;
     padding: var(--spacing-md);
-    width: 100vw;
+    width: 100%;
   }
   .footer-top-section {
     order: 1;
@@ -129,12 +128,12 @@
 
   @media (max-width: 900px) {
     .description {
-      width: 50vw;
+      width: 90%;
     }
     .footer-top-section {
       flex-direction: column;
     }
-    .links-section{
+    .links-section {
       width: 90vw;
     }
   }

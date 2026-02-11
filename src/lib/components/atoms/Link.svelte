@@ -1,7 +1,7 @@
 <script>
   let {
     href = "#",
-    target = "_self ",
+    target = "_self",
     rel,
     text,
     className,
