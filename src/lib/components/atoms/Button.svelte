@@ -1,55 +1,49 @@
 <script>
-    import { EyeIcon } from "$lib";
-
-    let { buttonText } = $props();
+    let { buttonText, Icon, buttonType } = $props();
 </script>
 
 
-
-
-<button class="basic-button btn-white">
-    <EyeIcon/>
+<button class="basic-button {buttonType}">
+    {#if Icon}
+        <Icon class="icon"/>
+    {/if}
     {buttonText}
 </button>
 
-<style>
 
+<style>
      .basic-button {
         display: flex;
         align-items: center;
         gap: var(--spacing-xs);
-        padding: 0.6rem;
         border-radius: var(--radius-xs);
+        font-size: clamp(10px, 3vw, 14px);
         font-weight: 550;
         padding: var(--spacing-xs);
-        -webkit-box-shadow: 0px 0px 20px -10px #000000;
-        box-shadow: 0px 0px 20px -10px #00000071;
+        -webkit-box-shadow: var(--box-shadow-webkit);
+        box-shadow: var(--box-shadow);
         letter-spacing: 0.03rem;
         cursor: pointer;
     }
 
     .btn-white {
-        background-color: #ffffffff;
-        color: #000000;
-        border: 1px solid rgba(0, 0, 0, 0.146);
-        padding: 0.6rem;
+        background-color: var(--main-background-color);
+        color: var(--main-text-color);
+        border: var(--border);
     }
 
     .btn-red {
-        background-color: #ff0200;
-        color: #ffffffff;
+        background-color: var(--emergency-color);
+        color: var(--secondary-text-color);
         border: none;
-        padding: 0.6rem;
+        padding: var(--spacing-xs);
     }
 
     .btn-black {
-        background-color: #000000;
-        color: #ffffffff;
+        background-color: var(--secondary-background-color);
+        color: var(--secondary-text-color);
         border: none;
-        padding: 0.6rem;
+        padding: var(--spacing-xs);
     }
-
-
-
 
 </style>

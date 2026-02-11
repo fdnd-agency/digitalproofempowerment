@@ -8,7 +8,7 @@
 
 
 <div class="select-button-container">
-    <label for="language"><LanguageIcon /></label>
+    <label class="label" for="language"><LanguageIcon /></label>
 
     <select id="language" name="" class="language-select">
         <option value="english">English</option>
@@ -28,13 +28,15 @@
     }
 
     .language-select {
-        border: 1px solid rgba(0, 0, 0, 0.146);
+        border: var(--border);
         border-radius: var(--radius-xs);
         font: var(--main-font);
         font-size: clamp(5px, 3vw, 15px);
-        padding: 0.3rem;
-        padding-right: 1rem;
-        background-color: #ffffffff;
+        padding: var(--spacing-xxs);
+        padding-right: var(--spacing-md);
+        background-color: var(--main-background-color);
+        box-shadow: var(--box-shadow);
+        -webkit-box-shadow: var(--box-shadow-webkit);
     }
 
 

@@ -1,7 +1,5 @@
 <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="19"
-    height="19"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -15,3 +13,12 @@
         r="2"
     /><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" /></svg
 >
+
+<style>
+    svg {
+        flex-shrink: 0;
+        height: 15px;
+        width: 15px;
+        display: block;
+    }
+</style>

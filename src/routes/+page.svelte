@@ -52,14 +52,14 @@
         cardText="Always keep ORIGINAL files (no edits/filters). Keep location and date/time on."
     />
     <InformationCard
-        cardText="Always keep ORIGINAL files (no edits/filters). Keep location and date/time on."
+     Icon={PhotoUpload}   cardTitle="Always keep ORIGINAL files (no edits/filters). Keep location and date/time on." cardSubText="lorem10"
     />
 </section>
 
 <SelectButton/>
 
 
-<Button buttonText="Discreet mode"/>
+<Button buttonText="Discreet mode" buttonType="btn-white"/>
 
 <FileInput inputField="Photo or video (Camera)"/>
 
