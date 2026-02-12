@@ -107,7 +107,6 @@
 
     #nav-toggle:checked + .nav-button span:nth-child(1) {
         transform: rotate(45deg) translate(0.4rem, 0.44rem);
-        background-color: var(--emergency-color);
     }
 
     #nav-toggle:checked + .nav-button span:nth-child(2) {
@@ -116,7 +115,6 @@
 
     #nav-toggle:checked + .nav-button span:nth-child(3) {
         transform: rotate(-45deg) translate(0.45rem, -0.5rem);
-        background-color: var(--emergency-color);
     }
 
     .visually-hidden {
