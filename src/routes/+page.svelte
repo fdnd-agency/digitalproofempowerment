@@ -1,4 +1,5 @@
 <script>
+<<<<<<< HEAD
   // Components
   import InformationCard from "$lib/components/molecules/InformationCard.svelte";
   import FileInput from "$lib/components/atoms/FileInput.svelte";
@@ -92,26 +93,20 @@
 <Link text="I'm a link" className="footer-link" />
 
 <Footer />
+=======
+</script>
+
+<main>
+    <section>
+        <h1>This is the index page</h1>
+    </section>
+</main>
+>>>>>>> 9c583460a52dfea0202e723a22445cdaff317c78
 
 <style>
-  .card-container {
-    padding: var(--spacing-xl);
-
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: var(--spacing-sm);
-
-    @media (min-width: 360px) {
-      grid-template-columns: 1fr;
+    section {
+        padding: 3rem;
+        height: 100vh;
+        width: auto;
     }
-
-    @media (min-width: 760px) {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    @media (min-width: 960px) {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-  }
 </style>

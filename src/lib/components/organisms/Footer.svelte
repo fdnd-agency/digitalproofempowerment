@@ -52,7 +52,7 @@
           text: "Submit Proof",
           href: "/submit",
           rel: "canonical",
-          ariaLabel: "Submit documents form ",
+          ariaLabel: "Submit documents form",
           className: "footer-link",
         },
         {
