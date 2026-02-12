@@ -1,6 +1,6 @@
 // Icons
 export { default as KeyIcon } from "$lib/assets/svg/KeyIcon.svelte";
-export { default as CheckedIcon } from "$lib/assets/svg/CheckedIcon.svelte";;
+export { default as CheckedIcon } from "$lib/assets/svg/CheckedIcon.svelte";
 export { default as LanguageIcon } from "$lib/assets/svg/LanguageIcon.svelte";
 export { default as EyeIcon } from "$lib/assets/svg/EyeIcon.svelte";
 export { default as CloseIcon } from "$lib/assets/svg/CloseIcon.svelte";
@@ -14,6 +14,8 @@ export { default as LocationIconCard } from "$lib/assets/svg/LocationIconCard.sv
 export { default as NotesIconCard } from "$lib/assets/svg/NotesIconCard.svelte";
 export { default as AudioIconCard } from "$lib/assets/svg/AudioIconCard.svelte";
 export { default as ChatLogIconCard } from "$lib/assets/svg/ChatLogIconCard.svelte";
+export { default as Logo } from "$lib/assets/svg/Logo.svelte";
+
 
 // Components
 export { default as Button } from "$lib/components/atoms/Button.svelte";
