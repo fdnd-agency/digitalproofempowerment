@@ -1,144 +1,207 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
-    font-family: 'Poppins';
-    src: url(/src/lib/assets/fonts/Poppins-Regular.ttf) format('truetype');
-    font-weight: 100 900;
-    font-display: swap;
-    font-style: normal;
+  font-family: "Poppins";
+  src: url(/src/lib/assets/fonts/Poppins-Regular.ttf) format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
 }
 
 :root {
+  --main-font:
+    "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+    sans-serif;
 
-    --main-font: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  /* Border */
+  --border: 1px solid rgba(0, 0, 0, 0.146);
 
-    /* Border */
-    --border: 1px solid rgba(0, 0, 0, 0.146);
+  /* Border Radius */
+  --radius-xs: 0.3rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 999px;
 
-    /* Border Radius */
-    --radius-xs: 0.3rem;
-    --radius-sm: 0.5rem;
-    --radius-md: 0.75rem;
-    --radius-lg: 1rem;
-    --radius-xl: 1.5rem;
-    --radius-full: 999px;
+  /* Spacing */
+  --spacing-xxs: 0.3rem;
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
 
-    /* Spacing */
-    --spacing-xxs: 0.3rem;
-    --spacing-xs: 0.5rem;
-    --spacing-sm: 0.75rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
-    --spacing-2xl: 3rem;
-    --spacing-3xl: 4rem;
+  /* Box shadow */
+  --box-shadow: 0px 0px 20px -10px #00000071;
+  /* -webkit-box-shadow: */
+  --box-shadow-webkit: 0px 0px 20px -10px #000000;
 
-    /* Box shadow */
-    --box-shadow: 0px 0px 20px -10px #00000071;
-    /* -webkit-box-shadow: */
-    --box-shadow-webkit: 0px 0px 20px -10px #000000;
+  /* -------- COLORS --------- */
 
-    /* -------- COLORS --------- */
+  /* Colors */
+  --main-text-color: hsl(246, 76%, 5%);
+  --secondary-text-color: hsl(0, 0%, 100%);
+  --main-background-color: hsl(240, 6%, 97%);
+  --secondary-background-color: hsl(0, 0%, 0%);
+  --emergency-color: hsl(357.68, 83.41%, 42.55%);
 
-    /* Colors */
-    --main-text-color: hsl(246, 76%, 5%);
-    --secondary-text-color: hsl(0, 0%, 100%);
-    --main-background-color: hsl(240, 6%, 97%);
-    --secondary-background-color: hsl(0, 0%, 0%);
-    --emergency-color: hsl(357.68, 83.41%, 42.55%);
+  /* --------------- */
 
-    /* --------------- */
+  /* primary: #0d1631; */
+  --primary-hue: 225;
+  --primary-saturation: 58%;
 
-    /* primary: #0d1631; */
-    --primary-hue: 225;
-    --primary-saturation: 58%;
+  /* --------------- */
 
-    /* --------------- */
+  /* secondary: #e1e5ee; */
+  --secondary-hue: 222;
+  --secondary-saturation: 27.66%;
 
-    /* secondary: #e1e5ee; */
-    --secondary-hue: 222;
-    --secondary-saturation: 27.66%;
+  /* --------------- */
 
-    /* --------------- */
+  /* accent: #ed8248; */
+  --accent-hue: 21;
+  --accent-saturation: 100%;
 
-    /* accent: #ed8248; */
-    --accent-hue: 21;
-    --accent-saturation: 100%;
+  /* --------------- */
 
-    /* --------------- */
+  /* Variation in lightness */
+  --darkest: 12%;
+  --dark: 31%;
+  --neutral: 50%;
+  --light: 90%;
+  --lightest: 91%;
 
-    /* Variation in lightness */
-    --darkest: 12%;
-    --dark: 31%;
-    --neutral: 50%;
-    --light: 90%;
-    --lightest: 91%;
+  /* Primary color */
+  --primary-darkest: hsl(
+    var(--primary-hue),
+    var(--primary-saturation),
+    var(--darkest)
+  );
+  --primary-dark: hsl(
+    var(--primary-hue),
+    var(--primary-saturation),
+    var(--dark)
+  );
+  --primary-neutral: hsl(
+    var(--primary-hue),
+    var(--primary-saturation),
+    var(--neutral)
+  );
+  --primary-light: hsl(
+    var(--primary-hue),
+    var(--primary-saturation),
+    var(--light)
+  );
+  --primary-lightest: hsl(
+    var(--primary-hue),
+    var(--primary-saturation),
+    var(--lightest)
+  );
 
-    /* Primary color */
-    --primary-darkest: hsl(var(--primary-hue), var(--primary-saturation), var(--darkest));
-    --primary-dark: hsl(var(--primary-hue), var(--primary-saturation), var(--dark));
-    --primary-neutral: hsl(var(--primary-hue), var(--primary-saturation), var(--neutral));
-    --primary-light: hsl(var(--primary-hue), var(--primary-saturation), var(--light));
-    --primary-lightest: hsl(var(--primary-hue), var(--primary-saturation), var(--lightest));
+  /* secondary color */
+  --secondary-darkest: hsl(
+    var(--secondary-hue),
+    var(--secondary-saturation),
+    var(--darkest)
+  );
+  --secondary-dark: hsl(
+    var(--secondary-hue),
+    var(--secondary-saturation),
+    var(--dark)
+  );
+  --secondary-neutral: hsl(
+    var(--secondary-hue),
+    var(--secondary-saturation),
+    var(--neutral)
+  );
+  --secondary-light: hsl(
+    var(--secondary-hue),
+    var(--secondary-saturation),
+    var(--light)
+  );
+  --secondary-lightest: hsl(
+    var(--secondary-hue),
+    var(--secondary-saturation),
+    var(--lightest)
+  );
 
-     /* secondary color */
-    --secondary-darkest: hsl(var(--secondary-hue), var(--secondary-saturation), var(--darkest));
-    --secondary-dark: hsl(var(--secondary-hue), var(--secondary-saturation), var(--dark));
-    --secondary-neutral: hsl(var(--secondary-hue), var(--secondary-saturation), var(--neutral));
-    --secondary-light: hsl(var(--secondary-hue), var(--secondary-saturation), var(--light));
-    --secondary-lightest: hsl(var(--secondary-hue), var(--secondary-saturation), var(--lightest));
-
-    /* accent color */
-    --accent-darkest: hsl(var(--accent-hue), var(--accent-saturation), var(--darkest));
-    --accent-dark: hsl(var(--accent-hue), var(--accent-saturation), var(--dark));
-    --accent-neutral: hsl(var(--accent-hue), var(--accent-saturation), var(--neutral));
-    --accent-light: hsl(var(--accent-hue), var(--accent-saturation), var(--light));
-    --accent-lightest: hsl(var(--accent-hue), var(--accent-saturation), var(--lightest));
+  /* accent color */
+  --accent-darkest: hsl(
+    var(--accent-hue),
+    var(--accent-saturation),
+    var(--darkest)
+  );
+  --accent-dark: hsl(var(--accent-hue), var(--accent-saturation), var(--dark));
+  --accent-neutral: hsl(
+    var(--accent-hue),
+    var(--accent-saturation),
+    var(--neutral)
+  );
+  --accent-light: hsl(
+    var(--accent-hue),
+    var(--accent-saturation),
+    var(--light)
+  );
+  --accent-lightest: hsl(
+    var(--accent-hue),
+    var(--accent-saturation),
+    var(--lightest)
+  );
 }
 
 html,
 Body {
+  font-family: var(--main-font);
+  color: var(--main-text-color);
+  background-color: var(--main-background-color);
 
-    font-family: var(--main-font);
-    color: var(--main-text-color);
-    background-color: var(--main-background-color);
+  & .h1,
+  h1 {
+    font-size: clamp(24px, 5vw, 48px);
+    line-height: 1.2;
+  }
 
-    & .h1, h1 {
-        font-size: clamp(24px, 5vw, 48px);
-        line-height: 1.2;
-    }
+  & .h2,
+  h2 {
+    font-size: clamp(20px, 4.5vw, 36px);
+    line-height: 1.3;
+  }
 
-    & .h2, h2 {
-        font-size: clamp(20px, 4.5vw, 36px);
-        line-height: 1.3;
-    }
+  & .h3,
+  h3 {
+    font-size: clamp(16px, 3vw, 25px);
+    line-height: 1.4;
+  }
 
-   & .h3, h3 {
-        font-size: clamp(16px, 3vw, 25px);
-        line-height: 1.4;
-    }
+  & .h4,
+  h4 {
+    font-size: clamp(14px, 2.5vw, 18px);
+    line-height: 1.5;
+  }
 
-   & .h4, h4 {
-        font-size: clamp(14px, 2.5vw, 18px);
-        line-height: 1.5;
-    }
+  & .h5,
+  h5 {
+    font-size: clamp(14px, 2vw, 16px);
+    line-height: 1.6;
+  }
 
-   & .h5, h5 {
-        font-size: clamp(14px, 2vw, 16px);
-        line-height: 1.6;
-    }
+  & .h6,
+  h6 {
+    font-size: clamp(12px, 1.5vw, 14px);
+    line-height: 1.4;
+  }
 
-   & .h6, h6 {
-        font-size: clamp(12px, 1.5vw, 14px);
-        line-height: 1.4;
-    }
-
-   & .paragraph, p {
-        font-size: clamp(16px, 3vw, 20px);
-        line-height: 1.5;
-    }
+  & .paragraph,
+  p {
+    font-size: clamp(16px, 3vw, 20px);
+    line-height: 1.5;
+  }
 }
