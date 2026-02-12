@@ -41,7 +41,7 @@
   digital divide.
 </p>
 
-<Title headingText="This is an heading text" />
+<Title className='heading' level='h4' headingText="This is an heading text" />
 
 <Text
   text="The findings of the project so far, demonstrate that digital tools and data
