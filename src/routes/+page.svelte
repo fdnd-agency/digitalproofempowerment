@@ -7,6 +7,7 @@
   import Title from "$lib/components/atoms/Title.svelte";
   import Link from "$lib/components/atoms/Link.svelte";
   import Footer from "$lib/components/organisms/Footer.svelte";
+  import Text from "$lib/components/atoms/Text.svelte";
 
   // Icons
   import {
@@ -42,16 +43,25 @@
 
 <Title className='heading' level='h4' headingText="This is an heading text" />
 
+<Text
+  text="The findings of the project so far, demonstrate that digital tools and data
+  literacy are essential for improving working conditions and combating
+  exploitation."
+  className="footer-text"
+/>
+
 <section class="card-container">
-    <InformationCard
-        cardText="Always keep ORIGINAL files (no edits/filters). Keep location and date/time on."
-    />
-    <InformationCard
-        cardText="Always keep ORIGINAL files (no edits/filters). Keep location and date/time on."
-    />
-    <InformationCard
-     Icon={PhotoUpload}   cardTitle="Always keep ORIGINAL files (no edits/filters). Keep location and date/time on." cardSubText="lorem10"
-    />
+  <InformationCard
+    cardText="Always keep ORIGINAL files (no edits/filters). Keep location and date/time on."
+  />
+  <InformationCard
+    cardText="Always keep ORIGINAL files (no edits/filters). Keep location and date/time on."
+  />
+  <InformationCard
+    Icon={PhotoUpload}
+    cardTitle="Always keep ORIGINAL files (no edits/filters). Keep location and date/time on."
+    cardSubText="lorem10"
+  />
 
   <InformationCard
     cardText="Always keep ORIGINAL files (no edits/filters). Keep location and date/time on."
@@ -66,14 +76,14 @@
 
 <SelectButton />
 
-<Button buttonText="Discreet mode" buttonType="btn-white"/>
+<Button buttonText="Discreet mode" buttonType="btn-white" />
 <Button buttonText="Discreet mode" />
 
 <FileInput inputField="Photo or video (Camera)" />
 
 <Link text="I'm a link" className="footer-link" />
 
-<Footer/>
+<Footer />
 
 <style>
   .card-container {
