@@ -40,7 +40,7 @@
   digital divide.
 </p>
 
-<Title headingText="This is an heading text" />
+<Title className='heading' level='h4' headingText="This is an heading text" />
 
 <section class="card-container">
     <InformationCard
