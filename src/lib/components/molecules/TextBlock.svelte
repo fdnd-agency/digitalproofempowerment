@@ -1,6 +1,6 @@
 <script>
   import Title from "../atoms/Title.svelte";
-  import Text from "../atoms/text.svelte";
+  import Text from "../atoms/Text.svelte";
 
   let {
     headingText,
@@ -15,7 +15,7 @@
 </script>
 
 <div class={className}>
-  <Title {level} className={textClass} {headingText} Icon={titleIcon} />
+  <Title {level} className={titleClass} {headingText} Icon={titleIcon} />
   <Text className={textClass} {text} Icon={textIcon} />
 </div>
 
