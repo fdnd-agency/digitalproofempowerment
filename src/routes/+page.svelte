@@ -7,6 +7,7 @@
     </section>
 </main>
 
+
 <style>
     section {
         padding: 3rem;
