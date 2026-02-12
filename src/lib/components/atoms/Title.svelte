@@ -6,9 +6,11 @@
   const validateLevel = (level) => {
     return levels.includes(level) ? level : "h1";
   };
+
+  const validatedLevel = $derived(validateLevel(level));
 </script>
 
-<svelte:element this={validateLevel(level)} class={className}>
+<svelte:element this={validatedLevel} class={className}>
   {#if Icon}
     <Icon class="icon" />
   {/if}
