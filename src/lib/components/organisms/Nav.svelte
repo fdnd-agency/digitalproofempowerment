@@ -37,7 +37,7 @@
 
     <ul class="nav-list-container">
         <li class="nav-item logo"><a>Logo</a></li>
-        <li class="nav-item"><Link href="/about-us" text="About us" ariaLabel="Lean more about Digital Proof Empowerment" rel="canonical" className="footer-link"/></li>
+        <li class="nav-item"><Link href="/about-us" text="About us" ariaLabel="Learn more about Digital Proof Empowerment" rel="canonical" className="footer-link"/></li>
         <li class="nav-item"><Link href="/contact" text="Contact" ariaLabel="contact information" rel="help" className="footer-link"/></li>
         <li class="nav-item"><Link href="/proof-tips" text="Proof Tips" ariaLabel="Learn more about what is a strong Proof" rel="canonical" className="footer-link"/></li>
         <li class="nav-item"><Link href="/help-others" text="Help Others" ariaLabel="Help someone submit proof" rel="help" className="footer-link"/></li>
