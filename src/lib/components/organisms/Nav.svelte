@@ -95,7 +95,8 @@
     /* To make label accessable with keyboard */
     #nav-toggle:focus + .nav-button {
         outline: 1px solid var(--accent-neutral);
-        outline-offset: var(--spacing-xxs);
+        outline-offset: var(--spacing-xs);
+        border-radius: var(--radius-xs);
     }
 
     #nav-toggle:checked + .nav-button + .nav-list-container {
