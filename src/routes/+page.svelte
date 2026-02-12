@@ -24,8 +24,6 @@
 <h1>Digital Proof Empowerment</h1>
 <p>From Underutilized to Empowered</p>
 
-<TextBlock />
-
 <p>
   This project focuses on addressing labor exploitation and digital illiteracy.
   Using digital technology, we help vulnerable groups become more resilient. We
