@@ -1,23 +1,28 @@
 <script>
-    import { CheckedIcon } from "$lib";
+  let { headingText, Icon, className, level = "h1" } = $props();
 
-    let { headingText, Icon } = $props();
+  const levels = ["h1", "h2", "h3", "h4", "h5", "h6"];
+
+  const validateLevel = (level) => {
+    return levels.includes(level) ? level : "h1";
+  };
+
+  const validatedLevel = $derived(validateLevel(level));
 </script>
 
-
-<div class="heading">
-    {#if Icon}
-        <Icon class="icon"/>
-    {/if}
-    <h2 class="h1">{headingText}</h2>
-</div>
+<svelte:element this={validatedLevel} class={className}>
+  {#if Icon}
+    <Icon class="icon" />
+  {/if}
+  {headingText}
+</svelte:element>
 
 <style>
-    .heading {
-        display: flex;
-        flex-direction: row;
-        gap: var(--spacing-sm);
-        align-items: center;
-        padding: var(--spacing-md) var(--spacing-xs) var(--spacing-xl) 0rem;
-    }
+  .heading {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-sm);
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-xs) var(--spacing-xl) 0rem;
+  }
 </style>
