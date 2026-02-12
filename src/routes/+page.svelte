@@ -8,6 +8,7 @@
   import Link from "$lib/components/atoms/Link.svelte";
   import Footer from "$lib/components/organisms/Footer.svelte";
   import Text from "$lib/components/atoms/Text.svelte";
+  import TextBlock from "$lib/components/molecules/TextBlock.svelte";
 
   // Icons
   import {
@@ -22,6 +23,8 @@
 
 <h1>Digital Proof Empowerment</h1>
 <p>From Underutilized to Empowered</p>
+
+<TextBlock />
 
 <p>
   This project focuses on addressing labor exploitation and digital illiteracy.
@@ -41,13 +44,20 @@
   digital divide.
 </p>
 
-<Title className='heading' level='h4' headingText="This is an heading text" />
+<Title className="heading" level="h4" headingText="This is an heading text" />
 
 <Text
   text="The findings of the project so far, demonstrate that digital tools and data
   literacy are essential for improving working conditions and combating
   exploitation."
   className="footer-text"
+/>
+
+<TextBlock
+  headingText="test title"
+  text="test text"
+  className="text-block"
+  level="h8"
 />
 
 <section class="card-container">
