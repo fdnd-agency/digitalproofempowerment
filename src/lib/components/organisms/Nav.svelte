@@ -30,7 +30,7 @@
 </script>
 
 <nav class="nav-container">
-    <input type="checkbox" class="visually-hidden" id="nav-toggle" />
+    <input type="checkbox" class="visually-hidden" id="nav-toggle" aria-label="toggle dropdown menu"/>
     <label class="nav-button" for="nav-toggle">
         <span></span>
         <span></span>
@@ -92,9 +92,16 @@
         z-index: 1;
     }
 
+    /* To make label accessable with keyboard */
+    #nav-toggle:focus + .nav-button {
+        outline: 1px solid var(--accent-neutral);
+        outline-offset: var(--spacing-xxs);
+    }
+
     #nav-toggle:checked + .nav-button + .nav-list-container {
         transform: translateY(2.2rem);
         opacity: 1;
+
     }
 
     #nav-toggle:checked + .nav-button span:nth-child(1) {
