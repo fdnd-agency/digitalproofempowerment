@@ -1,7 +1,3 @@
-// place files you want to import through the `$lib` alias in this folder.
-
-import { fromAction } from "svelte/attachments"
-
 // Icons
 export { default as KeyIcon } from "$lib/assets/svg/KeyIcon.svelte"
 export { default as CheckedIcon } from "$lib/assets/svg/CheckedIcon.svelte"
@@ -20,7 +16,6 @@ export { default as AudioIconCard } from "$lib/assets/svg/AudioIconCard.svelte"
 export { default as ChatLogIconCard } from "$lib/assets/svg/ChatLogIconCard.svelte"
 
 // Components
-// export { default as Navbar } from "$lib/components/templates/Navbar.svelte"
 export { default as Button } from "$lib/components/atoms/Button.svelte"
 export { default as Title } from "$lib/components/atoms/Title.svelte"
 export { default as InformationCard} from "$lib/components/molecules/InformationCard.svelte"

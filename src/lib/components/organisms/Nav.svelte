@@ -17,8 +17,6 @@
     import { onMount } from "svelte";
     import { browser } from "$app/environment";
 
-    let { cardText } = $props();
-
     onMount(() => {
         function checkForWindowResize() {
             if (window.innerWidth > 600) {
