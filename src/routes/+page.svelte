@@ -7,7 +7,7 @@
   import Title from "$lib/components/atoms/Title.svelte";
   import Link from "$lib/components/atoms/Link.svelte";
   import Footer from "$lib/components/organisms/Footer.svelte";
-  import Text from "$lib/components/atoms/text.svelte";
+  import Text from "$lib/components/atoms/Text.svelte";
 
   // Icons
   import {
