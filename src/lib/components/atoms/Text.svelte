@@ -12,6 +12,10 @@
 <style>
   .footer-text {
     display: flex;
-    gap: 0.5rem;
+    text-wrap: wrap;
+    width: 100%;
+    font-size: clamp(14px, 3vw, 15px);
+    padding: var(--spacing-sm);
+    padding-top: 0;
   }
 </style>

@@ -25,4 +25,9 @@
     align-items: center;
     padding: var(--spacing-md) var(--spacing-xs) var(--spacing-xl) 0rem;
   }
+
+  .footer-heading {
+    color: var(--secondary-text-color);
+    padding: var(--spacing-sm);
+  }
 </style>
