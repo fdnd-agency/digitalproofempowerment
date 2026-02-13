@@ -2,6 +2,7 @@
   import Link from "$lib/components/atoms/Link.svelte";
   import { text } from "@sveltejs/kit";
   import LinkGroup from "../molecules/LinkGroup.svelte";
+  import TextBlock from "../molecules/TextBlock.svelte";
 
   const footerLinksGroups = [
     {
@@ -69,13 +70,15 @@
 
 <footer class="footer">
   <div class="footer-top-section">
-    <div class="description">
-      <h3>Digital proof Empowerment</h3>
-      <p>
-        Empowering workers with digital tools to document conditions and combat
-        labor exploitation.
-      </p>
-    </div>
+    <TextBlock
+      className="footer-block"
+      headingText="Digital proof Empowerment"
+      text="  Empowering workers with digital tools to document conditions and combat
+        labor exploitation."
+      textClass="footer-text"
+      titleClass="footer-heading"
+      level="h3"
+    />
 
     <div class="links-section">
       {#each footerLinksGroups as group (group.groupName)}
@@ -107,18 +110,8 @@
     justify-content: space-between;
   }
 
-  .description {
-    padding: var(--spacing-md);
-    width: 40%;
-  }
-  .description > p {
-    text-wrap: wrap;
-    width: 100%;
-    font-size: clamp(14px, 3vw, 15px);
-  }
   .links-section {
     display: flex;
-    justify-content: center;
   }
   .copy-right {
     order: 2;
@@ -127,14 +120,18 @@
   }
 
   @media (max-width: 900px) {
-    .description {
-      width: 90%;
-    }
     .footer-top-section {
       flex-direction: column;
     }
     .links-section {
-      width: 90vw;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+      place-items: center;
+      text-align: center;
+    }
+
+    .copy-right {
+      font-size: clamp(12px, 3vw, 14px);
     }
   }
 </style>
