@@ -30,4 +30,22 @@
     color: var(--secondary-text-color);
     padding: var(--spacing-sm);
   }
+
+  .question-title {
+    justify-self: center;
+    margin: var(--spacing-xs);
+    padding: var(--spacing-xs);
+    font-size: larger;
+    color: var(--secondary-text-color);
+  }
+
+  .quiz-intro-title {
+    color: var(--secondary-text-color);
+  }
+
+  @media (max-width: 400px) {
+    .quiz-intro-title {
+      font-size: clamp(20px, 4.5vw, 36px);
+    }
+  }
 </style>
