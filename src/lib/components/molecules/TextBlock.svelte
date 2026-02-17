@@ -32,7 +32,7 @@
     width: 40%;
   }
 
-  .quiz-block{
+  .quiz-block {
     margin-bottom: var(--spacing-md);
   }
 
