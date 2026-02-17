@@ -18,4 +18,15 @@
     padding: var(--spacing-sm);
     padding-top: 0;
   }
+
+  .quiz-intro-text {
+    color: var(--secondary-text-color);
+    padding: var(--spacing-xs);
+  }
+
+  @media (max-width: 500px) {
+    .quiz-intro-text {
+      font-size: clamp(14px, 3vw, 18px);
+    }
+  }
 </style>
