@@ -32,6 +32,10 @@
     width: 40%;
   }
 
+  .quiz-block{
+    margin-bottom: var(--spacing-md);
+  }
+
   @media (max-width: 900px) {
     .footer-block {
       width: 90%;
