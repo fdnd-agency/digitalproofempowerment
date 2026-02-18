@@ -18,7 +18,9 @@
 
 <style>
   .container {
-    background-image: url(src/lib/assets/Images/sebastian-svenson-d2w-_1LJioQ-unsplash.jpg);
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.02)),
+      url(src/lib/assets/Images/sebastian-svenson-d2w-_1LJioQ-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -30,6 +32,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 
   @media (max-width: 400px) {

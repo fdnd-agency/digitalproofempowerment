@@ -19,31 +19,27 @@
 
 <style>
   main {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "quiz"
-      "side"
-      "proof ";
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     padding: 3rem;
     min-height: 100vh;
   }
   .quiz {
     grid-area: quiz;
-    height: inherit;
+    min-height: 100%;
     margin: 10% 0;
   }
   .side {
     grid-area: side;
-    overflow-y: auto;
+    min-height: 100%;
     margin-bottom: 10%;
   }
   .proof {
     grid-area: proof;
     background-color: var(--secondary-lightest);
     width: 100%;
-    height: fit-content;
+    min-height: inherit;
     margin-bottom: 10%;
     padding: 2rem;
   }
@@ -51,7 +47,7 @@
   @media (max-width: 899px) {
     .side {
       height: auto;
-      max-height: 50vh;
+      max-height: 100%;
     }
   }
 

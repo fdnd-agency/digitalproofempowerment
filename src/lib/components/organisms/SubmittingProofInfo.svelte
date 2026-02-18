@@ -68,7 +68,6 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-
   }
 
   @media (max-width: 800px) {

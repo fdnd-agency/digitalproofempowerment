@@ -29,5 +29,13 @@
 <style>
   .sideBar {
     padding: var(--spacing-sm);
+    display: flex;
+  }
+
+  @media (max-width: 600px) {
+    .sideBar {
+      flex-direction: column;
+      margin-bottom: 30%;
+    }
   }
 </style>
