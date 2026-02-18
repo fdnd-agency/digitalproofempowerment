@@ -43,6 +43,12 @@
     color: var(--secondary-text-color);
   }
 
+  .proof-intro {
+    color: var(--accent-neutral);
+    padding: var(--spacing-2xl);
+    font-weight: 400 !important;
+  }
+
   @media (max-width: 400px) {
     .quiz-intro-title {
       font-size: clamp(20px, 4.5vw, 36px);
