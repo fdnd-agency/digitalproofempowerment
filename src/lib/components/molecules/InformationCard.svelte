@@ -59,7 +59,7 @@
   }
 
   .custom-card:nth-child(even) {
-    background-color: rgba(156, 90, 36, 0.4);
+    background-color: rgba(214, 116, 35, 0.4);
   }
 
   .custom-card > p {
@@ -70,7 +70,7 @@
     background-color: rgba(4, 1, 15, 0.4);
   }
    .custom-card:nth-child(even):hover {
-    background-color: rgba(156, 90, 36, 0.7);
+    background-color: rgba(197, 91, 5, 0.7);
     transform: scale(1.1) rotate(2deg);
   }
 </style>
