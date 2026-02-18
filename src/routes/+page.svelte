@@ -1,11 +1,15 @@
 <script>
   import quizData from "$lib/data/quizData.js";
   import HomeQuizSection from "$lib/components/organisms/HomeQuizSection.svelte";
+  import SideBar from "$lib/components/molecules/SideBar.svelte";
 </script>
 
 <main>
   <section class="quiz">
     <HomeQuizSection />
+  </section>
+  <section class="side">
+    <SideBar />
   </section>
 </main>
 
@@ -23,6 +27,18 @@
   }
   .quiz {
     grid-area: quiz;
+  }
+  .side {
+    grid-area: side;
+    height: 70%;
+    overflow-y: auto;
+  }
+
+  @media (max-width: 899px) {
+    .side {
+      height: auto;
+      max-height: 50vh;
+    }
   }
 
   @media (max-width: 899px) {

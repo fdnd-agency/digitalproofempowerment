@@ -1,41 +1,76 @@
 <script>
-
-    let { cardSubText, Icon, cardTitle } = $props();
+  let { cardSubText, Icon, cardTitle, className } = $props();
 </script>
 
-<div class="information-card">
+<div class={className || "information-card"}>
+  <div class="title-icon">
     {#if Icon}
-        <Icon class="icon"/>
+      <Icon class="icon" />
     {/if}
     <p class="card-paragraph">{cardTitle}</p>
-    <p class="card-sub-paragraph">{cardSubText}</p>
+  </div>
+
+  <p class="card-sub-paragraph">{cardSubText}</p>
 </div>
 
 <style>
-    div {
-        border: var(--border);
-        padding: var(--spacing-md);
-        border-radius: var(--radius-md);
+  .information-card {
+    border: var(--border);
+    padding: var(--spacing-md);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: fit-content;
+    box-shadow: var(--box-shadow);
+    -webkit-box-shadow: var(--box-shadow-webkit);
+  }
 
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-md);
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: fit-content;
+  .title-icon {
+    font-weight: bolder;
+    width: 100%;
+    text-align: center;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-md);
+    align-items: center;
+    text-align: left;
+  }
 
-        box-shadow: var(--box-shadow);
-        -webkit-box-shadow: var(--box-shadow-webkit);
-    }
+  .custom-card {
+    padding: var(--spacing-md);
+    border: var(--border);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    background-color: rgba(12, 4, 43, 0.2);
+    text-align: left;
+    font-size: clamp(14px, 3vw, 16px);
+    box-shadow: var(--box-shadow);
+    -webkit-box-shadow: var(--box-shadow-webkit);
+    height: fit-content;
+    transition: transform 0.5s ease-in-out;
+  }
 
-    .card-paragraph {
-        font-weight: bolder;
-        background-color: var(--secondary-lightest);
-        width: 14rem;
-        border-radius: var(--radius-sm);
-    }
+  .custom-card:nth-child(even) {
+    background-color: rgba(156, 90, 36, 0.4);
+  }
 
-
-    
+  .custom-card > p {
+    font-size: clamp(14px, 3vw, 16px);
+  }
+  .custom-card:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background-color: rgba(4, 1, 15, 0.4);
+  }
+   .custom-card:nth-child(even):hover {
+    background-color: rgba(156, 90, 36, 0.7);
+    transform: scale(1.1) rotate(2deg);
+  }
 </style>
