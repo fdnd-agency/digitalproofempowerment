@@ -20,34 +20,31 @@
 <style>
   main {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr;
     grid-template-areas:
-      "quiz side"
-      "proof proof";
+      "quiz"
+      "side"
+      "proof ";
     gap: 2rem;
     padding: 3rem;
     min-height: 100vh;
   }
-  section {
-    padding: 1rem;
-    height: 100vh;
-  }
   .quiz {
     grid-area: quiz;
     height: inherit;
-    margin-bottom: 30vh;
+    margin: 10% 0;
   }
   .side {
     grid-area: side;
     overflow-y: auto;
-    margin-bottom: 30vh;
+    margin-bottom: 10%;
   }
-  main > .proof {
+  .proof {
     grid-area: proof;
     background-color: var(--secondary-lightest);
     width: 100%;
     height: fit-content;
-    margin-bottom: 30vh;
+    margin-bottom: 10%;
     padding: 2rem;
   }
 
