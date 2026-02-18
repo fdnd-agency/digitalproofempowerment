@@ -28,7 +28,6 @@
 
   .footer-heading {
     color: var(--secondary-text-color);
-    padding: var(--spacing-sm);
   }
 
   .question-title {
