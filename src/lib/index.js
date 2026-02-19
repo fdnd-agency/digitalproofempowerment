@@ -9,12 +9,21 @@ export { default as PhotoUpload } from "$lib/assets/svg/PhotoUpload.svelte";
 export { default as PlayIcon } from "$lib/assets/svg/PlayIcon.svelte";
 export { default as FolderIcon } from "$lib/assets/svg/FolderIcon.svelte";
 export { default as PhoneIcon } from "$lib/assets/svg/PhoneIcon.svelte";
-export { default as VideoIconCard } from "$lib/assets/svg/VideoIconCard.svelte";
-export { default as LocationIconCard } from "$lib/assets/svg/LocationIconCard.svelte";
-export { default as NotesIconCard } from "$lib/assets/svg/NotesIconCard.svelte";
-export { default as AudioIconCard } from "$lib/assets/svg/AudioIconCard.svelte";
-export { default as ChatLogIconCard } from "$lib/assets/svg/ChatLogIconCard.svelte";
 export { default as Logo } from "$lib/assets/svg/Logo.svelte";
+
+export { default as CardIconAudio } from "$lib/assets/svg/CardIconAudio.svelte";
+export { default as CardIconChat } from "$lib/assets/svg/CardIconChat.svelte";
+export { default as CardIconImg } from "$lib/assets/svg/CardIconImg.svelte";
+export { default as CardIconVideo } from "$lib/assets/svg/CardIconVideo.svelte";
+export { default as CardIconNotes } from "$lib/assets/svg/CardIconNotes.svelte";
+export { default as CardIconLocation } from "$lib/assets/svg/CardIconLocation.svelte";
+export { default as StarIcon } from "$lib/assets/svg/StarIcon.svelte";
+export { default as QuotesIcon } from "$lib/assets/svg/QuotesIcon.svelte";
+
+
+// img
+export { default as HeaderBG } from "$lib/assets/img/HeaderBg.webp";
+
 
 // Components
 export { default as Button } from "$lib/components/atoms/Button.svelte";
@@ -23,3 +32,8 @@ export { default as InformationCard } from "$lib/components/molecules/Informatio
 export { default as Nav } from "$lib/components/organisms/Nav.svelte";
 export { default as Link } from "$lib/components/atoms/Link.svelte";
 export { default as Footer } from "$lib/components/organisms/Footer.svelte";
+export { default as Profile } from "$lib/components/atoms/profile.svelte";
+export { default as Rating } from "$lib/components/atoms/Rating.svelte";
+export { default as Header } from "$lib/components/organisms/Header.svelte";
+export { default as EmergencySection } from "$lib/components/molecules/EmergencySection.svelte";
+export { default as ReviewCard } from "$lib/components/molecules/ReviewCard.svelte";
