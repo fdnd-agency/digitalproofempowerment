@@ -23,6 +23,7 @@
     flex-direction: row;
     gap: var(--spacing-sm);
     align-items: center;
-    padding: var(--spacing-md) var(--spacing-xs) var(--spacing-xl) 0rem;
+    max-width: 18ch;
+    margin: 0 auto;
   }
 </style>
