@@ -13,7 +13,6 @@
         CardIconNotes,
         CardIconLocation,
         Profile,
-        Rating,
         QuotesIcon,
         EyeIcon,
         Header,

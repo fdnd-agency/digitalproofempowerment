@@ -14,12 +14,10 @@
         CardIconLocation,
         Header,
         Profile,
-        Rating,
         QuotesIcon,
         EyeIcon,
         EmergencySection,
-        ReviewCard,
-        Link,
+        Link
     } from "$lib";
 
     let {} = $props();

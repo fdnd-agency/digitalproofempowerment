@@ -9,18 +9,16 @@
 
     <section class="hero-content">
         <p class="hero-page-label" aria-current="page">{pageLabel}</p>
-        <Title headingText={HeroHeading} className="heading hero-heading" />
+        <Title headingText={HeroHeading}  className="heading hero-heading" />
         <p class="hero-paragraph">{HeroParagraph}</p>
 
         <div class="hero-buttons-wrapper">
             <Button
-                buttonHref="/login"
                 Icon={PlayIcon}
                 buttonType="btn-black"
                 buttonText="Get started"
             />
             <Button
-                buttonHref="/about"
                 Icon={FolderIcon}
                 buttonType="btn-white"
                 buttonText="Learn more"
@@ -59,7 +57,8 @@
         display: flex;
         flex-direction: column;
         gap: var(--spacing-lg);
-        color: var(--secondary-lightest);
+        color: var(--secondary-text-color);
+
     }
 
     .hero-page-label {
