@@ -23,3 +23,4 @@ export { default as InformationCard } from "$lib/components/molecules/Informatio
 export { default as Nav } from "$lib/components/organisms/Nav.svelte";
 export { default as Link } from "$lib/components/atoms/Link.svelte";
 export { default as Footer } from "$lib/components/organisms/Footer.svelte";
+export {default as QuizBox} from "$lib/components/molecules/QuizBox.svelte"
