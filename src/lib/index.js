@@ -32,7 +32,7 @@ export { default as InformationCard } from "$lib/components/molecules/Informatio
 export { default as Nav } from "$lib/components/organisms/Nav.svelte";
 export { default as Link } from "$lib/components/atoms/Link.svelte";
 export { default as Footer } from "$lib/components/organisms/Footer.svelte";
-export { default as Profile } from "$lib/components/atoms/profile.svelte";
+export { default as Profile } from "$lib/components/atoms/Profile.svelte";
 export { default as Header } from "$lib/components/organisms/Header.svelte";
 export { default as EmergencySection } from "$lib/components/molecules/EmergencySection.svelte";
 export { default as ReviewCard } from "$lib/components/molecules/ReviewCard.svelte";
