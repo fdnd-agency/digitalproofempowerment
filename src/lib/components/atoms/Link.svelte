@@ -34,9 +34,15 @@
   }
 
   .footer-link:visited {
-    color: white;
+    color: var(--secondary-text-color);
   }
   .footer-link:hover {
     border-bottom: solid 1px white;
+  }
+
+  @media (max-width: 500px) {
+    .footer-link {
+      text-wrap: nowrap;
+    }
   }
 </style>
