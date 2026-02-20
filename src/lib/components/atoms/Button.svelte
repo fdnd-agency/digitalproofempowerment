@@ -24,20 +24,20 @@
     cursor: pointer;
   }
 
-  .btn-white {
+  :global(.btn-white) {
     background-color: var(--main-background-color);
     color: var(--main-text-color);
     border: var(--border);
   }
 
-  .btn-red {
+  :global(.btn-red) {
     background-color: var(--emergency-color);
     color: var(--secondary-text-color);
     border: none;
     padding: var(--spacing-xs);
   }
 
-  .btn-black {
+  :global(.btn-black) {
     background-color: var(--secondary-background-color);
     color: var(--secondary-text-color);
     border: none;
