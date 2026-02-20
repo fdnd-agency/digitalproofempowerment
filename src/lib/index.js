@@ -36,3 +36,4 @@ export { default as Profile } from "$lib/components/atoms/profile.svelte";
 export { default as Header } from "$lib/components/organisms/Header.svelte";
 export { default as EmergencySection } from "$lib/components/molecules/EmergencySection.svelte";
 export { default as ReviewCard } from "$lib/components/molecules/ReviewCard.svelte";
+export {default as QuizBox} from "$lib/components/molecules/QuizBox.svelte"
