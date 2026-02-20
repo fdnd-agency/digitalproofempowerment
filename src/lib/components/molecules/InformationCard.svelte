@@ -1,41 +1,70 @@
 <script>
-
-    let { cardSubText, Icon, cardTitle } = $props();
+    let { cardSubText, Icon, cardTitle, labels } = $props();
 </script>
 
-<div class="information-card">
+<article class="information-card">
     {#if Icon}
-        <Icon class="icon"/>
+        <Icon class="icon" />
     {/if}
-    <p class="card-paragraph">{cardTitle}</p>
+
+    <h2 class="card-paragraph">{cardTitle}</h2>
     <p class="card-sub-paragraph">{cardSubText}</p>
-</div>
+
+    {#if labels}
+        <div class="label-wrapper">
+            {#each labels as label}
+                <span class="label">{label}</span>
+            {/each}
+        </div>
+    {/if}
+</article>
 
 <style>
-    div {
+    article {
         border: var(--border);
-        padding: var(--spacing-md);
+        padding: var(--spacing-lg);
         border-radius: var(--radius-md);
+
+        box-shadow: var(--box-shadow);
+        -webkit-box-shadow: var(--box-shadow-webkit);
 
         display: flex;
         flex-direction: column;
         gap: var(--spacing-md);
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        height: fit-content;
-
-        box-shadow: var(--box-shadow);
-        -webkit-box-shadow: var(--box-shadow-webkit);
+        color: var(--accent-dark);
+        transition: transform 0.3s ease-in-out;
     }
 
     .card-paragraph {
-        font-weight: bolder;
-        background-color: var(--secondary-lightest);
-        width: 14rem;
-        border-radius: var(--radius-sm);
+        font-size: clamp(20px, 3vw, 20px);
+        color: var(--main-text-color);
+        font-weight: bold;
     }
 
+    .card-sub-paragraph {
+        font-size: clamp(11px, 3vw, 13px);
+        color: var(--main-text-color);
+        text-wrap: wrap;
+    }
 
-    
+    .information-card:hover {
+        color: var(--primary-neutral);
+        transform: scale(1.05) rotate(1deg);
+    }
+
+    .label-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: var(--spacing-xxs);
+        margin-top: auto;
+    }
+
+    .label {
+        background-color: var(--primary-neutral);
+        font-size: clamp(10px, 3vw, 11px);
+        color: var(--secondary-text-color);
+        padding: var(--spacing-xxxs) var(--spacing-xxs);
+        border-radius: var(--radius-xs);
+        align-self: flex-start;
+    }
 </style>
