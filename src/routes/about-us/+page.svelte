@@ -46,7 +46,7 @@
             <div class="button-wrapper">
                 <Button
                     Icon={FolderIcon}
-                    buttonType="btn-black"
+                    className="btn-white"
                     buttonText="Start gathering evidence "
                 />
             </div>

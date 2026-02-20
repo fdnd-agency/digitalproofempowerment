@@ -2,8 +2,7 @@
   let { className, buttonText, Icon, buttonType, ...rest } = $props();
 </script>
 
-<button class={className || "basic-button"} type={buttonType} {...rest}>
-  {#if Icon}
+<button class={`basic-button ${className || ""}`} type={buttonType} {...rest}>  {#if Icon}
     <Icon class="icon" />
   {/if}
   {buttonText}
@@ -24,24 +23,38 @@
     cursor: pointer;
   }
 
-  :global(.btn-white) {
+  .btn-white {
     background-color: var(--main-background-color);
     color: var(--main-text-color);
     border: var(--border);
+
+    &:hover {
+      background-color: var(--accent-neutral);
+      color: var(--secondary-text-color);
+    }
   }
 
-  :global(.btn-red) {
+  .btn-red {
     background-color: var(--emergency-color);
     color: var(--secondary-text-color);
     border: none;
     padding: var(--spacing-xs);
+
+    &:hover {
+      background-color: var(--main-background-color);
+      color: var(--main-text-color);
+    }
   }
 
-  :global(.btn-black) {
+  .btn-black {
     background-color: var(--secondary-background-color);
     color: var(--secondary-text-color);
     border: none;
     padding: var(--spacing-xs);
+
+    &:hover {
+      background-color: var(--accent-neutral);
+    }
   }
 
   .quiz-button {

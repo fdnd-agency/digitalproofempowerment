@@ -15,12 +15,12 @@
         <div class="hero-buttons-wrapper">
             <Button
                 Icon={PlayIcon}
-                buttonType="btn-black"
+                className="btn-black"
                 buttonText="Get started"
             />
             <Button
                 Icon={FolderIcon}
-                buttonType="btn-white"
+                className="btn-white"
                 buttonText="Learn more"
             />
         </div>
