@@ -26,7 +26,6 @@
     <div class="button-wrapper">
         <Button
             Icon={PhoneIcon}
-            buttonHref="/"
             buttonType="btn-red"
             buttonText="Call 112"
         />
