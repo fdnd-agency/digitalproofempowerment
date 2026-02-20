@@ -76,7 +76,8 @@
             <div class="button-wrapper">
                 <Button
                     Icon={EyeIcon}
-                    buttonType="btn-black"
+                    buttonType="submit"
+                    className="btn-black"
                     buttonText="Send"
                 />
             </div>    
