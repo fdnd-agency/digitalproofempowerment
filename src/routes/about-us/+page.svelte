@@ -21,7 +21,7 @@
         HeaderBG,
     } from "$lib";
 
-    let {  } = $props();
+    let {} = $props();
 </script>
 
 <Header
@@ -31,8 +31,6 @@
 />
 
 <main>
-  
-
     <section class="evidence-container">
         <div class="evidence-container-content-wrapper">
             <Title
@@ -94,8 +92,7 @@
         </div>
     </section>
 
-        <EmergencySection />
-
+    <EmergencySection />
 
     <section class="reviews-container">
         <div class="reviews-container-content-wrapper">
@@ -116,7 +113,7 @@
                 reviewerName="John D."
                 profileImage="https://i.pravatar.cc/150"
                 reviewerProffesion="Janitor"
-                dateTimeFormat="2026-15-02"
+                dateTimeFormat="2026-02-15"
                 reviewDate="15 Feb 2026"
                 reviewText="Being assaulted on the job was terrifying, and I didn’t know
                     where to turn. This platform allowed me to collect evidence
@@ -126,8 +123,7 @@
                 reviewerName="Gabby C."
                 profileImage="https://i.pravatar.cc/150"
                 reviewerProffesion="Mechanic"
-                dateTimeFormat="2026-15-02"
-                reviewDate="15 Feb 2026"
+                dateTimeFormat="2026-02-15"
                 reviewText="Honest stories from real people who have experienced unfavorable
                 working conditions in their own jobs—now receiving compensation
                 because they were able to gather all the evidence against their
@@ -137,7 +133,7 @@
                 reviewerName="Carlo J."
                 profileImage="https://i.pravatar.cc/150"
                 reviewerProffesion="Manager"
-                dateTimeFormat="2026-15-02"
+                dateTimeFormat="2026-02-15"
                 reviewDate="15 Feb 2026"
                 reviewText="I experienced physical abuse at work and felt powerless.
                     Thanks to this platform, I was able to document everything
@@ -159,7 +155,8 @@
         color: var(--main-text-color);
 
         @media (min-width: 800px) {
-            padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl);
+            padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl)
+                var(--spacing-3xl);
             display: flex;
             flex-direction: column;
             gap: var(--spacing-lg);
@@ -203,15 +200,19 @@
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         gap: var(--spacing-xl);
+    }
 
-        @media (min-width: 760px) {
-            grid-template-columns: 1fr 1fr;
+     @media (min-width: 760px) {
+            .evidence-card-container {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (min-width: 1100px) {
-            grid-template-columns: 1fr 1fr 1fr;
+            .evidence-card-container {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
         }
-    }
 
     /* ------------ reviews container */
 
@@ -223,7 +224,8 @@
         color: var(--main-text-color);
 
         @media (min-width: 800px) {
-            padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl);
+            padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl)
+                var(--spacing-3xl);
             display: flex;
             flex-direction: column;
             gap: var(--spacing-lg);
@@ -250,15 +252,19 @@
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         gap: var(--spacing-xl);
+    }
 
-        @media (min-width: 760px) {
-            grid-template-columns: 1fr 1fr;
+    @media (min-width: 760px) {
+            .reviews-card-container {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (min-width: 1100px) {
-            grid-template-columns: 1fr 1fr 1fr;
+            .reviews-card-container  {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
         }
-    }
 
     .reviews-container-paragraph {
         margin: 0 auto;
