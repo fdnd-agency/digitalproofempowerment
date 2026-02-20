@@ -5,7 +5,7 @@
 </script>
 
 <header class="hero-container" aria-label={pageLabel}>
-    <img src={HeaderBG} alt="" class="hero-background-image" aria-hidden="true" />
+    <img src={HeaderBG} alt="" class="hero-background-image" aria-hidden="true" fetchpriority="high" />
 
     <section class="hero-content">
         <p class="hero-page-label" aria-current="page">{pageLabel}</p>
