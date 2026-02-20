@@ -7,7 +7,7 @@
         <Icon class="icon" />
     {/if}
 
-    <h4 class="card-paragraph">{cardTitle}</h4>
+    <h2 class="card-paragraph">{cardTitle}</h2>
     <p class="card-sub-paragraph">{cardSubText}</p>
 
     {#if labels}
@@ -31,7 +31,7 @@
         display: flex;
         flex-direction: column;
         gap: var(--spacing-md);
-        color: var(--accent-neutral);
+        color: var(--accent-dark);
         transition: transform 0.3s ease-in-out;
     }
 
