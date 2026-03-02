@@ -1,34 +1,70 @@
 <script>
-  let { cardSubText, Icon, cardTitle, className } = $props();
+  let { cardSubText, Icon, cardTitle, labels, className } = $props();
 </script>
 
-<div class={className || "information-card"}>
-  <div class="title-icon">
-    {#if Icon}
-      <Icon class="icon" />
-    {/if}
-    <p class="card-paragraph">{cardTitle}</p>
-  </div>
-
+<article class={className || "information-card"}>
+  {#if Icon}
+    <Icon class="icon" />
+  {/if}
+  <h2 class="card-paragraph">{cardTitle}</h2>
   <p class="card-sub-paragraph">{cardSubText}</p>
-</div>
+  {#if labels}
+    <div class="label-wrapper">
+      {#each labels as label}
+        <span class="label">{label}</span>
+      {/each}
+    </div>
+  {/if}
+</article>
 
 <style>
-  .information-card {
+  article {
     border: var(--border);
     padding: var(--spacing-md);
     border-radius: var(--radius-md);
+
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
     justify-content: center;
-    align-items: center;
-    text-align: center;
     height: fit-content;
+
     box-shadow: var(--box-shadow);
     -webkit-box-shadow: var(--box-shadow-webkit);
   }
 
+  .card-paragraph {
+    font-size: clamp(20px, 3vw, 20px);
+    color: var(--main-text-color);
+    font-weight: bold;
+  }
+
+  .card-sub-paragraph {
+    font-size: clamp(11px, 3vw, 13px);
+    color: var(--main-text-color);
+    text-wrap: wrap;
+  }
+
+  .information-card:hover {
+    color: var(--primary-neutral);
+    transform: scale(1.05) rotate(1deg);
+  }
+
+  .label-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-xxs);
+    margin-top: auto;
+  }
+
+  .label {
+    background-color: var(--primary-neutral);
+    font-size: clamp(10px, 3vw, 11px);
+    color: var(--secondary-text-color);
+    padding: var(--spacing-xxxs) var(--spacing-xxs);
+    border-radius: var(--radius-xs);
+    align-self: flex-start;
+  }
   .title-icon {
     font-weight: bolder;
     width: 100%;
@@ -61,7 +97,7 @@
     background-color: rgba(214, 116, 35, 0.4);
   }
 
-  .custom-card > p {
+  .custom-card > h2 {
     font-size: clamp(14px, 3vw, 16px);
   }
   .custom-card:hover {
