@@ -35,21 +35,26 @@
 
   .proof-tip-intro {
     margin: var(--spacing-lg);
-    color: var(--accent-neutral);
+    color: var(--accent-dark);
     padding: var(--spacing-sm);
     text-decoration: none;
     border-bottom: solid 2px var(--primary-darkest);
     transition: 0.5s ease-in-out;
+    font-size: clamp(16px 2vw 18px);
+    text-align: center;
   }
   .proof-submit-intro {
     margin: var(--spacing-2xl);
     text-decoration: none;
-    background-color: var(--accent-neutral);
+    background-color: var(--accent-dark);
     color: var(--secondary-text-color);
     border: solid 1px;
     border-radius: var(--spacing-lg);
     padding: var(--spacing-sm);
     transition: 0.5s ease-in-out;
+    font-size: clamp(16px 2vw 18px);
+    text-align: center;
+
   }
 
   .proof-tip-intro:hover {
@@ -62,7 +67,7 @@
   }
 
   .proof-submit-intro:hover {
-    color: var(--accent-neutral);
+    color: var(--primary-darkest);
     background-color: white;
     margin: var(--spacing-2xl);
     padding: var(--spacing-sm);
