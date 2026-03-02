@@ -27,7 +27,6 @@
     background-color: var(--primary-darkest);
     width: 100%;
     min-height: 100%;
-    border-radius: 16px;
     padding: var(--spacing-2xl);
     display: flex;
     flex-direction: column;
