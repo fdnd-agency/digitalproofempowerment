@@ -1,26 +1,18 @@
 <script>
-	
-	 import {
-		Nav,
-		Footer
-    } from "$lib";
+	import Logo from "/web-app-manifest-512x512.png";
+	import "../lib/css/global-stylesheet.css";
 
-	import favicon from '$lib/assets/favicon.svg';
-	import '../lib/css/global-stylesheet.css';
+	import { Nav, Footer } from "$lib";
 
 	let { children } = $props();
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={Logo} />
 </svelte:head>
 
-<Nav/>
+<Nav />
 
 {@render children()}
 
-
-<Footer/>
-
-
-
+<Footer />
