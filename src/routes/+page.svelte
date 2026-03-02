@@ -22,33 +22,24 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    padding: 3rem;
     min-height: 100vh;
   }
   .quiz {
     grid-area: quiz;
-    min-height: 100%;
-    margin: 10% 0;
+    height: 100vh;
+    margin: 0;
   }
   .side {
     grid-area: side;
     min-height: 100%;
-    margin-bottom: 10%;
+    margin: 10% 0;
   }
   .proof {
     grid-area: proof;
     background-color: var(--secondary-lightest);
     width: 100%;
     min-height: inherit;
-    margin-bottom: 10%;
     padding: 2rem;
-  }
-
-  @media (max-width: 899px) {
-    .side {
-      height: auto;
-      max-height: 100%;
-    }
   }
 
   @media (max-width: 899px) {
@@ -56,6 +47,18 @@
       display: flex;
       flex-direction: column;
       padding: 1rem;
+    }
+    .side {
+      height: auto;
+      max-height: 100%;
+    }
+    .quiz {
+      min-height: 100%;
+    }
+  }
+  @media (max-width: 400px) {
+    .quiz {
+      min-height: 50%;
     }
   }
 </style>
