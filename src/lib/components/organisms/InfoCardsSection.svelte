@@ -1,5 +1,5 @@
 <script>
-  import InformationCard from "./InformationCard.svelte";
+  import InformationCard from "../molecules/InformationCard.svelte";
   import KeyIcon from "$lib/assets/svg/KeyIcon.svelte";
   import CheckedIcon from "$lib/assets/svg/CheckedIcon.svelte";
   import EyeIcon from "$lib/assets/svg/EyeIcon.svelte";

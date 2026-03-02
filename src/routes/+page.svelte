@@ -1,7 +1,7 @@
 <script>
   import quizData from "$lib/data/quizData.js";
   import HomeQuizSection from "$lib/components/organisms/HomeQuizSection.svelte";
-  import SideBar from "$lib/components/molecules/SideBar.svelte";
+  import SideBar from "$lib/components/organisms/InfoCardsSection.svelte";
 </script>
 
 <main>
