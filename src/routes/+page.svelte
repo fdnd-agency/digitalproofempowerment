@@ -9,7 +9,7 @@
   <section class="quiz">
     <HomeQuizSection />
   </section>
-  <section class="side">
+  <section class="cards">
     <SideBar />
   </section>
   <section class="proof">
@@ -25,17 +25,14 @@
     min-height: 100vh;
   }
   .quiz {
-    grid-area: quiz;
     height: 100vh;
     margin: 0;
   }
-  .side {
-    grid-area: side;
+  .cards {
     min-height: 100%;
     margin: 10% 0;
   }
   .proof {
-    grid-area: proof;
     background-color: var(--secondary-lightest);
     width: 100%;
     min-height: inherit;
@@ -43,12 +40,7 @@
   }
 
   @media (max-width: 899px) {
-    main {
-      display: flex;
-      flex-direction: column;
-      padding: 1rem;
-    }
-    .side {
+    .cards {
       height: auto;
       max-height: 100%;
     }
