@@ -5,7 +5,7 @@
   import EyeIcon from "$lib/assets/svg/EyeIcon.svelte";
 </script>
 
-<div class="sideBar">
+<div class="cards-section">
   <InformationCard
     Icon={KeyIcon}
     className="custom-card"
@@ -27,13 +27,13 @@
 </div>
 
 <style>
-  .sideBar {
+  .cards-section {
     padding: var(--spacing-sm);
     display: flex;
   }
 
   @media (max-width: 768px) {
-    .sideBar {
+    .cards-section {
       flex-direction: column;
     }
   }
