@@ -15,37 +15,32 @@
 
 <style>
   main {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas: "quiz side";
-    gap: 2rem;
-    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     min-height: 100vh;
   }
-  section {
-    padding: 2rem;
-  }
   .quiz {
-    grid-area: quiz;
+    height: 100vh;
+    margin: 0;
   }
   .cards {
-    grid-area: side;
-    height: 70%;
-    overflow-y: auto;
+    min-height: 100%;
+    margin: 10% 0;
   }
 
   @media (max-width: 899px) {
     .cards {
       height: auto;
-      max-height: 50vh;
+      max-height: 100%;
+    }
+    .quiz {
+      min-height: 100%;
     }
   }
-
-  @media (max-width: 899px) {
-    main {
-      display: flex;
-      flex-direction: column;
-      padding: 1rem;
+  @media (max-width: 400px) {
+    .quiz {
+      min-height: 50%;
     }
   }
 </style>
