@@ -1,7 +1,7 @@
 <script>
   import quizData from "$lib/data/quizData.js";
   import HomeQuizSection from "$lib/components/organisms/HomeQuizSection.svelte";
-  import SideBar from "$lib/components/organisms/SideBar.svelte";
+  import InfoCardsSection from "$lib/components/organisms/InfoCardsSection.svelte";
   import SubmittingProofInfo from "$lib/components/organisms/SubmittingProofInfo.svelte";
 </script>
 
@@ -9,8 +9,8 @@
   <section class="quiz">
     <HomeQuizSection />
   </section>
-  <section class="side">
-    <SideBar />
+  <section class="cards">
+    <InfoCardsSection />
   </section>
   <section class="proof">
     <SubmittingProofInfo />
@@ -19,50 +19,40 @@
 
 <style>
   main {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-areas:
-      "quiz side"
-      "proof proof";
-    gap: 2rem;
-    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
     min-height: 100vh;
   }
   section {
-    padding: 1rem;
-    height: 100vh;
-  }
-  .quiz {
-    grid-area: quiz;
-    height: inherit;
-    margin-bottom: 30vh;
-  }
-  .side {
-    grid-area: side;
-    overflow-y: auto;
-    margin-bottom: 30vh;
-  }
-  main > .proof {
-    grid-area: proof;
-    background-color: var(--secondary-lightest);
-    width: 100%;
-    height: fit-content;
-    margin-bottom: 30vh;
     padding: 2rem;
   }
+  .quiz {
+    height: 100vh;
+    margin: 0;
+  }
+  .cards {
+    min-height: 100%;
+    margin: 10% 0;
+  }
 
-  @media (max-width: 899px) {
-    .side {
-      height: auto;
-      max-height: 50vh;
-    }
+  .proof {
+    min-height: 100%;
+    margin: 10% 0;
   }
 
   @media (max-width: 899px) {
-    main {
-      display: flex;
-      flex-direction: column;
-      padding: 1rem;
+    .cards {
+      height: auto;
+      max-height: 100%;
+    }
+    .quiz {
+      min-height: 100%;
+    }
+  }
+  @media (max-width: 400px) {
+    .quiz {
+      min-height: 50%;
     }
   }
 </style>
