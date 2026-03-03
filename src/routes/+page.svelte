@@ -2,6 +2,7 @@
   import quizData from "$lib/data/quizData.js";
   import HomeQuizSection from "$lib/components/organisms/HomeQuizSection.svelte";
   import InfoCardsSection from "$lib/components/organisms/InfoCardsSection.svelte";
+  import SubmittingProofInfo from "$lib/components/organisms/SubmittingProofInfo.svelte";
 </script>
 
 <main>
@@ -10,6 +11,9 @@
   </section>
   <section class="cards">
     <InfoCardsSection />
+  </section>
+  <section class="proof">
+    <SubmittingProofInfo />
   </section>
 </main>
 
@@ -20,11 +24,19 @@
     gap: 3rem;
     min-height: 100vh;
   }
+  section {
+    padding: 2rem;
+  }
   .quiz {
     height: 100vh;
     margin: 0;
   }
   .cards {
+    min-height: 100%;
+    margin: 10% 0;
+  }
+
+  .proof {
     min-height: 100%;
     margin: 10% 0;
   }

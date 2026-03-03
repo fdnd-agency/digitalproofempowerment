@@ -40,6 +40,41 @@
     border-bottom: solid 1px white;
   }
 
+  .proof-tip-intro {
+    margin: var(--spacing-lg);
+    color: var(--accent-neutral);
+    padding: var(--spacing-sm);
+    text-decoration: none;
+    border-bottom: solid 2px var(--primary-darkest);
+    transition: 0.5s ease-in-out;
+  }
+  .proof-submit-intro {
+    margin: var(--spacing-2xl);
+    text-decoration: none;
+    background-color: var(--accent-neutral);
+    color: var(--secondary-text-color);
+    border: solid 1px;
+    border-radius: var(--spacing-lg);
+    padding: var(--spacing-sm);
+    transition: 0.5s ease-in-out;
+  }
+
+  .proof-tip-intro:hover {
+    border-bottom: solid 2px var(--primary-darkest);
+    margin: var(--spacing-lg);
+    background-color: var(--primary-darkest);
+    border-radius: var(--spacing-lg);
+    letter-spacing: 2px;
+    padding: var(--spacing-sm);
+  }
+
+  .proof-submit-intro:hover {
+    color: var(--accent-neutral);
+    background-color: white;
+    margin: var(--spacing-2xl);
+    padding: var(--spacing-sm);
+  }
+
   @media (max-width: 500px) {
     .footer-link {
       text-wrap: nowrap;
