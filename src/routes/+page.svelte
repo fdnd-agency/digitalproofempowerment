@@ -22,15 +22,14 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    min-height: 100vh;
+    min-height: 50vh;
   }
   .quiz {
     height: 100vh;
     margin: 0;
   }
   .cards {
-    min-height: 100%;
-    margin: 10% 0;
+    margin: var(--spacing-2xl) 0;
   }
   .proof {
     background-color: var(--secondary-lightest);
