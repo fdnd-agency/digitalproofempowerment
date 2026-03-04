@@ -2,6 +2,7 @@
   import Link from "../atoms/Link.svelte";
   import Text from "../atoms/Text.svelte";
   import Title from "../atoms/Title.svelte";
+  import { Infographic } from "$lib";
 </script>
 
 <Title
@@ -12,7 +13,7 @@
 <div class="info-container">
   <img
     alt="Proof collection illustration"
-    src="/src/lib/assets/img/Infographic.png"
+    src={Infographic}
     class="illustration"
   />
 

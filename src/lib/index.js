@@ -23,6 +23,7 @@ export { default as QuotesIcon } from "$lib/assets/svg/QuotesIcon.svelte";
 
 // img
 export { default as HeaderBG } from "$lib/assets/img/HeaderBg.webp";
+export { default as Infographic } from "$lib/assets/img/Infographic.png";
 
 
 // Components
