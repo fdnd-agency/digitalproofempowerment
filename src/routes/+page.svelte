@@ -22,7 +22,7 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    min-height: 50vh;
+    min-height: 100vh;
   }
   .quiz {
     height: 100vh;
@@ -40,16 +40,15 @@
 
   @media (max-width: 899px) {
     .cards {
-      height: auto;
-      max-height: 100%;
+      height: fit-content;
     }
     .quiz {
-      min-height: 100%;
+      min-height: inherit;
     }
   }
   @media (max-width: 400px) {
     .quiz {
-      min-height: 50%;
+      min-height: inherit;
     }
   }
 </style>

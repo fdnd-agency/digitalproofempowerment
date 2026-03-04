@@ -30,6 +30,7 @@
   .cards-section {
     padding: var(--spacing-sm);
     display: flex;
+    justify-content: center;
   }
 
   @media (max-width: 768px) {

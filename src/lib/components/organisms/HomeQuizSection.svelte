@@ -30,6 +30,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     border-radius: 0;
   }
 
