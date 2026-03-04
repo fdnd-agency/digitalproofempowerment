@@ -30,6 +30,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-radius: 0;
   }
 
   @media (max-width: 400px) {
