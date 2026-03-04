@@ -21,19 +21,20 @@
 </div>
 
 <style>
-  .footer-links > ul {
-    border-left: solid 1px white;
-  }
-
-  .footer-links > ul > li {
+   .footer-links > ul > li {
     list-style: none;
-    /* margin:.5rem 1rem .5rem 0; */
-    padding: 0.5rem;
-    gap: var(--spacing-xs);
     font-size: clamp(12px, 3vw, 14px);
+    padding: var(--spacing-xs);
+    padding-left: 0;
+
   }
 
   .footer-links > h4 {
-    margin: 0.5rem;
+    margin-bottom: 1rem;
+    padding: none;
+  }
+  .footer-links {
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-xs);
   }
 </style>
