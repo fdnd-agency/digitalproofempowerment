@@ -47,7 +47,7 @@
     text-decoration: none;
     border-bottom: solid 2px var(--primary-darkest);
     transition: 0.5s ease-in-out;
-    font-size: clamp(16px 2vw 18px);
+    font-size: clamp(16px, 2vw, 18px);
     text-align: center;
   }
   .proof-submit-intro {
@@ -59,7 +59,7 @@
     border-radius: var(--spacing-lg);
     padding: var(--spacing-sm);
     transition: 0.5s ease-in-out;
-    font-size: clamp(16px 2vw 18px);
+    font-size: clamp(16px, 2vw, 18px);
     text-align: center;
   }
 

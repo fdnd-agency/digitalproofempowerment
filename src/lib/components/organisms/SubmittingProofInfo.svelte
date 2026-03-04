@@ -12,7 +12,7 @@
 <div class="info-container">
   <img
     alt="Proof collection illustration"
-    src="src/lib/assets/img/Infographic.png"
+    src="/src/lib/assets/img/Infographic.png"
     class="illustration"
   />
 
