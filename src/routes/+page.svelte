@@ -22,23 +22,20 @@
     display: flex;
     flex-direction: column;
     gap: 3rem;
-    min-height: 100vh;
-  }
-  section {
-    padding: 2rem;
+    min-height: 50vh;
   }
   .quiz {
     height: 100vh;
     margin: 0;
   }
   .cards {
-    min-height: 100%;
-    margin: 10% 0;
+    margin: var(--spacing-2xl) 0;
   }
-
   .proof {
-    min-height: 100%;
-    margin: 10% 0;
+    background-color: var(--secondary-lightest);
+    width: 100%;
+    min-height: inherit;
+    padding: 2rem;
   }
 
   @media (max-width: 899px) {
