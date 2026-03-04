@@ -45,14 +45,17 @@
   }
 
   .proof-intro {
-    color: var(--accent-neutral);
+    color: var(--accent-dark);
     padding: var(--spacing-2xl);
-    font-weight: 400 !important;
+    text-align: center;
   }
 
   @media (max-width: 400px) {
     .quiz-intro-title {
       font-size: clamp(20px, 4.5vw, 36px);
+    }
+    .proof-intro {
+      font-size: clamp(20px, 3vw, 25px);
     }
   }
 </style>
