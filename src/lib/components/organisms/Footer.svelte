@@ -126,8 +126,8 @@
     .links-section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+      gap:var(--spacing-md);
       place-items: center;
-      text-align: center;
     }
 
     .copy-right {
