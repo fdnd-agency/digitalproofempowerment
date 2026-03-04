@@ -31,7 +31,7 @@
 
   .footer-links > h4 {
     margin-bottom: 1rem;
-    padding: none;
+    padding: 0;
   }
   .footer-links {
     padding: var(--spacing-md);
