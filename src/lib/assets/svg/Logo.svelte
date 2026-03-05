@@ -4,6 +4,7 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
 >
+    <title>Home page</title>
     <circle cx="68" cy="68" r="68"  />
     <path
         fill-rule="evenodd"
@@ -18,8 +19,8 @@
 
     svg {
         flex-shrink: 0;
-        height: 50px;
-        width: 50px;
+        height: 45px;
+        width: 45px;
         display: block;
         fill: var(--accent-neutral);
     }
