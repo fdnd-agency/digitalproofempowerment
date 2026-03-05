@@ -152,7 +152,6 @@
         display: flex;
         flex-direction: column;
         gap: var(--spacing-lg);
-        /* background-color: var(--accent-light); */
         color: var(--main-text-color);
 
         @media (min-width: 800px) {
