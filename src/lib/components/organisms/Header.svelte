@@ -4,12 +4,12 @@
     let { pageLabel, HeroHeading, HeroParagraph, level = "h1" } = $props();
 </script>
 
-<header class="hero-container" aria-label={pageLabel}>
-    <img src={HeaderBG} alt="" class="hero-background-image" aria-hidden="true" fetchpriority="high" />
+<section class="hero-container">
+    <img src={HeaderBG} alt="" class="hero-background-image" fetchpriority="high" />
 
-    <section class="hero-content">
-        <p class="hero-page-label" aria-current="page">{pageLabel}</p>
-        <Title headingText={HeroHeading}  className="heading hero-heading" />
+    <div class="hero-content">
+        <p class="hero-page-label">{pageLabel}</p>
+        <Title headingText={HeroHeading} className="heading hero-heading" />
         <p class="hero-paragraph">{HeroParagraph}</p>
 
         <div class="hero-buttons-wrapper">
@@ -24,8 +24,8 @@
                 buttonText="Learn more"
             />
         </div>
-    </section>
-</header>
+    </div>
+</section>
 
 <style>
     .hero-container {

@@ -4,7 +4,7 @@
 
 <div>
     <figure>
-        <img alt="Profile picture of {name}" src="{profilePicture}" />
+        <img alt="" src="{profilePicture}" height="30" width="30" />
     </figure>
 
     <div class="content-wrapper">

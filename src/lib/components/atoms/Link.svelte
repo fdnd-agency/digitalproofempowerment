@@ -1,17 +1,10 @@
 <script>
-  let {
-    href = "#",
-    target = "_self",
-    rel,
-    text,
-    className,
-    ariaLabel,
-  } = $props();
+  let { href = "#", target = "_self", rel, text, className } = $props();
 </script>
 
 <!-- When using this component enter class name as className. -->
 
-<a {href} {target} {rel} class="link {className}" aria-label={ariaLabel}>
+<a {href} {target} {rel} class="link {className}">
   {text}
 </a>
 
@@ -43,6 +36,17 @@
   @media (max-width: 500px) {
     .footer-link {
       text-wrap: nowrap;
+    }
+  }
+
+  .nav-link {
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    padding: 0.5rem;
+
+    &:hover {
+      background-color: var(--accent-neutral);
+      border-radius: var(--radius-sm);
     }
   }
 </style>
