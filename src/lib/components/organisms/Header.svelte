@@ -4,7 +4,7 @@
     let { pageLabel, HeroHeading, HeroParagraph, level = "h1" } = $props();
 </script>
 
-<section class="hero-container">
+<header class="hero-container">
     <img src={HeaderBG} alt="" class="hero-background-image" fetchpriority="high" />
 
     <div class="hero-content">
@@ -25,7 +25,7 @@
             />
         </div>
     </div>
-</section>
+</header>
 
 <style>
     .hero-container {
