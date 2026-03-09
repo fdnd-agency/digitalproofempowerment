@@ -4,9 +4,6 @@
     let { buttonText } = $props();
 </script>
 
-
-
-
 <div class="select-button-container">
     <label class="label" for="language"><LanguageIcon /></label>
 

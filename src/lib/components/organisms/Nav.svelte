@@ -3,63 +3,128 @@
         Button,
         PhoneIcon,
         Link,
-        Logo
+        Logo,
+        Favicon
     } from "$lib";
 
-    import { onMount } from "svelte";
+    let menuIsOpen = false;
 
-    onMount(() => {
-        function checkForWindowResize() {
-            if (window.innerWidth > 600) {
-                document.getElementById("nav-toggle").checked = false;
-            }
+    function toggleMenu() {
+        menuIsOpen = !menuIsOpen;
+
+        if (menuIsOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
         }
-        window.addEventListener("resize", checkForWindowResize);
-    });
+    }
 </script>
 
 <nav class="nav-container">
-    <input type="checkbox" class="visually-hidden" id="nav-toggle" aria-label="toggle dropdown menu"/>
-    <label class="nav-button" for="nav-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </label>
 
-    <ul class="nav-list-container">
-        <li class="nav-item logo"><a href="/" aria-label="home page"><Logo/></a></li>
-        <li class="nav-item"><Link href="/about-us" text="About us" ariaLabel="Learn more about Digital Proof Empowerment" rel="canonical" className="footer-link"/></li>
-        <li class="nav-item"><Link href="/contact" text="Contact" ariaLabel="contact information" rel="help" className="footer-link"/></li>
-        <li class="nav-item"><Link href="/proof-tips" text="Proof Tips" ariaLabel="Learn more about what is a strong Proof" rel="canonical" className="footer-link"/></li>
-        <li class="nav-item"><Link href="/help-others" text="Help Others" ariaLabel="Help someone submit proof" rel="help" className="footer-link"/></li>
-        <li class="nav-item"><Link href="/submit-proof" text="Submit Proof" ariaLabel="Submit documents form" rel="canonical" className="footer-link"/></li>
+    <div class="nav-bar-container">
+        <img class="logo" src="{Favicon}" alt="Digital proof empowerment logo" height="40" width="40">
+        <button class="nav-button" name="hamburger-menu" on:click={toggleMenu}>
+            <span class:open={menuIsOpen}></span>
+            <span class:open={menuIsOpen}></span>
+            <span class:open={menuIsOpen}></span>
+        </button>
+    </div>
+
+    <ul class="nav-list-container" class:active={menuIsOpen}>
+        <li class="nav-item"><Link href="/about-us" text="About us" className="nav-link"/></li>
+        <li class="nav-item"><Link href="/contact" text="Contact" className="nav-link"/></li>
+        <li class="nav-item"><Link href="/proof-tips" text="Proof Tips" className="nav-link"/></li>
+        <li class="nav-item"><Link href="/help-others" text="Help Others" className="nav-link"/></li>
+        <li class="nav-item"><Link href="/submit-proof" text="Submit Proof" className="nav-link"/></li>
         <li class="nav-item"><Button Icon={PhoneIcon} className="btn-red" buttonText="Call 112"/></li>
     </ul>
 </nav>
 
+
 <style>
+    nav {
+        position: relative;
+    }
+
+    .nav-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: transform 0.3s ease;
+        z-index: 1000;
+    }
+
+    .nav-container {
+        background: rgba(0, 0, 0, 0.187);
+    }
+
+    .nav-container.hidden {
+        transform: translateY(-100%);
+    }
+
+    ul li {
+        list-style-type: none;
+    }
+
+    .nav-bar-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--primary-darkest);
+        padding: var(--spacing-lg);
+        background: transparent;
+
+        position: sticky;
+        top: 0;
+        z-index: 100000;
+    }
+
     .nav-list-container {
+        position: fixed;
+
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         gap: var(--spacing-xl);
-        margin-top: var(--spacing-md);
-        padding: var(--spacing-md);
-        background-color: var(--primary-darkest);
-        color: var(--secondary-text-color);
+
+        transform: translateY(-100%);
+        transition: transform 1s ease-in-out;
+        opacity: 0;
+        z-index: 9999;
+
+        width: 100%;
+        top: 0;
+        right: 0;
+        height: 100%;
     }
 
     .nav-item {
-        font-size: clamp(10px, 3vw, 14px);
         padding: var(--spacing-xs);
-        cursor: pointer;
+    }
+
+    .nav-list-container.active {
+        padding: var(--spacing-lg);
+        background-color: var(--primary-darkest);
+        color: var(--secondary-text-color);
+
+        transform: translateY(0%);
+        transition: transform 1s ease;
+        opacity: 1;
+        overflow: hidden;
     }
 
     .nav-button {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
+        gap: var(--spacing-xs);
         cursor: pointer;
         width: fit-content;
+        background-color: transparent;
+        border: none;
     }
 
     .nav-button span {
@@ -67,111 +132,22 @@
         height: 0.15rem;
         background-color: var(--main-background-color);
         transition: 0.6s;
+        cursor: pointer;
     }
 
-    .nav-list-container {
-        transform: translateY(-110%);
-        transition:
-            transform 0.3s ease,
-            opacity 0.3s ease;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1;
+    .nav-button span.open:nth-child(1) {
+        background-color: var(--emergency-color);
+        width: 1.2rem;
     }
 
-    /* To make label accessable with keyboard */
-    #nav-toggle:focus + .nav-button {
-        outline: 1px solid var(--accent-neutral);
-        outline-offset: var(--spacing-xs);
-        border-radius: var(--radius-xs);
+    .nav-button span.open:nth-child(2) {
+        width: 0.8rem;
+        background-color: var(--emergency-color);
     }
 
-    #nav-toggle:checked + .nav-button + .nav-list-container {
-        transform: translateY(2.2rem);
-        opacity: 1;
+    .nav-button span.open:nth-child(3) {
+        background-color: var(--emergency-color);
 
+        width: 0.6rem;
     }
-
-    #nav-toggle:checked + .nav-button span:nth-child(1) {
-        transform: rotate(45deg) translate(0.4rem, 0.44rem);
-    }
-
-    #nav-toggle:checked + .nav-button span:nth-child(2) {
-        opacity: 0;
-    }
-
-    #nav-toggle:checked + .nav-button span:nth-child(3) {
-        transform: rotate(-45deg) translate(0.45rem, -0.5rem);
-    }
-
-    .visually-hidden {
-        clip: rect(0 0 0 0);
-        clip-path: inset(50%);
-        height: 1px;
-        overflow: hidden;
-        position: absolute;
-        white-space: nowrap;
-        width: 1px;
-    }
-
-    nav {
-        background-color: var(--primary-darkest);
-        padding: var(--spacing-md);
-    }
-
-    ul li {
-        list-style-type: none;
-    }
-
-    /* --------------------------------- */
-
-    /* navbar big screens */
-    @media (min-width: 900px) {
-        #nav-toggle:checked + .nav-button + .nav-list-container {
-            transform: translateY(0rem);
-        }
-
-        .nav-container {
-            padding: 0;
-        }
-
-        .nav-button {
-            display: none;
-        }
-
-        .nav-list-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: var(--spacing-md);
-            position: static;
-            transform: translateY(0);
-            transition: unset;
-            margin: 0;
-            padding: var(--spacing-xs);
-            z-index: auto;
-            width: 100%;
-            margin-top: 0;
-            gap: 0;
-            background-color: var(--primary-darkest);
-            color: var(--secondary-text-color);
-        }
-
-        .logo {
-            margin-right: auto;
-        }
-
-        .nav-item.logo {
-            margin-right: auto;
-        }
-
-        .nav-item:last-child {
-            margin-left: auto;
-        }
-    }
-
-    
 </style>
