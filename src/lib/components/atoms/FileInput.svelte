@@ -1,11 +1,11 @@
 <script>
-    let { inputFieldText, Icon, inputId, dataType, files = null } = $props();
+    let { inputFieldText, Icon, inputId, dataType, files = null, name } = $props();
 </script>
 
 <!-- Icons for input file: AudioUpload, ChatLogUpload, VideoUpload, NotesUpload, LocationUpload, PhotoUpload -->
 
 <div class="upload-field">
-    <label for={inputId}>
+    <label for={inputId} name={name} >
         {#if Icon}
             <Icon class="icon" />
         {/if}
@@ -19,6 +19,7 @@
         class="share-button hide-inserted-file-text"
         accept={dataType}
         multiple
+        name={name}
     />
 
     {#if files?.length}
