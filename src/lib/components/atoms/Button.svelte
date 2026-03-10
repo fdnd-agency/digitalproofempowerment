@@ -2,7 +2,8 @@
   let { className, buttonText, Icon, buttonType, ...rest } = $props();
 </script>
 
-<button class={`basic-button ${className || ""}`} type={buttonType} {...rest}>  {#if Icon}
+<button class={`basic-button ${className || ""}`} type={buttonType} {...rest}>
+  {#if Icon}
     <Icon class="icon" />
   {/if}
   {buttonText}
@@ -80,5 +81,58 @@
 
   .quiz-button:focus {
     outline: 1px solid var(--accent-neutral);
+  }
+
+  .anon-button {
+    background: rgba(225, 225, 225, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+    border: 1px solid rgba(105, 62, 5, 0.37);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--main-text-color);
+  }
+  .identified-button {
+    background: rgba(225, 225, 225, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+    border: 1px solid rgba(105, 62, 5, 0.37);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--main-text-color);
+    
+  }
+
+  .form-back-button {
+    background: rgba(225, 225, 225, 0.8);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+    border: 1px solid rgba(105, 62, 5, 0.37);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--main-text-color);
+    margin: var(--spacing-xs);
+    font-size: 1.5rem; 
+    padding: 0 var(--spacing-md);
+  }
+  .submit-button{
+     background: rgb(225, 225, 225, );
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5.3px);
+    -webkit-backdrop-filter: blur(5.3px);
+    border: 1px solid rgba(105, 62, 5, 0.37);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--main-text-color);
+    margin: var(--spacing-xs) ;
+    align-self: center;
+    padding:  var(--spacing-xs) var(--spacing-2xl);
   }
 </style>
