@@ -24,6 +24,30 @@
     padding: var(--spacing-xs);
   }
 
+  .form-text {
+    margin: var(--spacing-sm);
+    text-align: center;
+  }
+
+  .form-anon-text {
+    margin: var(--spacing-xs);
+    align-self: center;
+  }
+
+  .proof-type{
+    margin-top: var(--spacing-lg);
+  }
+
+  .error {
+    border-radius: 16px;
+    padding: var(--spacing-xxs);
+    margin: var(--spacing-md);
+    background-color: var(--main-background-color);
+    color: var(--accent-dark);
+    border: 5px solid var(--accent-dark);
+    transition: all 0.3s ease-in-out;
+  }
+
   @media (max-width: 500px) {
     .quiz-intro-text {
       font-size: clamp(14px, 3vw, 18px);

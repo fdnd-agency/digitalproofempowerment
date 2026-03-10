@@ -49,6 +49,10 @@
     padding: var(--spacing-2xl);
     text-align: center;
   }
+  .form-title {
+    color: var(--secondary-text-color);
+    align-self: center;
+  }
 
   @media (max-width: 400px) {
     .quiz-intro-title {
