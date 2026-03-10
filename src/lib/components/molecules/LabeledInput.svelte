@@ -6,24 +6,29 @@
     type,
     autocomplete,
     name,
-    value,
+    value = $bindable(),
     classNameLabel,
     classNameInput,
     inputId,
     form,
-    text
+    text,
+    placeHolder,
+    ...rest
   } = $props();
 </script>
 
 <div>
   <Label className={classNameLabel} {inputId} formId={form} {text}>
+    <br />
     <Input
       {type}
       {autocomplete}
       name={inputId}
-      {value}
+      bind:value
       className={classNameInput}
       id={inputId}
+      {placeHolder}
+      {...rest}
     />
   </Label>
 </div>

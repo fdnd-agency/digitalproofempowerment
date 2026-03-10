@@ -1,11 +1,11 @@
 <script>
-    let { inputFieldText, Icon, inputId, dataType, files = null } = $props();
+    let { inputFieldText, Icon, inputId, dataType, files = null, name } = $props();
 </script>
 
 <!-- Icons for input file: AudioUpload, ChatLogUpload, VideoUpload, NotesUpload, LocationUpload, PhotoUpload -->
 
 <div class="upload-field">
-    <label for={inputId}>
+    <label for={inputId} name={name} >
         {#if Icon}
             <Icon class="icon" />
         {/if}
@@ -19,6 +19,7 @@
         class="share-button hide-inserted-file-text"
         accept={dataType}
         multiple
+        name={name}
     />
 
     {#if files?.length}
@@ -43,6 +44,7 @@
         cursor: pointer;
         box-shadow: var(--box-shadow);
         -webkit-box-shadow: var(--box-shadow-webkit);
+        margin: var(--spacing-sm);
 
         label {
             display: flex;
@@ -76,7 +78,7 @@
     .selected-files {
         font-size: small;
         position: absolute;
-        background-color: var(--secondary-neutral);
+        background-color: var(--accent-dark);
         top: -0.65rem;
         right: -0.8rem;
         border-radius: var(--radius-full);
@@ -90,6 +92,6 @@
     }
 
     .file-inserted {
-        background-color: var(--accent-neutral);
+        background-color: var(--primary-darkest);
     }
 </style>

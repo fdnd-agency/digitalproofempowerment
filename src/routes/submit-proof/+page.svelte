@@ -1,15 +1,20 @@
 <script>
-    import LabeledInput from "$lib/components/molecules/LabeledInput.svelte";
+  import SubmitForm from "$lib/components/organisms/SubmitForm.svelte";
 </script>
 
 <main>
-    <LabeledInput type="email"
-    text= "Enter your email"
-    name="email"
-    inputId="email"
-    value="test@example.com"
-    autocomplete="off"
-    classNameLabel="label"
-    classNameInput="input"
-    form="contact-form"/>
+  <SubmitForm />
 </main>
+
+<style>
+main {
+    padding: 10% 0;
+    display: grid;
+    place-items: center;
+    background-image: url("src/lib/assets/img/HeaderBg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+</style>
