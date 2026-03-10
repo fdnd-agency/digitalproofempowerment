@@ -84,22 +84,20 @@
   }
 
   .anon-button {
-    background: rgba(225, 225, 225, 0.8);
+    background: rgb(225, 225, 225);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5.3px);
-    -webkit-backdrop-filter: blur(5.3px);
     border: 1px solid rgba(105, 62, 5, 0.37);
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--main-text-color);
   }
   .identified-button {
-    background: rgba(225, 225, 225, 0.8);
+    background: rgb(225, 225, 225,);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5.3px);
-    -webkit-backdrop-filter: blur(5.3px);
     border: 1px solid rgba(105, 62, 5, 0.37);
     letter-spacing: 2px;
     text-transform: uppercase;
