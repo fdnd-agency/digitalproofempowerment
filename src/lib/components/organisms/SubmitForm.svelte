@@ -40,9 +40,31 @@
     emailError = "";
     return true;
   }
+
+  function handleSubmit(event) {
+    if (mode === "identified") {
+      if (!validateEmail()) return;
+    }
+
+    const formData = new FormData(event.target);
+
+    // Log formData for now
+    console.log("Submitting as:", mode);
+    for (const [key, value] of formData.entries()) {
+      console.log(key, value);
+    }
+
+    // TODO: add  API call
+  }
 </script>
 
-<form id="proof-form">
+<form
+  id="proof-form"
+  onsubmit={(e) => {
+    e.preventDefault();
+    handleSubmit(e);
+  }}
+>
   <Title headingText="Submit Proof" level="h2" className="form-title" />
 
   {#if mode === null}
@@ -113,6 +135,8 @@
       Icon={PhotoUpload}
       inputId="photos"
       dataType="image/*,video/*"
+      name="Photo and/or video"
+      form="proof-form"
     />
 
     <FileInput
@@ -120,6 +144,8 @@
       Icon={AudioUpload}
       inputId="audio"
       dataType="audio/*"
+      name="audio"
+      form="proof-form"
     />
 
     <FileInput
@@ -127,6 +153,7 @@
       Icon={LocationUpload}
       inputId="location"
       dataType=".json,.kml,.gpx"
+      name="location"
     />
 
     <FileInput
@@ -134,6 +161,7 @@
       Icon={NotesUpload}
       inputId="notes"
       dataType=".txt,.md,.pdf,.html"
+      name="notes"
     />
 
     <FileInput
@@ -141,6 +169,7 @@
       Icon={ChatLogUpload}
       inputId="chatlogs"
       dataType=".txt,.json,.zip"
+      name="whatsapp or telegram"
     />
 
     <LabeledInput
@@ -151,6 +180,7 @@
       classNameInput="optional-text"
       classNameLabel="optional-text-label"
       bind:value={optionalText}
+      name="textArea"
     />
 
     <Button buttonText="Submit" className="submit-button" />

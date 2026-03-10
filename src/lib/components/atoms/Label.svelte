@@ -1,8 +1,8 @@
 <script>
-  let { inputId, formId, className,text} = $props();
+  let { inputId, formId, className,text,...rest} = $props();
 </script>
 
-<label for={inputId} form={formId} class={className}> 
+<label for={inputId} form={formId} class={className} {...rest}> 
     {text}
     <slot/>
 </label>
