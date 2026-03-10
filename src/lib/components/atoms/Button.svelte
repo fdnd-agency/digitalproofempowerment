@@ -83,7 +83,7 @@
     outline: 1px solid var(--accent-neutral);
   }
 
-  .anon-button {
+  .form-button {
     background: rgb(225, 225, 225);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -93,8 +93,8 @@
     text-transform: uppercase;
     color: var(--main-text-color);
   }
-  .identified-button {
-    background: rgb(225, 225, 225,);
+  .form-button {
+    background: rgb(225, 225, 225);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5.3px);
@@ -120,7 +120,7 @@
     padding: 0 var(--spacing-md);
   }
   .submit-button{
-     background: rgb(225, 225, 225, );
+     background: rgb(225, 225, 225);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5.3px);

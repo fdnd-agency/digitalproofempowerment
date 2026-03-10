@@ -5,7 +5,6 @@
   import Title from "../atoms/Title.svelte";
   import Label from "../atoms/Label.svelte";
   import Text from "../atoms/Text.svelte";
-  import { error, text } from "@sveltejs/kit";
   import ChatLogUpload from "$lib/assets/svg/ChatLogUpload.svelte";
   import AudioUpload from "$lib/assets/svg/AudioUpload.svelte";
   import VideoUpload from "$lib/assets/svg/VideoUpload.svelte";
@@ -76,12 +75,12 @@
       <Button
         onclick={() => (mode = "anonymous")}
         buttonText="Anonymous"
-        className="anon-button"
+        className="form-button"
       />
       <Button
         onclick={() => (mode = "identified")}
         buttonText="Using Email"
-        className="identified-button"
+        className="form-button"
       />
     </div>
   {:else if mode === "identified"}
@@ -109,7 +108,7 @@
 
     <LabeledInput
       type="email"
-      autocomplete="eff"
+      autocomplete="off"
       name="email_verification"
       bind:value={emailVerification}
       placeHolder="email@example.com"
@@ -154,6 +153,7 @@
       inputId="location"
       dataType=".json,.kml,.gpx"
       name="location"
+      form="proof-form"
     />
 
     <FileInput
@@ -162,6 +162,7 @@
       inputId="notes"
       dataType=".txt,.md,.pdf,.html"
       name="notes"
+      form="proof-form"
     />
 
     <FileInput
@@ -170,6 +171,7 @@
       inputId="chatlogs"
       dataType=".txt,.json,.zip"
       name="whatsapp or telegram"
+      form="proof-form"
     />
 
     <LabeledInput
@@ -181,6 +183,7 @@
       classNameLabel="optional-text-label"
       bind:value={optionalText}
       name="textArea"
+      form="proof-form"
     />
 
     <Button buttonText="Submit" className="submit-button" />
@@ -201,6 +204,7 @@
       Icon={PhotoUpload}
       inputId="photos"
       dataType="image/*,video/*"
+      form="proof-form"
     />
 
     <FileInput
@@ -208,6 +212,7 @@
       Icon={AudioUpload}
       inputId="audio"
       dataType="audio/*"
+      form="proof-form"
     />
 
     <FileInput
@@ -215,6 +220,7 @@
       Icon={LocationUpload}
       inputId="location"
       dataType=".json,.kml,.gpx"
+      form="proof-form"
     />
 
     <FileInput
@@ -222,6 +228,7 @@
       Icon={NotesUpload}
       inputId="notes"
       dataType=".txt,.md,.pdf,.html"
+      form="proof-form"
     />
 
     <FileInput
@@ -229,6 +236,7 @@
       Icon={ChatLogUpload}
       inputId="chatlogs"
       dataType=".txt,.json,.zip"
+      form="proof-form"
     />
 
     <LabeledInput
@@ -238,6 +246,7 @@
       placeHolder="This is optional you can add context to the uploaded file or anything else you would like to say."
       classNameInput="optional-text"
       classNameLabel="optional-text-label"
+      form="proof-form"
     />
 
     <Button buttonText="Submit" className="submit-button" />

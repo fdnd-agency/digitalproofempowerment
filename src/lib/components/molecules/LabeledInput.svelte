@@ -17,9 +17,9 @@
   } = $props();
 </script>
 
-<div >
+<div>
   <Label className={classNameLabel} {inputId} formId={form} {text}>
-  <br/>
+    <br />
     <Input
       {type}
       {autocomplete}
@@ -27,7 +27,7 @@
       bind:value
       className={classNameInput}
       id={inputId}
-      placeHolder={placeHolder}
+      {placeHolder}
       {...rest}
     />
   </Label>
