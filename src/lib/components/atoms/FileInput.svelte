@@ -43,6 +43,7 @@
         cursor: pointer;
         box-shadow: var(--box-shadow);
         -webkit-box-shadow: var(--box-shadow-webkit);
+        margin: var(--spacing-sm);
 
         label {
             display: flex;
@@ -76,7 +77,7 @@
     .selected-files {
         font-size: small;
         position: absolute;
-        background-color: var(--secondary-neutral);
+        background-color: var(--accent-dark);
         top: -0.65rem;
         right: -0.8rem;
         border-radius: var(--radius-full);
@@ -90,6 +91,6 @@
     }
 
     .file-inserted {
-        background-color: var(--accent-neutral);
+        background-color: var(--primary-darkest);
     }
 </style>
