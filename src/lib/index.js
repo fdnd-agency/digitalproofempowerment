@@ -47,3 +47,8 @@ export { default as ReviewCard } from "$lib/components/molecules/ReviewCard.svel
 export { default as QuizBox} from "$lib/components/molecules/QuizBox.svelte"
 export { default as FileInput} from "$lib/components/atoms/FileInput.svelte"
 export { default as Form} from "$lib/components/molecules/Form.svelte"
+export { default as Text} from "$lib/components/atoms/Text.svelte"
+export { default as ContactForm} from "$lib/components/organisms/ContactForm.svelte"
+export { default as Label} from "$lib/components/atoms/Label.svelte"
+export { default as Input} from "$lib/components/atoms/Input.svelte"
+export { default as LocationSection} from "$lib/components/organisms/LocationSection.svelte"
