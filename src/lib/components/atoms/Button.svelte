@@ -35,6 +35,12 @@
     }
   }
 
+   .btn-green {
+    background-color: var(--success-color);
+    color: var(--secondary-text-color);
+    border: none;
+  }
+
   .btn-red {
     background-color: var(--emergency-color);
     color: var(--secondary-text-color);
