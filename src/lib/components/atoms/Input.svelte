@@ -50,4 +50,26 @@
     padding: var(--spacing-xs);
     margin: var(--spacing-xs);
   }
+
+
+  .contact-form-input {
+  padding: var(--spacing-sm);
+        border: var(--border);
+        border-radius: var(--radius-md);
+        font-family: var(--main-font);
+        font-size: clamp(0.95rem, 2vw, 1rem);
+        outline: none;
+        transition:
+            border-color 0.2s ease,
+            box-shadow 0.2s ease;
+}
+
+.contact-form-input:focus {
+   border-color: var(--accent-dark);
+        box-shadow: 0 0 10px rgba(237, 130, 72, 0.2);
+}
+
+
+
+
 </style>
