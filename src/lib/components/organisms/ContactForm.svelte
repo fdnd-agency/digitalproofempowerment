@@ -1,5 +1,5 @@
 <script>
-    import { Button, Input, Label, EyeIcon } from "$lib";
+    import { Button, Input, Label, EyeIcon, LoadingState } from "$lib";
     // import { enhance } from '$app/forms';
     import { superForm } from 'sveltekit-superforms';
 
@@ -89,12 +89,7 @@ const { form, errors, enhance, message, submitting, reset } = superForm(data.for
 </div>
 
 {#if $submitting}
-<div class="loader-container">
-    <span class="circle-one"></span>
-    <span class="circle-two"></span>
-    <span class="circle-three"></span>
-</div>
-        
+    <LoadingState/>    
 {/if}
 
 {#if $message}
