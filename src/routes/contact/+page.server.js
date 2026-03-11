@@ -35,6 +35,6 @@ export const actions = {
         console.log(form.data);
 
         console.log(message);
-        return message(form,'Message send successfull');
+        return message(form,'Successfull');
     }
 };

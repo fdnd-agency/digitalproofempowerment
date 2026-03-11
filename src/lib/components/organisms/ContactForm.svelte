@@ -68,7 +68,7 @@ const { form, errors, enhance, message, submitting, reset } = superForm(data.for
     </fieldset>
 
 
-    <div class="button-wrapper">
+<div class="button-wrapper">
 
    <div class="button-wrapper">
     {#if $message}
@@ -76,7 +76,7 @@ const { form, errors, enhance, message, submitting, reset } = superForm(data.for
             Icon={EyeIcon}
             buttonType="submit"
             className="btn-green"
-            buttonText="Send"
+            buttonText="Send!"
         />
     {:else}
         <Button
@@ -89,23 +89,18 @@ const { form, errors, enhance, message, submitting, reset } = superForm(data.for
 </div>
 
 {#if $submitting}
-
-    <div class="loader-container">
-<span class="circle-one"></span>
-<span class="circle-two"></span>
-<span class="circle-three"></span>
-
-
+<div class="loader-container">
+    <span class="circle-one"></span>
+    <span class="circle-two"></span>
+    <span class="circle-three"></span>
 </div>
         
-    {/if}
-    </div>
+{/if}
 
-
-
-               <!-- {#if $message}
+{#if $message}
     <p class="success-message">{$message}</p>
-{/if} -->
+{/if}
+</div>
 
  
 </form>
