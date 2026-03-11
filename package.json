@@ -23,5 +23,9 @@
 		"svelte": "^5.45.6",
 		"svelte-preprocess": "^6.0.3",
 		"vite": "^7.2.6"
+	},
+	"dependencies": {
+		"sveltekit-superforms": "^2.30.0",
+		"zod": "^4.3.6"
 	}
 }
