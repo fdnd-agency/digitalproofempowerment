@@ -1,18 +1,19 @@
 <script>
   let {
     type,
-    autocomplete = "off",
     name,
-    value = $bindable(),
+    value = "",
+    placeholder,
     className,
+    id,
     ...rest
   } = $props();
 </script>
 
 {#if type === "textarea"}
-  <textarea {name} {autocomplete} class={className} bind:value {...rest}></textarea>
+  <textarea {name} placeholder={placeholder} class={className} {...rest}>{value}</textarea>
 {:else}
-  <input {type} {autocomplete} {name} bind:value class={className} {...rest} />
+  <input {id} {type} {name} placeholder={placeholder} value={value} class={className} {...rest} />
 {/if}
 
 <style>
