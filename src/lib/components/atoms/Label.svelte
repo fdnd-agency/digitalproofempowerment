@@ -23,4 +23,11 @@
   margin: var(--spacing-md) 0;
 
 }
+
+.contact-form-label {
+  font-weight: 500;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+
 </style>
