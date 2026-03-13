@@ -1,7 +1,36 @@
-<h1>help other page</h1>
+<script>
+    import {
+        Button,
+        PlayIcon,
+        Title,
+        FolderIcon,
+        PhoneIcon,
+        InformationCard,
+        CardIconAudio,
+        CardIconChat,
+        CardIconImg,
+        CardIconVideo,
+        CardIconNotes,
+        CardIconLocation,
+        Profile,
+        QuotesIcon,
+        EyeIcon,
+        Header,
+        EmergencySection,
+        ReviewCard,
+        HeaderBG,
+        Link
+    } from "$lib";
 
-<style>
-    h1 {
-        padding: 10rem;
-    }
-</style>
+    let {} = $props();
+</script>
+
+<Header
+    pageLabel="Help others"
+    HeroHeading="How You Can Help Others"
+    HeroParagraph="Help someone document what happened and find the right support."
+    buttonTextOne="Submit proof"
+    buttoneTextOneHref="/submit-proof"
+    buttonTextTwo="Learn more"
+    buttoneTextTwoHref="/proof-tips"
+/>
