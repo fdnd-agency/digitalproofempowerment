@@ -42,14 +42,12 @@
                 <Link
                     href="mailto:info@blablabla.com"
                     text="info@blablabla.com"
-                    ariaLabel="Send us an email"
                     className="email-link"
                 />
 
                 <Link
                     href="tel:+31201234567"
                     text="+31 20 123 4567"
-                    ariaLabel="Call us"
                     className="cellphone-link"
                 />
             </address>
