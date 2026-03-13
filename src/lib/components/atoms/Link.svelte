@@ -1,10 +1,13 @@
 <script>
-  let { href = "#", target = "_self", rel, text, className } = $props();
+  let { Icon, href = "#", target = "_self", rel, text, className } = $props();
 </script>
 
 <!-- When using this component enter class name as className. -->
 
 <a {href} {target} {rel} class="link {className}">
+{#if Icon}
+    <Icon class="icon" />
+  {/if}
   {text}
 </a>
 
@@ -79,4 +82,35 @@
       border-radius: var(--radius-sm);
     }
   }
+
+
+
+   .emergency-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    border-radius: var(--radius-xs);
+    font-size: clamp(10px, 3vw, 14px);
+    font-weight: 550;
+    padding: var(--spacing-xs);
+    -webkit-box-shadow: var(--box-shadow-webkit);
+    box-shadow: var(--box-shadow);
+    letter-spacing: 0.03rem;
+    cursor: pointer;
+    justify-self: flex-start;
+    background-color: var(--emergency-color);
+    color: var(--secondary-text-color);
+    padding: var(--spacing-xs);
+
+    &:hover {
+      background-color: var(--main-background-color);
+      color: var(--main-text-color);
+    }
+  }
+
+
+
+
+
 </style>

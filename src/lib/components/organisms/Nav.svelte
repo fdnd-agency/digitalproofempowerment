@@ -37,9 +37,10 @@
         <li class="nav-item"><Link href="/proof-tips" text="Proof Tips" className="nav-link"/></li>
         <li class="nav-item"><Link href="/help-others" text="Help Others" className="nav-link"/></li>
         <li class="nav-item"><Link href="/submit-proof" text="Submit Proof" className="nav-link"/></li>
-        <li class="nav-item"><Button Icon={PhoneIcon} className="btn-red" buttonText="Call 112"/></li>
+        <li class="nav-item"><Link href="tel:+112" Icon={PhoneIcon} target="" rel="" className="emergency-link" text="Call 112"/></li>
     </ul>
 </nav>
+
 
 
 <style>
