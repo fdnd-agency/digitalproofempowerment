@@ -16,14 +16,12 @@
             <Link
                 Icon={PlayIcon}
                 className="black-button-link"
-                buttonText="Submit proof"
                 text="Submit proof"
                 href="/submit-proof"
             />
             <Link
                 Icon={FolderIcon}
                 className="white-button-link"
-                buttonText="Learn more"
                 text="Learn more"
                 href="/proof-tips"
             />
