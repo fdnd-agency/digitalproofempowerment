@@ -19,6 +19,7 @@
         EmergencySection,
         ReviewCard,
         HeaderBG,
+        Link
     } from "$lib";
 
     let {} = $props();
@@ -44,11 +45,13 @@
             </p>
 
             <div class="button-wrapper">
-                <Button
-                    Icon={FolderIcon}
-                    className="btn-white"
-                    buttonText="Start gathering evidence "
-                />
+            <Link
+                Icon={FolderIcon}
+                className="white-button-link"
+                buttonText="Start gathering evidence"
+                text="Start gathering evidence"
+                href="/submit-proof"
+            />
             </div>
         </div>
 
