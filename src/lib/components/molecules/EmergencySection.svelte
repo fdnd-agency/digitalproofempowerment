@@ -1,5 +1,5 @@
 <script>
-    import { Title, Button, PhoneIcon } from "$lib";
+    import { Title, Button, PhoneIcon, Link } from "$lib";
 
     let { pageLabel, level = "h2" } = $props();
 </script>
@@ -24,10 +24,11 @@
     </div>
 
     <div class="button-wrapper">
-        <Button
+        <Link
+            href="tel:+112"
             Icon={PhoneIcon}
-            className="btn-red"
-            buttonText="Call 112"
+            className="emergency-link"
+            text="Call 112"
         />
     </div>
 </section>
@@ -42,7 +43,8 @@
         color: var(--secondary-text-color);
 
         @media (min-width: 800px) {
-            padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl);
+            padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl)
+                var(--spacing-3xl);
             text-align: center;
             display: flex;
             flex-direction: column;

@@ -1,5 +1,5 @@
 <script>
-    import { Title, Button, PlayIcon, FolderIcon, HeaderBG } from "$lib";
+    import { Title, Link, Button, PlayIcon, FolderIcon, HeaderBG } from "$lib";
 
     let { pageLabel, HeroHeading, HeroParagraph, level = "h1" } = $props();
 </script>
@@ -13,15 +13,17 @@
         <p class="hero-paragraph">{HeroParagraph}</p>
 
         <div class="hero-buttons-wrapper">
-            <Button
+            <Link
                 Icon={PlayIcon}
-                className="btn-black"
-                buttonText="Get started"
+                className="black-button-link"
+                text="Submit proof"
+                href="/submit-proof"
             />
-            <Button
+            <Link
                 Icon={FolderIcon}
-                className="btn-white"
-                buttonText="Learn more"
+                className="white-button-link"
+                text="Learn more"
+                href="/proof-tips"
             />
         </div>
     </div>
