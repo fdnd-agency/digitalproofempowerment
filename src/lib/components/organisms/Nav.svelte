@@ -23,7 +23,7 @@
 <nav class="nav-container">
 
     <div class="nav-bar-container">
-        <img class="logo" src="{Favicon}" alt="Digital proof empowerment logo" height="40" width="40">
+        <a href="/"><img class="logo" src="{Favicon}" alt="Digital proof empowerment logo" height="40" width="40"></a>
         <button class="nav-button" name="hamburger-menu" on:click={toggleMenu}>
             <span class:open={menuIsOpen}></span>
             <span class:open={menuIsOpen}></span>
