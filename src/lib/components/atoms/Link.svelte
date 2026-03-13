@@ -5,7 +5,7 @@
 <!-- When using this component enter class name as className. -->
 
 <a {href} {target} {rel} class="link {className}">
-{#if Icon}
+  {#if Icon}
     <Icon class="icon" />
   {/if}
   {text}
@@ -109,6 +109,55 @@
     }
   }
 
+  .white-button-link {
+   display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    border-radius: var(--radius-xs);
+    font-size: clamp(10px, 3vw, 14px);
+    font-weight: 550;
+    padding: var(--spacing-xs);
+    -webkit-box-shadow: var(--box-shadow-webkit);
+    box-shadow: var(--box-shadow);
+    letter-spacing: 0.03rem;
+    cursor: pointer;
+    background-color: var(--main-background-color);
+    color: var(--main-text-color);
+    border: var(--border);
+    text-decoration: none;
+    justify-self: flex-start;
+
+
+    &:hover {
+      background-color: var(--accent-neutral);
+      color: var(--secondary-text-color);
+    }
+  }
+
+  .black-button-link {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    border-radius: var(--radius-xs);
+    font-size: clamp(10px, 3vw, 14px);
+    font-weight: 550;
+    padding: var(--spacing-xs);
+    -webkit-box-shadow: var(--box-shadow-webkit);
+    box-shadow: var(--box-shadow);
+    letter-spacing: 0.03rem;
+    cursor: pointer;
+    justify-self: flex-start;
+
+    background-color: var(--secondary-background-color);
+    color: var(--secondary-text-color);
+    border: none;
+    padding: var(--spacing-xs);
+    text-decoration: none;
+
+    &:hover {
+      background-color: var(--accent-neutral);
+    }
+  }
 
 
 
