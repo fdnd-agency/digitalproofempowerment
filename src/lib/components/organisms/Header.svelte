@@ -1,7 +1,7 @@
 <script>
     import { Title, Link, Button, PlayIcon, FolderIcon, HeaderBG } from "$lib";
 
-    let { pageLabel, HeroHeading, HeroParagraph, buttonTextOne, buttonTextTwo, buttoneTextOneHref, buttoneTextTwoHref, level = "h1" } = $props();
+    let { pageLabel, HeroHeading, HeroParagraph, buttonTextOne, buttonTextTwo, buttonTextOneHref, buttonTextTwoHref, level = "h1" } = $props();
 </script>
 
 <header class="hero-container">
@@ -17,13 +17,13 @@
                 Icon={PlayIcon}
                 className="black-button-link"
                 text="{buttonTextOne}"
-                href="{buttoneTextOneHref}"
+                href="{buttonTextOneHref}"
             />
             <Link
                 Icon={FolderIcon}
                 className="white-button-link"
                 text="{buttonTextTwo}"
-                href="{buttoneTextTwoHref}"
+                href="{buttonTextTwoHref}"
             />
         </div>
     </div>
