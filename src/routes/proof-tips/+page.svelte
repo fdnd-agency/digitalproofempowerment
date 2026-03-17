@@ -30,7 +30,7 @@
     HeroHeading="Best Practices for Gathering Evidence"
     HeroParagraph="Use these tips to help collect and keep useful evidence."
     buttonTextOne="Submit proof"
-    buttoneTextOneHref="/submit-proof"
+    buttonTextOneHref="/submit-proof"
     buttonTextTwo="Contact"
-    buttoneTextTwoHref="/contact"
+    buttonTextTwoHref="/contact"
 />

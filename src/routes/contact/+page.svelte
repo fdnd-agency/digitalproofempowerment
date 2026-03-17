@@ -33,9 +33,9 @@
     HeroHeading="We’re here to help"
     HeroParagraph="Have questions or need support? Reach out to us and we’ll respond as quickly as possible. Your privacy and safety are our top priority."
     buttonTextOne="Submit proof"
-    buttoneTextOneHref="/submit-proof"
+    buttonTextOneHref="/submit-proof"
     buttonTextTwo="Learn more"
-    buttoneTextTwoHref="/proof-tips"
+    buttonTextTwoHref="/proof-tips"
 />
 
 <main>

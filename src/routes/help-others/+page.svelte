@@ -30,7 +30,7 @@
     HeroHeading="How You Can Help Others"
     HeroParagraph="Help someone document what happened and find the right support."
     buttonTextOne="Submit proof"
-    buttoneTextOneHref="/submit-proof"
+    buttonTextOneHref="/submit-proof"
     buttonTextTwo="Learn more"
-    buttoneTextTwoHref="/proof-tips"
+    buttonTextTwoHref="/proof-tips"
 />

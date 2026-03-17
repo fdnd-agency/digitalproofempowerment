@@ -32,7 +32,7 @@
     buttonTextOne="Return to home page"
     buttonTextOneHref="/"
     buttonTextTwo="Submit proof"
-    buttoneTextTwoHref="/submit-proof"
+    buttonTextTwoHref="/submit-proof"
 />
 
 <style>

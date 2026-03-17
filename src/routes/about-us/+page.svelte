@@ -30,9 +30,9 @@
     HeroHeading="Empowering you to take control safely"
     HeroParagraph="A safe place to organize your notes and experiences at work."
     buttonTextOne="Submit proof"
-    buttoneTextOneHref="/submit-proof"
+    buttonTextOneHref="/submit-proof"
     buttonTextTwo="Learn more"
-    buttoneTextTwoHref="/proof-tips"
+    buttonTextTwoHref="/proof-tips"
 />
 
 <main>
