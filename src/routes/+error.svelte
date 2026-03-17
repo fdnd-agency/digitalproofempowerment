@@ -26,11 +26,15 @@
 </script>
 
 <Header
-    pageLabel="Help others"
-    HeroHeading="How You Can Help Others"
-    HeroParagraph="Help someone document what happened and find the right support."
-    buttonTextOne="Submit proof"
-    buttonTextOneHref="/submit-proof"
-    buttonTextTwo="Learn more"
-    buttonTextTwoHref="/proof-tips"
+    pageLabel="404 Error"
+    HeroHeading="Oops! Something went wrong."
+    HeroParagraph="We couldn’t load this page right now. Please try again, or return to the homepage."
+    buttonTextOne="Return to home page"
+    buttonTextOneHref="/"
+    buttonTextTwo="Submit proof"
+    buttonTextTwoHref="/submit-proof"
 />
+
+<style>
+
+</style>
