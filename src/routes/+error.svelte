@@ -30,7 +30,7 @@
     HeroHeading="Oops! Something went wrong."
     HeroParagraph="We couldn’t load this page right now. Please try again, or return to the homepage."
     buttonTextOne="Return to home page"
-    buttoneTextOneHref="/"
+    buttonTextOneHref="/"
     buttonTextTwo="Submit proof"
     buttoneTextTwoHref="/submit-proof"
 />
