@@ -1,5 +1,5 @@
 <script>
-  let { inputFieldText, Icon, inputId, dataType, files = null, name } = $props();
+  let { inputFieldText, Icon, inputId, dataType, files = null, name, error } = $props();
 </script>
 
 <!-- Icons for input file: AudioUpload, ChatLogUpload, VideoUpload, NotesUpload, LocationUpload, PhotoUpload -->
@@ -28,7 +28,21 @@
     <p class="selected-files">0</p>
   {/if}
 </div>
+<!-- temporary section  -->
+<div> 
+    {#if files?.length}
+    <ul> selected files: 
+        {#each Array.from(files) as file}
+            <li>{file.name}</li>
+        {/each}
+    </ul>
+    {/if}
 
+    {#if error}
+    <p class="error">{error}</p>
+    {/if}
+</div>
+<!-- temporary section end -->
 <style>
   .upload-field {
     position: relative;
@@ -92,4 +106,11 @@
   .file-inserted {
     background-color: var(--primary-darkest);
   }
+
+    ul{
+        color: var(--secondary-text-color);
+    }
+    li{
+        list-style:decimal;
+    }
 </style>
