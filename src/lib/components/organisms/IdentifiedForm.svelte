@@ -1,0 +1,187 @@
+<script>
+  import Text from "../atoms/Text.svelte";
+  import Button from "../atoms/Button.svelte";
+  import FileInput from "../atoms/FileInput.svelte";
+  import LabeledInput from "../molecules/LabeledInput.svelte";
+  import ChatLogUpload from "$lib/assets/svg/ChatLogUpload.svelte";
+  import AudioUpload from "$lib/assets/svg/AudioUpload.svelte";
+  import NotesUpload from "$lib/assets/svg/NotesUpload.svelte";
+  import LocationUpload from "$lib/assets/svg/LocationUpload.svelte";
+  import PhotoUpload from "$lib/assets/svg/PhotoUpload.svelte";
+  import { superForm } from "sveltekit-superforms/client";
+  import { zodClient } from "sveltekit-superforms/adapters";
+  import { proofSchemaIdentified } from "$lib/formValidation";
+  import SuperDebug from "sveltekit-superforms/SuperDebug.svelte";
+
+  let { data, onBack } = $props();
+  let resetKey = $state(0);
+
+  const { form, errors, enhance } = superForm(data, {
+    validators: zodClient(proofSchemaIdentified),
+    dataType: "form",
+    resetForm: true,
+    onUpdated: ({ form }) => {
+      if (form.message) {
+        resetKey++;
+      }
+    },
+  });
+
+  let photoFiles = $state(null);
+  let audioFiles = $state(null);
+  let locationFiles = $state(null);
+  let notesFiles = $state(null);
+  let chatFiles = $state(null);
+
+  $effect(() => {
+    if (photoFiles) $form.photos = Array.from(photoFiles);
+  });
+  $effect(() => {
+    if (audioFiles) $form.audio = Array.from(audioFiles);
+  });
+  $effect(() => {
+    if (locationFiles) $form.location = Array.from(locationFiles);
+  });
+  $effect(() => {
+    if (notesFiles) $form.note = Array.from(notesFiles);
+  });
+  $effect(() => {
+    if (chatFiles) $form.chat = Array.from(chatFiles);
+  });
+</script>
+
+<div class="debug">
+  <SuperDebug data={$form} />
+</div>
+
+<form
+  id="identified-form"
+  method="POST"
+  action="?/identified"
+  enctype="multipart/form-data"
+  use:enhance
+>
+  <Button onclick={onBack} buttonText="&#8617;" className="form-back-button" />
+
+  {#key resetKey}
+    <LabeledInput
+      type="email"
+      autocomplete="off"
+      name="email"
+      bind:value={$form.email}
+      placeHolder="email@example.com"
+      classNameLabel="email-label"
+      classNameInput="email-input"
+      inputId="email"
+      form="identified-form"
+      text="Email address"
+      required
+    />
+    <LabeledInput
+      type="email"
+      autocomplete="off"
+      name="emailVerification"
+      bind:value={$form.emailVerification}
+      placeHolder="email@example.com"
+      classNameLabel="email-label-verification"
+      classNameInput="email-input-verification"
+      inputId="email-verification"
+      form="identified-form"
+      text="Confirm email address"
+      required
+    />
+
+    {#if $errors.email}
+      <Text text={$errors.email} className="error" />
+    {/if}
+    {#if $errors.emailVerification}
+      <Text text={$errors.emailVerification} className="error" />
+    {/if}
+
+    <Text
+      text="What type of proof are you submitting?"
+      className="proof-type"
+    />
+
+    <FileInput
+      inputFieldText="Photos and video (camera)"
+      Icon={PhotoUpload}
+      inputId="photos"
+      dataType="image/*,video/*"
+      name="photos"
+      form="identified-form"
+      bind:files={photoFiles}
+      errors={$errors.photos?.[0]}
+    />
+    <FileInput
+      inputFieldText="Audio (Voice Memos)"
+      Icon={AudioUpload}
+      inputId="audio"
+      dataType="audio/*"
+      name="audio"
+      form="identified-form"
+      bind:files={audioFiles}
+      errors={$errors.audio?.[0]}
+    />
+    <FileInput
+      inputFieldText="Location & routes (Google maps timeline)"
+      Icon={LocationUpload}
+      inputId="location"
+      dataType=".json,.kml,.gpx"
+      name="location"
+      form="identified-form"
+      bind:files={locationFiles}
+      errors={$errors.location?.[0]}
+    />
+    <FileInput
+      inputFieldText="Notes & diary (Notes/Keep)"
+      Icon={NotesUpload}
+      inputId="notes"
+      dataType=".txt,.md,.pdf,.html"
+      name="notes"
+      form="identified-form"
+      bind:files={notesFiles}
+      errors={$errors.note?.[0]}
+    />
+    <FileInput
+      inputFieldText="WhatsApp or Telegram"
+      Icon={ChatLogUpload}
+      inputId="chatlogs"
+      dataType=".txt,.json,.zip"
+      name="chat"
+      form="identified-form"
+      bind:files={chatFiles}
+      errors={$errors.chat?.[0]}
+    />
+
+    <LabeledInput
+      type="textarea"
+      inputId="optional-text"
+      text="Any thing you would like to add? (Optional)"
+      placeHolder="This is optional..."
+      classNameInput="optional-text"
+      classNameLabel="optional-text-label"
+      bind:value={$form.textArea}
+      name="textArea"
+      form="identified-form"
+    />
+  {/key}
+
+  <Button buttonText="Submit" className="submit-button" />
+</form>
+
+<style>
+  form{
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: var(--spacing-xl);
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  }
+</style>
