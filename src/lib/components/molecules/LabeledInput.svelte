@@ -23,7 +23,7 @@
     <Input
       {type}
       {autocomplete}
-      name={inputId}
+      name={name}
       bind:value
       className={classNameInput}
       id={inputId}
