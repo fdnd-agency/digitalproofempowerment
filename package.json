@@ -53,6 +53,6 @@
   },
   "dependencies": {
     "sveltekit-superforms": "^2.30.0",
-    "zod": "^4.3.6"
+    "zod": "^3.25.76"
   }
 }
