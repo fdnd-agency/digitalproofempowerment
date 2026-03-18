@@ -26,16 +26,19 @@
 
   .form-text {
     margin: var(--spacing-sm);
+    color: var(--secondary-text-color);
     text-align: center;
   }
 
   .form-anon-text {
     margin: var(--spacing-xs);
+    color: var(--secondary-text-color);
     align-self: center;
   }
 
   .proof-type {
     margin-top: var(--spacing-lg);
+    color: var(--secondary-text-color);
   }
 
   .error {
@@ -46,6 +49,10 @@
     color: var(--accent-dark);
     border: 5px solid var(--accent-dark);
     transition: all 0.3s ease-in-out;
+  }
+  .feedback {
+    color: var(--secondary-text-color);
+    padding: var(--spacing-md);
   }
 
   @media (width <= 500px) {
