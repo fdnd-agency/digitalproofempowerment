@@ -16,7 +16,7 @@
   let { data, onBack } = $props();
   let resetKey = $state(0);
 
-  const { form, errors, enhance } = superForm(data, {
+  const { form,message ,errors, enhance } = superForm(data, {
     validators: zodClient(proofSchemaIdentified),
     dataType: "form",
     resetForm: true,
@@ -170,6 +170,21 @@
   <Button buttonText="Submit" className="submit-button" />
 </form>
 
+{#if $message}
+<div class="feedback">
+  <Text text={$message} className="feedback" />
+  {#if $message}
+    <Button
+      buttonText='&#x58;'
+      onclick={() => {
+        $message = null;
+      }}
+      className="feedback-button"
+    />
+  {/if}
+</div>
+{/if}
+
 <style>
   form{
     background: rgba(255, 255, 255, 0.2);
@@ -183,5 +198,13 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
+  }
+
+   .feedback{
+    display: flex;
+    border: solid 1px white;
+    background-color: green;
+    border-radius: 16px;
+    margin-top: var(--spacing-lg);
   }
 </style>

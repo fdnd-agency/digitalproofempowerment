@@ -42,17 +42,28 @@
   }
 
   .error {
-    border-radius: 16px;
+    font-size: clamp(11px, 3vw, 12px);
+    background-color: var(--emergency-color);
+    width: fit-content;
     padding: var(--spacing-xxs);
-    margin: var(--spacing-md);
-    background-color: var(--main-background-color);
-    color: var(--accent-dark);
-    border: 5px solid var(--accent-dark);
-    transition: all 0.3s ease-in-out;
+    border-radius: var(--radius-sm);
+    color: var(--secondary-text-color);
+    font-style: italic;
+    padding-left: var(--spacing-xs);
+    padding-right: var(--spacing-xs);
+    margin-top: var(--radius-xs);
+
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-xxs);
+    justify-content: center;
+    align-items: center;
   }
   .feedback {
     color: var(--secondary-text-color);
-    padding: var(--spacing-md);
+    padding: var(--spacing-xs);
+    font-size: clamp(16px, 3vw, 18px);
+
   }
 
   @media (width <= 500px) {

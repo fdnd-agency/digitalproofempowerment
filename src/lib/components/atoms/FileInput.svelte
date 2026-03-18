@@ -28,6 +28,7 @@
     <p class="selected-files">0</p>
   {/if}
 </div>
+
 <!-- temporary section  -->
 <div> 
     {#if files?.length}
@@ -43,6 +44,7 @@
     {/if}
 </div>
 <!-- temporary section end -->
+ 
 <style>
   .upload-field {
     position: relative;
