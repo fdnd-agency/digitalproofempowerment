@@ -13,7 +13,8 @@
     display: flex;
     flex-direction: column;
     margin: var(--spacing-sm);
-  }
+    color: var(--secondary-text-color);
+}
 
   .email-label {
     color: var(--secondary-text-color);
