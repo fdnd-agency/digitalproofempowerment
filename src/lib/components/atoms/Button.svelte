@@ -125,4 +125,11 @@
     align-self: center;
     padding: var(--spacing-xs) var(--spacing-2xl);
   }
+  .feedback-button{
+    justify-self: start;
+    background:none;
+    align-self: start;
+    border: none;
+    color: var(--secondary-text-color);
+  }
 </style>
