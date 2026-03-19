@@ -21,10 +21,9 @@
 </script>
 
 <nav class="nav-container">
-
     <div class="nav-bar-container">
         <a href="/"><img class="logo" src="{Favicon}" alt="Digital proof empowerment logo" height="40" width="40"></a>
-        <button class="nav-button" name="hamburger-menu" on:click={toggleMenu}>
+        <button class="nav-button" name="navigation toggle button" on:click={toggleMenu} aria-label="navigation toggle">
             <span class:open={menuIsOpen}></span>
             <span class:open={menuIsOpen}></span>
             <span class:open={menuIsOpen}></span>
@@ -37,7 +36,7 @@
         <li class="nav-item"><Link href="/proof-tips" text="Proof Tips" className="nav-link"/></li>
         <li class="nav-item"><Link href="/help-others" text="Help Others" className="nav-link"/></li>
         <li class="nav-item"><Link href="/submit-proof" text="Submit Proof" className="nav-link"/></li>
-        <li class="nav-item"><Link href="tel:+112" Icon={PhoneIcon} target="" rel="" className="emergency-link" text="Call 112"/></li>
+        <li class="nav-item"><Link href="tel:+112" Icon={PhoneIcon} target="_self" rel="" className="emergency-link" text="Call 112"/></li>
     </ul>
 </nav>
 
@@ -131,7 +130,7 @@
     .nav-button span {
         width: 1.7rem;
         height: 0.15rem;
-        background-color: var(--main-background-color);
+        background-color: var(--nav-icon-color);
         transition: 0.6s;
         cursor: pointer;
     }

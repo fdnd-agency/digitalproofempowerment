@@ -9,6 +9,8 @@
         <Title
             headingText="Emergency? Get Help Now"
             class="emergency-container-title"
+            level={level}
+            
         />
         <p class="emergency-container-paragraph">
             Your safety is the top priority . If you find yourself in a
@@ -29,6 +31,7 @@
             Icon={PhoneIcon}
             className="emergency-link"
             text="Call 112"
+            target="_self"
         />
     </div>
 </section>
@@ -49,6 +52,13 @@
             display: flex;
             flex-direction: column;
             gap: var(--spacing-lg);
+        }
+    }
+
+    @media (prefers-color-scheme: dark) {
+        .emergency-container {
+            background-color: var(--primary-darkest);
+            color: hsl(0, 0%, 100%);
         }
     }
 

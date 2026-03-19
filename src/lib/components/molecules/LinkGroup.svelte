@@ -4,7 +4,7 @@
 </script>
 
 <div class={className}>
-  <h4>{groupName}</h4>
+  <h3 class="h4">{groupName}</h3>
   <ul>
     {#each links as link (link.href)}
       <li>
@@ -26,7 +26,6 @@
     font-size: clamp(12px, 3vw, 14px);
     padding: var(--spacing-xs);
     padding-left: 0;
-
   }
 
   .footer-links > h4 {

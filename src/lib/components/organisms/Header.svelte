@@ -1,7 +1,16 @@
 <script>
     import { Title, Link, Button, PlayIcon, FolderIcon, HeaderBG } from "$lib";
 
-    let { pageLabel, HeroHeading, HeroParagraph, buttonTextOne, buttonTextTwo, buttonTextOneHref, buttonTextTwoHref, level = "h1" } = $props();
+    let {
+        pageLabel,
+        HeroHeading,
+        HeroParagraph,
+        buttonTextOne,
+        buttonTextTwo,
+        buttonTextOneHref,
+        buttonTextTwoHref,
+        level = "h1",
+    } = $props();
 </script>
 
 <header class="hero-container">
@@ -9,7 +18,7 @@
 
     <div class="hero-content">
         <p class="hero-page-label">{pageLabel}</p>
-        <Title headingText={HeroHeading} className="heading hero-heading" />
+        <Title headingText={HeroHeading} className="heading hero-heading" level="h1" />
         <p class="hero-paragraph">{HeroParagraph}</p>
 
         <div class="hero-buttons-wrapper">
@@ -53,6 +62,13 @@
         filter: brightness(0.7);
     }
 
+    @media (prefers-color-scheme: dark) {
+        .hero-background-image {
+            filter: brightness(0.3);
+            /* filter: grayscale(4); */
+        }
+    }
+
     .hero-content {
         position: relative;
         text-align: center;
@@ -60,7 +76,6 @@
         flex-direction: column;
         gap: var(--spacing-lg);
         color: var(--secondary-text-color);
-
     }
 
     .hero-page-label {
