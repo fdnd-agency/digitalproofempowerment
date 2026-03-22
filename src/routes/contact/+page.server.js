@@ -18,6 +18,7 @@ export const actions = {
         const endpoint = 'https://fdnd-agency.directus.app/items/digital_proof_empowerment_questions';
         // const endpoint = 'https://69b07208c63dd197febc4bbf.mockapi.io/questions/questions';
 
+        console.log(form);
 
         const response = await fetch(endpoint, {
             method: 'POST',
@@ -28,13 +29,17 @@ export const actions = {
                 last_name: form.data.lastname,
                 email: form.data.email,
                 message: form.data.message
-            // }
+                // }
             })
         });
+
+        if (!response.ok) {
+            return message(form, 'Something went wrong');
+        }
 
         console.log(form.data);
 
         console.log(message);
-        return message(form,'Successfull');
+        return message(form, 'Message send successfull');
     }
 };
