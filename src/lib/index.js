@@ -33,6 +33,7 @@ export { default as ErrorMessageIcon } from "$lib/assets/svg/ErrorMessageIcon.sv
 // img
 export { default as HeaderBG } from "$lib/assets/img/HeaderBg.webp";
 export { default as Infographic } from "$lib/assets/img/Infographic.png";
+export { default as NoscriptImage } from "$lib/assets/img/NoscriptImage.webp";
 
 
 // Components
