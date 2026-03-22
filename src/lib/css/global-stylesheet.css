@@ -13,9 +13,7 @@
 }
 
 :root {
-  --main-font:
-    "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
-    sans-serif;
+  --main-font: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 
   color-scheme: light dark;
 
@@ -134,7 +132,7 @@
       var(--lightest));
 }
 
-
+/* dark light mode based on system settings */
 @media (prefers-color-scheme: dark) {
   :root {
     --main-background-color: rgba(0, 0, 0, 0.934);
@@ -150,22 +148,26 @@
   }
 }
 
-
+/* reduce motion for animations */
 html {
-		scroll-behavior: smooth;
-	}
+  scroll-behavior: smooth;
+}
 
-	@media (prefers-reduced-motion: reduce) {
-		html {
-			scroll-behavior: auto;
-		}
-	}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
 
 html,
 body {
   font-family: var(--main-font);
   color: var(--main-text-color);
   background-color: var(--main-background-color);
+
+  /* max-width for big screens no stretching */
+  max-width: 120rem;
+  margin: 0 auto;
 
   & .h1,
   h1 {
