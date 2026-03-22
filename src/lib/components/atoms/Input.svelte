@@ -11,7 +11,7 @@
 </script>
 
 {#if type === "textarea"}
-  <textarea {name} placeholder={placeholder} class={className} {...rest}>{value}</textarea>
+  <textarea {id} {name} placeholder={placeholder} class={className} {...rest}>{value}</textarea>
 {:else}
   <input {id} {type} {name} placeholder={placeholder} value={value} class={className} {...rest} />
 {/if}
@@ -62,6 +62,7 @@
         transition:
             border-color 0.2s ease,
             box-shadow 0.2s ease;
+            background-color: var(--main-background-color);
 }
 
 .contact-form-input:focus {
