@@ -26,6 +26,8 @@ export { default as CardIconLocation } from "$lib/assets/svg/CardIconLocation.sv
 export { default as StarIcon } from "$lib/assets/svg/StarIcon.svelte";
 export { default as QuotesIcon } from "$lib/assets/svg/QuotesIcon.svelte";
 export { default as Favicon} from "$lib/assets/favicon.svg"
+export { default as ErrorMessageIcon } from "$lib/assets/svg/ErrorMessageIcon.svelte";
+
 
 
 // img
@@ -53,3 +55,4 @@ export { default as Label} from "$lib/components/atoms/Label.svelte"
 export { default as Input} from "$lib/components/atoms/Input.svelte"
 export { default as LocationSection} from "$lib/components/organisms/LocationSection.svelte"
 export { default as LoadingState} from "$lib/components/atoms/LoadingState.svelte"
+export { default as FormValidationMessages} from "$lib/components/atoms/FormValidationMessages.svelte"
