@@ -18,16 +18,37 @@
             document.body.style.overflow = 'auto';
         }
     }
+
+ 
 </script>
 
 <nav class="nav-container">
     <div class="nav-bar-container">
-        <a href="/"><img class="logo" src="{Favicon}" alt="Digital proof empowerment logo" height="40" width="40"></a>
-        <button class="nav-button" name="navigation toggle button" on:click={toggleMenu} aria-label="navigation toggle">
+        <a href="/"><img class="logo" src={Favicon} alt="Digital proof empowerment logo" height="40" width="40"></a>
+
+        <button class="nav-button main-button" name="navigation toggle button" on:click={toggleMenu} aria-label="navigation toggle">
             <span class:open={menuIsOpen}></span>
             <span class:open={menuIsOpen}></span>
             <span class:open={menuIsOpen}></span>
         </button>
+
+        <noscript>
+            <a href="#footer" class="no-js-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+
+            <style>
+                .nav-button { 
+                display: none !important; 
+                }
+
+                .no-js-button { 
+                display: flex !important; 
+                }
+            </style>
+        </noscript>
     </div>
 
     <ul class="nav-list-container" class:active={menuIsOpen}>
@@ -39,8 +60,6 @@
         <li class="nav-item"><Link href="tel:+112" Icon={PhoneIcon} target="_self" rel="" className="emergency-link" text="Call 112"/></li>
     </ul>
 </nav>
-
-
 
 <style>
     nav {
@@ -117,6 +136,13 @@
         overflow: hidden;
     }
 
+    /* nav-buttons */
+
+    .no-js-button {
+        display: none;
+    }
+
+    .no-js-button,
     .nav-button {
         display: flex;
         flex-direction: column;
@@ -127,7 +153,8 @@
         border: none;
     }
 
-    .nav-button span {
+    .nav-button span,
+    .no-js-button span {
         width: 1.7rem;
         height: 0.15rem;
         background-color: var(--nav-icon-color);
@@ -135,19 +162,21 @@
         cursor: pointer;
     }
 
-    .nav-button span.open:nth-child(1) {
+    .nav-button span.open:nth-child(1),
+    .no-js-button span.open:nth-child(1) {
         background-color: var(--emergency-color);
         width: 1.2rem;
     }
 
-    .nav-button span.open:nth-child(2) {
+    .nav-button span.open:nth-child(2),
+    .no-js-button span.open:nth-child(2) {
         width: 0.8rem;
         background-color: var(--emergency-color);
     }
 
-    .nav-button span.open:nth-child(3) {
+    .nav-button span.open:nth-child(3),
+    .no-js-button span.open:nth-child(3) {
         background-color: var(--emergency-color);
-
         width: 0.6rem;
     }
 </style>
