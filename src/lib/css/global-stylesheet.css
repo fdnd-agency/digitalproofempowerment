@@ -49,6 +49,7 @@
   /* -------- COLORS --------- */
 
   /* Colors */
+  --nav-icon-color: hsl(240, 6%, 97%);
   --main-text-color: hsl(246, 76%, 5%);
   --secondary-text-color: hsl(0, 0%, 100%);
   --main-background-color: hsl(240, 6%, 97%);
