@@ -68,7 +68,7 @@
   ];
 </script>
 
-<footer class="footer">
+<footer class="footer" id="footer">
   <div class="footer-top-section">
     <TextBlock
       className="footer-block"
