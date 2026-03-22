@@ -19,9 +19,12 @@
         EmergencySection,
         Link,
         Text,
-        ContactForm
+        ContactForm,
+        NoscriptImage
     } from "$lib";
 
+
+    
     let {} = $props();
 </script>
 
@@ -67,6 +70,22 @@
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
+
+           <noscript> 
+                <a href="https://www.google.com/maps/place/Hogeschool+van+Amsterdam+-+HvA+Wibauthuis+(WBH)/@52.3592016,4.9071238,17z/data=!3m1!4b1!4m6!3m5!1s0x47c6099a4b62ff9f:0xaaf1a4822a7d03c9!8m2!3d52.3592016!4d4.9096987!16s%2Fg%2F11bw4vqkyg?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D" target="_blank">
+                    <img class="no-script-image" 
+                        src={NoscriptImage} 
+                        alt="Locatie van Hogeschool van Amsterdam op Google Maps"
+                        width="600"
+                        height="450"
+                    />
+                </a>  
+
+                <style> 
+                    .map-iframe 
+                    { display:none; } 
+                </style> 
+            </noscript>
         </article>
 
 <style>
@@ -87,7 +106,7 @@
         margin-top: auto;
     }
 
-    strong {
+    strong, .google-maps-link {
         font-weight: bolder;
         color: var(--main-text-color);
         text-decoration: underline;
@@ -115,7 +134,7 @@
         align-self: flex-start;
     }
 
-    .map-iframe {
+    .map-iframe, .no-script-image {
         width: 100%;
         height: 30rem;
         border: var(--border);
