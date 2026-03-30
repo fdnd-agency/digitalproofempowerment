@@ -11,7 +11,6 @@
   import { superForm } from "sveltekit-superforms/client";
   import { zodClient } from "sveltekit-superforms/adapters";
   import { proofSchemaAnon } from "$lib/formValidation";
-  import SuperDebug from "sveltekit-superforms/SuperDebug.svelte";
   import { Form } from "$lib";
 
   let { data, onBack } = $props();
@@ -51,9 +50,6 @@
   });
 </script>
 
-<div class="debug">
-  <SuperDebug data={$form} />
-</div>
 
 <form
   id="anon-form"

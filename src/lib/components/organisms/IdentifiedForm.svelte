@@ -11,7 +11,6 @@
   import { superForm } from "sveltekit-superforms/client";
   import { zodClient } from "sveltekit-superforms/adapters";
   import { proofSchemaIdentified } from "$lib/formValidation";
-  import SuperDebug from "sveltekit-superforms/SuperDebug.svelte";
 
   let { data, onBack } = $props();
   let resetKey = $state(0);
@@ -50,9 +49,6 @@
   });
 </script>
 
-<div class="debug">
-  <SuperDebug data={$form} />
-</div>
 
 <form
   id="identified-form"
