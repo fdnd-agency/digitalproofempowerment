@@ -168,4 +168,12 @@
     margin-top: var(--spacing-lg);
   }
 
+    @media (max-width: 500px){
+    form{
+      margin:var(--spacing-3xl) var(--spacing-md);
+
+    }
+
+  }
+
 </style>
