@@ -67,16 +67,9 @@
   <Title headingText="Submit Proof" level="h2" className="form-title" />
 
   {#if mode === null}
-    <Text
-      text="How would you like to Submit your proof ?"
-      className="form-text"
-    />
+    <Text text="How would you like to Submit your proof ?" className="form-text" />
     <div class="selection">
-      <Button
-        onclick={() => (mode = "anonymous")}
-        buttonText="Anonymous"
-        className="form-button"
-      />
+      <Button onclick={() => (mode = "anonymous")} buttonText="Anonymous" className="form-button" />
       <Button
         onclick={() => (mode = "identified")}
         buttonText="Using Email"
@@ -124,10 +117,7 @@
     {#if emailError}
       <Text text={emailError} className="error" />
     {/if}
-    <Text
-      text="What type of proof are you submitting?"
-      className="proof-type"
-    />
+    <Text text="What type of proof are you submitting?" className="proof-type" />
 
     <FileInput
       inputFieldText="Photos and video (camera)"

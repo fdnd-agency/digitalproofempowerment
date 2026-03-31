@@ -34,7 +34,7 @@
     align-self: center;
   }
 
-  .proof-type{
+  .proof-type {
     margin-top: var(--spacing-lg);
   }
 
@@ -54,11 +54,10 @@
     }
   }
 
-.contact-form-container-paragraph {
-  max-width: 30rem;
-        text-wrap: pretty;
-        font-style: italic;
-        font-size: clamp(12px, 3vw, 16px);
-}
-
+  .contact-form-container-paragraph {
+    max-width: 30rem;
+    text-wrap: pretty;
+    font-style: italic;
+    font-size: clamp(12px, 3vw, 16px);
+  }
 </style>
