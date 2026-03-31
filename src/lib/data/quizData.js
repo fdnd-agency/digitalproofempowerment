@@ -36,8 +36,7 @@ const quizData = [
   },
   {
     index: "collect-proof",
-    question:
-      "Collecting proof is very important to get help. Do you have proof?",
+    question: "Collecting proof is very important to get help. Do you have proof?",
     options: [
       { label: "Yes", next: "submit-proof" },
       {
@@ -111,8 +110,7 @@ const quizData = [
   },
   {
     index: "other-manager-collect-proof",
-    question:
-      "Collecting proof is very important to get help. Do you have proof?",
+    question: "Collecting proof is very important to get help. Do you have proof?",
     options: [
       { label: "Yes", next: "submit-proof" },
       {

@@ -7,7 +7,7 @@
 </main>
 
 <style>
-main {
+  main {
     padding: 10% 0;
     display: grid;
     place-items: center;
@@ -16,5 +16,5 @@ main {
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
-}
+  }
 </style>
