@@ -1,5 +1,5 @@
 <script>
-  import { Button, PhoneIcon, Link, Logo, Favicon } from "$lib";
+  import { PhoneIcon, Link, Favicon } from "$lib";
 
   let menuIsOpen = false;
 
@@ -25,7 +25,12 @@
         width="40"
       /></a
     >
-    <button class="nav-button" name="hamburger-menu" on:click={toggleMenu}>
+    <button
+      class="nav-button"
+      name="hamburger-menu"
+      aria-label="Toggle navigation menu"
+      on:click={toggleMenu}
+    >
       <span class:open={menuIsOpen}></span>
       <span class:open={menuIsOpen}></span>
       <span class:open={menuIsOpen}></span>
@@ -69,9 +74,9 @@
     background: rgba(0, 0, 0, 0.187);
   }
 
-  .nav-container.hidden {
+  /* .nav-container.hidden {
     transform: translateY(-100%);
-  }
+  } */
 
   ul li {
     list-style-type: none;

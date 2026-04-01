@@ -1,11 +1,12 @@
+<!-- eslint-disable svelte/valid-compile -->
 <script>
   import { Button, Input, Label, EyeIcon, LoadingState } from "$lib";
-  // import { enhance } from '$app/forms';
   import { superForm } from "sveltekit-superforms";
 
   let { data } = $props();
 
-  const { form, errors, enhance, message, submitting, reset } = superForm(data.form, {
+  /* eslint-disable-next-line svelte/valid-compile */
+  const { form, errors, enhance, message, submitting } = superForm(data.form, {
     resetForm: true,
   });
 </script>
@@ -259,20 +260,24 @@
 
     animation: fadeOut 1s ease forwards;
     animation-delay: 3s;
+  }
 
+  /* the below css were not used anywhere but kept for review */
+  /* 
     svg {
       align-self: flex-start;
     }
   }
 
-  /* @keyframes fadeOut {
+
+  @keyframes fadeOut {
     from {
-        opacity: 1;
+      opacity: 1;
     }
     to {
-        opacity: 0;
+      opacity: 0;
     }
-} */
+  }
 
   .loader-container {
     display: flex;
@@ -299,7 +304,7 @@
     .circle-three {
       animation-delay: 0.3s;
     }
-  }
+  } */
 
   @keyframes loading {
     0% {

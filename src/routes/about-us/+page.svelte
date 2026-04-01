@@ -1,29 +1,21 @@
 <script>
   import {
-    Button,
-    PlayIcon,
-    Title,
+    Header,
+    Link,
     FolderIcon,
-    PhoneIcon,
+    Title,
     InformationCard,
-    CardIconAudio,
-    CardIconChat,
     CardIconImg,
     CardIconVideo,
+    CardIconAudio,
     CardIconNotes,
     CardIconLocation,
-    Profile,
-    QuotesIcon,
-    EyeIcon,
-    Header,
+    CardIconChat,
     EmergencySection,
     ReviewCard,
-    HeaderBG,
-    Link,
   } from "$lib";
-
-  let {} = $props();
 </script>
+
 
 <Header
   pageLabel="About us"
@@ -172,9 +164,6 @@
       flex-direction: column;
       gap: var(--spacing-lg);
     }
-  }
-
-  .evidence-container-title {
   }
 
   .evidence-container-paragraph {

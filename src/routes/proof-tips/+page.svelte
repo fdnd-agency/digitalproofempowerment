@@ -1,28 +1,5 @@
 <script>
-  import {
-    Button,
-    PlayIcon,
-    Title,
-    FolderIcon,
-    PhoneIcon,
-    InformationCard,
-    CardIconAudio,
-    CardIconChat,
-    CardIconImg,
-    CardIconVideo,
-    CardIconNotes,
-    CardIconLocation,
-    Profile,
-    QuotesIcon,
-    EyeIcon,
-    Header,
-    EmergencySection,
-    ReviewCard,
-    HeaderBG,
-    Link,
-  } from "$lib";
-
-  let {} = $props();
+  import { Header } from "$lib";
 </script>
 
 <Header

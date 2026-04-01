@@ -1,10 +1,10 @@
 <script>
-  let { inputId, formId, className, text, ...rest } = $props();
+  let { inputId, formId, className, text, children, ...rest } = $props();
 </script>
 
 <label for={inputId} form={formId} class={className} {...rest}>
   {text}
-  <slot />
+  {@render children?.()}
 </label>
 
 <style>

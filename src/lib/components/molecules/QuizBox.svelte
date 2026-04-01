@@ -17,7 +17,7 @@
     <Title level="h3" headingText={currentQuestion.question} className="question-title" />
 
     <div class="option-wrapper">
-      {#each currentQuestion.options as option}
+      {#each currentQuestion.options as option (option)}
         <Button
           buttonText={option.label}
           onclick={() => handleAnswer(option.next)}
