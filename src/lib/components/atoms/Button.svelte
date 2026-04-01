@@ -35,7 +35,7 @@
     }
   }
 
-   .btn-green {
+  .btn-green {
     background-color: var(--success-color);
     color: var(--secondary-text-color);
     border: none;
@@ -108,7 +108,6 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--main-text-color);
-    
   }
 
   .form-back-button {
@@ -122,11 +121,11 @@
     text-transform: uppercase;
     color: var(--main-text-color);
     margin: var(--spacing-xs);
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     padding: 0 var(--spacing-md);
   }
-  .submit-button{
-     background: rgb(225, 225, 225);
+  .submit-button {
+    background: rgb(225, 225, 225);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5.3px);
@@ -135,8 +134,8 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--main-text-color);
-    margin: var(--spacing-xs) ;
+    margin: var(--spacing-xs);
     align-self: center;
-    padding:  var(--spacing-xs) var(--spacing-2xl);
+    padding: var(--spacing-xs) var(--spacing-2xl);
   }
 </style>

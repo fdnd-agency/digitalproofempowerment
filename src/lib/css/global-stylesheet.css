@@ -13,9 +13,7 @@
 }
 
 :root {
-  --main-font:
-    "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
-    sans-serif;
+  --main-font: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
 
   /* Border */
   --border: 1px solid rgba(0, 0, 0, 0.146);
@@ -54,7 +52,6 @@
   --emergency-color: hsl(357.68, 83.41%, 42.55%);
   --success-color: hsl(122, 75%, 29%);
 
-
   /* --------------- */
 
   /* primary: #0d1631; */
@@ -83,81 +80,25 @@
   --lightest: 91%;
 
   /* Primary color */
-  --primary-darkest: hsl(
-    var(--primary-hue),
-    var(--primary-saturation),
-    var(--darkest)
-  );
-  --primary-dark: hsl(
-    var(--primary-hue),
-    var(--primary-saturation),
-    var(--dark)
-  );
-  --primary-neutral: hsl(
-    var(--primary-hue),
-    var(--primary-saturation),
-    var(--neutral)
-  );
-  --primary-light: hsl(
-    var(--primary-hue),
-    var(--primary-saturation),
-    var(--light)
-  );
-  --primary-lightest: hsl(
-    var(--primary-hue),
-    var(--primary-saturation),
-    var(--lightest)
-  );
+  --primary-darkest: hsl(var(--primary-hue), var(--primary-saturation), var(--darkest));
+  --primary-dark: hsl(var(--primary-hue), var(--primary-saturation), var(--dark));
+  --primary-neutral: hsl(var(--primary-hue), var(--primary-saturation), var(--neutral));
+  --primary-light: hsl(var(--primary-hue), var(--primary-saturation), var(--light));
+  --primary-lightest: hsl(var(--primary-hue), var(--primary-saturation), var(--lightest));
 
   /* secondary color */
-  --secondary-darkest: hsl(
-    var(--secondary-hue),
-    var(--secondary-saturation),
-    var(--darkest)
-  );
-  --secondary-dark: hsl(
-    var(--secondary-hue),
-    var(--secondary-saturation),
-    var(--dark)
-  );
-  --secondary-neutral: hsl(
-    var(--secondary-hue),
-    var(--secondary-saturation),
-    var(--neutral)
-  );
-  --secondary-light: hsl(
-    var(--secondary-hue),
-    var(--secondary-saturation),
-    var(--light)
-  );
-  --secondary-lightest: hsl(
-    var(--secondary-hue),
-    var(--secondary-saturation),
-    var(--lightest)
-  );
+  --secondary-darkest: hsl(var(--secondary-hue), var(--secondary-saturation), var(--darkest));
+  --secondary-dark: hsl(var(--secondary-hue), var(--secondary-saturation), var(--dark));
+  --secondary-neutral: hsl(var(--secondary-hue), var(--secondary-saturation), var(--neutral));
+  --secondary-light: hsl(var(--secondary-hue), var(--secondary-saturation), var(--light));
+  --secondary-lightest: hsl(var(--secondary-hue), var(--secondary-saturation), var(--lightest));
 
   /* accent color */
-  --accent-darkest: hsl(
-    var(--accent-hue),
-    var(--accent-saturation),
-    var(--darkest)
-  );
+  --accent-darkest: hsl(var(--accent-hue), var(--accent-saturation), var(--darkest));
   --accent-dark: hsl(var(--accent-hue), var(--accent-saturation), var(--dark));
-  --accent-neutral: hsl(
-    var(--accent-hue),
-    var(--accent-saturation),
-    var(--neutral)
-  );
-  --accent-light: hsl(
-    var(--accent-hue),
-    var(--accent-saturation),
-    var(--light)
-  );
-  --accent-lightest: hsl(
-    var(--accent-hue),
-    var(--accent-saturation),
-    var(--lightest)
-  );
+  --accent-neutral: hsl(var(--accent-hue), var(--accent-saturation), var(--neutral));
+  --accent-light: hsl(var(--accent-hue), var(--accent-saturation), var(--light));
+  --accent-lightest: hsl(var(--accent-hue), var(--accent-saturation), var(--lightest));
 }
 
 html,
@@ -209,7 +150,6 @@ Body {
   }
 }
 
-
 time {
-    font-size: clamp(8px, 3vw, 11px);
+  font-size: clamp(8px, 3vw, 11px);
 }

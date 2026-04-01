@@ -18,7 +18,7 @@
 
 <style>
   .container {
-    background-image: url(src/lib/assets/Images/sebastian-svenson-d2w-_1LJioQ-unsplash.jpg);
+    background-image: url($lib/assets/Images/sebastian-svenson-d2w-_1LJioQ-unsplash.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

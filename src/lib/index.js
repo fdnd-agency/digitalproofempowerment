@@ -16,7 +16,6 @@ export { default as VideoUpload } from "$lib/assets/svg/VideoUpload.svelte";
 export { default as ChatLogUpload } from "$lib/assets/svg/ChatLogUpload.svelte";
 export { default as AudioUpload } from "$lib/assets/svg/AudioUpload.svelte";
 
-
 export { default as CardIconAudio } from "$lib/assets/svg/CardIconAudio.svelte";
 export { default as CardIconChat } from "$lib/assets/svg/CardIconChat.svelte";
 export { default as CardIconImg } from "$lib/assets/svg/CardIconImg.svelte";
@@ -28,13 +27,10 @@ export { default as QuotesIcon } from "$lib/assets/svg/QuotesIcon.svelte";
 export { default as Favicon} from "$lib/assets/favicon.svg"
 export { default as ErrorMessageIcon } from "$lib/assets/svg/ErrorMessageIcon.svelte";
 
-
-
 // img
 export { default as HeaderBG } from "$lib/assets/img/HeaderBg.webp";
 export { default as Infographic } from "$lib/assets/img/Infographic.png";
 export { default as NoscriptImage } from "$lib/assets/img/NoscriptImage.webp";
-
 
 // Components
 export { default as Button } from "$lib/components/atoms/Button.svelte";

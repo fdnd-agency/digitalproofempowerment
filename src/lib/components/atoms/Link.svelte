@@ -83,9 +83,7 @@
     }
   }
 
-
-
-   .emergency-link {
+  .emergency-link {
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -110,7 +108,7 @@
   }
 
   .white-button-link {
-   display: flex;
+    display: flex;
     align-items: center;
     gap: var(--spacing-xs);
     border-radius: var(--radius-xs);
@@ -126,7 +124,6 @@
     border: var(--border);
     text-decoration: none;
     justify-self: flex-start;
-
 
     &:hover {
       background-color: var(--accent-neutral);
@@ -158,8 +155,4 @@
       background-color: var(--accent-neutral);
     }
   }
-
-
-
-
 </style>

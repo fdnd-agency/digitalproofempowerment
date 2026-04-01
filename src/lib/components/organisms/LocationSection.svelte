@@ -28,39 +28,27 @@
     let {} = $props();
 </script>
 
-        <div class="location-container-content-wrapper">
-            <Title
-                headingText="Headoffice location"
-                class="location-container-title"
-            />
+<div class="location-container-content-wrapper">
+  <Title headingText="Headoffice location" class="location-container-title" />
 
-            <address class="office-address">
-                <strong>Office:</strong>
-                <div class="address">
-                    <span>Amstelcampus</span>
-                    <span>1091 GH Amsterdam</span>
-                    <span>Netherlands</span>
-                </div>
+  <address class="office-address">
+    <strong>Office:</strong>
+    <div class="address">
+      <span>Amstelcampus</span>
+      <span>1091 GH Amsterdam</span>
+      <span>Netherlands</span>
+    </div>
 
-                <Link
-                    href="mailto:info@blablabla.com"
-                    text="info@blablabla.com"
-                    className="email-link"
-                />
+    <Link href="mailto:info@blablabla.com" text="info@blablabla.com" className="email-link" />
 
-                <Link
-                    href="tel:+31201234567"
-                    text="+31 20 123 4567"
-                    className="cellphone-link"
-                />
-            </address>
+    <Link href="tel:+31201234567" text="+31 20 123 4567" className="cellphone-link" />
+  </address>
 
-            <p class="location-container-paragraph">
-                <strong class="warning-highlight">Please note</strong>: This
-                location is not open for public visits and is accessible only by
-                appointment for partners and official business.
-            </p>
-        </div>
+  <p class="location-container-paragraph">
+    <strong class="warning-highlight">Please note</strong>: This location is not open for public
+    visits and is accessible only by appointment for partners and official business.
+  </p>
+</div>
 
         <article>
             <iframe
@@ -89,22 +77,21 @@
         </article>
 
 <style>
- 
-    /* maps */
+  /* maps */
 
-    .location-container-content-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-lg);
-    }
+  .location-container-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
 
-    .location-container-paragraph {
-        max-width: 30rem;
-        text-wrap: pretty;
-        font-style: italic;
-        font-size: clamp(12px, 3vw, 16px);
-        margin-top: auto;
-    }
+  .location-container-paragraph {
+    max-width: 30rem;
+    text-wrap: pretty;
+    font-style: italic;
+    font-size: clamp(12px, 3vw, 16px);
+    margin-top: auto;
+  }
 
     strong, .google-maps-link {
         font-weight: bolder;
@@ -115,24 +102,24 @@
         text-decoration-color: var(--accent-neutral);
     }
 
-    .office-address {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-xs);
-    }
+  .office-address {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
 
-    .address {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-xxxs);
-    }
+  .address {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxxs);
+  }
 
-    :global(.email-link, .cellphone-link) {
-        color: var(--primary-dark);
-        font-weight: 600;
-        text-decoration: none;
-        align-self: flex-start;
-    }
+  :global(.email-link, .cellphone-link) {
+    color: var(--primary-dark);
+    font-weight: 600;
+    text-decoration: none;
+    align-self: flex-start;
+  }
 
     .map-iframe, .no-script-image {
         width: 100%;

@@ -8,7 +8,6 @@
 
 </script>
 
-
 <form class="contact-form" method="POST" id="contact-form" use:enhance>
     <fieldset class="contact-form-fieldset">
         <legend class="contact-form-legend">Contact form</legend>
@@ -52,7 +51,6 @@
 
 
     <div class="button-wrapper">
-
         <Button
             Icon={EyeIcon}
             buttonType="submit"
@@ -60,7 +58,6 @@
             buttonText="Send"
         />
             
-
         {#if $submitting}
             <LoadingState/>    
         {/if}
@@ -71,102 +68,92 @@
                 <FormValidationMessages ErrorText={$message} Icon={ErrorMessageIcon} className="error-message"  />
         {/if}
     </div>
-
-            
-
- 
 </form>
 
-
-
-
 <style>
-    .contact-form {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-md);
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .contact-form-fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxs);
+    text-align: left;
+  }
+
+  .contact-form-legend {
+    display: none;
+  }
+
+  .contact-form-fieldset {
+    border: none;
+  }
+
+  .button-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-md);
+  }
+
+  .error-message {
+    font-size: clamp(11px, 3vw, 12px);
+    background-color: var(--emergency-color);
+    width: fit-content;
+    padding: var(--spacing-xxs);
+    border-radius: var(--radius-sm);
+    color: var(--secondary-text-color);
+    font-style: italic;
+    padding-left: var(--spacing-xs);
+    padding-right: var(--spacing-xs);
+    margin-top: var(--radius-xs);
+
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-xxs);
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      align-self: flex-start;
     }
+  }
 
-    .contact-form-fieldset {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-md);
+  .success-message {
+    font-size: clamp(11px, 3vw, 12px);
+    background-color: green;
+    width: fit-content;
+    padding: var(--spacing-xxs);
+    border-radius: var(--radius-sm);
+    color: var(--secondary-text-color);
+    font-style: italic;
+    padding-left: var(--spacing-xs);
+    padding-right: var(--spacing-xs);
+    margin-top: var(--radius-xs);
+
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-xxs);
+    justify-content: center;
+    align-items: center;
+
+    animation: fadeOut 1s ease forwards;
+    animation-delay: 3s;
+
+    svg {
+      align-self: flex-start;
     }
+  }
 
-    .input-group {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-xxs);
-        text-align: left;
-    }
-
-    .contact-form-legend {
-        display: none;
-    }
-
-    .contact-form-fieldset {
-        border: none;
-    }
-
-    .button-wrapper {
-        display: flex;
-        flex-direction: row;
-        gap: var(--spacing-md);
-    }
-
-
-    .error-message {
-        font-size: clamp(11px, 3vw, 12px);
-        background-color: var(--emergency-color);
-        width: fit-content;
-        padding: var(--spacing-xxs);
-        border-radius: var(--radius-sm);
-        color: var(--secondary-text-color);
-        font-style: italic;
-        padding-left: var(--spacing-xs);
-        padding-right: var(--spacing-xs);
-        margin-top: var(--radius-xs);
-
-        display: flex;
-        flex-direction: row;
-        gap: var(--spacing-xxs);
-        justify-content: center;
-        align-items: center;
-
-        svg {
-            align-self: flex-start;
-        }
-    }
-
-
-    .success-message {
-        font-size: clamp(11px, 3vw, 12px);
-        background-color: green;
-        width: fit-content;
-        padding: var(--spacing-xxs);
-        border-radius: var(--radius-sm);
-        color: var(--secondary-text-color);
-        font-style: italic;
-        padding-left: var(--spacing-xs);
-        padding-right: var(--spacing-xs);
-        margin-top: var(--radius-xs);
-
-        display: flex;
-        flex-direction: row;
-        gap: var(--spacing-xxs);
-        justify-content: center;
-        align-items: center;
-
-        animation: fadeOut 1s ease forwards;
-        animation-delay: 3s;
-
-        svg {
-            align-self: flex-start;
-        }
-    }
-
-
-/* @keyframes fadeOut {
+  /* @keyframes fadeOut {
     from {
         opacity: 1;
     }
@@ -175,45 +162,42 @@
     }
 } */
 
-.loader-container {
-  display: flex;
-align-items: center;  
-width: fit-content;
-  gap: var(--spacing-xs);
+  .loader-container {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    gap: var(--spacing-xs);
 
     span {
-        height: 0.7rem;
-        width: 0.7rem;
-        border-radius: var(--radius-lg);
-        background-color: var(--accent-neutral);
-        animation: loading 1s ease infinite;
+      height: 0.7rem;
+      width: 0.7rem;
+      border-radius: var(--radius-lg);
+      background-color: var(--accent-neutral);
+      animation: loading 1s ease infinite;
     }
 
     .circle-one {
-  animation-delay: 0s;
-}
+      animation-delay: 0s;
+    }
 
-.circle-two {
-  animation-delay: 0.2s;
-}
+    .circle-two {
+      animation-delay: 0.2s;
+    }
 
-.circle-three {
-  animation-delay: 0.3s;
-}
-
-
-}
-
-@keyframes loading {
-  0% {
-    transform: translateY(0);
+    .circle-three {
+      animation-delay: 0.3s;
+    }
   }
-  50% {
-    transform: translateY(-1rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
 
+  @keyframes loading {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-1rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 </style>

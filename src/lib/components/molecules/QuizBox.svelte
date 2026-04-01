@@ -5,9 +5,7 @@
 
   let currentIndex = $state("start");
 
-  let currentQuestion = $derived(
-    quizData.find((q) => q.index === currentIndex),
-  );
+  let currentQuestion = $derived(quizData.find((q) => q.index === currentIndex));
 
   const handleAnswer = (next) => {
     currentIndex = next;
@@ -16,11 +14,7 @@
 
 <div class="quiz-container">
   {#if currentQuestion}
-    <Title
-      level="h3"
-      headingText={currentQuestion.question}
-      className="question-title"
-    />
+    <Title level="h3" headingText={currentQuestion.question} className="question-title" />
 
     <div class="option-wrapper">
       {#each currentQuestion.options as option}

@@ -5,17 +5,9 @@
   import { Infographic } from "$lib";
 </script>
 
-<Title
-  headingText="Why Collecting Proof is Very Important"
-  className="proof-intro"
-  level="h1"
-/>
+<Title headingText="Why Collecting Proof is Very Important" className="proof-intro" level="h1" />
 <div class="info-container">
-  <img
-    alt="Proof collection illustration"
-    src={Infographic}
-    class="illustration"
-  />
+  <img alt="Proof collection illustration" src={Infographic} class="illustration" />
 
   <div class="links-section">
     <Link

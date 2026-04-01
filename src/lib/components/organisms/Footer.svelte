@@ -82,11 +82,7 @@
 
     <div class="links-section">
       {#each footerLinksGroups as group (group.groupName)}
-        <LinkGroup
-          className={group.className}
-          groupName={group.groupName}
-          links={group.links}
-        />
+        <LinkGroup className={group.className} groupName={group.groupName} links={group.links} />
       {/each}
     </div>
   </div>
@@ -126,7 +122,7 @@
     .links-section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-      gap:var(--spacing-md);
+      gap: var(--spacing-md);
       place-items: center;
     }
 

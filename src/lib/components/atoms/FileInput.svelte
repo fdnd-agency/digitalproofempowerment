@@ -1,97 +1,97 @@
 <script>
-    let { inputFieldText, Icon, inputId, dataType, files = null, name } = $props();
+  let { inputFieldText, Icon, inputId, dataType, files = null, name } = $props();
 </script>
 
 <!-- Icons for input file: AudioUpload, ChatLogUpload, VideoUpload, NotesUpload, LocationUpload, PhotoUpload -->
 
 <div class="upload-field">
-    <label for={inputId} name={name} >
-        {#if Icon}
-            <Icon class="icon" />
-        {/if}
-        <p>{inputFieldText}</p>
-    </label>
-
-    <input
-        id={inputId}
-        bind:files
-        type="file"
-        class="share-button hide-inserted-file-text"
-        accept={dataType}
-        multiple
-        name={name}
-    />
-
-    {#if files?.length}
-        <p class="selected-files file-inserted">{files.length}</p>
-    {:else}
-        <p class="selected-files">0</p>
+  <label for={inputId} {name}>
+    {#if Icon}
+      <Icon class="icon" />
     {/if}
+    <p>{inputFieldText}</p>
+  </label>
+
+  <input
+    id={inputId}
+    bind:files
+    type="file"
+    class="share-button hide-inserted-file-text"
+    accept={dataType}
+    multiple
+    {name}
+  />
+
+  {#if files?.length}
+    <p class="selected-files file-inserted">{files.length}</p>
+  {:else}
+    <p class="selected-files">0</p>
+  {/if}
 </div>
 
 <style>
-    .upload-field {
-        position: relative;
+  .upload-field {
+    position: relative;
 
-        display: flex;
-        align-items: center;
-        border-radius: var(--radius-xl);
-        border: var(--border);
-        font-weight: 400;
-        padding: var(--spacing-xs);
-        background-color: var(--main-background-color);
-        width: fit-content;
-        cursor: pointer;
-        box-shadow: var(--box-shadow);
-        -webkit-box-shadow: var(--box-shadow-webkit);
-        margin: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    border-radius: var(--radius-xl);
+    border: var(--border);
+    font-weight: 400;
+    padding: var(--spacing-xs);
+    background-color: var(--main-background-color);
+    width: fit-content;
+    cursor: pointer;
+    box-shadow: var(--box-shadow);
+    -webkit-box-shadow: var(--box-shadow-webkit);
+    margin: var(--spacing-sm);
 
-        label {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-xs);
-            cursor: pointer;
-        }
-
-        &:hover {
-            background-color: var(--primary-neutral);
-            color: var(--secondary-text-color);
-        }
+    label {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      cursor: pointer;
     }
 
-    label p {
-        font-size: clamp(5px, 3vw, 12px);
+    &:hover {
+      background-color: var(--primary-neutral);
+      color: var(--secondary-text-color);
     }
+  }
 
-    .share-button {
-        all: unset;
-    }
+  label p {
+    font-size: clamp(5px, 3vw, 12px);
+  }
 
-    .share-button::-webkit-file-upload-button {
-        visibility: hidden;
-    }
+  .share-button {
+    all: unset;
+  }
 
-    .hide-inserted-file-text {
-        display: none;
-    }
+  .share-button::-webkit-file-upload-button {
+    visibility: hidden;
+  }
 
-    .selected-files {
-        font-size: small;
-        position: absolute;
-        background-color: var(--accent-dark);
-        top: -0.65rem;
-        right: -0.8rem;
-        border-radius: var(--radius-full);
-        width: 1.5rem;
-        height: 1.5rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        color: var(--secondary-text-color);
-    }
+  .hide-inserted-file-text {
+    display: none;
+  }
 
-    .file-inserted {
-        background-color: var(--primary-darkest);
-    }
+  .selected-files {
+    font-size: small;
+    position: absolute;
+    background-color: var(--accent-dark);
+    top: -0.65rem;
+    right: -0.8rem;
+    border-radius: var(--radius-full);
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--secondary-text-color);
+  }
+
+  .file-inserted {
+    background-color: var(--primary-darkest);
+  }
 </style>
