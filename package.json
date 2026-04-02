@@ -26,6 +26,8 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
     "@csstools/postcss-global-data": "^4.0.0",
     "@eslint/js": "^10.0.1",
     "@sveltejs/adapter-auto": "^7.0.0",
