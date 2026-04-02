@@ -32,12 +32,11 @@
     height: auto;
     object-fit: contain;
   }
+
   .info-container {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-content: center;
+    flex-flow: column wrap;
+    place-content: center space-evenly;
     gap: var(--spacing-md);
   }
 
@@ -47,19 +46,21 @@
     align-items: center;
   }
 
-  @media (max-width: 800px) {
+  @media (width <= 800px) {
     .info-container {
       flex-direction: column;
     }
+
     .links-section {
       display: flex;
     }
   }
 
-  @media (max-width: 400px) {
+  @media (width <= 400px) {
     .info-container {
       flex-direction: column;
     }
+
     .links-section {
       flex-direction: column;
     }

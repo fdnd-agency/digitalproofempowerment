@@ -18,6 +18,7 @@
     color: var(--secondary-text-color);
     margin: var(--spacing-md) 0;
   }
+
   .email-label-verification {
     color: var(--secondary-text-color);
     margin: var(--spacing-md) 0;

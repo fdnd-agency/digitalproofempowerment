@@ -22,7 +22,6 @@
     overflow-y: auto;
     white-space: pre-wrap;
     overflow-wrap: break-word;
-    word-break: break-word;
     font-family: inherit;
     margin-top: var(--spacing-xs);
   }
@@ -37,6 +36,7 @@
     padding: var(--spacing-xs);
     margin: var(--spacing-xs);
   }
+
   .email-input-verification {
     border-radius: 16px;
     padding: var(--spacing-xs);
@@ -57,6 +57,6 @@
 
   .contact-form-input:focus {
     border-color: var(--accent-dark);
-    box-shadow: 0 0 10px rgba(237, 130, 72, 0.2);
+    box-shadow: 0 0 10px rgb(237 130 72 / 20%);
   }
 </style>

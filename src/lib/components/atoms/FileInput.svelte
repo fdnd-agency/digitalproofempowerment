@@ -32,7 +32,6 @@
 <style>
   .upload-field {
     position: relative;
-
     display: flex;
     align-items: center;
     border-radius: var(--radius-xl);
@@ -42,8 +41,7 @@
     background-color: var(--main-background-color);
     width: fit-content;
     cursor: pointer;
-    box-shadow: var(--box-shadow);
-    -webkit-box-shadow: var(--box-shadow-webkit);
+    box-shadow: var(--box-shadow-webkit);
     margin: var(--spacing-sm);
 
     label {

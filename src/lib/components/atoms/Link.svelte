@@ -15,6 +15,7 @@
   .link:focus {
     outline: 1px solid var(--accent-neutral);
   }
+
   .footer-link {
     color: inherit;
     text-decoration: none;
@@ -38,6 +39,7 @@
     font-size: clamp(16px, 2vw, 18px);
     text-align: center;
   }
+
   .proof-submit-intro {
     margin: var(--spacing-2xl);
     text-decoration: none;
@@ -66,7 +68,7 @@
     padding: var(--spacing-sm);
   }
 
-  @media (max-width: 500px) {
+  @media (width <= 500px) {
     .footer-link {
       text-wrap: nowrap;
     }
@@ -91,8 +93,6 @@
     border-radius: var(--radius-xs);
     font-size: clamp(10px, 3vw, 14px);
     font-weight: 550;
-    padding: var(--spacing-xs);
-    -webkit-box-shadow: var(--box-shadow-webkit);
     box-shadow: var(--box-shadow);
     letter-spacing: 0.03rem;
     cursor: pointer;
@@ -115,7 +115,6 @@
     font-size: clamp(10px, 3vw, 14px);
     font-weight: 550;
     padding: var(--spacing-xs);
-    -webkit-box-shadow: var(--box-shadow-webkit);
     box-shadow: var(--box-shadow);
     letter-spacing: 0.03rem;
     cursor: pointer;
@@ -138,13 +137,10 @@
     border-radius: var(--radius-xs);
     font-size: clamp(10px, 3vw, 14px);
     font-weight: 550;
-    padding: var(--spacing-xs);
-    -webkit-box-shadow: var(--box-shadow-webkit);
     box-shadow: var(--box-shadow);
     letter-spacing: 0.03rem;
     cursor: pointer;
     justify-self: flex-start;
-
     background-color: var(--secondary-background-color);
     color: var(--secondary-text-color);
     border: none;

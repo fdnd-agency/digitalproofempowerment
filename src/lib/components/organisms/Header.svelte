@@ -77,7 +77,6 @@
     text-transform: uppercase;
     opacity: 0.8;
     font-weight: 600;
-
     text-decoration: underline;
     text-underline-offset: 8px;
     text-decoration-thickness: 1px;

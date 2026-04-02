@@ -18,7 +18,6 @@
     font-size: clamp(10px, 3vw, 14px);
     font-weight: 550;
     padding: var(--spacing-xs);
-    -webkit-box-shadow: var(--box-shadow-webkit);
     box-shadow: var(--box-shadow);
     letter-spacing: 0.03rem;
     cursor: pointer;
@@ -67,11 +66,10 @@
   .quiz-button {
     grid-row: 2;
     font-size: clamp(16px, 2.5vw, 20px);
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(255 255 255 / 20%);
     border-radius: var(--spacing-md);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(20.6px);
-    -webkit-backdrop-filter: blur(10.6px);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
+    backdrop-filter: blur(10.6px);
     border: 1px solid var(--accent-lightest);
     padding: var(--spacing-xl);
     padding-top: var(--spacing-xs);
@@ -90,33 +88,22 @@
   }
 
   .form-button {
-    background: rgb(225, 225, 225);
+    background: rgb(225 225 225);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
     backdrop-filter: blur(5.3px);
-    border: 1px solid rgba(105, 62, 5, 0.37);
+    border: 1px solid rgb(105 62 5 / 37%);
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--main-text-color);
   }
-  .form-button {
-    background: rgb(225, 225, 225);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5.3px);
-    border: 1px solid rgba(105, 62, 5, 0.37);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--main-text-color);
-  }
-
+  
   .form-back-button {
-    background: rgba(225, 225, 225, 0.8);
+    background: rgb(225 225 225 / 80%);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
     backdrop-filter: blur(5.3px);
-    -webkit-backdrop-filter: blur(5.3px);
-    border: 1px solid rgba(105, 62, 5, 0.37);
+    border: 1px solid rgb(105 62 5 / 37%);
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--main-text-color);
@@ -124,13 +111,13 @@
     font-size: 1.5rem;
     padding: 0 var(--spacing-md);
   }
+
   .submit-button {
-    background: rgb(225, 225, 225);
+    background: rgb(225 225 225);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
     backdrop-filter: blur(5.3px);
-    -webkit-backdrop-filter: blur(5.3px);
-    border: 1px solid rgba(105, 62, 5, 0.37);
+    border: 1px solid rgb(105 62 5 / 37%);
     letter-spacing: 2px;
     text-transform: uppercase;
     color: var(--main-text-color);

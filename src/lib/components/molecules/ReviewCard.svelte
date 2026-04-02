@@ -24,8 +24,7 @@
     border: var(--border);
     padding: var(--spacing-lg);
     border-radius: var(--radius-sm);
-    box-shadow: var(--box-shadow);
-    -webkit-box-shadow: var(--box-shadow-webkit);
+    box-shadow: var(--box-shadow-webkit);
   }
 
   p {

@@ -145,7 +145,7 @@
     gap: var(--spacing-lg);
     color: var(--main-text-color);
 
-    @media (min-width: 800px) {
+    @media (width >= 800px) {
       padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl);
       display: flex;
       flex-direction: column;
@@ -158,7 +158,7 @@
     flex-direction: column;
     gap: var(--spacing-lg);
 
-    @media (min-width: 800px) {
+    @media (width >= 800px) {
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -173,7 +173,7 @@
   }
 
   .button-wrapper {
-    @media (min-width: 800px) {
+    @media (width >= 800px) {
       display: flex;
       justify-content: center;
       margin-top: var(--spacing-md);
@@ -189,13 +189,13 @@
     gap: var(--spacing-xl);
   }
 
-  @media (min-width: 760px) {
+  @media (width >= 760px) {
     .evidence-card-container {
       grid-template-columns: 1fr 1fr;
     }
   }
 
-  @media (min-width: 1100px) {
+  @media (width >= 1100px) {
     .evidence-card-container {
       grid-template-columns: 1fr 1fr 1fr;
     }
@@ -210,7 +210,7 @@
     gap: var(--spacing-lg);
     color: var(--main-text-color);
 
-    @media (min-width: 800px) {
+    @media (width >= 800px) {
       padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl);
       display: flex;
       flex-direction: column;
@@ -223,7 +223,7 @@
     flex-direction: column;
     gap: var(--spacing-lg);
 
-    @media (min-width: 800px) {
+    @media (width >= 800px) {
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -240,13 +240,13 @@
     gap: var(--spacing-xl);
   }
 
-  @media (min-width: 760px) {
+  @media (width >= 760px) {
     .reviews-card-container {
       grid-template-columns: 1fr 1fr;
     }
   }
 
-  @media (min-width: 1100px) {
+  @media (width >= 1100px) {
     .reviews-card-container {
       grid-template-columns: 1fr 1fr 1fr;
     }

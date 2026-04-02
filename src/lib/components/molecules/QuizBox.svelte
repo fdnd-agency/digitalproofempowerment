@@ -33,11 +33,11 @@
 
 <style>
   .quiz-container {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(255 255 255 / 20%);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
     backdrop-filter: blur(33px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgb(255 255 255 / 30%);
     width: 50%;
     padding: var(--spacing-md);
     display: flex;
@@ -52,10 +52,11 @@
     gap: var(--spacing-xs);
   }
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     .quiz-container {
       width: 100%;
     }
+
     .option-wrapper {
       padding: var(--spacing-xs);
     }
