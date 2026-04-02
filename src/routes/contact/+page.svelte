@@ -1,27 +1,5 @@
 <script>
-  import {
-    Button,
-    PlayIcon,
-    Title,
-    FolderIcon,
-    PhoneIcon,
-    InformationCard,
-    CardIconAudio,
-    CardIconChat,
-    CardIconImg,
-    CardIconVideo,
-    CardIconNotes,
-    CardIconLocation,
-    Header,
-    Profile,
-    QuotesIcon,
-    EyeIcon,
-    EmergencySection,
-    Link,
-    Text,
-    ContactForm,
-    LocationSection,
-  } from "$lib";
+  import { Title, Header, EmergencySection, Text, ContactForm, LocationSection } from "$lib";
 
   let { data } = $props();
 </script>

@@ -12,7 +12,7 @@
 
   {#if labels}
     <div class="label-wrapper">
-      {#each labels as label}
+      {#each labels as label (label)}
         <span class="label">{label}</span>
       {/each}
     </div>
