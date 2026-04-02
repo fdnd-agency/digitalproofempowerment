@@ -50,5 +50,3 @@ export { default as Label } from "$lib/components/atoms/Label.svelte";
 export { default as Input } from "$lib/components/atoms/Input.svelte";
 export { default as LocationSection } from "$lib/components/organisms/LocationSection.svelte";
 export { default as LoadingState } from "$lib/components/atoms/LoadingState.svelte";
-
-const x = "hello";
