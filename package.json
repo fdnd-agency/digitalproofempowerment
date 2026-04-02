@@ -7,7 +7,23 @@
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview",
-    "prepare": "svelte-kit sync || echo ''"
+    "prepare": "husky",
+    "lint": "eslint src/",
+    "format": "prettier --write .",
+    "stylelint": "stylelint \"src/**/*.css\" \"src/**/*.svelte\""
+  },
+  "lint-staged": {
+    "*.{js,svelte}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.css": [
+      "stylelint --fix",
+      "prettier --write"
+    ],
+    "*.{html,json,md}": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "@csstools/postcss-global-data": "^4.0.0",
@@ -19,6 +35,8 @@
     "eslint": "^10.0.0",
     "eslint-plugin-svelte": "^3.16.0",
     "globals": "^17.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
     "postcss": "^8.5.6",
     "postcss-csso": "^6.0.1",
     "postcss-preset-env": "^11.1.3",
