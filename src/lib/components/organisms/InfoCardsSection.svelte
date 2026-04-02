@@ -33,7 +33,7 @@
     justify-content: center;
   }
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     .cards-section {
       flex-direction: column;
     }

@@ -19,6 +19,4 @@
 >
 
 <style>
-  svg {
-  }
 </style>

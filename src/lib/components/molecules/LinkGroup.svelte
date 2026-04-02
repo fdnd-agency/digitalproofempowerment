@@ -32,6 +32,7 @@
     margin-bottom: 1rem;
     padding: 0;
   }
+
   .footer-links {
     padding: var(--spacing-md);
     margin-top: var(--spacing-xs);

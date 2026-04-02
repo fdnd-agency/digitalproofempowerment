@@ -1,0 +1,29 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-html/svelte"],
+  "rules": {
+    "color-no-invalid-hex": true,
+    "shorthand-property-no-redundant-values": true,
+    "declaration-block-no-duplicate-properties": true,
+    "no-empty-source": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global", "local"]
+      }
+    ]
+  },
+  "ignoreFiles": [
+    ".svelte-kit/**",
+    "build/**",
+    "dist/**",
+    "node_modules/**",
+    "**/*.js",
+    "**/*.ts",
+    "**/*.svg",
+    "**/*.ttf",
+    "**/*.jpg",
+    "**/*.png",
+    "**/*.webp",
+    "**/*.html"
+  ]
+}

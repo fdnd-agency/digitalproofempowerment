@@ -43,7 +43,7 @@
     gap: var(--spacing-lg);
     color: var(--main-text-color);
 
-    @media (min-width: 800px) {
+    @media (width >= 800px) {
       padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl);
       gap: var(--spacing-lg);
       display: grid;
@@ -67,7 +67,7 @@
     gap: var(--spacing-lg);
     color: var(--main-text-color);
 
-    @media (min-width: 800px) {
+    @media (width >= 800px) {
       padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl);
       gap: var(--spacing-lg);
       display: grid;

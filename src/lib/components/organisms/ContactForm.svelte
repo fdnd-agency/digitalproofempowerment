@@ -194,6 +194,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
+    border: none;
   }
 
   .input-group {
@@ -205,10 +206,6 @@
 
   .contact-form-legend {
     display: none;
-  }
-
-  .contact-form-fieldset {
-    border: none;
   }
 
   .button-wrapper {
@@ -228,7 +225,6 @@
     padding-left: var(--spacing-xs);
     padding-right: var(--spacing-xs);
     margin-top: var(--radius-xs);
-
     display: flex;
     flex-direction: row;
     gap: var(--spacing-xxs);
@@ -251,18 +247,17 @@
     padding-left: var(--spacing-xs);
     padding-right: var(--spacing-xs);
     margin-top: var(--radius-xs);
-
     display: flex;
     flex-direction: row;
     gap: var(--spacing-xxs);
     justify-content: center;
     align-items: center;
-
     animation: fadeOut 1s ease forwards;
     animation-delay: 3s;
   }
 
   /* the below css were not used anywhere but kept for review */
+
   /* 
     svg {
       align-self: flex-start;
@@ -310,9 +305,11 @@
     0% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(-1rem);
     }
+
     100% {
       transform: translateY(0);
     }

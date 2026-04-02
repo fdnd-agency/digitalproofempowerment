@@ -99,6 +99,7 @@
     padding: var(--spacing-md);
     width: 100%;
   }
+
   .footer-top-section {
     order: 1;
     display: flex;
@@ -109,16 +110,18 @@
   .links-section {
     display: flex;
   }
+
   .copy-right {
     order: 2;
     align-self: center;
     margin: var(--spacing-lg);
   }
 
-  @media (max-width: 900px) {
+  @media (width <= 900px) {
     .footer-top-section {
       flex-direction: column;
     }
+
     .links-section {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(0, 1fr));

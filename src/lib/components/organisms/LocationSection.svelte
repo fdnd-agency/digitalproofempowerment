@@ -85,7 +85,6 @@
     height: 30rem;
     border: var(--border);
     border-radius: var(--radius-lg);
-    -webkit-box-shadow: var(--box-shadow-webkit);
     box-shadow: var(--box-shadow);
   }
 </style>

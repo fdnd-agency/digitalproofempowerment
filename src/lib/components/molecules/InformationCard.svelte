@@ -24,10 +24,7 @@
     border: var(--border);
     padding: var(--spacing-lg);
     border-radius: var(--radius-md);
-
-    box-shadow: var(--box-shadow);
-    -webkit-box-shadow: var(--box-shadow-webkit);
-
+    box-shadow: var(--box-shadow-webkit);
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
@@ -71,7 +68,6 @@
   .title-icon {
     font-weight: bolder;
     width: 100%;
-    text-align: center;
     border-radius: var(--radius-sm);
     display: flex;
     flex-direction: row;
@@ -88,31 +84,32 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
-    background-color: rgba(12, 4, 43, 0.2);
+    background-color: rgb(12 4 43 / 20%);
     text-align: left;
     font-size: clamp(14px, 3vw, 16px);
-    box-shadow: var(--box-shadow);
-    -webkit-box-shadow: var(--box-shadow-webkit);
+    box-shadow: var(--box-shadow-webkit);
     transition: transform 0.3s ease-in-out;
   }
 
   .custom-card:nth-child(even) {
-    background-color: rgba(214, 116, 35, 0.4);
+    background-color: rgb(214 116 35 / 40%);
   }
 
   .custom-card > h2 {
     font-size: clamp(14px, 3vw, 16px);
   }
+
   .custom-card:hover {
     transform: scale(1.1) rotate(-2deg);
     background-color: var(--secondary-lightest);
   }
+
   .custom-card:nth-child(even):hover {
-    background-color: rgba(197, 91, 5, 0.7);
+    background-color: rgb(197 91 5 / 70%);
     transform: scale(1.1) rotate(2deg);
   }
 
-  @media (max-width: 899px) {
+  @media (width <= 899px) {
     .custom-card:hover,
     .custom-card:nth-child(even):hover {
       transform: none;
