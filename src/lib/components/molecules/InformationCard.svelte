@@ -1,8 +1,8 @@
 <script>
-    let { cardSubText, Icon, cardTitle, labels, className } = $props();
+    let { cardSubText, Icon, cardTitle, labels, className, backgroundColor } = $props();
 </script>
 
-<article class={className || "information-card"}>
+<article class={className || "information-card"} style={`background-color: ${backgroundColor || '#f7f7f8'}`}>
     {#if Icon}
         <Icon class="icon" />
     {/if}
