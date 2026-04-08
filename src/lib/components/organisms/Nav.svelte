@@ -18,8 +18,6 @@
             document.body.style.overflow = 'auto';
         }
     }
-
- 
 </script>
 
 <nav class="nav-container">
