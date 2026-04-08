@@ -5,8 +5,8 @@
 }
 
 @font-face {
-  font-family: "Poppins";
-  src: url(/src/lib/assets/fonts/Poppins-Regular.ttf) format("truetype");
+  font-family: Poppins;
+  src: url("/src/lib/assets/fonts/Poppins-Regular.ttf") format("truetype");
   font-weight: 100;
   font-display: swap;
   font-style: normal;
@@ -18,7 +18,7 @@
   color-scheme: light dark;
 
   /* Border */
-  --border: 1px solid rgba(0, 0, 0, 0.146);
+  --border: 1px solid rgb(0 0 0 / 14.6%);
 
   /* Border Radius */
   --radius-xs: 0.3rem;
@@ -41,8 +41,9 @@
 
   /* Box shadow */
   --box-shadow: 0px 0px 20px -10px #00000071;
+
   /* -webkit-box-shadow: */
-  --box-shadow-webkit: 0px 0px 20px -10px #000000;
+  --box-shadow-webkit: 0px 0px 20px -10px #000;
 
   /* -------- COLORS --------- */
 
@@ -212,7 +213,7 @@ body {
   }
 }
 
-
 time {
   font-size: clamp(8px, 3vw, 11px);
 }
+

@@ -1,66 +1,34 @@
 <script>
-    import {
-        Button,
-        PlayIcon,
-        Title,
-        FolderIcon,
-        PhoneIcon,
-        InformationCard,
-        CardIconAudio,
-        CardIconChat,
-        CardIconImg,
-        CardIconVideo,
-        CardIconNotes,
-        CardIconLocation,
-        Header,
-        Profile,
-        QuotesIcon,
-        EyeIcon,
-        EmergencySection,
-        Link,
-        Text,
-        ContactForm
-    } from "$lib";
-
-    let {} = $props();
+  import { Title, Link } from "$lib";
 </script>
 
-        <div class="location-container-content-wrapper">
-            <Title
-                headingText="Headoffice location"
-                class="location-container-title"
-                level="h2"
-            />
+  <div class="location-container-content-wrapper">
+          <Title
+              headingText="Headoffice location"
+              class="location-container-title"
+              level="h2"
+          />
 
-            <address class="office-address">
-                <strong>Office:</strong>
-                <div class="address">
-                    <span>Amstelcampus</span>
-                    <span>1091 GH Amsterdam</span>
-                    <span>Netherlands</span>
-                </div>
+  <address class="office-address">
+    <strong>Office:</strong>
+    <div class="address">
+      <span>Amstelcampus</span>
+      <span>1091 GH Amsterdam</span>
+      <span>Netherlands</span>
+    </div>
 
-                <Link
-                    href="mailto:info@blablabla.com"
-                    text="info@blablabla.com"
-                    className="email-link"
-                />
+    <Link href="mailto:info@blablabla.com" text="info@blablabla.com" className="email-link" />
 
-                <Link
-                    href="tel:+31201234567"
-                    text="+31 20 123 4567"
-                    className="cellphone-link"
-                />
-            </address>
+    <Link href="tel:+31201234567" text="+31 20 123 4567" className="cellphone-link" />
+  </address>
 
-            <p class="location-container-paragraph">
-                <strong class="warning-highlight">Please note</strong>: This
-                location is not open for public visits and is accessible only by
-                appointment for partners and official business.
-            </p>
-        </div>
+  <p class="location-container-paragraph">
+    <strong class="warning-highlight">Please note</strong>: This location is not open for public
+    visits and is accessible only by appointment for partners and official business.
+  </p>
+</div>
 
-        <article>
+    <article>
         <h3 hidden>location</h3>
             <iframe
                 class="map-iframe"
@@ -72,44 +40,45 @@
             ></iframe>
         </article>
 
+
+
 <style>
- 
-    /* maps */
+  /* maps */
 
-    .location-container-content-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-lg);
-    }
+  .location-container-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
 
-    .location-container-paragraph {
-        max-width: 30rem;
-        text-wrap: pretty;
-        font-style: italic;
-        font-size: clamp(12px, 3vw, 16px);
-        margin-top: auto;
-    }
+  .location-container-paragraph {
+    max-width: 30rem;
+    text-wrap: pretty;
+    font-style: italic;
+    font-size: clamp(12px, 3vw, 16px);
+    margin-top: auto;
+  }
 
-    strong {
-        font-weight: bolder;
-        color: var(--main-text-color);
-        text-decoration: underline;
-        text-underline-offset: 5px;
-        text-decoration-thickness: 1px;
-        text-decoration-color: var(--accent-neutral);
-    }
+  strong {
+    font-weight: bolder;
+    color: var(--main-text-color);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: var(--accent-neutral);
+  }
 
-    .office-address {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-xs);
-    }
+  .office-address {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
 
-    .address {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-xxxs);
-    }
+  .address {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxxs);
+  }
 
     :global(.email-link, .cellphone-link) {
         color: var(--main-text-color);
@@ -119,15 +88,14 @@
         text-decoration-thickness: 1px;
         text-decoration-color: var(--accent-neutral);
         align-self: flex-start;
-        
     }
 
-    .map-iframe {
-        width: 100%;
-        height: 30rem;
-        border: var(--border);
-        border-radius: var(--radius-lg);
-        -webkit-box-shadow: var(--box-shadow-webkit);
-        box-shadow: var(--box-shadow);
-    }
+  .map-iframe {
+    width: 100%;
+    height: 30rem;
+    border: var(--border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--box-shadow);
+  }
 </style>
+ 

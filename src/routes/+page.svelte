@@ -24,13 +24,16 @@
     gap: 3rem;
     min-height: 100vh;
   }
+
   .quiz {
     height: 100vh;
     margin: 0;
   }
+
   .cards {
     margin: var(--spacing-2xl) 0;
   }
+
   .proof {
     background-color: var(--secondary-lightest);
     width: 100%;
@@ -38,15 +41,17 @@
     padding: 2rem;
   }
 
-  @media (max-width: 899px) {
+  @media (width <= 899px) {
     .cards {
       height: fit-content;
     }
+
     .quiz {
       min-height: inherit;
     }
   }
-  @media (max-width: 400px) {
+
+  @media (width <= 400px) {
     .quiz {
       min-height: inherit;
     }
