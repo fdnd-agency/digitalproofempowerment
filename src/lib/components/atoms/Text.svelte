@@ -34,7 +34,7 @@
     align-self: center;
   }
 
-  .proof-type{
+  .proof-type {
     margin-top: var(--spacing-lg);
   }
 
@@ -48,17 +48,16 @@
     transition: all 0.3s ease-in-out;
   }
 
-  @media (max-width: 500px) {
+  @media (width <= 500px) {
     .quiz-intro-text {
       font-size: clamp(14px, 3vw, 18px);
     }
   }
 
-.contact-form-container-paragraph {
-  max-width: 30rem;
-        text-wrap: pretty;
-        font-style: italic;
-        font-size: clamp(12px, 3vw, 16px);
-}
-
+  .contact-form-container-paragraph {
+    max-width: 30rem;
+    text-wrap: pretty;
+    font-style: italic;
+    font-size: clamp(12px, 3vw, 16px);
+  }
 </style>

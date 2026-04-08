@@ -1,25 +1,16 @@
 <script>
-    import {
-        Button,
-        PhoneIcon,
-        Link,
-        Logo,
-        Favicon
-    } from "$lib";
+  import { PhoneIcon, Link, Favicon } from "$lib";
 
-    let menuIsOpen = false;
+  let menuIsOpen = false;
 
-    function toggleMenu() {
-        menuIsOpen = !menuIsOpen;
+  function toggleMenu() {
+    menuIsOpen = !menuIsOpen;
 
-        if (menuIsOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'auto';
-        }
+    if (menuIsOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
     }
-
- 
 </script>
 
 <nav class="nav-container">
