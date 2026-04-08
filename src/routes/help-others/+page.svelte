@@ -5,6 +5,15 @@
         InformationCard,
         QuotesIcon,
         EyeIcon,
+        EarIcon,
+        DocumentIcon,
+        NoDocumentIcon,
+        QuestionDocumentIcon,
+        HandshakeIcon,
+        BadIcon,
+        SaveIcon,
+        OrganizationIcon,
+        AnonymousIcon,
         Header,
         EmergencySection,
     } from "$lib";
@@ -46,19 +55,19 @@
         <Title headingText="What can you do?" level="h2" />
         <div class="section-grid">
             <InformationCard
-                Icon={PhoneIcon}
+                Icon={EarIcon}
                 cardTitle="Listen and acknowledge"
                 cardSubText="Give the person room to share their story without judgment.
                     Acknowledge that it is serious."
             />
             <InformationCard
-                Icon={EyeIcon}
+                Icon={DocumentIcon}
                 cardTitle="Document together"
                 cardSubText="Discuss which events to collect: dates, times, messages,
                     photos or witnesses."
             />
             <InformationCard
-                Icon={QuotesIcon}
+                Icon={HandshakeIcon}
                 cardTitle="Be a reliable support"
                 cardSubText="Help organize evidence and look for information about the
                     next steps together."
@@ -70,24 +79,24 @@
         <Title headingText="Employee rights" level="h2" />
         <div class="rights-list">
             <InformationCard
-                Icon={PhoneIcon}
+                Icon={SaveIcon}
                 cardTitle="Workplace safety"
                 cardSubText="Every employee has the right to a safe and respectful work
                     environment."
             />
             <InformationCard
-                Icon={EyeIcon}
+                Icon={BadIcon}
                 cardTitle="No discrimination"
                 cardSubText="Discrimination, bullying and harassment should not happen at
                     work."
             />
             <InformationCard
-                Icon={QuotesIcon}
+                Icon={PhoneIcon}
                 cardTitle="Report a complaint"
                 cardSubText="Employees may report issues without fear of retaliation."
             />
             <InformationCard
-                Icon={QuotesIcon}
+                Icon={EyeIcon}
                 cardTitle="Seek help"
                 cardSubText="Anyone may ask for advice from a confidant, union or
                     external organization."
@@ -104,12 +113,12 @@
                 cardSubText="The first step inside an organization. They can talk with you and advise on what to do."
             />
             <InformationCard
-                Icon={EyeIcon}
+                Icon={HandshakeIcon}
                 cardTitle="Union"
                 cardSubText="A union offers legal advice, support in meetings and can defend your rights."
             />
             <InformationCard
-                Icon={QuotesIcon}
+                Icon={OrganizationIcon}
                 cardTitle="External agencies"
                 cardSubText="For serious complaints, agencies like Veilig Thuis, labor inspection or anti-discrimination bureaus can help further."
             />
@@ -120,20 +129,20 @@
         <Title headingText="Frequently asked questions" level="h2" />
         <div class="faq-list">
             <InformationCard
-                Icon={PhoneIcon}
+                Icon={NoDocumentIcon}
                 cardTitle="What should I do if someone does not want to gather
                 evidence?"
                 cardSubText="Always respect their boundaries. Offer emotional support and
                 let them know you are there if they want to start later."
             />
             <InformationCard
-                Icon={EyeIcon}
+                Icon={AnonymousIcon}
                 cardTitle="Can I help anonymously?"
                 cardSubText="Yes. You can share tips, look for information and point
                 someone to available help without giving your name."
             />
             <InformationCard
-                Icon={QuotesIcon}
+                Icon={QuestionDocumentIcon}
                 cardTitle="What if there is no direct evidence?"
                 cardSubText="Write down as many details as possible: dates, times, people
                 and observations. Handwritten notes and witness accounts can
