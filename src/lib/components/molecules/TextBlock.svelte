@@ -36,7 +36,7 @@
     margin-bottom: var(--spacing-md);
   }
 
-  @media (max-width: 900px) {
+  @media (width <= 900px) {
     .footer-block {
       width: 90%;
     }
