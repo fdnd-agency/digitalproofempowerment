@@ -49,15 +49,17 @@
     padding: var(--spacing-2xl);
     text-align: center;
   }
+
   .form-title {
     color: var(--secondary-text-color);
     align-self: center;
   }
 
-  @media (max-width: 400px) {
+  @media (width <= 400px) {
     .quiz-intro-title {
       font-size: clamp(20px, 4.5vw, 36px);
     }
+
     .proof-intro {
       font-size: clamp(20px, 3vw, 25px);
     }

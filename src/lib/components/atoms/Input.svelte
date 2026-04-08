@@ -1,19 +1,11 @@
 <script>
-  let {
-    type,
-    name,
-    value = "",
-    placeholder,
-    className,
-    id,
-    ...rest
-  } = $props();
+  let { type, name, value = "", placeholder, className, id, ...rest } = $props();
 </script>
 
 {#if type === "textarea"}
-  <textarea {name} placeholder={placeholder} class={className} {...rest}>{value}</textarea>
+  <textarea {name} {placeholder} class={className} {...rest}>{value}</textarea>
 {:else}
-  <input {id} {type} {name} placeholder={placeholder} value={value} class={className} {...rest} />
+  <input {id} {type} {name} {placeholder} {value} class={className} {...rest} />
 {/if}
 
 <style>
@@ -30,7 +22,6 @@
     overflow-y: auto;
     white-space: pre-wrap;
     overflow-wrap: break-word;
-    word-break: break-word;
     font-family: inherit;
     margin-top: var(--spacing-xs);
   }
@@ -45,31 +36,27 @@
     padding: var(--spacing-xs);
     margin: var(--spacing-xs);
   }
+
   .email-input-verification {
     border-radius: 16px;
     padding: var(--spacing-xs);
     margin: var(--spacing-xs);
   }
 
-
   .contact-form-input {
-  padding: var(--spacing-sm);
-        border: var(--border);
-        border-radius: var(--radius-md);
-        font-family: var(--main-font);
-        font-size: clamp(0.95rem, 2vw, 1rem);
-        outline: none;
-        transition:
-            border-color 0.2s ease,
-            box-shadow 0.2s ease;
-}
+    padding: var(--spacing-sm);
+    border: var(--border);
+    border-radius: var(--radius-md);
+    font-family: var(--main-font);
+    font-size: clamp(0.95rem, 2vw, 1rem);
+    outline: none;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
 
-.contact-form-input:focus {
-   border-color: var(--accent-dark);
-        box-shadow: 0 0 10px rgba(237, 130, 72, 0.2);
-}
-
-
-
-
+  .contact-form-input:focus {
+    border-color: var(--accent-dark);
+    box-shadow: 0 0 10px rgb(237 130 72 / 20%);
+  }
 </style>

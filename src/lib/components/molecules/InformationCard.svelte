@@ -20,102 +20,99 @@
 </article>
 
 <style>
-    article {
-        border: var(--border);
-        padding: var(--spacing-lg);
-        border-radius: var(--radius-md);
+  article {
+    border: var(--border);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--box-shadow-webkit);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    color: var(--accent-dark);
+    transition: transform 0.3s ease-in-out;
+  }
 
-        box-shadow: var(--box-shadow);
-        -webkit-box-shadow: var(--box-shadow-webkit);
+  .card-paragraph {
+    font-size: clamp(20px, 3vw, 20px);
+    color: var(--main-text-color);
+    font-weight: bold;
+  }
 
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-md);
-        color: var(--accent-dark);
-        transition: transform 0.3s ease-in-out;
-    }
+  .card-sub-paragraph {
+    font-size: clamp(11px, 3vw, 13px);
+    color: var(--main-text-color);
+    text-wrap: wrap;
+  }
 
-    .card-paragraph {
-        font-size: clamp(20px, 3vw, 20px);
-        color: var(--main-text-color);
-        font-weight: bold;
-    }
+  .information-card:hover {
+    color: var(--primary-neutral);
+    transform: scale(1.05) rotate(1deg);
+  }
 
-    .card-sub-paragraph {
-        font-size: clamp(11px, 3vw, 13px);
-        color: var(--main-text-color);
-        text-wrap: wrap;
-    }
+  .label-wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-xxs);
+    margin-top: auto;
+  }
 
-    .information-card:hover {
-        color: var(--primary-neutral);
-        transform: scale(1.05) rotate(1deg);
-    }
+  .label {
+    background-color: var(--primary-neutral);
+    font-size: clamp(10px, 3vw, 11px);
+    color: var(--secondary-text-color);
+    padding: var(--spacing-xxxs) var(--spacing-xxs);
+    border-radius: var(--radius-xs);
+    align-self: flex-start;
+  }
 
-    .label-wrapper {
-        display: flex;
-        flex-direction: row;
-        gap: var(--spacing-xxs);
-        margin-top: auto;
-    }
+  .title-icon {
+    font-weight: bolder;
+    width: 100%;
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-md);
+    align-items: center;
+    text-align: left;
+  }
 
-    .label {
-        background-color: var(--primary-neutral);
-        font-size: clamp(10px, 3vw, 11px);
-        color: var(--secondary-text-color);
-        padding: var(--spacing-xxxs) var(--spacing-xxs);
-        border-radius: var(--radius-xs);
-        align-self: flex-start;
-    }
+  .custom-card {
+    padding: var(--spacing-md);
+    border: var(--border);
+    border-radius: var(--radius-md);
+    margin: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    background-color: rgb(12 4 43 / 20%);
+    text-align: left;
+    font-size: clamp(14px, 3vw, 16px);
+    box-shadow: var(--box-shadow-webkit);
+    transition: transform 0.3s ease-in-out;
+  }
 
-    .title-icon {
-        font-weight: bolder;
-        width: 100%;
-        text-align: center;
-        border-radius: var(--radius-sm);
-        display: flex;
-        flex-direction: row;
-        gap: var(--spacing-md);
-        align-items: center;
-        text-align: left;
-    }
+  .custom-card:nth-child(even) {
+    background-color: rgb(214 116 35 / 40%);
+  }
 
-    .custom-card {
-        padding: var(--spacing-md);
-        border: var(--border);
-        border-radius: var(--radius-md);
-        margin: var(--spacing-md);
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-md);
-        background-color: rgba(12, 4, 43, 0.2);
-        text-align: left;
-        font-size: clamp(14px, 3vw, 16px);
-        box-shadow: var(--box-shadow);
-        -webkit-box-shadow: var(--box-shadow-webkit);
-        transition: transform 0.3s ease-in-out;
-    }
+  .custom-card > h2 {
+    font-size: clamp(14px, 3vw, 16px);
+  }
 
-    .custom-card:nth-child(even) {
-        background-color: rgba(214, 116, 35, 0.4);
-    }
+  .custom-card:hover {
+    transform: scale(1.1) rotate(-2deg);
+    background-color: var(--secondary-lightest);
+  }
 
-    .custom-card > h2 {
-        font-size: clamp(14px, 3vw, 16px);
-    }
-    .custom-card:hover {
-        transform: scale(1.1) rotate(-2deg);
-        background-color: var(--secondary-lightest);
-    }
+  .custom-card:nth-child(even):hover {
+    background-color: rgb(197 91 5 / 70%);
+    transform: scale(1.1) rotate(2deg);
+  }
+
+  @media (width <= 899px) {
+    .custom-card:hover,
     .custom-card:nth-child(even):hover {
-        background-color: rgba(197, 91, 5, 0.7);
-        transform: scale(1.1) rotate(2deg);
+      transform: none;
     }
-
-    @media (max-width: 899px) {
-        .custom-card:hover,
-        .custom-card:nth-child(even):hover {
-            transform: none;
-        }
-    }
+  }
 </style>

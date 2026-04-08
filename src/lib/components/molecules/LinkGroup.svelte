@@ -21,18 +21,18 @@
 </div>
 
 <style>
-   .footer-links > ul > li {
+  .footer-links > ul > li {
     list-style: none;
     font-size: clamp(12px, 3vw, 14px);
     padding: var(--spacing-xs);
     padding-left: 0;
-
   }
 
   .footer-links > h4 {
     margin-bottom: 1rem;
     padding: 0;
   }
+
   .footer-links {
     padding: var(--spacing-md);
     margin-top: var(--spacing-xs);

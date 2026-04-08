@@ -67,16 +67,9 @@
   <Title headingText="Submit Proof" level="h2" className="form-title" />
 
   {#if mode === null}
-    <Text
-      text="How would you like to Submit your proof ?"
-      className="form-text"
-    />
+    <Text text="How would you like to Submit your proof ?" className="form-text" />
     <div class="selection">
-      <Button
-        onclick={() => (mode = "anonymous")}
-        buttonText="Anonymous"
-        className="form-button"
-      />
+      <Button onclick={() => (mode = "anonymous")} buttonText="Anonymous" className="form-button" />
       <Button
         onclick={() => (mode = "identified")}
         buttonText="Using Email"
@@ -124,10 +117,7 @@
     {#if emailError}
       <Text text={emailError} className="error" />
     {/if}
-    <Text
-      text="What type of proof are you submitting?"
-      className="proof-type"
-    />
+    <Text text="What type of proof are you submitting?" className="proof-type" />
 
     <FileInput
       inputFieldText="Photos and video (camera)"
@@ -255,11 +245,11 @@
 
 <style>
   form {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgb(255 255 255 / 20%);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
     backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgb(255 255 255 / 30%);
     padding: var(--spacing-xl);
     min-height: 50vh;
     display: flex;
@@ -267,6 +257,7 @@
     align-items: start;
     justify-content: center;
   }
+
   .selection {
     display: flex;
     gap: var(--spacing-lg);
@@ -274,9 +265,9 @@
     align-self: center;
   }
 
-  @media (max-width: 500px) {
+  @media (width <= 500px) {
     form {
-      margin: 25% 5% 0 5%;
+      margin: 25% 5% 0;
     }
   }
 </style>
