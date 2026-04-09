@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod/v3';
 
 export const validationItems = z.object({
   firstname: z.string().min(2, "Name must be atleast 2 characters long"),

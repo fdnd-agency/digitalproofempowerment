@@ -1,5 +1,15 @@
 <script>
-  import { Title, Link } from "$lib";
+    import {
+        Title,
+        Header,
+        EmergencySection,
+        Link,
+        Text,
+        ContactForm,
+        NoscriptImage
+    } from "$lib";
+    
+    let {} = $props();
 </script>
 
   <div class="location-container-content-wrapper">
@@ -28,8 +38,7 @@
   </p>
 </div>
 
-    <article>
-        <h3 hidden>location</h3>
+        <article>
             <iframe
                 class="map-iframe"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.6186428938627!2d4.9096987!3d52.359201600000006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6099a4b62ff9f%3A0xaaf1a4822a7d03c9!2sHogeschool%20van%20Amsterdam%20-%20HvA%20Wibauthuis%20(WBH)!5e0!3m2!1snl!2snl!4v1771445757900!5m2!1snl!2snl"
@@ -59,14 +68,14 @@
     margin-top: auto;
   }
 
-  strong {
-    font-weight: bolder;
-    color: var(--main-text-color);
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    text-decoration-thickness: 1px;
-    text-decoration-color: var(--accent-neutral);
-  }
+    strong, .google-maps-link {
+        font-weight: bolder;
+        color: var(--main-text-color);
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        text-decoration-thickness: 1px;
+        text-decoration-color: var(--accent-neutral);
+    }
 
   .office-address {
     display: flex;
@@ -90,11 +99,12 @@
         align-self: flex-start;
     }
 
-  .map-iframe {
-    width: 100%;
-    height: 30rem;
-    border: var(--border);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--box-shadow);
-  }
+    .map-iframe, .no-script-image {
+        width: 100%;
+        height: 30rem;
+        border: var(--border);
+        border-radius: var(--radius-lg);
+        -webkit-box-shadow: var(--box-shadow-webkit);
+        box-shadow: var(--box-shadow);
+    }
 </style>
