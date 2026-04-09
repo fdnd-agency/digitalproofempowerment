@@ -4,7 +4,7 @@
 </script>
 
 <div class={className}>
-  <h4>{groupName}</h4>
+  <h3 class="h4">{groupName}</h3>
   <ul>
     {#each links as link (link.href)}
       <li>

@@ -1,11 +1,12 @@
 <script>
-  let { inputId, formId, className, text, children, ...rest } = $props();
+  let { inputId, className,text,...rest} = $props();
 </script>
 
-<label for={inputId} form={formId} class={className} {...rest}>
-  {text}
-  {@render children?.()}
+<label for={inputId} class={className} {...rest}> 
+    {text}
+    <slot/>
 </label>
+
 
 <style>
   .optional-text-label {

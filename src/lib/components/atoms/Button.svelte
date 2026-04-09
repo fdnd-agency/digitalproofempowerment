@@ -55,7 +55,7 @@
   .btn-black {
     background-color: var(--secondary-background-color);
     color: var(--secondary-text-color);
-    border: none;
+    border: var(--border);
     padding: var(--spacing-xs);
 
     &:hover {

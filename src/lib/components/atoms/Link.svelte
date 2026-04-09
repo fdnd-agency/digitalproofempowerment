@@ -87,7 +87,7 @@
 
   .emergency-link {
     text-decoration: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: var(--spacing-xs);
     border-radius: var(--radius-xs);
@@ -108,7 +108,7 @@
   }
 
   .white-button-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: var(--spacing-xs);
     border-radius: var(--radius-xs);
@@ -131,7 +131,7 @@
   }
 
   .black-button-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: var(--spacing-xs);
     border-radius: var(--radius-xs);
@@ -143,7 +143,7 @@
     justify-self: flex-start;
     background-color: var(--secondary-background-color);
     color: var(--secondary-text-color);
-    border: none;
+    border: var(--border);
     padding: var(--spacing-xs);
     text-decoration: none;
 
