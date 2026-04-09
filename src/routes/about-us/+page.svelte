@@ -16,7 +16,6 @@
   } from "$lib";
 </script>
 
-
 <Header
   pageLabel="About us"
   HeroHeading="Empowering you to take control safely"
