@@ -1,22 +1,25 @@
 <script>
-    let { cardSubText, Icon, cardTitle, labels, className, backgroundColor } = $props();
+  let { cardSubText, Icon, cardTitle, labels, className, backgroundColor } = $props();
 </script>
 
-<article class={className || "information-card"} style={`background-color: ${backgroundColor || '#f7f7f8'}`}>
-    {#if Icon}
-        <Icon class="icon" />
-    {/if}
+<article
+  class={className || "information-card"}
+  style={`background-color: ${backgroundColor || "#f7f7f8"}`}
+>
+  {#if Icon}
+    <Icon class="icon" />
+  {/if}
 
-    <h2 class="card-paragraph">{cardTitle}</h2>
-    <p class="card-sub-paragraph">{cardSubText}</p>
+  <h2 class="card-paragraph">{cardTitle}</h2>
+  <p class="card-sub-paragraph">{cardSubText}</p>
 
-    {#if labels}
-        <div class="label-wrapper">
-            {#each labels as label}
-                <span class="label">{label}</span>
-            {/each}
-        </div>
-    {/if}
+  {#if labels}
+    <div class="label-wrapper">
+      {#each labels as label (label)}
+        <span class="label">{label}</span>
+      {/each}
+    </div>
+  {/if}
 </article>
 
 <style>
