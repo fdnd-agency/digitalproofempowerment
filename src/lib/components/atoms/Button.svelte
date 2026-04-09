@@ -97,7 +97,7 @@
     text-transform: uppercase;
     color: var(--main-text-color);
   }
-  
+
   .form-back-button {
     background: rgb(225 225 225 / 80%);
     border-radius: 16px;
