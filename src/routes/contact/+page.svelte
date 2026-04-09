@@ -1,13 +1,5 @@
 <script>
-  import {
-    Title,
-    Header,
-    EmergencySection,
-    Link,
-    Text,
-    ContactForm,
-    LocationSection,
-  } from "$lib";
+  import { Title, Header, EmergencySection, Text, ContactForm, LocationSection } from "$lib";
 
   let { data } = $props();
 </script>
@@ -23,20 +15,21 @@
 />
 
 <main>
-  <section class="contact-form-container">
-    <div class="contact-form-container-content-wrapper">
-      <Title headingText="Get in touch" class="contact-form-container-title" />
-      <Text
-        className="contact-form-container-paragraph"
-        text="Have questions or need support? Fill out the form below and
-                we'll get back to you as soon as possible."
-      />
-    </div>
+    <section class="contact-form-container">
+        <div class="contact-form-container-content-wrapper">
+            <Title
+                headingText="Get in touch"
+                class="contact-form-container-title"
+                level="h2"
+            />
+            <Text className="contact-form-container-paragraph" text="Have questions or need support? Fill out the form below and
+                we'll get back to you as soon as possible." />
+        </div>
 
     <ContactForm {data} />
   </section>
 
-  <EmergencySection />
+    <EmergencySection level="h2" />
 
   <section class="location-container">
     <LocationSection />
@@ -51,7 +44,7 @@
     gap: var(--spacing-lg);
     color: var(--main-text-color);
 
-    @media (min-width: 800px) {
+    @media (width >= 800px) {
       padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl);
       gap: var(--spacing-lg);
       display: grid;
@@ -75,7 +68,7 @@
     gap: var(--spacing-lg);
     color: var(--main-text-color);
 
-    @media (min-width: 800px) {
+    @media (width >= 800px) {
       padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl);
       gap: var(--spacing-lg);
       display: grid;

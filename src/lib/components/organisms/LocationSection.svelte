@@ -8,14 +8,16 @@
         ContactForm,
         NoscriptImage
     } from "$lib";
-
-
     
     let {} = $props();
 </script>
 
-<div class="location-container-content-wrapper">
-  <Title headingText="Headoffice location" class="location-container-title" />
+  <div class="location-container-content-wrapper">
+          <Title
+              headingText="Headoffice location"
+              class="location-container-title"
+              level="h2"
+          />
 
   <address class="office-address">
     <strong>Office:</strong>
@@ -43,24 +45,11 @@
                 allowfullscreen
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
+                title="headoffice location"
             ></iframe>
-
-           <noscript> 
-                <a href="https://www.google.com/maps/place/Hogeschool+van+Amsterdam+-+HvA+Wibauthuis+(WBH)/@52.3592016,4.9071238,17z/data=!3m1!4b1!4m6!3m5!1s0x47c6099a4b62ff9f:0xaaf1a4822a7d03c9!8m2!3d52.3592016!4d4.9096987!16s%2Fg%2F11bw4vqkyg?entry=ttu&g_ep=EgoyMDI2MDMxOC4xIKXMDSoASAFQAw%3D%3D" target="_blank">
-                    <img class="no-script-image" 
-                        src={NoscriptImage} 
-                        alt="Locatie van Hogeschool van Amsterdam op Google Maps"
-                        width="600"
-                        height="450"
-                    />
-                </a>  
-
-                <style> 
-                    .map-iframe 
-                    { display:none; } 
-                </style> 
-            </noscript>
         </article>
+
+
 
 <style>
   /* maps */
@@ -100,12 +89,15 @@
     gap: var(--spacing-xxxs);
   }
 
-  :global(.email-link, .cellphone-link) {
-    color: var(--primary-dark);
-    font-weight: 600;
-    text-decoration: none;
-    align-self: flex-start;
-  }
+    :global(.email-link, .cellphone-link) {
+        color: var(--main-text-color);
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+        text-decoration-thickness: 1px;
+        text-decoration-color: var(--accent-neutral);
+        align-self: flex-start;
+    }
 
     .map-iframe, .no-script-image {
         width: 100%;

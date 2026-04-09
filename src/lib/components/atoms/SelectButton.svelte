@@ -31,7 +31,6 @@
     padding: var(--spacing-xxs);
     padding-right: var(--spacing-md);
     background-color: var(--main-background-color);
-    box-shadow: var(--box-shadow);
-    -webkit-box-shadow: var(--box-shadow-webkit);
+    box-shadow: var(--box-shadow-webkit);
   }
 </style>

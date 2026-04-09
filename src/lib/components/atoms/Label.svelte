@@ -1,11 +1,12 @@
 <script>
-  let { inputId, formId, className, text, ...rest } = $props();
+  let { inputId, className,text,...rest} = $props();
 </script>
 
-<label for={inputId} form={formId} class={className} {...rest}>
-  {text}
-  <slot />
+<label for={inputId} class={className} {...rest}> 
+    {text}
+    <slot/>
 </label>
+
 
 <style>
   .optional-text-label {
@@ -18,6 +19,7 @@
     color: var(--secondary-text-color);
     margin: var(--spacing-md) 0;
   }
+
   .email-label-verification {
     color: var(--secondary-text-color);
     margin: var(--spacing-md) 0;

@@ -1,11 +1,14 @@
+<!-- eslint-disable svelte/valid-compile -->
 <script>
     import { Button, Input, Label, EyeIcon, LoadingState, FormValidationMessages, ErrorMessageIcon } from "$lib";
     import { superForm } from 'sveltekit-superforms';
 
     let { data } = $props();
 
-    const { form, errors, enhance, message, submitting, reset } = superForm(data.form, {resetForm: true});
-
+  /* eslint-disable-next-line svelte/valid-compile */
+  const { form, errors, enhance, message, submitting } = superForm(data.form, {
+    resetForm: true,
+  });
 </script>
 
 <form class="contact-form" method="POST" id="contact-form" use:enhance>
@@ -81,6 +84,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
+    border: none;
   }
 
   .input-group {
@@ -92,10 +96,6 @@
 
   .contact-form-legend {
     display: none;
-  }
-
-  .contact-form-fieldset {
-    border: none;
   }
 
   .button-wrapper {
@@ -115,7 +115,6 @@
     padding-left: var(--spacing-xs);
     padding-right: var(--spacing-xs);
     margin-top: var(--radius-xs);
-
     display: flex;
     flex-direction: row;
     gap: var(--spacing-xxs);
@@ -138,64 +137,24 @@
     padding-left: var(--spacing-xs);
     padding-right: var(--spacing-xs);
     margin-top: var(--radius-xs);
-
     display: flex;
     flex-direction: row;
     gap: var(--spacing-xxs);
     justify-content: center;
     align-items: center;
-
     animation: fadeOut 1s ease forwards;
     animation-delay: 3s;
-
-    svg {
-      align-self: flex-start;
-    }
-  }
-
-  /* @keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-    }
-} */
-
-  .loader-container {
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    gap: var(--spacing-xs);
-
-    span {
-      height: 0.7rem;
-      width: 0.7rem;
-      border-radius: var(--radius-lg);
-      background-color: var(--accent-neutral);
-      animation: loading 1s ease infinite;
-    }
-
-    .circle-one {
-      animation-delay: 0s;
-    }
-
-    .circle-two {
-      animation-delay: 0.2s;
-    }
-
-    .circle-three {
-      animation-delay: 0.3s;
-    }
   }
 
   @keyframes loading {
     0% {
       transform: translateY(0);
     }
+
     50% {
       transform: translateY(-1rem);
     }
+
     100% {
       transform: translateY(0);
     }

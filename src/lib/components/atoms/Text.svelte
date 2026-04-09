@@ -48,7 +48,7 @@
     transition: all 0.3s ease-in-out;
   }
 
-  @media (max-width: 500px) {
+  @media (width <= 500px) {
     .quiz-intro-text {
       font-size: clamp(14px, 3vw, 18px);
     }
