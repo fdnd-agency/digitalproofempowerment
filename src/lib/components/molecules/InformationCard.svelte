@@ -4,7 +4,7 @@
 
 <article
   class={className || "information-card"}
-  style={`background-color: ${backgroundColor || "#f7f7f8"}`}
+  style={`background-color: ${backgroundColor || "transparent"}`}
 >
   {#if Icon}
     <Icon class="icon" />

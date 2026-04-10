@@ -158,7 +158,7 @@
   }
 
   .alternate-bg {
-    background: #e4effc;
+    background: #68acff31;
     border-radius: 0;
   }
 
