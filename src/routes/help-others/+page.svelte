@@ -51,18 +51,24 @@
     <Title headingText="What can you do?" level="h2" />
     <div class="section-grid">
       <InformationCard
+        backgroundColor="#f7f7f8"
+        backgroundColorDark="#000000"
         Icon={EarIcon}
         cardTitle="Listen and acknowledge"
         cardSubText="Give the person room to share their story without judgment.
                     Acknowledge that it is serious."
       />
       <InformationCard
+        backgroundColor="#f7f7f8"
+        backgroundColorDark="#000000"
         Icon={DocumentIcon}
         cardTitle="Document together"
         cardSubText="Discuss which events to collect: dates, times, messages,
                     photos or witnesses."
       />
       <InformationCard
+        backgroundColor="#f7f7f8"
+        backgroundColorDark="#000000"
         Icon={HandshakeIcon}
         cardTitle="Be a reliable support"
         cardSubText="Help organize evidence and look for information about the
@@ -104,16 +110,22 @@
     <Title headingText="Support organizations and agencies" level="h2" />
     <div class="cards-grid">
       <InformationCard
+        backgroundColor="#f7f7f8"
+        backgroundColorDark="#000000"
         Icon={PhoneIcon}
         cardTitle="Confidant"
         cardSubText="The first step inside an organization. They can talk with you and advise on what to do."
       />
       <InformationCard
+        backgroundColor="#f7f7f8"
+        backgroundColorDark="#000000"
         Icon={HandshakeIcon}
         cardTitle="Union"
         cardSubText="A union offers legal advice, support in meetings and can defend your rights."
       />
       <InformationCard
+        backgroundColor="#f7f7f8"
+        backgroundColorDark="#000000"
         Icon={OrganizationIcon}
         cardTitle="External agencies"
         cardSubText="For serious complaints, agencies like Veilig Thuis, labor inspection or anti-discrimination bureaus can help further."

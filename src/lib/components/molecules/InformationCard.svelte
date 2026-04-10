@@ -1,10 +1,10 @@
 <script>
-  let { cardSubText, Icon, cardTitle, labels, className, backgroundColor } = $props();
+  let {cardSubText, Icon, cardTitle, labels, className, backgroundColor, backgroundColorDark,} = $props();
 </script>
 
 <article
   class={className || "information-card"}
-  style={`background-color: ${backgroundColor || "transparent"}`}
+  style={`--card-bg: ${backgroundColor || 'transparent'}; --card-bg-dark: ${backgroundColorDark || 'transparent'}`}
 >
   {#if Icon}
     <Icon class="icon" />
@@ -50,6 +50,16 @@
   .information-card:hover {
     color: var(--primary-neutral);
     transform: scale(1.05) rotate(1deg);
+  }
+
+  article {
+    background-color: var(--card-bg);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    article {
+      background-color: var(--card-bg-dark);
+    }
   }
 
   .label-wrapper {
