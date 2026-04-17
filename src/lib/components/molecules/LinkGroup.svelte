@@ -28,7 +28,7 @@
     padding-left: 0;
   }
 
-  .footer-links > h4 {
+  .footer-links > h3 {
     margin-bottom: 1rem;
     padding: 0;
   }

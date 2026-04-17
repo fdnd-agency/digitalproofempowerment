@@ -15,21 +15,20 @@
 />
 
 <main>
-    <section class="contact-form-container">
-        <div class="contact-form-container-content-wrapper">
-            <Title
-                headingText="Get in touch"
-                class="contact-form-container-title"
-                level="h2"
-            />
-            <Text className="contact-form-container-paragraph" text="Have questions or need support? Fill out the form below and
-                we'll get back to you as soon as possible." />
-        </div>
+  <section class="contact-form-container">
+    <div class="contact-form-container-content-wrapper">
+      <Title headingText="Get in touch" class="contact-form-container-title" level="h2" />
+      <Text
+        className="contact-form-container-paragraph"
+        text="Have questions or need support? Fill out the form below and
+                we'll get back to you as soon as possible."
+      />
+    </div>
 
     <ContactForm {data} />
   </section>
 
-    <EmergencySection level="h2" />
+  <EmergencySection level="h2" />
 
   <section class="location-container">
     <LocationSection />
