@@ -1,1 +1,18 @@
 npx lint-staged
+
+branch=$(git symbolic-ref --short HEAD)
+pattern="^(main|master|develop|release\/.*|hotfix\/.*|feat(ure)?\/.*|bugfix\/.*)#[0-9]+$"
+
+if ! echo "$branch" | grep -qE "$pattern"; then
+  echo "❌ Invalid branch name: \"$branch\""
+  echo "   Base branches (no issue number needed): main, master, develop, dev"
+  echo "   Feature branches must end with #<number>, e.g.:"
+  echo "     feat/login#123"
+  echo "     feature/dashboard#45"
+  echo "     bugfix/fix-header#12"
+  echo "     fix/broken-link#97"
+  echo "     hotfix/security-patch#8"
+  echo "     release/v1.2.0#60"
+  echo "     chore/update-deps#33"
+  exit 1
+fi
