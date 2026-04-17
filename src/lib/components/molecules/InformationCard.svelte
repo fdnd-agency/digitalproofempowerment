@@ -1,10 +1,11 @@
 <script>
-  let {cardSubText, Icon, cardTitle, labels, className, backgroundColor, backgroundColorDark,} = $props();
+  let { cardSubText, Icon, cardTitle, labels, className, backgroundColor, backgroundColorDark } =
+    $props();
 </script>
 
 <article
   class={className || "information-card"}
-  style={`--card-bg: ${backgroundColor || 'transparent'}; --card-bg-dark: ${backgroundColorDark || 'transparent'}`}
+  style={`--card-bg: ${backgroundColor || "transparent"}; --card-bg-dark: ${backgroundColorDark || "transparent"}`}
 >
   {#if Icon}
     <Icon class="icon" />
