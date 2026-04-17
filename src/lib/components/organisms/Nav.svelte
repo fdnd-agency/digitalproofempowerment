@@ -11,166 +11,179 @@
     } else {
       document.body.style.overflow = "auto";
     }
-}
+  }
 </script>
 
-
-
 <nav class="nav-container">
-    <div class="nav-bar-container">
-        <a href="/"><img class="logo" src={Favicon} alt="Digital proof empowerment logo" height="40" width="40"></a>
+  <div class="nav-bar-container">
+    <a href="/"
+      ><img
+        class="logo"
+        src={Favicon}
+        alt="Digital proof empowerment logo"
+        height="40"
+        width="40"
+      /></a
+    >
 
-        <button class="nav-button main-button" name="navigation toggle button" on:click={toggleMenu} aria-label="navigation toggle">
-            <span class:open={menuIsOpen}></span>
-            <span class:open={menuIsOpen}></span>
-            <span class:open={menuIsOpen}></span>
-        </button>
+    <button
+      class="nav-button main-button"
+      name="navigation toggle button"
+      on:click={toggleMenu}
+      aria-label="navigation toggle"
+    >
+      <span class:open={menuIsOpen}></span>
+      <span class:open={menuIsOpen}></span>
+      <span class:open={menuIsOpen}></span>
+    </button>
 
-        <noscript>
-            <a href="#footer" class="no-js-button">
-                <span></span>
-                <span></span>
-                <span></span>
-            </a>
+    <noscript>
+      <a href="#footer" class="no-js-button" aria-label="navigation toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
 
-            <style>
-                .nav-button { 
-                display: none !important; 
-                }
+      <style>
+        .nav-button {
+          display: none !important;
+        }
 
-                .no-js-button { 
-                display: flex !important; 
-                }
-            </style>
-        </noscript>
-    </div>
+        .no-js-button {
+          display: flex !important;
+        }
+      </style>
+    </noscript>
+  </div>
 
-    <ul class="nav-list-container" class:active={menuIsOpen}>
-        <li class="nav-item"><Link href="/about-us" text="About us" className="nav-link"/></li>
-        <li class="nav-item"><Link href="/contact" text="Contact" className="nav-link"/></li>
-        <li class="nav-item"><Link href="/proof-tips" text="Proof Tips" className="nav-link"/></li>
-        <li class="nav-item"><Link href="/help-others" text="Help Others" className="nav-link"/></li>
-        <li class="nav-item"><Link href="/submit-proof" text="Submit Proof" className="nav-link"/></li>
-        <li class="nav-item"><Link href="tel:+112" Icon={PhoneIcon} target="_self" rel="" className="emergency-link" text="Call 112"/></li>
-    </ul>
+  <ul class="nav-list-container" class:active={menuIsOpen}>
+    <li class="nav-item"><Link href="/about-us" text="About us" className="nav-link" /></li>
+    <li class="nav-item"><Link href="/contact" text="Contact" className="nav-link" /></li>
+    <li class="nav-item"><Link href="/proof-tips" text="Proof Tips" className="nav-link" /></li>
+    <li class="nav-item"><Link href="/help-others" text="Help Others" className="nav-link" /></li>
+    <li class="nav-item"><Link href="/submit-proof" text="Submit Proof" className="nav-link" /></li>
+    <li class="nav-item">
+      <Link
+        href="tel:+112"
+        Icon={PhoneIcon}
+        target="_self"
+        rel=""
+        className="emergency-link"
+        text="Call 112"
+      />
+    </li>
+  </ul>
 </nav>
 
 <style>
-    nav {
-        position: relative;
-    }
+  nav {
+    position: relative;
+  }
 
-    .nav-container {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        transition: transform 0.3s ease;
-        z-index: 1000;
-    }
+  .nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
 
-    .nav-container {
-        background: rgba(0, 0, 0, 0.187);
-    }
+  .nav-container {
+    background: rgba(0, 0, 0, 0.187);
+  }
 
-    .nav-container.hidden {
-        transform: translateY(-100%);
-    }
+  ul li {
+    list-style-type: none;
+  }
 
-    ul li {
-        list-style-type: none;
-    }
+  .nav-bar-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-darkest);
+    padding: var(--spacing-lg);
+    background: transparent;
 
-    .nav-bar-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        background-color: var(--primary-darkest);
-        padding: var(--spacing-lg);
-        background: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 100000;
+  }
 
-        position: sticky;
-        top: 0;
-        z-index: 100000;
-    }
+  .nav-list-container {
+    position: fixed;
 
-    .nav-list-container {
-        position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xl);
 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: var(--spacing-xl);
+    transform: translateY(-100%);
+    transition: transform 1s ease-in-out;
+    opacity: 0;
+    z-index: 9999;
 
-        transform: translateY(-100%);
-        transition: transform 1s ease-in-out;
-        opacity: 0;
-        z-index: 9999;
+    width: 100%;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
 
-        width: 100%;
-        top: 0;
-        right: 0;
-        height: 100%;
-    }
+  .nav-item {
+    padding: var(--spacing-xs);
+  }
 
-    .nav-item {
-        padding: var(--spacing-xs);
-    }
+  .nav-list-container.active {
+    padding: var(--spacing-lg);
+    background-color: var(--primary-darkest);
+    color: var(--secondary-text-color);
 
-    .nav-list-container.active {
-        padding: var(--spacing-lg);
-        background-color: var(--primary-darkest);
-        color: var(--secondary-text-color);
+    transform: translateY(0%);
+    transition: transform 1s ease;
+    opacity: 1;
+    overflow: hidden;
+  }
 
-        transform: translateY(0%);
-        transition: transform 1s ease;
-        opacity: 1;
-        overflow: hidden;
-    }
+  /* nav-buttons */
 
-    /* nav-buttons */
+  .no-js-button {
+    display: none;
+  }
 
-    .no-js-button {
-        display: none;
-    }
+  .no-js-button,
+  .nav-button {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    cursor: pointer;
+    width: fit-content;
+    background-color: transparent;
+    border: none;
+  }
 
-    .no-js-button,
-    .nav-button {
-        display: flex;
-        flex-direction: column;
-        gap: var(--spacing-xs);
-        cursor: pointer;
-        width: fit-content;
-        background-color: transparent;
-        border: none;
-    }
+  .nav-button span,
+  .no-js-button span {
+    width: 1.7rem;
+    height: 0.15rem;
+    background-color: var(--nav-icon-color);
+    transition: 0.6s;
+    cursor: pointer;
+  }
 
-    .nav-button span,
-    .no-js-button span {
-        width: 1.7rem;
-        height: 0.15rem;
-        background-color: var(--nav-icon-color);
-        transition: 0.6s;
-        cursor: pointer;
-    }
+  .nav-button span.open:nth-child(1) {
+    background-color: var(--emergency-color);
+    width: 1.2rem;
+  }
 
-    .nav-button span.open:nth-child(1),
-    .no-js-button span.open:nth-child(1) {
-        background-color: var(--emergency-color);
-        width: 1.2rem;
-    }
+  .nav-button span.open:nth-child(2) {
+    width: 0.8rem;
+    background-color: var(--emergency-color);
+  }
 
-    .nav-button span.open:nth-child(2),
-    .no-js-button span.open:nth-child(2) {
-        width: 0.8rem;
-        background-color: var(--emergency-color);
-    }
-
-    .nav-button span.open:nth-child(3),
-    .no-js-button span.open:nth-child(3) {
-        background-color: var(--emergency-color);
-        width: 0.6rem;
-    }
+  .nav-button span.open:nth-child(3) {
+    background-color: var(--emergency-color);
+    width: 0.6rem;
+  }
 </style>
