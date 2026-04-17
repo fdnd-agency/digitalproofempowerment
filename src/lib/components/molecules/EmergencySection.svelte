@@ -38,7 +38,7 @@
     background-color: var(--primary-neutral);
     color: var(--secondary-text-color);
 
-    @media (min-width: 800px) {
+    @media (width >= 800px) {
       padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl);
       text-align: center;
       display: flex;
@@ -50,7 +50,7 @@
   @media (prefers-color-scheme: dark) {
     .emergency-container {
       background-color: var(--primary-darkest);
-      color: hsl(0, 0%, 100%);
+      color: hsl(0deg 0% 100%);
     }
   }
 
@@ -74,28 +74,30 @@
     transition:
       background-color 0.3s ease,
       color 0.3s ease;
-    animation: highlightPulse 5s ease-in-out infinite;
+    animation: highlight-pulse 5s ease-in-out infinite;
   }
 
   .emergency-highlight:hover {
-    background-color: rgba(237, 130, 72, 0.25);
+    background-color: rgb(237 130 72 / 25%);
     color: var(--secondary-text-color);
   }
 
-  @keyframes highlightPulse {
+  @keyframes highlight-pulse {
     0% {
       background-color: var(--accent-neutral);
     }
+
     50% {
-      background-color: rgba(237, 130, 72, 0.15);
+      background-color: rgb(237 130 72 / 15%);
     }
+
     100% {
       background-color: var(--accent-neutral);
     }
   }
 
   .button-wrapper {
-    @media (min-width: 800px) {
+    @media (width >= 800px) {
       display: flex;
       justify-content: center;
       margin-top: var(--spacing-md);

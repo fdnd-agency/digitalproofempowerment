@@ -21,7 +21,6 @@
     padding-left: var(--spacing-xs);
     padding-right: var(--spacing-xs);
     margin-top: var(--radius-xs);
-
     display: flex;
     flex-direction: row;
     gap: var(--spacing-xxs);
@@ -40,22 +39,21 @@
     padding-left: var(--spacing-xs);
     padding-right: var(--spacing-xs);
     margin-top: var(--radius-xs);
-
     display: flex;
     flex-direction: row;
     gap: var(--spacing-xxs);
     justify-content: center;
     align-items: center;
-
-    animation: fadeOut 1s ease forwards;
+    animation: fade-out 1s ease forwards;
     animation-delay: 5s;
     opacity: 1;
   }
 
-  @keyframes fadeOut {
+  @keyframes fade-out {
     from {
       opacity: 1;
     }
+
     to {
       opacity: 0;
     }

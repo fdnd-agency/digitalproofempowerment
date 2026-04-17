@@ -34,6 +34,7 @@
     gap: var(--spacing-md);
     color: var(--accent-dark);
     transition: transform 0.3s ease-in-out;
+    background-color: var(--card-bg);
   }
 
   .card-paragraph {
@@ -51,10 +52,6 @@
   .information-card:hover {
     color: var(--primary-neutral);
     transform: scale(1.05) rotate(1deg);
-  }
-
-  article {
-    background-color: var(--card-bg);
   }
 
   @media (prefers-color-scheme: dark) {

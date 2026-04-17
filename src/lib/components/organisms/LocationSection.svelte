@@ -83,13 +83,16 @@
     align-self: flex-start;
   }
 
+  /* stylelint-disable */
   .map-iframe {
     width: 100%;
     height: 30rem;
     border: var(--border);
     border-radius: var(--radius-lg);
-    -webkit-box-shadow: var(--box-shadow-webkit);
+    box-shadow: var(--box-shadow-webkit);
     box-shadow: var(--box-shadow);
   }
+  /* stylelint-enable */
+
   /*  .no-script-image */
 </style>

@@ -65,17 +65,9 @@
   @media (prefers-color-scheme: dark) {
     .hero-background-image {
       filter: brightness(0.3);
+
       /* filter: grayscale(4); */
     }
-  }
-
-  .hero-content {
-    position: relative;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    color: var(--secondary-text-color);
   }
 
   .hero-content {
