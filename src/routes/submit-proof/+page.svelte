@@ -1,5 +1,5 @@
 <script>
-  import SubmitForm from "$lib/components/organisms/SubmitForm.svelte";
+  import { SubmitForm } from "$lib";
 
   let { data } = $props();
 
@@ -48,7 +48,6 @@
 
 <main>
   <div id="map" bind:this={mapContainer}></div>
-
   <SubmitForm {data} />
 </main>
 
