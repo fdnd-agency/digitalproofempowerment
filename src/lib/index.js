@@ -25,6 +25,7 @@ export { default as VideoUpload } from "$lib/assets/svg/VideoUpload.svelte";
 export { default as ChatLogUpload } from "$lib/assets/svg/ChatLogUpload.svelte";
 export { default as AudioUpload } from "$lib/assets/svg/AudioUpload.svelte";
 export { default as TimeIcon } from "$lib/assets/svg/TimeIcon.svelte";
+export { default as LocationIcon } from "$lib/assets/svg/LocationIcon.svelte";
 
 export { default as CardIconAudio } from "$lib/assets/svg/CardIconAudio.svelte";
 export { default as CardIconChat } from "$lib/assets/svg/CardIconChat.svelte";

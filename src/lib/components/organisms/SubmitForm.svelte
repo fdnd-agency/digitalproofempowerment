@@ -1,5 +1,11 @@
 <script>
-  import { LocationUpload, FormValidationMessages, ErrorMessageIcon } from "$lib";
+  import {
+    LocationUpload,
+    FormValidationMessages,
+    ErrorMessageIcon,
+    LocationIcon,
+    TimeIcon,
+  } from "$lib";
   import { superForm } from "sveltekit-superforms";
 
   let { data } = $props();
@@ -41,7 +47,7 @@
 
   <section class="time-container">
     <div class="icon-container">
-      <LocationUpload />
+      <TimeIcon />
     </div>
 
     <h2>Select Time</h2>
@@ -65,7 +71,7 @@
 
   <section class="location-container">
     <div class="icon-container">
-      <LocationUpload />
+      <LocationIcon />
     </div>
 
     <h2>Location</h2>
