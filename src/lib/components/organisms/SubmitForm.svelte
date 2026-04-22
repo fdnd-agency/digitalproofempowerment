@@ -1,273 +1,287 @@
 <script>
-  import Button from "../atoms/Button.svelte";
-  import LabeledInput from "../molecules/LabeledInput.svelte";
-  import FileInput from "../atoms/FileInput.svelte";
-  import Title from "../atoms/Title.svelte";
-  import Label from "../atoms/Label.svelte";
-  import Text from "../atoms/Text.svelte";
-  import ChatLogUpload from "$lib/assets/svg/ChatLogUpload.svelte";
-  import AudioUpload from "$lib/assets/svg/AudioUpload.svelte";
-  import VideoUpload from "$lib/assets/svg/VideoUpload.svelte";
-  import NotesUpload from "$lib/assets/svg/NotesUpload.svelte";
-  import LocationUpload from "$lib/assets/svg/LocationUpload.svelte";
-  import PhotoUpload from "$lib/assets/svg/PhotoUpload.svelte";
+  import { LocationUpload, FormValidationMessages, ErrorMessageIcon } from "$lib";
+  import { superForm } from "sveltekit-superforms";
 
-  let mode = $state(null); // "identified" | "anonymous"
+  let { data } = $props();
 
-  let email = $state("");
-  let emailVerification = $state("");
-  let emailError = $state(null);
-  let optionalText = $state("");
+  const { form, errors, enhance, message } = superForm({
+    resetForm: true,
+  });
 
-  function validateEmail() {
-    if (!email && !emailVerification) {
-      emailError = null;
-      return false;
-    }
-
-    if (email !== emailVerification) {
-      emailError = "Emails do not match";
-      return false;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      emailError = "Invalid email format";
-      return false;
-    }
-
-    emailError = "";
-    return true;
-  }
-
-  function handleSubmit(event) {
-    if (mode === "identified") {
-      if (!validateEmail()) return;
-    }
-
-    const formData = new FormData(event.target);
-
-    // Log formData for now
-    console.log("Submitting as:", mode);
-    for (const [key, value] of formData.entries()) {
-      console.log(key, value);
-    }
-
-    // TODO: add  API call
+  function getLocation() {
+    navigator.geolocation.getCurrentPosition(
+      ({ coords }) => ($form.location = `${coords.latitude}, ${coords.longitude}`)
+    );
   }
 </script>
 
-<form
-  id="proof-form"
-  onsubmit={(e) => {
-    e.preventDefault();
-    handleSubmit(e);
-  }}
->
-  <Title headingText="Submit Proof" level="h2" className="form-title" />
-
-  {#if mode === null}
-    <Text text="How would you like to Submit your proof ?" className="form-text" />
-    <div class="selection">
-      <Button onclick={() => (mode = "anonymous")} buttonText="Anonymous" className="form-button" />
-      <Button
-        onclick={() => (mode = "identified")}
-        buttonText="Using Email"
-        className="form-button"
-      />
+<form class="form-container" method="POST" use:enhance>
+  <section class="date-container">
+    <div class="icon-container">
+      <LocationUpload />
     </div>
-  {:else if mode === "identified"}
-    <Button
-      onclick={() => {
-        mode = null;
-      }}
-      buttonText="&#8617;"
-      className="form-back-button"
-    />
 
-    <LabeledInput
-      type="email"
-      autocomplete="off"
-      name="email"
-      bind:value={email}
-      placeHolder="email@example.com"
-      classNameLabel="email-label"
-      classNameInput="email-input"
-      inputId="email"
-      form="proof-form"
-      text="Email address"
-      required
-    />
+    <h2>Select date</h2>
+    <p>Select the date to link your hours to the correct working day.</p>
 
-    <LabeledInput
-      type="email"
-      autocomplete="off"
-      name="email_verification"
-      bind:value={emailVerification}
-      placeHolder="email@example.com"
-      classNameLabel="email-label-verification"
-      classNameInput="email-input-verification"
-      inputId="email-verification"
-      form="proof-form"
-      text="Confirm email address"
-      onblur={validateEmail}
-      required
-    />
+    <fieldset>
+      <legend class="visually-hidden">Date</legend>
+      <label class="visually-hidden" for="date-input">Date</label>
+      <input id="date-input" name="date" type="date" bind:value={$form.date} />
 
-    {#if emailError}
-      <Text text={emailError} className="error" />
+      {#if $errors.date}
+        <FormValidationMessages
+          ErrorText={$errors.date}
+          Icon={ErrorMessageIcon}
+          className="error-message"
+        />
+      {/if}
+    </fieldset>
+  </section>
+
+  <section class="time-container">
+    <div class="icon-container">
+      <LocationUpload />
+    </div>
+
+    <h2>Select Time</h2>
+    <p>Log your start time to keep an accurate record of your working hours.</p>
+
+    <fieldset>
+      <legend class="visually-hidden">Time</legend>
+
+      <label class="visually-hidden" for="time-input">Time</label>
+      <input name="time" id="time-input" type="time" bind:value={$form.time} />
+
+      {#if $errors.time}
+        <FormValidationMessages
+          ErrorText={$errors.time}
+          Icon={ErrorMessageIcon}
+          className="error-message"
+        />
+      {/if}
+    </fieldset>
+  </section>
+
+  <section class="location-container">
+    <div class="icon-container">
+      <LocationUpload />
+    </div>
+
+    <h2>Location</h2>
+    <p>
+      Your current location is automatically detected. Press the button to verify you are working
+      onsite.
+    </p>
+
+    <fieldset>
+      <legend class="visually-hidden">Location</legend>
+
+      <label class="visually-hidden" for="location-input">Time</label>
+      <input
+        class="location-input"
+        id="location-input"
+        type="text"
+        placeholder="Click to submit geo location"
+        onclick={getLocation}
+        readonly
+        name="location"
+        bind:value={$form.location}
+      />
+
+      {#if $errors.location}
+        <FormValidationMessages
+          ErrorText={$errors.location}
+          Icon={ErrorMessageIcon}
+          className="error-message"
+        />
+      {/if}
+
+      <div class="adress-container">
+        <p>
+          If you know the address, adding it provides extra verification of your on-site location.
+        </p>
+
+        <label for="street-input">
+          Street
+          <input
+            id="street-input"
+            type="text"
+            autocomplete="address-line1"
+            placeholder="Street and number"
+            bind:value={$form.street}
+          />
+        </label>
+
+        <label for="postal-code-input">
+          Postal code
+          <input
+            id="postal-code-input"
+            type="text"
+            autocomplete="postal-code"
+            placeholder="Postal code"
+            bind:value={$form.postal}
+          />
+        </label>
+
+        <label for="city-input">
+          City
+          <input
+            id="city-input"
+            type="text"
+            autocomplete="address-level2"
+            placeholder="City"
+            bind:value={$form.city}
+          />
+        </label>
+
+        <label for="country-input">
+          Country
+          <input
+            id="country-input"
+            type="text"
+            autocomplete="country-name"
+            placeholder="Country"
+            bind:value={$form.country}
+          />
+        </label>
+      </div>
+    </fieldset>
+  </section>
+
+  <div class="global-form-message-container">
+    {#if $message === "Message send successfull"}
+      <FormValidationMessages
+        ErrorText={$message}
+        Icon={ErrorMessageIcon}
+        className="success-message"
+      />
+    {:else if $message === "Something went wrong"}
+      <FormValidationMessages
+        ErrorText={$message}
+        Icon={ErrorMessageIcon}
+        className="error-message"
+      />
     {/if}
-    <Text text="What type of proof are you submitting?" className="proof-type" />
+  </div>
 
-    <FileInput
-      inputFieldText="Photos and video (camera)"
-      Icon={PhotoUpload}
-      inputId="photos"
-      dataType="image/*,video/*"
-      name="Photo and/or video"
-      form="proof-form"
-    />
-
-    <FileInput
-      inputFieldText="Audio (Voice Memos)"
-      Icon={AudioUpload}
-      inputId="audio"
-      dataType="audio/*"
-      name="audio"
-      form="proof-form"
-    />
-
-    <FileInput
-      inputFieldText="Location & routes (Google maps timeline)"
-      Icon={LocationUpload}
-      inputId="location"
-      dataType=".json,.kml,.gpx"
-      name="location"
-      form="proof-form"
-    />
-
-    <FileInput
-      inputFieldText="Notes & diary (Notes/Keep)"
-      Icon={NotesUpload}
-      inputId="notes"
-      dataType=".txt,.md,.pdf,.html"
-      name="notes"
-      form="proof-form"
-    />
-
-    <FileInput
-      inputFieldText="WhatsApp or Telegram"
-      Icon={ChatLogUpload}
-      inputId="chatlogs"
-      dataType=".txt,.json,.zip"
-      name="whatsapp or telegram"
-      form="proof-form"
-    />
-
-    <LabeledInput
-      type="textarea"
-      inputId="optional-text"
-      text=" Any thing you would like to add ? (Optional)"
-      placeHolder="This is optional you can add context to the uploaded file or anything else you would like to say."
-      classNameInput="optional-text"
-      classNameLabel="optional-text-label"
-      bind:value={optionalText}
-      name="textArea"
-      form="proof-form"
-    />
-
-    <Button buttonText="Submit" className="submit-button" />
-  {:else if mode === "anonymous"}
-    <Text text="Anonymous submission" className="form-anon-text" />
-    <Button
-      onclick={() => {
-        mode = null;
-      }}
-      buttonText="&#8617;"
-      className="form-back-button"
-    />
-
-    <Text text="What type of proof are you submitting?" />
-
-    <FileInput
-      inputFieldText="Photos and video (camera)"
-      Icon={PhotoUpload}
-      inputId="photos"
-      dataType="image/*,video/*"
-      form="proof-form"
-    />
-
-    <FileInput
-      inputFieldText="Audio (Voice Memos)"
-      Icon={AudioUpload}
-      inputId="audio"
-      dataType="audio/*"
-      form="proof-form"
-    />
-
-    <FileInput
-      inputFieldText="Location & routes (Google maps timeline)"
-      Icon={LocationUpload}
-      inputId="location"
-      dataType=".json,.kml,.gpx"
-      form="proof-form"
-    />
-
-    <FileInput
-      inputFieldText="Notes & diary (Notes/Keep)"
-      Icon={NotesUpload}
-      inputId="notes"
-      dataType=".txt,.md,.pdf,.html"
-      form="proof-form"
-    />
-
-    <FileInput
-      inputFieldText="WhatsApp or Telegram"
-      Icon={ChatLogUpload}
-      inputId="chatlogs"
-      dataType=".txt,.json,.zip"
-      form="proof-form"
-    />
-
-    <LabeledInput
-      type="textarea"
-      inputId="optional-text"
-      text=" Any thing you would like to add ? (Optional)"
-      placeHolder="This is optional you can add context to the uploaded file or anything else you would like to say."
-      classNameInput="optional-text"
-      classNameLabel="optional-text-label"
-      form="proof-form"
-    />
-
-    <Button buttonText="Submit" className="submit-button" />
-  {/if}
+  <button class="submit-button" type="submit">Submit</button>
 </form>
 
 <style>
-  form {
-    background: rgb(255 255 255 / 20%);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgb(0 0 0 / 10%);
-    backdrop-filter: blur(5px);
-    border: 1px solid rgb(255 255 255 / 30%);
-    padding: var(--spacing-xl);
-    min-height: 50vh;
+  .global-form-message-container {
+    padding: 1rem;
+  }
+
+  .form-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 0.5rem;
+
+    @media (min-width: 720px) {
+      grid-template-rows: auto auto;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  fieldset {
+    border: none;
+  }
+
+  h2 {
+    padding-top: 1rem;
+    color: #091244;
+  }
+
+  p {
+    padding-bottom: 1rem;
+    color: rgb(118, 118, 118);
+  }
+
+  .icon-container {
+    background-color: rgba(170, 176, 176, 0.252);
+    padding: 0.5rem;
+    width: fit-content;
+    border-radius: 0.5rem;
+  }
+
+  .date-container,
+  .time-container,
+  .location-container {
+    background-color: #ffffff;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+
     display: flex;
     flex-direction: column;
-    align-items: start;
-    justify-content: center;
+    gap: 0.5rem;
   }
 
-  .selection {
-    display: flex;
-    gap: var(--spacing-lg);
-    justify-content: center;
-    align-self: center;
+  input {
+    width: 100%;
+    padding: 0.6rem 0.7rem;
+    border-radius: 0.4rem;
+    background-color: #88c5f1;
+    color: #ffffff;
+    font-family: Poppins;
+    border: none;
+    outline: none;
+    font-size: 0.6rem;
   }
 
-  @media (width <= 500px) {
-    form {
-      margin: 25% 5% 0;
+  .location-input {
+    width: 100%;
+    padding: 0.6rem 0.7rem;
+    border-radius: 0.4rem;
+    background-color: #ea661a;
+    color: #ffffff;
+    font-family: Poppins;
+    border: none;
+    outline: none;
+    font-size: 0.6rem;
+    margin-top: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #61afe7;
     }
+  }
+
+  ::placeholder {
+    color: #ffffff;
+  }
+
+  .adress-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  label {
+    font-size: clamp(12px, 3vw, 20px);
+  }
+
+  .submit-button {
+    margin: 1rem;
+    padding: 0.6rem 0.7rem;
+    border-radius: 0.4rem;
+    background-color: #091244;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
   }
 </style>
