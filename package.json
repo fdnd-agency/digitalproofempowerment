@@ -52,6 +52,8 @@
     "vite": "^7.2.6"
   },
   "dependencies": {
+    "leaflet": "^1.9.4",
+    "mapbox-gl": "^3.22.0",
     "sveltekit-superforms": "^2.30.0",
     "zod": "^4.3.6"
   }
