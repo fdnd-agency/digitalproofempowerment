@@ -67,46 +67,44 @@
 
   /* ------------------------------------------ BOX SHADOW ------------------------------------------ */
 
-  /* -webkit-box-shadow: */
   --box-shadow-webkit: 0px 0px 20px -10px #000;
 
-  /* -------- COLORS --------- */
+  /* ------------------------------------------ COLORS ------------------------------------------ */
 
-  /* Colors */
-  --nav-icon-color: hsl(240deg 6% 97%);
-  --main-text-color: hsl(246deg 76% 5%);
+  --primary-text-color: hsl(232deg 47% 24%);
   --secondary-text-color: hsl(0deg 0% 100%);
-  --main-background-color: hsl(240deg 6% 97%);
-  --secondary-background-color: hsl(0deg 0% 0%);
-  --emergency-color: hsl(357.68deg 83.41% 42.55%);
-  --success-color: hsl(122deg 75% 29%);
+  --tertiary-text-color: hsl(240deg 6% 29%);
+  --primary: hsl(232deg 47% 24%);
+  --secondary: hsl(7deg 76% 61%);
+  --tertiary: hsl(207deg 42% 9%);
+  --neutral: hsl(207deg 42% 9%);
+
+  /* ---------------  */
+
+  /* primary */
+  --primary-hue: 232;
+  --primary-saturation: 47%;
 
   /* --------------- */
 
-  /* primary: #0d1631; */
-  --primary-hue: 225;
-  --primary-saturation: 58%;
+  /* secondary */
+  --secondary-hue: 7;
+  --secondary-saturation: 76%;
 
   /* --------------- */
 
-  /* secondary: #e1e5ee; */
-  --secondary-hue: 222;
-  --secondary-saturation: 27.66%;
-
-  /* --------------- */
-
-  /* accent: #ed8248; */
-  --accent-hue: 21;
-  --accent-saturation: 100%;
+  /* Tertiary and Neutral */
+  --tertiary-hue: 207;
+  --tertiary-saturation: 42%;
 
   /* --------------- */
 
   /* Variation in lightness */
-  --darkest: 12%;
-  --dark: 31%;
-  --neutral: 50%;
-  --light: 90%;
-  --lightest: 91%;
+  --darkest: 20%;
+  --dark: 40%;
+  --neutral-li: 60%;
+  --light: 80%;
+  --lightest: 100%;
 
   /* Primary color */
   --primary-darkest: hsl(var(--primary-hue) var(--primary-saturation) var(--darkest));
@@ -118,12 +116,9 @@
   /* secondary color */
   --secondary-darkest: hsl(var(--secondary-hue) var(--secondary-saturation) var(--darkest));
   --secondary-dark: hsl(var(--secondary-hue) var(--secondary-saturation) var(--dark));
-  --secondary-neutral: hsl(var(--secondary-hue) var(--secondary-saturation) var(--neutral));
+  --secondary-neutral: hsl(var(--secondary-hue) var(--secondary-saturation) var(--neutral-li));
   --secondary-light: hsl(var(--secondary-hue) var(--secondary-saturation) var(--light));
   --secondary-lightest: hsl(var(--secondary-hue) var(--secondary-saturation) var(--lightest));
-
-  /* accent color */
-  --accent-darkest: hsl(var(--accent-hue) var(--accent-saturation) var(--darkest));
   --accent-dark: hsl(var(--accent-hue) var(--accent-saturation) var(--dark));
   --accent-neutral: hsl(var(--accent-hue) var(--accent-saturation) var(--neutral));
   --accent-light: hsl(var(--accent-hue) var(--accent-saturation) var(--light));
