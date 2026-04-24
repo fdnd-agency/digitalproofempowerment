@@ -4,16 +4,39 @@
   box-sizing: border-box;
 }
 
+/* ------------------------------------------ FONTS ------------------------------------------ */
+
+/* Headline font */
 @font-face {
-  font-family: Poppins;
-  src: url("/src/lib/assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-family: headline-font;
+  src: url("/src/lib/assets/fonts/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* Body and labe font */
+@font-face {
+  font-family: body-font;
+  src: url("/src/lib/assets/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 350;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: label-font;
+  src: url("/src/lib/assets/fonts/Inter-VariableFont_opsz,wght.ttf") format("truetype");
   font-weight: 100;
   font-display: swap;
   font-style: normal;
 }
 
 :root {
-  --main-font: "Poppins", -apple-system, blinkmacsystemfont, "Segoe UI", system-ui, sans-serif;
+  --headline-font:
+    "SpaceGrotesk", -apple-system, blinkmacsystemfont, "Segoe UI", system-ui, sans-serif;
+  --body-font: "body-font", -apple-system, blinkmacsystemfont, "Segoe UI", system-ui, sans-serif;
+  --label-font: "label-font", -apple-system, blinkmacsystemfont, "Segoe UI", system-ui, sans-serif;
 
   color-scheme: light dark;
 
