@@ -109,7 +109,7 @@
   /* Primary color */
   --primary-darkest: hsl(var(--primary-hue) var(--primary-saturation) var(--darkest));
   --primary-dark: hsl(var(--primary-hue) var(--primary-saturation) var(--dark));
-  --primary-neutral: hsl(var(--primary-hue) var(--primary-saturation) var(--neutral));
+  --primary-neutral: hsl(var(--primary-hue) var(--primary-saturation) var(--neutral-li));
   --primary-light: hsl(var(--primary-hue) var(--primary-saturation) var(--light));
   --primary-lightest: hsl(var(--primary-hue) var(--primary-saturation) var(--lightest));
 
@@ -119,23 +119,18 @@
   --secondary-neutral: hsl(var(--secondary-hue) var(--secondary-saturation) var(--neutral-li));
   --secondary-light: hsl(var(--secondary-hue) var(--secondary-saturation) var(--light));
   --secondary-lightest: hsl(var(--secondary-hue) var(--secondary-saturation) var(--lightest));
-  --accent-dark: hsl(var(--accent-hue) var(--accent-saturation) var(--dark));
-  --accent-neutral: hsl(var(--accent-hue) var(--accent-saturation) var(--neutral));
-  --accent-light: hsl(var(--accent-hue) var(--accent-saturation) var(--light));
-  --accent-lightest: hsl(var(--accent-hue) var(--accent-saturation) var(--lightest));
+
+  /* Tertiary and Neutral color */
+  --tertiary-darkest: hsl(var(--tertiary-hue) var(--tertiary-saturation) var(--darkest));
+  --tertiary-dark: hsl(var(--tertiary-hue) var(--tertiary-saturation) var(--dark));
+  --tertiary-neutral: hsl(var(--tertiary-hue) var(--tertiary-saturation) var(--neutral-li));
+  --tertiary-light: hsl(var(--tertiary-hue) var(--tertiary-saturation) var(--light));
 }
 
 /* dark light mode based on system settings */
 @media (prefers-color-scheme: dark) {
   :root {
-    --main-background-color: rgb(0 0 0 / 93.4%);
-    --secondary-background-color: hsl(0deg 0% 0%);
-    --main-text-color: hsl(0deg 0% 100%);
-    --success-color: hsl(122deg 100% 25%);
-    --emergency-color: hsl(358deg 96% 30%);
-    --border: 1px solid rgb(74 74 74);
-    --box-shadow: 0px 0px 20px -10px hsl(0deg 0% 100% / 65.8%);
-    --box-shadow-webkit: 0px 0px 20px -10px hsl(0deg 0% 100% / 55%);
+    /* dark mode stuff */
   }
 }
 
