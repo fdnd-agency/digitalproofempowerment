@@ -38,12 +38,14 @@
   --body-font: "body-font", -apple-system, blinkmacsystemfont, "Segoe UI", system-ui, sans-serif;
   --label-font: "label-font", -apple-system, blinkmacsystemfont, "Segoe UI", system-ui, sans-serif;
 
-  color-scheme: light dark;
+  /* ------------------------------------------ BORDERS ------------------------------------------ */
 
-  /* Border */
-  --border: 1px solid rgb(0 0 0 / 14.6%);
+  --border-1: 1px solid var(--primary-neutral);
+  --border-2: 1px solid var(--secondary-neutral);
+  --border-3: 1px solid var(--tertiary-neutral);
 
-  /* Border Radius */
+  /* ------------------------------------------ BORDER RADIUS ------------------------------------------ */
+
   --radius-xs: 0.3rem;
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
@@ -51,7 +53,8 @@
   --radius-xl: 1.5rem;
   --radius-full: 999px;
 
-  /* Spacing */
+  /* ------------------------------------------ SPACING AND PADDING ------------------------------------------ */
+
   --spacing-xxxs: 0.1rem;
   --spacing-xxs: 0.3rem;
   --spacing-xs: 0.5rem;
@@ -62,8 +65,7 @@
   --spacing-2xl: 3rem;
   --spacing-3xl: 4rem;
 
-  /* Box shadow */
-  --box-shadow: 0px 0px 20px -10px #00000071;
+  /* ------------------------------------------ BOX SHADOW ------------------------------------------ */
 
   /* -webkit-box-shadow: */
   --box-shadow-webkit: 0px 0px 20px -10px #000;
