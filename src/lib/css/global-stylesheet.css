@@ -125,6 +125,7 @@
   --tertiary-dark: hsl(var(--tertiary-hue) var(--tertiary-saturation) var(--dark));
   --tertiary-neutral: hsl(var(--tertiary-hue) var(--tertiary-saturation) var(--neutral-li));
   --tertiary-light: hsl(var(--tertiary-hue) var(--tertiary-saturation) var(--light));
+  --tertiary-lightest: hsl(var(--tertiary-hue) var(--tertiary-saturation) var(--lightest));
 }
 
 /* dark light mode based on system settings */
@@ -142,11 +143,7 @@
 
 html,
 body {
-  font-family: var(--main-font);
-  color: var(--main-text-color);
-  background-color: var(--main-background-color);
-
-  /* max-width for big screens no stretching */
+  /* max-width for big screens no stretching, we can decide later what the exact value will be */
   max-width: 120rem;
   margin: 0 auto;
 
@@ -158,41 +155,56 @@ body {
 
   & .h2,
   h2 {
-    font-size: clamp(20px, 4.5vw, 36px);
+    font-size: clamp(18px, 3vw, 36px);
     line-height: 1.3;
+    color: var(primary-text-color);
+    font-family: var(--headline-font);
   }
 
   & .h3,
   h3 {
     font-size: clamp(16px, 3vw, 25px);
-    line-height: 1.4;
+    line-height: 1.3;
+    color: var(primary-text-color);
+    font-family: var(--headline-font);
   }
 
   & .h4,
   h4 {
     font-size: clamp(14px, 2.5vw, 18px);
     line-height: 1.5;
+    color: var(primary-text-color);
+    font-family: var(--headline-font);
   }
 
   & .h5,
   h5 {
     font-size: clamp(14px, 2vw, 16px);
     line-height: 1.6;
+    color: var(primary-text-color);
+    font-family: var(--headline-font);
   }
 
   & .h6,
   h6 {
     font-size: clamp(12px, 1.5vw, 14px);
     line-height: 1.4;
+    color: var(primary-text-color);
+    font-family: var(--headline-font);
   }
 
   & .paragraph,
   p {
     font-size: clamp(16px, 3vw, 20px);
     line-height: 1.5;
+    font-family: var(--body-font);
+    color: var(--tertiary-text-color);
   }
-}
 
-time {
-  font-size: clamp(8px, 3vw, 11px);
+  .label {
+    font-size: clamp(14px, 3vw, 18px);
+    line-height: 1.5;
+    font-family: var(--body-font);
+    color: var(--tertiary-text-color);
+  }
 }
