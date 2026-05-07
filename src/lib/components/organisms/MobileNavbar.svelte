@@ -1,16 +1,17 @@
 <script>
+  import { page } from "$app/stores";
   import LinkGroup from "../molecules/LinkGroup.svelte";
   import LogIcon from "$lib/assets/svg/LogIcon.svelte";
   import VaultIcon from "$lib/assets/svg/VaultIcon.svelte";
   import EvidenceIcon from "$lib/assets/svg/EvidenceIcon.svelte";
   import ProfileIcon from "$lib/assets/svg/ProfileIcon.svelte";
 
-  const links = [
+  $: links = [
     { className: "mobile-link", text: "Log", icon: LogIcon, href: "/log" },
     { className: "mobile-link", text: "vault", icon: VaultIcon, href: "/vault" },
     { className: "mobile-link", text: "Evidence", icon: EvidenceIcon, href: "/evidence" },
     { className: "mobile-link", text: "Profile", icon: ProfileIcon, href: "/profile" },
-  ];
+  ].map((link) => ({ ...link, isActive: $page.url.pathname === link.href }));
 </script>
 
 <nav class="mobile-navbar">
@@ -31,7 +32,7 @@
       right: 0;
       bottom: 0;
       z-index: 1000;
-      background-color: rgb(206, 208, 236);
+      background-color: var(--secondary-text-color);
       padding-bottom: env(safe-area-inset-bottom);
     }
   }

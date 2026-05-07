@@ -15,6 +15,7 @@
           ariaLabel={link.ariaLabel}
           text={link.text}
           Icon={link.icon}
+          isActive={link.isActive}
         />
       </li>
     {/each}
