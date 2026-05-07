@@ -14,6 +14,7 @@
           rel={link.rel}
           ariaLabel={link.ariaLabel}
           text={link.text}
+          Icon={link.icon}
         />
       </li>
     {/each}
@@ -21,6 +22,14 @@
 </div>
 
 <style>
+  .mobile-nav-links > ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: var(--spacing-sm);
+  }
+  .mobile-nav-links > ul > li {
+    list-style: none;
+  }
   .footer-links > ul > li {
     list-style: none;
     font-size: clamp(12px, 3vw, 14px);

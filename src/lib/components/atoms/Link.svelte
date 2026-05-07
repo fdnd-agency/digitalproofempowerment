@@ -67,6 +67,12 @@
     margin: var(--spacing-2xl);
     padding: var(--spacing-sm);
   }
+  .mobile-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
   @media (width <= 500px) {
     .footer-link {
