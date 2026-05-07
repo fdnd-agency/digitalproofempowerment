@@ -32,7 +32,7 @@
       right: 0;
       bottom: 0;
       z-index: 1000;
-      background-color: var(--secondary-text-color);
+      background-color: var(--background-color-secondary);
       padding-bottom: env(safe-area-inset-bottom);
     }
   }

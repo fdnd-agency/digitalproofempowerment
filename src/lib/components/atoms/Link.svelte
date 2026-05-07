@@ -80,9 +80,9 @@
     color: var(--primary-text-color);
   }
   .mobile-link.active {
-    background-color: rgb(227, 237, 241);
+    background-color: var(--background-color-primary);
     padding: var(--spacing-sm);
-    border-radius: var(--spacing-sm);
+    border-radius: var(--radius-md);
   }
 
   @media (width <= 500px) {
