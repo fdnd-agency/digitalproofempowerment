@@ -71,6 +71,8 @@
 
   /* ------------------------------------------ COLORS ------------------------------------------ */
 
+  --background-color-secondary: hsl(240deg 6% 97%);
+  --background-color-primary: hsl(213deg 80% 94%);
   --primary-text-color: hsl(232deg 47% 24%);
   --secondary-text-color: hsl(0deg 0% 100%);
   --tertiary-text-color: hsl(240deg 6% 29%);
