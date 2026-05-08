@@ -14,6 +14,8 @@
           rel={link.rel}
           ariaLabel={link.ariaLabel}
           text={link.text}
+          Icon={link.icon}
+          isActive={link.isActive}
         />
       </li>
     {/each}
@@ -21,6 +23,18 @@
 </div>
 
 <style>
+  .mobile-nav-links > ul {
+    display: flex;
+    place-content: center space-evenly;
+    padding: var(--spacing-sm);
+    font-family: var(--headline-font);
+    font-size: clamp(12px, 3vw, 14px);
+  }
+
+  .mobile-nav-links > ul > li {
+    list-style: none;
+  }
+
   .footer-links > ul > li {
     list-style: none;
     font-size: clamp(12px, 3vw, 14px);
@@ -28,7 +42,7 @@
     padding-left: 0;
   }
 
-  .footer-links > h4 {
+  .footer-links > h3 {
     margin-bottom: 1rem;
     padding: 0;
   }
