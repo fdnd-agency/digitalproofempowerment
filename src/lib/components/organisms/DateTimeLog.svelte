@@ -1,5 +1,5 @@
 <script>
-  let { selectedDate = $bindable(null), dateRange = $bindable({ start: null, end: null }) } =
+  let { selectedDate = $bindable(null)} =
     $props();
 
   let clockMode = $state("clockIn");
