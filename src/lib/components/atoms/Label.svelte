@@ -1,12 +1,11 @@
 <script>
-  let { inputId, className,text,...rest} = $props();
+  let { inputId, className, text, ...rest } = $props();
 </script>
 
-<label for={inputId} class={className} {...rest}> 
-    {text}
-    <slot/>
+<label for={inputId} class={className} {...rest}>
+  {text}
+  <slot />
 </label>
-
 
 <style>
   .optional-text-label {
@@ -38,7 +37,6 @@
   }
 
   @media (width <= 480px) {
-    
     .log-label {
       font-size: 0.9rem;
       margin-bottom: var(--spacing-xxs);

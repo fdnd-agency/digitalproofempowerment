@@ -1,9 +1,9 @@
 <script>
-  let { type, name, value =  $bindable(""), placeholder, className, id, ...rest } = $props();
+  let { type, name, value = $bindable(""), placeholder, className, id, ...rest } = $props();
 </script>
 
 {#if type === "textarea"}
-  <textarea {id} {name} placeholder={placeholder} class={className} bind:value {...rest} ></textarea>
+  <textarea {id} {name} {placeholder} class={className} {...rest}>{value}</textarea>
 {:else}
   <input {id} {type} {name} {placeholder} bind:value class={className} {...rest} />
 {/if}
