@@ -1,9 +1,17 @@
 <!-- eslint-disable svelte/valid-compile -->
 <script>
-    import { Button, Input, Label, EyeIcon, LoadingState, FormValidationMessages, ErrorMessageIcon } from "$lib";
-    import { superForm } from 'sveltekit-superforms';
+  import {
+    Button,
+    Input,
+    Label,
+    EyeIcon,
+    LoadingState,
+    FormValidationMessages,
+    ErrorMessageIcon,
+  } from "$lib";
+  import { superForm } from "sveltekit-superforms";
 
-    let { data } = $props();
+  let { data } = $props();
 
   /* eslint-disable-next-line svelte/valid-compile */
   const { form, errors, enhance, message, submitting } = superForm(data.form, {
@@ -12,65 +20,126 @@
 </script>
 
 <form class="contact-form" method="POST" id="contact-form" use:enhance>
-    <fieldset class="contact-form-fieldset">
-        <legend class="contact-form-legend">Contact form</legend>
+  <fieldset class="contact-form-fieldset">
+    <legend class="contact-form-legend">Contact form</legend>
 
-        <div class="input-group">
-            <Label inputId="first-name" formId="contact-form" className="contact-form-label" text="First name" />
-            <Input name="firstname" type="text" placeholder="First name" className="contact-form-input" id="first-name" bind:value={$form.firstname} />
+    <div class="input-group">
+      <Label
+        inputId="first-name"
+        formId="contact-form"
+        className="contact-form-label"
+        text="First name"
+      />
+      <Input
+        name="firstname"
+        type="text"
+        placeholder="First name"
+        className="contact-form-input"
+        id="first-name"
+        bind:value={$form.firstname}
+      />
 
-            {#if $errors.firstname}
-                <FormValidationMessages ErrorText={$errors.firstname} Icon={ErrorMessageIcon} className="error-message"  />
-            {/if}
-        </div>
-
-        <div class="input-group">
-            <Label inputId="last-name" formId="contact-form" className="contact-form-label" text="Last name" />
-            <Input name="lastname" type="text" placeholder="Last name" className="contact-form-input" id="last-name" bind:value={$form.lastname} />
-
-            {#if $errors.lastname}
-                <FormValidationMessages ErrorText={$errors.lastname} Icon={ErrorMessageIcon} className="error-message"  />
-            {/if}
-        </div>
-
-        <div class="input-group">
-            <Label inputId="email" formId="contact-form" className="contact-form-label" text="Email" />
-            <Input name="email" type="email" placeholder="emailadress" className="contact-form-input" id="email" bind:value={$form.email}  />
-            
-            {#if $errors.email}
-                <FormValidationMessages ErrorText={$errors.email} Icon={ErrorMessageIcon} className="error-message"  />
-            {/if}
-        </div>
-
-        <div class="input-group">
-            <Label inputId="message" formId="contact-form" className="contact-form-label" text="Message" />
-            <Input name="message" placeholder="Your message" type="textarea" className="contact-form-input" id="message" bind:value={$form.message}  />
-
-            {#if $errors.message }
-                <FormValidationMessages ErrorText={$errors.message} Icon={ErrorMessageIcon} className="error-message"  />
-            {/if}
-        </div>
-    </fieldset>
-
-
-    <div class="button-wrapper">
-        <Button
-            Icon={EyeIcon}
-            buttonType="submit"
-            className="btn-black"
-            buttonText="Send"
+      {#if $errors.firstname}
+        <FormValidationMessages
+          ErrorText={$errors.firstname}
+          Icon={ErrorMessageIcon}
+          className="error-message"
         />
-            
-        {#if $submitting}
-            <LoadingState/>    
-        {/if}
-
-        {#if $message === 'Message send successfull'}
-                <FormValidationMessages ErrorText={$message} Icon={ErrorMessageIcon} className="success-message"  />
-        {:else if $message === 'Something went wrong'}
-                <FormValidationMessages ErrorText={$message} Icon={ErrorMessageIcon} className="error-message"  />
-        {/if}
+      {/if}
     </div>
+
+    <div class="input-group">
+      <Label
+        inputId="last-name"
+        formId="contact-form"
+        className="contact-form-label"
+        text="Last name"
+      />
+      <Input
+        name="lastname"
+        type="text"
+        placeholder="Last name"
+        className="contact-form-input"
+        id="last-name"
+        bind:value={$form.lastname}
+      />
+
+      {#if $errors.lastname}
+        <FormValidationMessages
+          ErrorText={$errors.lastname}
+          Icon={ErrorMessageIcon}
+          className="error-message"
+        />
+      {/if}
+    </div>
+
+    <div class="input-group">
+      <Label inputId="email" formId="contact-form" className="contact-form-label" text="Email" />
+      <Input
+        name="email"
+        type="email"
+        placeholder="emailadress"
+        className="contact-form-input"
+        id="email"
+        bind:value={$form.email}
+      />
+
+      {#if $errors.email}
+        <FormValidationMessages
+          ErrorText={$errors.email}
+          Icon={ErrorMessageIcon}
+          className="error-message"
+        />
+      {/if}
+    </div>
+
+    <div class="input-group">
+      <Label
+        inputId="message"
+        formId="contact-form"
+        className="contact-form-label"
+        text="Message"
+      />
+      <Input
+        name="message"
+        placeholder="Your message"
+        type="textarea"
+        className="contact-form-input"
+        id="message"
+        bind:value={$form.message}
+      />
+
+      {#if $errors.message}
+        <FormValidationMessages
+          ErrorText={$errors.message}
+          Icon={ErrorMessageIcon}
+          className="error-message"
+        />
+      {/if}
+    </div>
+  </fieldset>
+
+  <div class="button-wrapper">
+    <Button Icon={EyeIcon} buttonType="submit" className="btn-black" buttonText="Send" />
+
+    {#if $submitting}
+      <LoadingState />
+    {/if}
+
+    {#if $message === "Message send successfull"}
+      <FormValidationMessages
+        ErrorText={$message}
+        Icon={ErrorMessageIcon}
+        className="success-message"
+      />
+    {:else if $message === "Something went wrong"}
+      <FormValidationMessages
+        ErrorText={$message}
+        Icon={ErrorMessageIcon}
+        className="error-message"
+      />
+    {/if}
+  </div>
 </form>
 
 <style>
@@ -102,48 +171,6 @@
     display: flex;
     flex-direction: row;
     gap: var(--spacing-md);
-  }
-
-  .error-message {
-    font-size: clamp(11px, 3vw, 12px);
-    background-color: var(--emergency-color);
-    width: fit-content;
-    padding: var(--spacing-xxs);
-    border-radius: var(--radius-sm);
-    color: var(--secondary-text-color);
-    font-style: italic;
-    padding-left: var(--spacing-xs);
-    padding-right: var(--spacing-xs);
-    margin-top: var(--radius-xs);
-    display: flex;
-    flex-direction: row;
-    gap: var(--spacing-xxs);
-    justify-content: center;
-    align-items: center;
-
-    svg {
-      align-self: flex-start;
-    }
-  }
-
-  .success-message {
-    font-size: clamp(11px, 3vw, 12px);
-    background-color: green;
-    width: fit-content;
-    padding: var(--spacing-xxs);
-    border-radius: var(--radius-sm);
-    color: var(--secondary-text-color);
-    font-style: italic;
-    padding-left: var(--spacing-xs);
-    padding-right: var(--spacing-xs);
-    margin-top: var(--radius-xs);
-    display: flex;
-    flex-direction: row;
-    gap: var(--spacing-xxs);
-    justify-content: center;
-    align-items: center;
-    animation: fadeOut 1s ease forwards;
-    animation-delay: 3s;
   }
 
   @keyframes loading {

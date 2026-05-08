@@ -1,5 +1,5 @@
 <script>
-  import { Nav, Footer } from "$lib";
+  import { Nav, MobileNavbar, Footer } from "$lib";
 
   import favicon from "$lib/assets/favicon.svg";
   import "../lib/css/global-stylesheet.css";
@@ -14,5 +14,7 @@
 <Nav />
 
 {@render children()}
+
+<MobileNavbar />
 
 <Footer />
