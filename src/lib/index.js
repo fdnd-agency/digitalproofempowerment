@@ -62,3 +62,4 @@ export { default as Input } from "$lib/components/atoms/Input.svelte";
 export { default as LocationSection } from "$lib/components/organisms/LocationSection.svelte";
 export { default as LoadingState } from "$lib/components/atoms/LoadingState.svelte";
 export { default as FormValidationMessages } from "$lib/components/atoms/FormValidationMessages.svelte";
+export { default as MobileNavbar } from "$lib/components/organisms/MobileNavbar.svelte";

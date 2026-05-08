@@ -1,10 +1,10 @@
 <script>
-  let { Icon, href = "#", target = "_self", rel, text, className } = $props();
+  let { Icon, href = "#", target = "_self", rel, text, className, isActive = false } = $props();
 </script>
 
 <!-- When using this component enter class name as className. -->
 
-<a {href} {target} {rel} class="link {className}">
+<a {href} {target} {rel} class="link {className}" class:active={isActive}>
   {#if Icon}
     <Icon class="icon" />
   {/if}
@@ -12,7 +12,7 @@
 </a>
 
 <style>
-  .link:focus {
+  .link:focus-visible {
     outline: 1px solid var(--accent-neutral);
   }
 
@@ -66,6 +66,29 @@
     background-color: white;
     margin: var(--spacing-2xl);
     padding: var(--spacing-sm);
+  }
+
+  .mobile-link {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--primary-text-color);
+    padding: var(--spacing-sm);
+  }
+
+  .mobile-link:visited {
+    color: var(--primary-text-color);
+  }
+
+  .mobile-link.active {
+    background-color: var(--background-color-primary);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+  }
+
+  .mobile-link:focus-visible {
+    outline: 1px solid var(--secondary);
   }
 
   @media (width <= 500px) {
