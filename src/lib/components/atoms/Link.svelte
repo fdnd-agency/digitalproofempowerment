@@ -84,6 +84,9 @@
     padding: var(--spacing-sm);
     border-radius: var(--radius-md);
   }
+  .mobile-link:focus {
+    outline: 1px solid var(--secondary);
+  }
 
   @media (width <= 500px) {
     .footer-link {
