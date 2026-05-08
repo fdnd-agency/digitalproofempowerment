@@ -1,4 +1,7 @@
 <script>
+  import Input from "$lib/components/atoms/Input.svelte";
+  import Label from "$lib/components/atoms/Label.svelte";
+
   let { selectedDate = $bindable(null) } = $props();
 
   let clockMode = $state("clockIn");
@@ -14,47 +17,67 @@
   }
 </script>
 
-<div class="datetime-log">
-  <div class="mode-row">
+<form class="datetime-log">
+  <nav class="clock-mode-nav">
     <button
       type="button"
       class:active={clockMode === "clockIn"}
-      onclick={() => (clockMode = "clockIn")}>Inklokken</button
+      onclick={() => (clockMode = "clockIn")}>Clock in</button
     >
     <button
       type="button"
       class:active={clockMode === "clockOut"}
-      onclick={() => (clockMode = "clockOut")}>Uitklokken</button
+      onclick={() => (clockMode = "clockOut")}>Clock out</button
     >
-  </div>
+  </nav>
 
-  <div class="datetime-field">
-    <label for="dateInput">What date?</label>
-    <input id="dateInput" type="date" bind:value={selectedDate} />
+  <div class="date-selection">
+    <Label className="log-label" inputId="dateInput" text="What date?" />
+    <Input id="dateInput" type="date" className="log-input" bind:value={selectedDate} />
   </div>
 
   {#if clockMode === "clockIn"}
-    <div class="datetime-field">
-      <label for="clockInInput">Clock in</label>
-      <input id="clockInInput" type="time" bind:value={clockChecker.clockIn} />
+    <div class="time-selection">
+      <Label className="log-label" inputId="clockInInput" text="Clock in" />
+      <Input
+        id="clockInInput"
+        type="time"
+        className="log-input"
+        bind:value={clockChecker.clockIn}
+      />
     </div>
   {:else if clockMode === "clockOut"}
-    <div class="datetime-field">
-      <label for="clockOutInput">Clock out</label>
-      <input id="clockOutInput" type="time" bind:value={clockChecker.clockOut} />
+    <div class="time-selection">
+      <Label className="log-label" inputId="clockOutInput" text="Clock out" />
+      <Input
+        id="clockOutInput"
+        type="time"
+        className="log-input"
+        bind:value={clockChecker.clockOut}
+      />
     </div>
   {:else}
-    <div class="datetime-field">
-      <label for="clockInInput">Clock in</label>
-      <input id="clockInInput" type="time" bind:value={clockChecker.clockIn} />
+    <div class="time-selection">
+      <Label className="log-label" inputId="clockInInput" text="Clock in" />
+      <Input
+        id="clockInInput"
+        type="time"
+        className="log-input"
+        bind:value={clockChecker.clockIn}
+      />
     </div>
-    <div class="datetime-field">
-      <label for="clockOutInput">Clock out</label>
-      <input id="clockOutInput" type="time" bind:value={clockChecker.clockOut} />
+    <div class="time-selection">
+      <Label className="log-label" inputId="clockOutInput" text="Clock out" />
+      <Input
+        id="clockOutInput"
+        type="time"
+        className="log-input"
+        bind:value={clockChecker.clockOut}
+      />
     </div>
   {/if}
 
-  <div class="datetime-summary">
+  <aside class="datetime-summary">
     <span>{selectedDate ? formatDate(selectedDate) : "Choose a date"}</span>
     <span>
       {clockMode === "clockIn" && clockChecker.clockIn
@@ -63,8 +86,8 @@
           ? clockChecker.clockOut
           : "--:--"}
     </span>
-  </div>
-</div>
+  </aside>
+</form>
 
 <style>
   .datetime-log {
@@ -72,13 +95,13 @@
     gap: var(--spacing-md);
   }
 
-  .mode-row {
+  .clock-mode-nav {
     display: flex;
     gap: var(--spacing-sm);
     flex-wrap: wrap;
   }
 
-  .mode-row button {
+  .clock-mode-nav button {
     flex: 1;
     min-width: 120px;
     padding: var(--spacing-sm) var(--spacing-md);
@@ -90,51 +113,16 @@
     transition: border-color 0.2s ease;
   }
 
-  .mode-row button.active {
+  .clock-mode-nav button.active {
     background: var(--accent-dark);
     border-color: var(--accent-dark);
     color: white;
   }
 
-  .datetime-field {
+  .date-selection,
+  .time-selection {
     display: grid;
     gap: var(--spacing-xxs);
-  }
-
-  .datetime-field label {
-    font-weight: 700;
-    color: var(--primary-dark);
-    text-transform: capitalize;
-  }
-
-  .datetime-field input {
-    width: 100%;
-    border: var(--border);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-sm) var(--spacing-sm);
-    font-size: 1rem;
-    background: white;
-    color: var(--primary-dark);
-    outline: none;
-    transition:
-      border-color 0.2s ease,
-      box-shadow 0.2s ease;
-  }
-
-  .datetime-field input:focus {
-    border-color: var(--primary-dark);
-    box-shadow: 0 0 0 4px rgb(61 114 205 / 8%);
-  }
-
-  .datetime-summary {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--spacing-md);
-    padding: var(--spacing-md);
-    border-radius: var(--radius-md);
-    background: var(--secondary-light);
-    color: var(--primary-dark);
-    font-weight: 600;
   }
 
   .datetime-summary span {
@@ -143,6 +131,7 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: var(--primary-dark);
   }
 
   @media (width <= 768px) {

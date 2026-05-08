@@ -1,11 +1,11 @@
 <script>
-  let { type, name, value = "", placeholder, className, id, ...rest } = $props();
+  let { type, name, value =  $bindable(""), placeholder, className, id, ...rest } = $props();
 </script>
 
 {#if type === "textarea"}
-  <textarea {id} {name} placeholder={placeholder} class={className} {...rest}>{value}</textarea>
+  <textarea {id} {name} placeholder={placeholder} class={className} bind:value {...rest} ></textarea>
 {:else}
-  <input {id} {type} {name} {placeholder} {value} class={className} {...rest} />
+  <input {id} {type} {name} {placeholder} bind:value class={className} {...rest} />
 {/if}
 
 <style>
@@ -44,27 +44,45 @@
   }
 
   .contact-form-input {
-  padding: var(--spacing-sm);
-        border: var(--border);
-        border-radius: var(--radius-md);
-        font-family: var(--main-font);
-        font-size: clamp(0.95rem, 2vw, 1rem);
-        outline: none;
-        transition:
-            border-color 0.2s ease,
-            box-shadow 0.2s ease;
-            background-color: var(--main-background-color);
-}
+    padding: var(--spacing-sm);
+    border: var(--border);
+    border-radius: var(--radius-md);
+    font-family: var(--main-font);
+    font-size: clamp(0.95rem, 2vw, 1rem);
+    outline: none;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+    background-color: var(--main-background-color);
+  }
 
-.contact-form-input:focus {
-   border-color: var(--accent-dark);
-        box-shadow: 0 0 10px rgba(237, 130, 72, 0.2);
-}
-
-
+  .contact-form-input:focus {
+    border-color: var(--accent-dark);
+    box-shadow: 0 0 10px rgba(237, 130, 72, 0.2);
+  }
 
   .contact-form-input:focus {
     border-color: var(--accent-dark);
     box-shadow: 0 0 10px rgb(237 130 72 / 20%);
+  }
+
+  .log-input {
+    color-scheme: light;
+    width: 100%;
+    border: var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-sm);
+    font-size: 1rem;
+    outline: none;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+    background-color: white;
+    color: black;
+  }
+
+  .log-input:focus {
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 0 4px rgb(61 114 205 / 8%);
   }
 </style>

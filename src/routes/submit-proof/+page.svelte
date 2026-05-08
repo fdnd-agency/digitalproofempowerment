@@ -12,21 +12,21 @@
   <!-- <SubmitForm /> -->
   <div class="container">
     <section class="card location-card">
-      <div class="card-header">
+      <header class="card-header">
         <h2>Save your work location</h2>
-      </div>
-      <div class="card-content">
+      </header>
+      <article class="card-content">
         <LocationLog bind:locatieInput />
-      </div>
+      </article>
     </section>
 
     <section class="card datetime-card">
-      <div class="card-header">
+      <header class="card-header">
         <h2>Save your date and time</h2>
-      </div>
-      <div class="card-content">
+      </header>
+      <article class="card-content">
         <DateTimeLog bind:selectedDate bind:dateRange />
-      </div>
+      </article>
     </section>
   </div>
 </main>

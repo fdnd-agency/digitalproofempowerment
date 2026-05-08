@@ -1,4 +1,7 @@
 <script>
+  import Input from "$lib/components/atoms/Input.svelte";
+  import Label from "$lib/components/atoms/Label.svelte";
+
   let {
     locatieInput = $bindable(""),
     mapUrl = "https://www.openstreetmap.org/export/embed.html?bbox=4.8,52.3,5.0,52.4&layer=mapnik",
@@ -25,6 +28,10 @@
 
       const lat = parseFloat(data[0].lat);
       const lon = parseFloat(data[0].lon);
+      const address = data[0].address || {};
+
+      postcode = address.postcode ?? postcode;
+      housenumber = address.house_number ?? address.house_number ?? housenumber;
 
       const offset = 0.05;
       const bbox = `${lon - offset},${lat - offset},${lon + offset},${lat + offset}`;
@@ -57,36 +64,49 @@
   }
 </script>
 
-<div class="location-log">
+<section class="location-log">
   <iframe id="map" title="Workplace location map" src={mapUrl}></iframe>
-  <div class="column-inputs">
-    <label for="locatieInput">Your location</label>
-    <input
+  <div class="location-inputs">
+    <Label className="log-label" inputId="locatieInput" text="Your location" />
+    <Input
       id="locatieInput"
       onchange={zoekLocatie}
       type="text"
       placeholder="Type the workplace name or location here"
       bind:value={locatieInput}
+      className="log-input"
     />
   </div>
-  <div class="button-row">
-    <label for="geo-button">Want us to find you?</label>
+  <div class="geolocation-controls">
+    <Label className="log-label" inputId="geo-button" text="Want us to find you?" />
     <button id="geo-button" onclick={locatieViaGeolocatie} type="button" class="geo-button"
-      >Click here!</button
-    >
+      >Click here!
+    </button>
   </div>
 
-  <div class="two-column-inputs">
+  <div class="address-details">
     <div>
-      <label for="postcodeInput">Postcode</label>
-      <input id="postcodeInput" type="text" placeholder="1234 AB" bind:value={postcode} />
+      <Label className="log-label" inputId="postcodeInput" text="Postcode" />
+      <Input
+        id="postcodeInput"
+        type="text"
+        placeholder="1234 AB"
+        bind:value={postcode}
+        className="log-input"
+      />
     </div>
     <div>
-      <label for="housenumberInput">Huisnummer</label>
-      <input id="housenumberInput" type="text" placeholder="12" bind:value={housenumber} />
+      <Label className="log-label" inputId="housenumberInput" text="Huisnummer" />
+      <Input
+        id="housenumberInput"
+        type="text"
+        placeholder="12"
+        bind:value={housenumber}
+        className="log-input"
+      />
     </div>
   </div>
-</div>
+</section>
 
 <style>
   .location-log {
@@ -103,32 +123,14 @@
     box-shadow: inset 0 0 0 1px rgb(13 22 49 / 5%);
   }
 
-  .location-log input {
-    width: 100%;
-    border: var(--border);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-sm);
-    font-size: 1rem;
-    outline: none;
-    transition:
-      border-color 0.2s ease,
-      box-shadow 0.2s ease;
-    background-color: white;
-  }
-
-  .location-log input:focus {
-    border-color: var(--primary-dark);
-    box-shadow: 0 0 0 4px rgb(61 114 205 / 8%);
-  }
-
-  .button-row {
+  .geolocation-controls {
     display: flex;
     gap: var(--spacing-sm);
     flex-wrap: wrap;
     align-items: center;
   }
 
-  .button-row button {
+  .geolocation-controls button {
     flex: 1;
     min-width: 140px;
     border: none;
@@ -141,7 +143,7 @@
     transition: transform 0.2s ease;
   }
 
-  .button-row button:hover {
+  .geolocation-controls button:hover {
     background: #1e3f72;
     transform: translateY(-1px);
   }
@@ -154,26 +156,15 @@
     background: #2f6cbb;
   }
 
-  .column-inputs {
-    display: flex;
-    flex-direction: column;
+  .location-inputs {
+    display: grid;
+    gap: var(--spacing-xs);
   }
 
-  .two-column-inputs {
+  .address-details {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--spacing-md);
-  }
-
-  label {
-    font-weight: 600;
-    color: var(--primary-dark);
-    display: block;
-    margin-bottom: var(--spacing-xs);
-  }
-
-  .two-column-inputs label {
-    margin-bottom: var(--spacing-xs);
   }
 
   @media (width <= 768px) {
@@ -181,16 +172,11 @@
       min-height: 180px;
     }
 
-    .location-log input {
-      padding: var(--spacing-xs);
-      font-size: 0.9rem;
-    }
-
-    .button-row {
+    .geolocation-controls {
       gap: var(--spacing-xs);
     }
 
-    .button-row button {
+    .geolocation-controls button {
       min-width: unset;
       padding: var(--spacing-xs) var(--spacing-md);
     }
@@ -205,19 +191,9 @@
       min-height: 150px;
     }
 
-    .location-log input {
-      padding: var(--spacing-xs);
-      font-size: 0.85rem;
-    }
-
-    .button-row button {
+    .geolocation-controls button {
       padding: calc(var(--spacing-xs) - 0.05rem) var(--spacing-xs);
       font-size: 0.9rem;
-    }
-
-    label {
-      font-size: 0.9rem;
-      margin-bottom: var(--spacing-xxs);
     }
   }
 </style>
