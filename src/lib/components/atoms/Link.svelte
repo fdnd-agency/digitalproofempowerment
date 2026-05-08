@@ -12,7 +12,7 @@
 </a>
 
 <style>
-  .link:focus {
+  .link:focus-visible {
     outline: 1px solid var(--accent-neutral);
   }
 
@@ -84,7 +84,7 @@
     padding: var(--spacing-sm);
     border-radius: var(--radius-md);
   }
-  .mobile-link:focus {
+  .mobile-link:focus-visible {
     outline: 1px solid var(--secondary);
   }
 

@@ -26,6 +26,7 @@
   .mobile-nav-links > ul {
     display: flex;
     justify-content: space-evenly;
+    align-content: center;
     padding: var(--spacing-sm);
   }
   .mobile-nav-links > ul > li {
