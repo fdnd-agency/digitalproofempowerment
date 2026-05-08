@@ -1,196 +1,145 @@
 <script>
-  let { selectedDate = $bindable(null), dateRange = $bindable({ start: null, end: null }) } = $props();
+  let { selectedDate = $bindable(null), dateRange = $bindable({ start: null, end: null }) } =
+    $props();
 
-  let currentDate = $state(new Date(2026, 3, 20));
-  let pickerMode = $state("start");
+  let clockMode = $state("clockIn");
+  let clockChecker = $state({ clockIn: "", clockOut: "" });
 
-  let daysInMonth = $derived(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate());
-  let firstDayOfMonth = $derived(new Date(currentDate.getFullYear(), currentDate.getMonth(), 1).getDay());
-  let adjustedFirstDay = $derived(firstDayOfMonth === 0 ? 6 : firstDayOfMonth - 1);
-  let monthDays = $derived(Array.from({ length: daysInMonth }, (_, i) => i + 1));
-  let emptyDays = $derived(Array(adjustedFirstDay).fill(null));
-  let monthName = $derived(currentDate.toLocaleString("en-US", { month: "long", year: "numeric" }));
-
-  function previousMonth() {
-    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() - 1);
-  }
-
-  function nextMonth() {
-    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1);
-  }
-
-  function isInRange(day) {
-    if (!dateRange.start || !dateRange.end) return false;
-    const checkDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-    return checkDate >= dateRange.start && checkDate <= dateRange.end;
-  }
-
-  function isStartOrEnd(day) {
-    if (!dateRange.start && !dateRange.end) return false;
-    const checkDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-    const startMatch = dateRange.start && checkDate.getTime() === dateRange.start.getTime();
-    const endMatch = dateRange.end && checkDate.getTime() === dateRange.end.getTime();
-    return startMatch || endMatch;
-  }
-
-  function selectDay(day) {
-    const selected = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
-    
-    if (pickerMode === "start") {
-      dateRange = { start: selected, end: null };
-      pickerMode = "end";
-    } else {
-      if (dateRange.start && selected < dateRange.start) {
-        dateRange = { end: dateRange.start, start: selected };
-      } else {
-        dateRange = { ...dateRange, end: selected };
-      }
-      pickerMode = "start";
-    }
-    selectedDate = selected;
-  }
-
-  function formatDate(date) {
-    if (!date) return "";
-    return date.toLocaleDateString("en-GB", { day: "2-digit", month: "2-digit", year: "numeric" });
+  function formatDate(value) {
+    if (!value) return "";
+    return new Date(value).toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    });
   }
 </script>
 
 <div class="datetime-log">
-  <div class="calendar-header">
-    <button type="button" aria-label="Previous month" onclick={previousMonth}>←</button>
-    <span>{monthName.toLowerCase()}</span>
-    <button type="button" aria-label="Next month" onclick={nextMonth}>→</button>
+  <div class="mode-row">
+    <button type="button" class:active={clockMode === "clockIn"} onclick={() => (clockMode = "clockIn")}>Inklokken</button>
+    <button type="button" class:active={clockMode === "clockOut"} onclick={() => (clockMode = "clockOut")}>Uitklokken</button>
   </div>
-  <div class="date-range-display">
-    <span>Start: {formatDate(dateRange.start) || "-"}</span>
-    <span>End: {formatDate(dateRange.end) || "-"}</span>
+
+  <div class="datetime-field">
+    <label for="dateInput">What date?</label>
+    <input id="dateInput" type="date" bind:value={selectedDate} />
   </div>
-  <div class="weekday-row">
-    <span>mon</span>
-    <span>tue</span>
-    <span>wed</span>
-    <span>thu</span>
-    <span>fri</span>
-    <span>sat</span>
-    <span>sun</span>
-  </div>
-  <div class="date-grid">
-    {#each emptyDays as _}
-      <div></div>
-    {/each}
-    {#each monthDays as day}
-      <button
-        type="button"
-        onclick={() => selectDay(day)}
-        class:in-range={isInRange(day)}
-        class:start-end={isStartOrEnd(day)}
-        class:selected={selectedDate?.getDate() === day &&
-          selectedDate?.getMonth() === currentDate.getMonth()}
-      >
-        {day}
-      </button>
-    {/each}
+
+  {#if clockMode === "clockIn"}
+    <div class="datetime-field">
+      <label for="clockInInput">Clock in</label>
+      <input id="clockInInput" type="time" bind:value={clockChecker.clockIn} />
+    </div>
+  {:else if clockMode === "clockOut"}
+    <div class="datetime-field">
+      <label for="clockOutInput">Clock out</label>
+      <input id="clockOutInput" type="time" bind:value={clockChecker.clockOut} />
+    </div>
+  {:else}
+    <div class="datetime-field">
+      <label for="clockInInput">Clock in</label>
+      <input id="clockInInput" type="time" bind:value={clockChecker.clockIn} />
+    </div>
+    <div class="datetime-field">
+      <label for="clockOutInput">Clock out</label>
+      <input id="clockOutInput" type="time" bind:value={clockChecker.clockOut} />
+    </div>
+  {/if}
+
+  <div class="datetime-summary">
+    <span>{selectedDate ? formatDate(selectedDate) : "Choose a date"}</span>
+    <span>
+      {clockMode === "clockIn" && clockChecker.clockIn
+        ? clockChecker.clockIn
+        : clockMode === "clockOut" && clockChecker.clockOut
+        ? clockChecker.clockOut
+        : "--:--"}
+    </span>
   </div>
 </div>
 
 <style>
   .datetime-log {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 1rem;
   }
 
-  .calendar-header {
+  .mode-row {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-    padding-bottom: 0.75rem;
-    border-bottom: var(--border);
+    gap: 0.75rem;
+    flex-wrap: wrap;
   }
 
-  .calendar-header button {
-    width: 2.5rem;
-    height: 2.5rem;
-    border: none;
-    border-radius: 50%;
-    background: var(--primary-dark);
-    color: white;
+  .mode-row button {
+    flex: 1;
+    min-width: 120px;
+    padding: 0.85rem 1rem;
+    border: 1px solid rgba(13, 22, 49, 0.16);
+    border-radius: var(--radius-md);
+    background: white;
+    color: var(--primary-dark);
     cursor: pointer;
-    font-size: 1rem;
+    transition: background 0.2s ease, border-color 0.2s ease;
   }
 
-  .calendar-header span {
-    font-size: clamp(1.25rem, 2vw, 1.6rem);
+  .mode-row button.active {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+    color: white;
+  }
+
+  .datetime-field {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .datetime-field label {
     font-weight: 700;
+    color: var(--primary-dark);
     text-transform: capitalize;
   }
 
-  .date-range-display {
+  .datetime-field input {
+    width: 100%;
+    border: var(--border);
+    border-radius: var(--radius-md);
+    padding: 0.8rem 0.9rem;
+    font-size: 1rem;
+    background: white;
+    color: var(--primary-dark);
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .datetime-field input:focus {
+    border-color: var(--primary-dark);
+    box-shadow: 0 0 0 4px rgba(61, 114, 205, 0.08);
+  }
+
+  .datetime-summary {
     display: flex;
     justify-content: space-between;
-    padding: 0.75rem;
-    background: white;
+    gap: 1rem;
+    padding: 1rem;
     border-radius: var(--radius-md);
-    font-size: 0.9rem;
-    color: var(--primary-dark);
-  }
-
-  .weekday-row {
-    display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    text-align: center;
-    gap: 0.5rem;
-    font-size: 0.9rem;
-    color: var(--primary-dark);
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-  }
-
-  .date-grid {
-    display: grid;
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-    gap: 0.85rem;
-  }
-
-  .date-grid > div {
-    aspect-ratio: 1;
-  }
-
-  .date-grid button {
-    aspect-ratio: 1;
-    border: 1px solid rgba(13, 22, 49, 0.12);
-    border-radius: 50%;
-    background: white;
-    color: var(--primary-dark);
-    font-size: 1rem;
-    cursor: pointer;
-    transition:
-      transform 0.2s ease,
-      background 0.2s ease;
-  }
-
-  .date-grid button:hover {
-    transform: translateY(-2px);
     background: var(--secondary-light);
-  }
-
-  .date-grid button.selected {
-    border-color: var(--accent-dark);
-    background: var(--accent-dark);
-    color: white;
-  }
-
-  .date-grid button.in-range {
-    background: var(--accent-light);
-    border-color: var(--accent-light);
     color: var(--primary-dark);
+    font-weight: 600;
   }
 
-  .date-grid button.start-end {
-    background: var(--accent-dark);
-    border-color: var(--accent-dark);
-    color: white;
+  .datetime-summary span {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  @media (max-width: 768px) {
+    .datetime-summary {
+      flex-direction: column;
+      gap: 0.5rem;
+    }
   }
 </style>
