@@ -58,14 +58,9 @@
 
   .contact-form-input:focus {
     border-color: var(--accent-dark);
-    box-shadow: 0 0 10px rgba(237, 130, 72, 0.2);
+    box-shadow: 0 0 10px rgb(237, 130, 72 /20%);
   }
-
-  .contact-form-input:focus {
-    border-color: var(--accent-dark);
-    box-shadow: 0 0 10px rgb(237 130 72 / 20%);
-  }
-
+  
   .log-input {
     color-scheme: light;
     width: 100%;
