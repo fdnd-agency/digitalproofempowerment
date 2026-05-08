@@ -81,7 +81,7 @@
     padding: var(--spacing-xl);
   }
 
-  @media (max-width <= 768px) {
+  @media (width <= 768px) {
     .container {
       grid-template-columns: 1fr;
       gap: var(--spacing-lg);
@@ -108,7 +108,7 @@
     }
   }
 
-  @media (max-width <= 480px) {
+  @media (width <= 480px) {
     .container {
       gap: var(--spacing-md);
     }

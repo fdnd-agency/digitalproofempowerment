@@ -145,7 +145,7 @@
     text-overflow: ellipsis;
   }
 
-  @media (max-width <= 768px) {
+  @media (width <= 768px) {
     .datetime-summary {
       flex-direction: column;
       gap: var(--spacing-xs);

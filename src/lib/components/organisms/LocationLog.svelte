@@ -176,7 +176,7 @@
     margin-bottom: var(--spacing-xs);
   }
 
-  @media (max-width <= 768px) {
+  @media (width <= 768px) {
     iframe {
       min-height: 180px;
     }
@@ -196,7 +196,7 @@
     }
   }
 
-  @media (max-width <= 480px) {
+  @media (width <= 480px) {
     .location-log {
       gap: var(--spacing-sm);
     }
