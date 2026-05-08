@@ -25,13 +25,14 @@
 <style>
   .mobile-nav-links > ul {
     display: flex;
-    justify-content: space-evenly;
-    align-content: center;
+    place-content: center space-evenly;
     padding: var(--spacing-sm);
   }
+
   .mobile-nav-links > ul > li {
     list-style: none;
   }
+
   .footer-links > ul > li {
     list-style: none;
     font-size: clamp(12px, 3vw, 14px);

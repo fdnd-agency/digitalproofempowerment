@@ -22,7 +22,8 @@
   .mobile-navbar {
     display: none;
   }
-  @media only screen and (max-width: 768px) {
+
+  @media only screen and (width <= 768px) {
     .mobile-navbar {
       width: 100%;
       height: 10%;

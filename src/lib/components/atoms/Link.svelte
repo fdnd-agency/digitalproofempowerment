@@ -67,6 +67,7 @@
     margin: var(--spacing-2xl);
     padding: var(--spacing-sm);
   }
+
   .mobile-link {
     text-decoration: none;
     display: flex;
@@ -79,11 +80,13 @@
   .mobile-link:visited {
     color: var(--primary-text-color);
   }
+
   .mobile-link.active {
     background-color: var(--background-color-primary);
     padding: var(--spacing-sm);
     border-radius: var(--radius-md);
   }
+
   .mobile-link:focus-visible {
     outline: 1px solid var(--secondary);
   }
