@@ -69,20 +69,20 @@
 <style>
   .datetime-log {
     display: grid;
-    gap: 1rem;
+    gap: var(--spacing-md);
   }
 
   .mode-row {
     display: flex;
-    gap: 0.75rem;
+    gap: var(--spacing-sm);
     flex-wrap: wrap;
   }
 
   .mode-row button {
     flex: 1;
     min-width: 120px;
-    padding: 0.85rem 1rem;
-    border: 1px solid rgba(13, 22, 49, 0.16);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid rgb(13 22 49 / 16%);
     border-radius: var(--radius-md);
     background: white;
     color: var(--primary-dark);
@@ -98,7 +98,7 @@
 
   .datetime-field {
     display: grid;
-    gap: 0.35rem;
+    gap: var(--spacing-xxs);
   }
 
   .datetime-field label {
@@ -111,7 +111,7 @@
     width: 100%;
     border: var(--border);
     border-radius: var(--radius-md);
-    padding: 0.8rem 0.9rem;
+    padding: var(--spacing-sm) var(--spacing-sm);
     font-size: 1rem;
     background: white;
     color: var(--primary-dark);
@@ -123,14 +123,14 @@
 
   .datetime-field input:focus {
     border-color: var(--primary-dark);
-    box-shadow: 0 0 0 4px rgba(61, 114, 205, 0.08);
+    box-shadow: 0 0 0 4px rgb(61 114 205 / 8%);
   }
 
   .datetime-summary {
     display: flex;
     justify-content: space-between;
-    gap: 1rem;
-    padding: 1rem;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
     border-radius: var(--radius-md);
     background: var(--secondary-light);
     color: var(--primary-dark);
@@ -145,10 +145,10 @@
     text-overflow: ellipsis;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width <= 768px) {
     .datetime-summary {
       flex-direction: column;
-      gap: 0.5rem;
+      gap: var(--spacing-xs);
     }
   }
 </style>

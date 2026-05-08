@@ -33,7 +33,7 @@
 
 <style>
   main {
-    padding: 10% 2rem;
+    padding: 10% var(--spacing-lg);
     min-height: 100vh;
     background: var(--secondary-lightest);
   }
@@ -49,6 +49,7 @@
     border-radius: 1.5rem 0 0 1.5rem;
     border-right: var(--border);
   }
+
   .datetime-card {
     border-radius: 0 1.5rem 1.5rem 0;
   }
@@ -65,9 +66,9 @@
   .card-header {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    border-bottom: 1px solid rgba(13, 22, 49, 0.1);
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid rgb(13 22 49 / 10%);
   }
 
   .card-header h2 {
@@ -77,13 +78,13 @@
   }
 
   .card-content {
-    padding: 2rem;
+    padding: var(--spacing-xl);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width <= 768px) {
     .container {
       grid-template-columns: 1fr;
-      gap: 1.5rem;
+      gap: var(--spacing-lg);
     }
 
     .location-card {
@@ -95,7 +96,7 @@
     }
 
     .card-content {
-      padding: 1.5rem;
+      padding: var(--spacing-lg);
     }
 
     .card-header {
@@ -107,9 +108,9 @@
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width <= 480px) {
     .container {
-      gap: 1rem;
+      gap: var(--spacing-md);
     }
 
     .card {
@@ -117,12 +118,12 @@
     }
 
     .card-content {
-      padding: 1.25rem;
+      padding: calc(var(--spacing-lg) - var(--spacing-xs));
     }
 
     .card-header {
-      padding: 1rem;
-      gap: 0.75rem;
+      padding: var(--spacing-md);
+      gap: var(--spacing-sm);
     }
 
     .card-header h2 {

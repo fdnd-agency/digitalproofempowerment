@@ -92,7 +92,7 @@
   .location-log {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: var(--spacing-lg);
   }
 
   iframe {
@@ -100,14 +100,14 @@
     width: 100%;
     border-radius: var(--radius-md);
     background: linear-gradient(180deg, #95c7f4 0%, #dae7ff 100%);
-    box-shadow: inset 0 0 0 1px rgba(13, 22, 49, 0.05);
+    box-shadow: inset 0 0 0 1px rgb(13 22 49 / 5%);
   }
 
   .location-log input {
     width: 100%;
     border: var(--border);
     border-radius: var(--radius-md);
-    padding: 0.75rem;
+    padding: var(--spacing-sm);
     font-size: 1rem;
     outline: none;
     transition:
@@ -118,12 +118,12 @@
 
   .location-log input:focus {
     border-color: var(--primary-dark);
-    box-shadow: 0 0 0 4px rgba(61, 114, 205, 0.08);
+    box-shadow: 0 0 0 4px rgb(61 114 205 / 8%);
   }
 
   .button-row {
     display: flex;
-    gap: 0.75rem;
+    gap: var(--spacing-sm);
     flex-wrap: wrap;
     align-items: center;
   }
@@ -133,7 +133,7 @@
     min-width: 140px;
     border: none;
     border-radius: var(--radius-md);
-    padding: 0.9rem 1rem;
+    padding: var(--spacing-sm) var(--spacing-md);
     font-weight: 700;
     color: white;
     background: var(--primary-dark);
@@ -162,43 +162,43 @@
   .two-column-inputs {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1rem;
-  }
-
-  .two-column-inputs label {
-    margin-bottom: 0.5rem;
+    gap: var(--spacing-md);
   }
 
   label {
     font-weight: 600;
     color: var(--primary-dark);
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: var(--spacing-xs);
   }
 
-  @media (max-width: 768px) {
+  .two-column-inputs label {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  @media (max-width <= 768px) {
     iframe {
       min-height: 180px;
     }
 
     .location-log input {
-      padding: 0.6rem;
+      padding: var(--spacing-xs);
       font-size: 0.9rem;
     }
 
     .button-row {
-      gap: 0.5rem;
+      gap: var(--spacing-xs);
     }
 
     .button-row button {
       min-width: unset;
-      padding: 0.8rem 1rem;
+      padding: var(--spacing-xs) var(--spacing-md);
     }
   }
 
-  @media (max-width: 480px) {
+  @media (max-width <= 480px) {
     .location-log {
-      gap: 0.75rem;
+      gap: var(--spacing-sm);
     }
 
     iframe {
@@ -206,18 +206,18 @@
     }
 
     .location-log input {
-      padding: 0.5rem;
+      padding: var(--spacing-xs);
       font-size: 0.85rem;
     }
 
     .button-row button {
-      padding: 0.7rem 0.8rem;
+      padding: calc(var(--spacing-xs) - 0.05rem) var(--spacing-xs);
       font-size: 0.9rem;
     }
 
     label {
       font-size: 0.9rem;
-      margin-bottom: 0.25rem;
+      margin-bottom: var(--spacing-xxs);
     }
   }
 </style>
