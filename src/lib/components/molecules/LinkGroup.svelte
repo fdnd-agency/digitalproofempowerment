@@ -27,6 +27,7 @@
     display: flex;
     place-content: center space-evenly;
     padding: var(--spacing-sm);
+    font-family: var(--headline-font);
   }
 
   .mobile-nav-links > ul > li {
