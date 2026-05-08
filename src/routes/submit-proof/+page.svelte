@@ -128,11 +128,5 @@
     .card-header h2 {
       font-size: 1.1rem;
     }
-
-    .card-icon {
-      width: 2.5rem;
-      height: 2.5rem;
-      font-size: 1.5rem;
-    }
   }
 </style>

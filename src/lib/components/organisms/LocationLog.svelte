@@ -3,9 +3,8 @@
     locatieInput = $bindable(""),
     mapUrl = "https://www.openstreetmap.org/export/embed.html?bbox=4.8,52.3,5.0,52.4&layer=mapnik",
   } = $props();
-
-  let postcode = "";
-  let housenumber = "";
+  let postcode = $state("");
+  let housenumber = $state("");
 
   async function zoekLocatie() {
     if (!locatieInput.trim()) {
