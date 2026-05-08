@@ -138,8 +138,7 @@
     color: white;
     background: var(--primary-dark);
     cursor: pointer;
-    transition:
-      transform 0.2s ease;
+    transition: transform 0.2s ease;
   }
 
   .button-row button:hover {
@@ -178,7 +177,6 @@
   }
 
   @media (max-width: 768px) {
-
     iframe {
       min-height: 180px;
     }

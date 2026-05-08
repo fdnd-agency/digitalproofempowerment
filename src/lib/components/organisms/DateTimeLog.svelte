@@ -1,6 +1,5 @@
 <script>
-  let { selectedDate = $bindable(null)} =
-    $props();
+  let { selectedDate = $bindable(null) } = $props();
 
   let clockMode = $state("clockIn");
   let clockChecker = $state({ clockIn: "", clockOut: "" });
@@ -17,8 +16,16 @@
 
 <div class="datetime-log">
   <div class="mode-row">
-    <button type="button" class:active={clockMode === "clockIn"} onclick={() => (clockMode = "clockIn")}>Inklokken</button>
-    <button type="button" class:active={clockMode === "clockOut"} onclick={() => (clockMode = "clockOut")}>Uitklokken</button>
+    <button
+      type="button"
+      class:active={clockMode === "clockIn"}
+      onclick={() => (clockMode = "clockIn")}>Inklokken</button
+    >
+    <button
+      type="button"
+      class:active={clockMode === "clockOut"}
+      onclick={() => (clockMode = "clockOut")}>Uitklokken</button
+    >
   </div>
 
   <div class="datetime-field">
@@ -53,8 +60,8 @@
       {clockMode === "clockIn" && clockChecker.clockIn
         ? clockChecker.clockIn
         : clockMode === "clockOut" && clockChecker.clockOut
-        ? clockChecker.clockOut
-        : "--:--"}
+          ? clockChecker.clockOut
+          : "--:--"}
     </span>
   </div>
 </div>
@@ -80,7 +87,7 @@
     background: white;
     color: var(--primary-dark);
     cursor: pointer;
-    transition: background 0.2s ease, border-color 0.2s ease;
+    transition: border-color 0.2s ease;
   }
 
   .mode-row button.active {
@@ -109,7 +116,9 @@
     background: white;
     color: var(--primary-dark);
     outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition:
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
   }
 
   .datetime-field input:focus {
