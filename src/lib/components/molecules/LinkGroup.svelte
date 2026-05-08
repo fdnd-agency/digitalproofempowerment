@@ -28,6 +28,7 @@
     place-content: center space-evenly;
     padding: var(--spacing-sm);
     font-family: var(--headline-font);
+    font-size: clamp(12px, 3vw, 14px);
   }
 
   .mobile-nav-links > ul > li {
