@@ -64,20 +64,16 @@
   .log-input {
     color-scheme: light;
     width: 100%;
-    border: var(--border);
+    border: 3px solid var(--primary-dark);
     border-radius: var(--radius-md);
     padding: var(--spacing-sm);
     font-size: 1rem;
     outline: none;
-    transition:
-      border-color 0.2s ease,
-      box-shadow 0.2s ease;
-    background-color: white;
-    color: black;
+    background-color: var(--background-color-secondary);
+    color: var(--primary-text-color);
   }
 
   .log-input:focus {
     border-color: var(--primary-dark);
-    box-shadow: 0 0 0 4px rgb(61 114 205 / 8%);
   }
 </style>

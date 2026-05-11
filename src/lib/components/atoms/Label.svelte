@@ -34,6 +34,7 @@
     color: var(--primary-dark);
     display: block;
     margin-bottom: var(--spacing-xs);
+    font-family: var(--body-font);
   }
 
   @media (width <= 480px) {

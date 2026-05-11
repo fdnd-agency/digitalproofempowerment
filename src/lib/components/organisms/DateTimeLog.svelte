@@ -105,17 +105,19 @@
     flex: 1;
     min-width: 120px;
     padding: var(--spacing-sm) var(--spacing-md);
-    border: 1px solid rgb(13 22 49 / 16%);
+    border: 3px solid rgba(95, 95, 95, 0.831);
     border-radius: var(--radius-md);
-    background: white;
-    color: var(--primary-dark);
+    background-color: rgba(95, 95, 95, 0.831);
+    color: var(--secondary-text-color);
     cursor: pointer;
     transition: border-color 0.2s ease;
   }
 
   .clock-mode-nav button.active {
-    background: var(--accent-dark);
-    border-color: var(--accent-dark);
+    background-color: var(--primary-dark);
+    border: 3px solid var(--primary-neutral);
+    font-family: var(--body-font);
+
     color: white;
   }
 

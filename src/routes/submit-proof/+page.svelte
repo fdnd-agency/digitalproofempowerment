@@ -35,7 +35,7 @@
   main {
     padding: 10% var(--spacing-lg);
     min-height: 100vh;
-    background: var(--secondary-lightest);
+    background: var(--background-color-primary);
   }
 
   .container {
