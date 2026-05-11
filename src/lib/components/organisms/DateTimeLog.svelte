@@ -105,17 +105,18 @@
     flex: 1;
     min-width: 120px;
     padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--primary-neutral);
     border: 3px solid var(--primary-dark);
-    border-radius: var(--radius-md);
-    background-color: var(--primary-dark);
     color: var(--secondary-text-color);
     cursor: pointer;
     transition: border-color 0.2s ease;
+    border-radius: var(--radius-md);
   }
 
   .clock-mode-nav button.active {
-    background-color: var(--primary-neutral);
     border: 3px solid var(--primary-dark);
+    border-radius: var(--radius-md);
+    background-color: var(--primary-dark);
     font-family: var(--body-font);
     color: var(--secondary-text-color);
   }
