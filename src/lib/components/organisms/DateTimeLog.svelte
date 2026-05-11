@@ -105,20 +105,19 @@
     flex: 1;
     min-width: 120px;
     padding: var(--spacing-sm) var(--spacing-md);
-    border: 3px solid rgba(95, 95, 95, 0.831);
+    border: 3px solid var(--primary-dark);
     border-radius: var(--radius-md);
-    background-color: rgba(95, 95, 95, 0.831);
+    background-color: var(--primary-dark);
     color: var(--secondary-text-color);
     cursor: pointer;
     transition: border-color 0.2s ease;
   }
 
   .clock-mode-nav button.active {
-    background-color: var(--primary-dark);
-    border: 3px solid var(--primary-neutral);
+    background-color: var(--primary-neutral);
+    border: 3px solid var(--primary-dark);
     font-family: var(--body-font);
-
-    color: white;
+    color: var(--secondary-text-color);
   }
 
   .date-selection,
