@@ -67,9 +67,9 @@
 <section class="location-log">
   <iframe id="map" title="Workplace location map" src={mapUrl}></iframe>
   <div class="location-inputs">
-    <Label className="log-label" inputId="locatieInput" text="Your location" />
+    <Label className="log-label" inputId="locatie-input" text="Your location" />
     <Input
-      id="locatieInput"
+      id="locatie-input"
       onchange={zoekLocatie}
       type="text"
       placeholder="Type the workplace name or location here"
@@ -86,9 +86,9 @@
 
   <div class="address-details">
     <div>
-      <Label className="log-label" inputId="postcodeInput" text="Postcode" />
+      <Label className="log-label" inputId="postcode-input" text="Postcode" />
       <Input
-        id="postcodeInput"
+        id="postcode-input"
         type="text"
         placeholder="1234 AB"
         bind:value={postcode}
@@ -96,9 +96,9 @@
       />
     </div>
     <div>
-      <Label className="log-label" inputId="housenumberInput" text="Huisnummer" />
+      <Label className="log-label" inputId="housenumber-input" text="Huisnummer" />
       <Input
-        id="housenumberInput"
+        id="housenumber-input"
         type="text"
         placeholder="12"
         bind:value={housenumber}

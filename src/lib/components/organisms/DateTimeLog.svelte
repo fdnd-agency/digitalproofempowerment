@@ -32,15 +32,15 @@
   </nav>
 
   <div class="date-selection">
-    <Label className="log-label" inputId="dateInput" text="What date?" />
-    <Input id="dateInput" type="date" className="log-input" bind:value={selectedDate} />
+    <Label className="log-label" inputId="date-input" text="What date?" />
+    <Input id="date-input" type="date" className="log-input" bind:value={selectedDate} />
   </div>
 
   {#if clockMode === "clockIn"}
     <div class="time-selection">
-      <Label className="log-label" inputId="clockInInput" text="Clock in" />
+      <Label className="log-label" inputId="clock-in-input" text="Clock in" />
       <Input
-        id="clockInInput"
+        id="clock-in-input"
         type="time"
         className="log-input"
         bind:value={clockChecker.clockIn}
@@ -48,9 +48,9 @@
     </div>
   {:else if clockMode === "clockOut"}
     <div class="time-selection">
-      <Label className="log-label" inputId="clockOutInput" text="Clock out" />
+      <Label className="log-label" inputId="clock-out-input" text="Clock out" />
       <Input
-        id="clockOutInput"
+        id="clock-out-input"
         type="time"
         className="log-input"
         bind:value={clockChecker.clockOut}
@@ -58,18 +58,18 @@
     </div>
   {:else}
     <div class="time-selection">
-      <Label className="log-label" inputId="clockInInput" text="Clock in" />
+      <Label className="log-label" inputId="clock-in-input" text="Clock in" />
       <Input
-        id="clockInInput"
+        id="clock-in-input"
         type="time"
         className="log-input"
         bind:value={clockChecker.clockIn}
       />
     </div>
     <div class="time-selection">
-      <Label className="log-label" inputId="clockOutInput" text="Clock out" />
+      <Label className="log-label" inputId="clock-out-input" text="Clock out" />
       <Input
-        id="clockOutInput"
+        id="clock-out-input"
         type="time"
         className="log-input"
         bind:value={clockChecker.clockOut}
