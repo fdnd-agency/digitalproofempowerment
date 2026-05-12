@@ -2,8 +2,7 @@
   import Input from "$lib/components/atoms/Input.svelte";
   import Label from "$lib/components/atoms/Label.svelte";
 
-  let { selectedDate = $bindable(null) } = $props();
-
+  let { selectedDate = $bindable(null), errors = {}, ...rest } = $props();
   let clockMode = $state("clockIn");
   let clockChecker = $state({ clockIn: "", clockOut: "" });
 
@@ -17,7 +16,7 @@
   }
 </script>
 
-<form class="datetime-log">
+<section class="datetime-log">
   <nav class="clock-mode-nav">
     <button
       type="button"
@@ -33,7 +32,14 @@
 
   <div class="date-selection">
     <Label className="log-label" inputId="date-input" text="What date?" />
-    <Input id="date-input" type="date" className="log-input" bind:value={selectedDate} />
+    <Input
+      id="date-input"
+      type="date"
+      className="log-input"
+      error={errors?.date}
+      name="date"
+      bind:value={selectedDate}
+    />
   </div>
 
   {#if clockMode === "clockIn"}
@@ -44,6 +50,8 @@
         type="time"
         className="log-input"
         bind:value={clockChecker.clockIn}
+        name="time"
+        error={errors?.time}
       />
     </div>
   {:else if clockMode === "clockOut"}
@@ -54,6 +62,8 @@
         type="time"
         className="log-input"
         bind:value={clockChecker.clockOut}
+        name="time"
+        error={errors?.time}
       />
     </div>
   {:else}
@@ -64,6 +74,7 @@
         type="time"
         className="log-input"
         bind:value={clockChecker.clockIn}
+        error={errors?.time}
       />
     </div>
     <div class="time-selection">
@@ -73,11 +84,13 @@
         type="time"
         className="log-input"
         bind:value={clockChecker.clockOut}
+        error={errors?.time}
       />
     </div>
   {/if}
 
-  <aside class="datetime-summary">
+  <Input type="hidden" name="" bind:value={clockMode} />
+  <!-- <aside class="datetime-summary">
     <span>{selectedDate ? formatDate(selectedDate) : "Choose a date"}</span>
     <span>
       {clockMode === "clockIn" && clockChecker.clockIn
@@ -86,8 +99,8 @@
           ? clockChecker.clockOut
           : "--:--"}
     </span>
-  </aside>
-</form>
+  </aside> -->
+</section>
 
 <style>
   .datetime-log {
@@ -127,7 +140,7 @@
     gap: var(--spacing-xxs);
   }
 
-  .datetime-summary span {
+  /* .datetime-summary span {
     flex: 1;
     min-width: 0;
     white-space: nowrap;
@@ -141,5 +154,5 @@
       flex-direction: column;
       gap: var(--spacing-xs);
     }
-  }
+  } */
 </style>

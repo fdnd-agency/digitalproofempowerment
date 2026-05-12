@@ -4,7 +4,9 @@
 
   let {
     locatieInput = $bindable(""),
+    errors = {},
     mapUrl = "https://www.openstreetmap.org/export/embed.html?bbox=4.8,52.3,5.0,52.4&layer=mapnik",
+    ...rest
   } = $props();
   let postcode = $state("");
   let housenumber = $state("");
@@ -30,8 +32,8 @@
       const lon = parseFloat(data[0].lon);
       const address = data[0].address || {};
 
-      postcode = address.postcode ?? postcode;
-      housenumber = address.house_number ?? address.house_number ?? housenumber;
+      // postcode = address.postcode ?? postcode;
+      // housenumber = address.house_number ?? address.house_number ?? housenumber;
 
       const offset = 0.05;
       const bbox = `${lon - offset},${lat - offset},${lon + offset},${lat + offset}`;
@@ -75,6 +77,8 @@
       placeholder="Type the workplace name or location here"
       bind:value={locatieInput}
       className="log-input"
+      name="location"
+      error={errors?.location}
     />
   </div>
   <div class="geolocation-controls">
@@ -93,6 +97,7 @@
         placeholder="1234 AB"
         bind:value={postcode}
         className="log-input"
+        name="postalCode"
       />
     </div>
     <div>
@@ -103,6 +108,7 @@
         placeholder="12"
         bind:value={housenumber}
         className="log-input"
+        name="houseNumber"
       />
     </div>
   </div>
