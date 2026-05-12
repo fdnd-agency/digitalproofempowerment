@@ -1,60 +1,91 @@
 <script>
-  let { ErrorText, Icon, className } = $props();
+  let { show = $bindable(false), type = "success", message = "Success!" } = $props();
+
+  import { SuccessMessageIcon, ErrorMessageIcon } from "$lib";
+
+  $effect(() => {
+    if (show) setTimeout(() => (show = false), 2500);
+  });
 </script>
 
-<span class={className}>
-  {#if Icon}
-    <Icon class="icon" />
-  {/if}
-  {ErrorText}
-</span>
+{#if show}
+  <dialog open>
+    <div class="content-container {type}">
+      <div class="icon">
+        {#if type === "success"}
+          <SuccessMessageIcon />
+        {:else}
+          <ErrorMessageIcon />
+        {/if}
+      </div>
+      <p>{message}</p>
+    </div>
+  </dialog>
+{/if}
 
 <style>
-  .error-message {
-    font-size: clamp(11px, 3vw, 12px);
-    background-color: var(--emergency-color);
-    width: fit-content;
-    padding: var(--spacing-xxs);
-    border-radius: var(--radius-sm);
-    color: var(--secondary-text-color);
-    font-style: italic;
-    padding-left: var(--spacing-xs);
-    padding-right: var(--spacing-xs);
-    margin-top: var(--radius-xs);
+  dialog {
+    position: fixed;
+    inset: 0;
+    background: var(--primary-darkest);
     display: flex;
-    flex-direction: row;
-    gap: var(--spacing-xxs);
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    z-index: 100;
+    border: none;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    animation: fade-in-out 2.5s ease forwards;
   }
 
-  .success-message {
-    font-size: clamp(11px, 3vw, 12px);
-    background-color: green;
-    width: fit-content;
-    padding: var(--spacing-xxs);
-    border-radius: var(--radius-sm);
-    color: var(--secondary-text-color);
-    font-style: italic;
-    padding-left: var(--spacing-xs);
-    padding-right: var(--spacing-xs);
-    margin-top: var(--radius-xs);
+  .content-container {
+    background: var(--background-color-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-2xl);
     display: flex;
-    flex-direction: row;
-    gap: var(--spacing-xxs);
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    animation: fade-out 1s ease forwards;
-    animation-delay: 5s;
-    opacity: 1;
+    gap: var(--spacing-md);
   }
 
-  @keyframes fade-out {
-    from {
+  .icon {
+    font-size: 3rem;
+    animation: pop 0.4s ease;
+  }
+
+  p {
+    font-family: var(--body-font);
+    color: var(--primary-dark);
+    font-size: 1.2rem;
+  }
+
+  @keyframes pop {
+    0% {
+      transform: scale(0);
+    }
+    70% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes fade-in-out {
+    0% {
+      opacity: 0;
+    }
+    20% {
       opacity: 1;
     }
-
-    to {
+    80% {
+      opacity: 1;
+    }
+    100% {
       opacity: 0;
     }
   }
