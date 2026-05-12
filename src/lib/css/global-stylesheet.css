@@ -80,6 +80,8 @@
   --secondary: hsl(7deg 76% 61%);
   --tertiary: hsl(207deg 42% 9%);
   --neutral: hsl(207deg 42% 9%);
+  --emergency: hsl(0deg 100% 41%);
+  --success: hsl(120deg 100% 25%);
 
   /* ---------------  */
 
