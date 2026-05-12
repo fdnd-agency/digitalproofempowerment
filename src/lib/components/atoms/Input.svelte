@@ -1,12 +1,30 @@
 <script>
-  let { type, name, value = $bindable(""), placeholder, className, id, ...rest } = $props();
+  let {
+    type,
+    name,
+    error,
+    value = $bindable(""),
+    placeholder,
+    className,
+    id,
+    hidden,
+    testing = "",
+    ...rest
+  } = $props();
 </script>
 
 {#if type === "textarea"}
   <textarea {id} {name} {placeholder} class={className} {...rest}>{value}</textarea>
 {:else}
-  <input {id} {type} {name} {placeholder} bind:value class={className} {...rest} />
-{/if}
+  <input
+    class="{className} {error ? 'input-error' : ''}"
+    {id}
+    {type}
+    {name}
+    {placeholder}
+    bind:value
+    {...rest}
+  />{/if}
 
 <style>
   .optional-text {
@@ -75,5 +93,31 @@
 
   .log-input:focus {
     border-color: var(--primary-dark);
+  }
+
+  .input-error {
+    border-color: var(--emergency);
+    font-family: var(--body-font);
+  }
+
+  .success {
+    font-size: clamp(11px, 3vw, 12px);
+    background-color: green;
+    width: fit-content;
+    padding: var(--spacing-xxs);
+    border-radius: var(--radius-sm);
+    color: var(--secondary-text-color);
+    font-style: italic;
+    padding-left: var(--spacing-xs);
+    padding-right: var(--spacing-xs);
+    margin-top: var(--radius-xs);
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-xxs);
+    justify-content: center;
+    align-items: center;
+    animation: fade-out 1s ease forwards;
+    animation-delay: 5s;
+    opacity: 1;
   }
 </style>
