@@ -19,9 +19,7 @@ export const actions = {
 
     console.log(form);
 
-    // const endpoint = 'https://fdnd-agency.directus.app/items/digital_proof_empowerment_evidence';
-    const endpoint = "https://69b15419adac80b427c4cc0e.mockapi.io/evidence";
-
+    const endpoint = "https://fdnd-agency.directus.app/items/digital_proof_empowerment_evidence";
     console.log(form);
 
     const response = await fetch(endpoint, {
@@ -29,18 +27,17 @@ export const actions = {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         // data: {
-        location: form.data.location,
-        postalCode: form.data.postalCode,
-        houseNumber: form.data.houseNumber,
-        time: form.data.time,
-        date: form.data.date,
-        type: form.data.clockMode,
-
+        Location: form.data.location,
+        Postal_code: form.data.postalCode,
+        House_number: form.data.houseNumber,
+        Time_stamp: form.data.time,
+        Date: form.data.date,
         // }
       }),
     });
 
-    console.log(response);
+    const body = await response.json();
+    console.log(body);
 
     if (!response.ok) {
       return message(form, "Something went wrong");
