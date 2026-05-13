@@ -35,6 +35,7 @@
       z-index: 1000;
       background-color: var(--background-color-secondary);
       padding-bottom: env(safe-area-inset-bottom);
+      margin-top: var(--spacing-2xl);
     }
   }
 </style>
