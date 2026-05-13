@@ -81,7 +81,7 @@
 
   .log-input {
     color-scheme: light;
-    width: 100%;
+    max-width: 100%;
     border: 3px solid var(--primary-dark);
     border-radius: var(--radius-md);
     padding: var(--spacing-sm);
