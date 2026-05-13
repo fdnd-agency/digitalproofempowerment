@@ -1,22 +1,36 @@
 <script>
-  // import SubmitForm from "$lib/components/organisms/SubmitForm.svelte";
   import LocationLog from "$lib/components/organisms/LocationLog.svelte";
   import DateTimeLog from "$lib/components/organisms/DateTimeLog.svelte";
 
-  let locatieInput = $state("");
-  let selectedDate = $state(null);
-  let dateRange = $state({ start: null, end: null });
+  import { FormValidationMessages } from "$lib";
+
+  // let locatieInput = $state("");
+  // let selectedDate = $state(null);
+  // let dateRange = $state({ start: null, end: null });
+  import { superForm } from "sveltekit-superforms";
+
+  let { data } = $props();
+
+  /* eslint-disable-next-line svelte/valid-compile */
+  const { form, errors, enhance, message } = superForm(data.form, {
+    resetForm: true,
+  });
 </script>
 
 <main>
   <!-- <SubmitForm /> -->
-  <div class="container">
+  <form class="container" method="POST" use:enhance>
     <section class="card location-card">
       <header class="card-header">
         <h2>Save your work location</h2>
       </header>
       <article class="card-content">
-        <LocationLog bind:locatieInput />
+        <LocationLog
+          bind:value={$form.locatieInput}
+          bind:postalCode={$form.PostalCode}
+          bind:houseNumber={$form.houseNumber}
+          errors={$errors}
+        />
       </article>
     </section>
 
@@ -25,10 +39,30 @@
         <h2>Save your date and time</h2>
       </header>
       <article class="card-content">
-        <DateTimeLog bind:selectedDate bind:dateRange />
+        <DateTimeLog
+          bind:value={$form.selectedDate}
+          bind:clockMode={$form.clockMode}
+          errors={$errors}
+        />
       </article>
+
+      <div class="button-container">
+        <button type="submit">Submit</button>
+      </div>
     </section>
-  </div>
+
+    <FormValidationMessages
+      show={$message === "Message send successfull"}
+      type="success"
+      message="Location submitted"
+    />
+
+    <FormValidationMessages
+      show={$message === "Something went wrong"}
+      type="error"
+      message="Something went wrong"
+    />
+  </form>
 </main>
 
 <style>
@@ -36,6 +70,24 @@
     padding: 10% var(--spacing-lg);
     min-height: 100vh;
     background: var(--background-color-primary);
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: var(--spacing-md) var(--spacing-xl);
+    margin-top: auto;
+  }
+
+  button {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    background-color: var(--primary-dark);
+    border: none;
+    color: var(--secondary-text-color);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    font-size: clamp(14px, 3vw, 18px);
   }
 
   .container {
@@ -61,6 +113,8 @@
     transition:
       transform 0.2s ease,
       box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
   }
 
   .card-header {
