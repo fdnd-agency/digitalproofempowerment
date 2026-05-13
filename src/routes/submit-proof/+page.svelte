@@ -70,6 +70,7 @@
     padding: 10% var(--spacing-lg);
     min-height: 100vh;
     background: var(--background-color-primary);
+    margin-bottom: var(--spacing-2xl);
   }
 
   .button-container {
