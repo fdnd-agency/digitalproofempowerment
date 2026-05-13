@@ -28,4 +28,19 @@
     font-weight: 500;
     font-size: clamp(0.9rem, 2vw, 1rem);
   }
+
+  .log-label {
+    font-weight: 600;
+    color: var(--primary-dark);
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--body-font);
+  }
+
+  @media (width <= 480px) {
+    .log-label {
+      font-size: 0.9rem;
+      margin-bottom: var(--spacing-xxs);
+    }
+  }
 </style>
