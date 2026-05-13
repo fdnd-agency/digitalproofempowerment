@@ -67,9 +67,11 @@
     0% {
       transform: scale(0);
     }
+
     70% {
       transform: scale(1.2);
     }
+
     100% {
       transform: scale(1);
     }
@@ -79,12 +81,15 @@
     0% {
       opacity: 0;
     }
+
     20% {
       opacity: 1;
     }
+
     80% {
       opacity: 1;
     }
+
     100% {
       opacity: 0;
     }
