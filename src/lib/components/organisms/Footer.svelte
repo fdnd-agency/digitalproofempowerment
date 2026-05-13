@@ -1,6 +1,4 @@
 <script>
-  import Link from "$lib/components/atoms/Link.svelte";
-  import { text } from "@sveltejs/kit";
   import LinkGroup from "../molecules/LinkGroup.svelte";
   import TextBlock from "../molecules/TextBlock.svelte";
 
@@ -91,46 +89,52 @@
 </footer>
 
 <style>
+  /* Hide on mobile */
   .footer {
-    background-color: var(--primary-darkest);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    padding: var(--spacing-md);
-    width: 100%;
+    display: none;
   }
 
-  .footer-top-section {
-    order: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .links-section {
-    display: flex;
-  }
-
-  .copy-right {
-    order: 2;
-    align-self: center;
-    margin: var(--spacing-lg);
-  }
-
-  @media (width <= 900px) {
-    .footer-top-section {
+  /* Show on desktop */
+  @media only screen and (width >= 769px) {
+    .footer {
+      background-color: var(--primary-darkest);
+      color: white;
+      display: flex;
       flex-direction: column;
+      padding: var(--spacing-md);
+      width: 100%;
+    }
+
+    .footer-top-section {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
     }
 
     .links-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-      gap: var(--spacing-md);
-      place-items: center;
+      display: flex;
     }
 
     .copy-right {
-      font-size: clamp(12px, 3vw, 14px);
+      align-self: center;
+      margin: var(--spacing-lg);
+    }
+
+    @media (width <= 900px) {
+      .footer-top-section {
+        flex-direction: column;
+      }
+
+      .links-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+        gap: var(--spacing-md);
+        place-items: center;
+      }
+
+      .copy-right {
+        font-size: clamp(12px, 3vw, 14px);
+      }
     }
   }
 </style>
