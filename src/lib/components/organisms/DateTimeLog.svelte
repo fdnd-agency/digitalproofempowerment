@@ -89,7 +89,6 @@
     </div>
   {/if}
 
-  <Input type="hidden" name="" bind:value={clockMode} />
   <!-- <aside class="datetime-summary">
     <span>{selectedDate ? formatDate(selectedDate) : "Choose a date"}</span>
     <span>

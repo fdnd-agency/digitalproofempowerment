@@ -32,9 +32,6 @@
       const lon = parseFloat(data[0].lon);
       const address = data[0].address || {};
 
-      // postcode = address.postcode ?? postcode;
-      // housenumber = address.house_number ?? address.house_number ?? housenumber;
-
       const offset = 0.05;
       const bbox = `${lon - offset},${lat - offset},${lon + offset},${lat + offset}`;
       mapUrl = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lon}`;
