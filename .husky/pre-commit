@@ -1,7 +1,7 @@
 npx lint-staged
 
 branch=$(git symbolic-ref --short HEAD)
-pattern="^(main|master|develop|release\/.*|hotfix\/.*|feat(ure)?\/.*|bugfix\/.*)-[0-9]+$"
+pattern="^(main|master|develop|release\/.*|hotfix\/.*|feat(ure)?\/.*|bugfix\/.*|chore\/.*)-[0-9]+$"
 
 if ! echo "$branch" | grep -qE "$pattern"; then
   echo "❌ Invalid branch name: \"$branch\""
