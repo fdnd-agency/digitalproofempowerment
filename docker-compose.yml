@@ -1,0 +1,15 @@
+version: '3'
+services:
+  globaleaks:
+    image: globaleaks/globaleaks:latest
+    container_name: globaleaks
+    platform: linux/amd64
+    ports:
+      - "80:8080"
+      - "443:8443"
+    volumes:
+      - globaleaks-data:/var/globaleaks
+    restart: always
+
+volumes:
+  globaleaks-data:
