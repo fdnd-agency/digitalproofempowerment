@@ -1,5 +1,3 @@
-# Team Agreements & Roles
-
 ## Table of Contents
 
 1. Introduction
@@ -12,17 +10,19 @@
 
 5. Issue Structure
    - Epic (Main Issue)
+   - User Story
    - Subissues
    - Example
 
 6. FDND Agency Conventions
 7. Branch Management
+8. Merging pull Requests
 
 ---
 
 ## 1. Introduction
 
-This document describes the team agreements, roles, and workflows for working on the project. The goal is to ensure clarity, consistency, and quality throughout the development process.
+This document describes the projects agreements, and workflows for working on the project. The goal is to ensure clarity, consistency, and quality throughout the development process.
 
 ## 2. Language
 
@@ -32,7 +32,7 @@ The website and all internal documentation are written in English.
 
 Tasks are divided into issues. Each team member picks up new issues only after their previous issues have been tested and merged into the `dev` branch.
 
-At all times, the **FDND Agency conventions** are followed. This applies to workflows, code style, naming conventions, documentation, and collaboration practices throughout the project.
+At all times, the [FDND Agency conventions](https://docs.fdnd.nl/conventies.html) are followed. This applies to workflows, code style, naming conventions, documentation, and collaboration practices throughout the project.
 
 ## 4. Project Board & Issues
 
@@ -43,8 +43,18 @@ At all times, the **FDND Agency conventions** are followed. This applies to work
 
 ### Issues
 
-- All issues must be assigned and labeled with relevant labels immediately.
-- Issues must contain a short description of the functionality.
+1. All issues must be assigned and labeled with relevant labels immediately.
+   - Estimation (poker) must be done as soon as possible, ideally within 24 hours of issue creation.
+
+   - status labels (e.g., `To Do`, `In Progress`, `Review`, `Done`) must be updated as the issue progresses.
+
+   - Priority labels (e.g., `High - P0`, `Medium - P1`, `Low - P2`) must be assigned based on the issue's importance and urgency.
+
+   - Assignees must be updated to reflect the current responsible team member.
+
+   - Labels for type (e.g., `Bug`, `Feature`, `Improvement`,`Userstory`) and area (e.g., `Frontend`, `Backend`, `Design`) must be added to provide context.
+
+2. Issues must contain a short description of the functionality.
 
 #### Definition of Ready (DoR)
 
@@ -96,7 +106,7 @@ An issue is considered done when:
 
 ## 5. Issue Structure
 
-To maintain clarity, we use a clear structure with **Epics** and **Subissues**.
+To maintain clarity, we use a clear structure with **Epics** **User Stories** and **Subissues**.
 
 ### Epic (Main Issue)
 
@@ -105,10 +115,16 @@ To maintain clarity, we use a clear structure with **Epics** and **Subissues**.
 - Description includes **acceptance criteria**.
 - Each acceptance criterion is elaborated into a subissue.
 
+### User Story
+
+- Follows the format: _As a user, I want ..., so that ..._.
+- Provides context and motivation for the feature.
+- Acceptance criteria are defined to specify the requirements and conditions for completion.
+
 ### Subissues
 
-- Created for each acceptance criterion.
-- Linked to the corresponding Epic.
+- Created if user stories have multiple acceptance criteria.
+- Linked to the corresponding user story -> epic.
 - Description contains details, a task list, and any references.
 - All subissues must be completed before the Epic can be closed.
 
@@ -130,7 +146,7 @@ To maintain clarity, we use a clear structure with **Epics** and **Subissues**.
 
 ## 6. FDND Agency Conventions
 
-At all times, the **FDND Agency conventions** are followed. This includes, but is not limited to:
+At all times, the [**FDND Agency conventions**](https://docs.fdnd.nl/conventies.html) are followed. This includes, but is not limited to:
 
 - Project workflow and collaboration agreements
 - Code style and formatting
@@ -142,5 +158,15 @@ These conventions are leading and apply to the entire project lifecycle.
 
 ## 7. Branch Management
 
+- Branches must be created from the `dev` branch.
+- Each branch should include the issue number and a brief description (e.g., `feat/login-page-223`).
+- Ensure that branches are up to date with the `dev` branch before merging to avoid conflicts.
 - Delete branches that have already been merged or are no longer in use.
-- Keep branch names consistent with the FDND Agency guidelines.
+
+## 8. Merging pull Requests
+
+- Pull requests must be reviewed by at least one other team member before merging.
+- Ensure that all checks (e.g., CI tests, code reviews) have passed before merging
+- Use descriptive commit messages that reference the issue number (e.g., `Fix login validation - closes #223`).
+- After merging, update the issue status to `Done` and ensure all relevant labels are updated
+- Branch owner should merge the pull request and delete the branch after merging to keep the repository clean.
