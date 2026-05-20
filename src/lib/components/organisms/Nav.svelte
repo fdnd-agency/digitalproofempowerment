@@ -1,83 +1,39 @@
 <script>
-  import { PhoneIcon, Link, Favicon } from "$lib";
-
-  let menuIsOpen = false;
-
-  function toggleMenu() {
-    menuIsOpen = !menuIsOpen;
-
-    if (menuIsOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }
+  import { page } from "$app/stores";
+  import { Link, Favicon } from "$lib";
+  import LogIcon from "$lib/assets/svg/LogIcon.svelte";
+  import VaultIcon from "$lib/assets/svg/VaultIcon.svelte";
+  import EvidenceIcon from "$lib/assets/svg/DocumentIcon.svelte";
+  import ProfileIcon from "$lib/assets/svg/ProfileIcon.svelte";
 </script>
 
 <nav class="nav-container">
   <div class="nav-bar-container">
-    <a href="/"
-      ><img
-        class="logo"
-        src={Favicon}
-        alt="Digital proof empowerment logo"
-        height="40"
-        width="40"
-      /></a
-    >
+    <a href="/">
+      <img class="logo" src={Favicon} alt="Digital proof empowerment logo" height="40" width="40" />
+    </a>
 
-    <button
-      class="nav-button main-button"
-      name="navigation toggle button"
-      on:click={toggleMenu}
-      aria-label="navigation toggle"
-    >
-      <span class:open={menuIsOpen}></span>
-      <span class:open={menuIsOpen}></span>
-      <span class:open={menuIsOpen}></span>
-    </button>
-
-    <noscript>
-      <a href="#footer" class="no-js-button" aria-label="navigation toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-
-      <style>
-        .nav-button {
-          display: none !important;
-        }
-
-        .no-js-button {
-          display: flex !important;
-        }
-      </style>
-    </noscript>
+    <ul class="nav-list-container">
+      <li class="nav-item">
+        <Link Icon={LogIcon} href="/" text="Logs" className="nav-link" isActive={$page.url.pathname === "/"}/>
+      </li>
+      <li class="nav-item">
+        <Link Icon={VaultIcon} href="/vault" text="Vault" className="nav-link" isActive={$page.url.pathname === "/vault"}/>
+      </li>
+      <li class="nav-item">
+        <Link Icon={EvidenceIcon} href="/evidence" text="Evidence" className="nav-link" isActive={$page.url.pathname === "/evidence"}/>
+      </li>
+      <li class="nav-item">
+        <Link Icon={ProfileIcon} href="/profile" text="Profile" className="nav-link" isActive={$page.url.pathname === "/profile"}/>
+      </li>
+    </ul>
   </div>
-
-  <ul class="nav-list-container" class:active={menuIsOpen}>
-    <li class="nav-item"><Link href="/about-us" text="About us" className="nav-link" /></li>
-    <li class="nav-item"><Link href="/contact" text="Contact" className="nav-link" /></li>
-    <li class="nav-item"><Link href="/proof-tips" text="Proof Tips" className="nav-link" /></li>
-    <li class="nav-item"><Link href="/help-others" text="Help Others" className="nav-link" /></li>
-    <li class="nav-item"><Link href="/submit-proof" text="Submit Proof" className="nav-link" /></li>
-    <li class="nav-item">
-      <Link
-        href="tel:+112"
-        Icon={PhoneIcon}
-        target="_self"
-        rel=""
-        className="emergency-link"
-        text="Call 112"
-      />
-    </li>
-  </ul>
 </nav>
 
 <style>
   nav {
     position: relative;
+    font-family: var(--body-font);
   }
 
   .nav-container {
@@ -87,7 +43,7 @@
     width: 100%;
     transition: transform 0.3s ease;
     z-index: 1000;
-    background: rgb(0 0 0 / 18.7%);
+    background: hsl(206, 45%, 9%);
   }
 
   ul li {
@@ -99,7 +55,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md) var(--spacing-xl);
     background: transparent;
     position: sticky;
     top: 0;
@@ -107,74 +63,16 @@
   }
 
   .nav-list-container {
-    position: fixed;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: var(--spacing-xl);
-    transform: translateY(-100%);
     transition: transform 1s ease-in-out;
-    opacity: 0;
-    z-index: 9999;
     width: 100%;
-    top: 0;
-    right: 0;
-    height: 100%;
   }
 
   .nav-item {
     padding: var(--spacing-xs);
-  }
-
-  .nav-list-container.active {
-    padding: var(--spacing-lg);
-    background-color: var(--primary-darkest);
-    color: var(--secondary-text-color);
-    transform: translateY(0%);
-    transition: transform 1s ease;
-    opacity: 1;
-    overflow: hidden;
-  }
-
-  /* nav-buttons */
-
-  .no-js-button {
-    display: none;
-  }
-
-  .no-js-button,
-  .nav-button {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-    cursor: pointer;
-    width: fit-content;
-    background-color: transparent;
-    border: none;
-  }
-
-  .nav-button span,
-  .no-js-button span {
-    width: 1.7rem;
-    height: 0.15rem;
-    background-color: var(--nav-icon-color);
-    transition: 0.6s;
-    cursor: pointer;
-  }
-
-  .nav-button span.open:nth-child(1) {
-    background-color: var(--emergency-color);
-    width: 1.2rem;
-  }
-
-  .nav-button span.open:nth-child(2) {
-    width: 0.8rem;
-    background-color: var(--emergency-color);
-  }
-
-  .nav-button span.open:nth-child(3) {
-    background-color: var(--emergency-color);
-    width: 0.6rem;
   }
 </style>

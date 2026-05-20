@@ -12,6 +12,11 @@
 </a>
 
 <style>
+  .link {
+    display: inline-flex;
+    gap: var(--spacing-xs);
+  }
+
   .link:focus-visible {
     outline: 1px solid var(--accent-neutral);
   }
@@ -106,6 +111,13 @@
       background-color: var(--accent-neutral);
       border-radius: var(--radius-sm);
     }
+  }
+
+  .nav-link.active {
+    background-color: var(--background-color-primary);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    color: var(--main-text-color);
   }
 
   .emergency-link {

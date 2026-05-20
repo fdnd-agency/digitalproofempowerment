@@ -33,6 +33,5 @@
     height: 20px;
     width: 20px;
     display: block;
-    color: var(--primary-text-color);
   }
 </style>
