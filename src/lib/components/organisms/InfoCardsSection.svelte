@@ -27,7 +27,7 @@
       backgroundColor="#6D73A9"
       backgroundColorDark="#6D73A9"
       cardTitle="Quickly log your hours"
-      cardSubText={"Securely document an\nincident in real-time"}
+      cardSubText="Securely document an incident in real-time"
       ctaText="clock in/out"
       ctaLink="submit-proof"
       Icon={ClipBoardIcon}
