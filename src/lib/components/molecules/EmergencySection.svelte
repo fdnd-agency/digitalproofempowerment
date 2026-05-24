@@ -65,24 +65,24 @@
     width: 6rem;
     height: 6rem;
     border-radius: 1.25rem;
-    background: hsl(0deg 0% 100% 0.16);
-    border: 1px solid hsl(0deg 0% 100% 0.18);
+    background: #ffffff29;
+    border: 1px solid #ffffff2e;
     backdrop-filter: blur(8px);
   }
 
   .emergency-right-panel :global(svg) {
     width: 3.2rem;
     height: 3.2rem;
-    color: #ffffff;
+    color: #fff;
   }
 
   .emergency-container-paragraph {
-    color: hsl(0deg 0% 100% 0.75);
+    color: #ffffffbf;
     max-width: 34rem;
     margin: 0;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width <= 768px) {
     .emergency-container {
       align-items: stretch;
       padding: var(--spacing-3xl) var(--spacing-xl);
