@@ -67,7 +67,7 @@
     width: 100%;
     transition: transform 0.3s ease;
     z-index: 1000;
-    background: hsl(206deg, 45%, 9%);
+    background: hsl(206deg 45% 9%);
   }
 
   ul li {

@@ -14,7 +14,7 @@
     flex-direction: column;
     gap: 3rem;
     min-height: 100vh;
-    background-color: hsl(213deg, 80%, 94%);
+    background-color: hsl(213deg 80% 94%);
   }
 
   .cards {
