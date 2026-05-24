@@ -1,6 +1,5 @@
 <script>
-  import InformationCard from "../molecules/InformationCard.svelte";
-  import CheckedIcon from "$lib/assets/svg/CheckedIcon.svelte";
+  import InformationCard from "../molecules/InformationCard.svelte";  
   import ClipBoardIcon from "$lib/assets/svg/ClipBoardIcon.svelte";
   import EmergencySection from "../molecules/EmergencySection.svelte";
   
