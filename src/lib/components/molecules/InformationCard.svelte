@@ -1,6 +1,15 @@
 <script>
   import Link from "../atoms/Link.svelte";
-  let { cardSubText, Icon, cardTitle, labels, className, backgroundColor, backgroundColorDark, ctaText, ctaLink,
+  let {
+    cardSubText,
+    Icon,
+    cardTitle,
+    labels,
+    className,
+    backgroundColor,
+    backgroundColorDark,
+    ctaText,
+    ctaLink,
   } = $props();
 </script>
 

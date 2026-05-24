@@ -26,5 +26,4 @@
       height: fit-content;
     }
   }
-
 </style>

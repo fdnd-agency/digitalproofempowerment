@@ -15,16 +15,40 @@
 
     <ul class="nav-list-container">
       <li class="nav-item">
-        <Link Icon={LogIcon} href="/" text="Logs" className="nav-link" isActive={$page.url.pathname === "/"}/>
+        <Link
+          Icon={LogIcon}
+          href="/"
+          text="Logs"
+          className="nav-link"
+          isActive={$page.url.pathname === "/"}
+        />
       </li>
       <li class="nav-item">
-        <Link Icon={VaultIcon} href="/vault" text="Vault" className="nav-link" isActive={$page.url.pathname === "/vault"}/>
+        <Link
+          Icon={VaultIcon}
+          href="/vault"
+          text="Vault"
+          className="nav-link"
+          isActive={$page.url.pathname === "/vault"}
+        />
       </li>
       <li class="nav-item">
-        <Link Icon={EvidenceIcon} href="/evidence" text="Evidence" className="nav-link" isActive={$page.url.pathname === "/evidence"}/>
+        <Link
+          Icon={EvidenceIcon}
+          href="/evidence"
+          text="Evidence"
+          className="nav-link"
+          isActive={$page.url.pathname === "/evidence"}
+        />
       </li>
       <li class="nav-item">
-        <Link Icon={ProfileIcon} href="/profile" text="Profile" className="nav-link" isActive={$page.url.pathname === "/profile"}/>
+        <Link
+          Icon={ProfileIcon}
+          href="/profile"
+          text="Profile"
+          className="nav-link"
+          isActive={$page.url.pathname === "/profile"}
+        />
       </li>
     </ul>
   </div>
