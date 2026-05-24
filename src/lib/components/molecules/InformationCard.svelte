@@ -64,7 +64,7 @@
 
   .card-sub-paragraph {
     font-size: clamp(11px, 3vw, 13px);
-    color: hsla(0, 0%, 100%, 0.5);
+    color: hsl(0deg, 0%, 100%, 0.5);
     text-wrap: wrap;
   }
 

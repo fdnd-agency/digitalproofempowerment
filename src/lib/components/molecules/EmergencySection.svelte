@@ -34,7 +34,7 @@
     align-items: center;
     justify-content: space-between;
     gap: var(--spacing-lg);
-    background: linear-gradient(90deg, hsl(7, 76%, 61%), hsl(7, 47%, 46%));
+    background: linear-gradient(90deg, hsl(7deg, 76%, 61%), hsl(7deg, 47%, 46%));
     color: var(--secondary-text-color);
     border-radius: var(--radius-md);
     min-height: 12rem;
@@ -65,8 +65,8 @@
     width: 6rem;
     height: 6rem;
     border-radius: 1.25rem;
-    background: hsla(0, 0%, 100%, 0.16);
-    border: 1px solid hsla(0, 0%, 100%, 0.18);
+    background: hsl(0deg, 0%, 100%, 0.16);
+    border: 1px solid hsl(0deg, 0%, 100%, 0.18);
     backdrop-filter: blur(8px);
   }
 
@@ -77,7 +77,7 @@
   }
 
   .emergency-container-paragraph {
-    color: hsla(0, 0%, 100%, 0.75);
+    color: hsl(0deg, 0%, 100%, 0.75);
     max-width: 34rem;
     margin: 0;
   }
