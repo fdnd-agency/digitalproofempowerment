@@ -20,7 +20,7 @@
       Icon={CameraIcon}
     />
 
-    //TODO: add fast clockin/out buttons
+    <!-- TODO: add fast clockin/out buttons -->
     <InformationCard
       className="wide-card"
       backgroundColor="#6D73A9"
