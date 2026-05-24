@@ -53,7 +53,6 @@ export { default as Profile } from "$lib/components/atoms/Profile.svelte";
 export { default as Header } from "$lib/components/organisms/Header.svelte";
 export { default as EmergencySection } from "$lib/components/molecules/EmergencySection.svelte";
 export { default as ReviewCard } from "$lib/components/molecules/ReviewCard.svelte";
-export { default as QuizBox } from "$lib/components/molecules/QuizBox.svelte";
 export { default as FileInput } from "$lib/components/atoms/FileInput.svelte";
 export { default as Form } from "$lib/components/molecules/Form.svelte";
 export { default as Text } from "$lib/components/atoms/Text.svelte";
