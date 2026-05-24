@@ -82,7 +82,7 @@
     margin: 0;
   }
 
-  @media (max-width <= 768px) {
+  @media (width <= 768px) {
     .emergency-container {
       align-items: stretch;
       padding: var(--spacing-3xl) var(--spacing-xl);
