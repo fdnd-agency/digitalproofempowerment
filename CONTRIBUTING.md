@@ -33,7 +33,7 @@
 
 ## 1. Introduction
 
-This document describes the projects agreements, and workflows for working on the project. The goal is to ensure clarity, consistency, and quality throughout the development process.
+This document describes the project agreements and workflows for working on the project. The goal is to ensure clarity, consistency, and quality throughout the development process.
 
 ## 2. Language
 
