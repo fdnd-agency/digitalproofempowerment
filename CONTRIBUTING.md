@@ -63,7 +63,7 @@ At all times, the [FDND Agency conventions](https://docs.fdnd.nl/conventies.html
 
    - Assignees must be updated to reflect the current responsible team member.
 
-   - Labels for type (e.g., `Bug`, `Feature`, `Improvement`,`Userstory`) and area (e.g., `Frontend`, `Backend`, `Design`) must be added to provide context.
+   - Labels for type (e.g., `Bug`, `Feature`, `Improvement`, `User Story`) and area (e.g., `Frontend`, `Backend`, `Design`) must be added to provide context.
 
 2. Issues must contain a short description of the functionality.
 
