@@ -135,7 +135,7 @@ To maintain clarity, we use a clear structure with **Epics** **User Stories** an
 ### Subissues
 
 - Created if user stories have multiple acceptance criteria.
-- Linked to the corresponding user story -> epic.
+- Linked to the corresponding user story, and the user story is linked to the epic.
 - Description contains details, a task list, and any references.
 - All subissues must be completed before the Epic can be closed.
 
