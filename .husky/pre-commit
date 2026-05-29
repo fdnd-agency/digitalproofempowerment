@@ -1,7 +1,7 @@
 npx lint-staged
 
 branch=$(git symbolic-ref --short HEAD)
-pattern="^(main|master|develop|release\/.*|hotfix\/.*|feat(ure)?\/.*|bugfix\/.*)-[0-9]+$"
+pattern="^(main|master|develop|release\/.*|hotfix\/.*|feat(ure)?\/.*|bugfix\/.*|docs\/.*)-[0-9]+$"
 
 if ! echo "$branch" | grep -qE "$pattern"; then
   echo "❌ Invalid branch name: \"$branch\""
@@ -14,5 +14,6 @@ if ! echo "$branch" | grep -qE "$pattern"; then
   echo "     hotfix/security-patch-8"
   echo "     release/v1.2.0-60"
   echo "     chore/update-deps-33"
+  echo "     docs/readme.md-updated-3"
   exit 1
 fi
