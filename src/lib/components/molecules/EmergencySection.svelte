@@ -1,106 +1,101 @@
 <script>
-  import { Title, Button, PhoneIcon, Link } from "$lib";
+  import { Title, Link, PhoneIcon } from "$lib";
+  import AsteriskIcon from "$lib/assets/svg/AsteriskIcon.svelte";
 
   let { pageLabel, level = "h2" } = $props();
 </script>
 
 <section class="emergency-container">
   <div class="emergency-container-content-wrapper">
-    <Title headingText="Emergency? Get Help Now" class="emergency-container-title" {level} />
-    <p class="emergency-container-paragraph">
-      Your safety is the top priority . If you find yourself in a situation where you are being
-      <strong class="emergency-highlight">threatened</strong>,
-      <strong class="emergency-highlight">abused</strong>, or
-      <strong class="emergency-highlight">at risk of serious harm</strong>, do not wait— call your
-      local emergency services right away. This platform is designed to help you document and
-      protect your rights, but in life-threatening situations, contacting trained professionals is
-      essential. Always put yourself first and seek help immediately.
-    </p>
+    <p class="emergency-container-paragraph">Emergency services</p>
+    <Title headingText="112" class="emergency-container-title" {level} />
+    <div class="button-wrapper">
+      <Link
+        href="tel:+112"
+        Icon={PhoneIcon}
+        className="emergency-link"
+        text="Call 112"
+        target="_self"
+      />
+    </div>
   </div>
 
-  <div class="button-wrapper">
-    <Link
-      href="tel:+112"
-      Icon={PhoneIcon}
-      className="emergency-link"
-      text="Call 112"
-      target="_self"
-    />
+  <div class="emergency-container-right">
+    <div class="emergency-right-panel">
+      <AsteriskIcon class="emergency-right-icon" />
+    </div>
   </div>
 </section>
 
 <style>
   .emergency-container {
-    padding: var(--spacing-3xl) var(--spacing-xl) var(--spacing-3xl);
+    padding: var(--spacing-xl);
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
     gap: var(--spacing-lg);
-    background-color: var(--primary-neutral);
+    background: linear-gradient(90deg, hsl(7deg 76% 61%), hsl(7deg 47% 46%));
     color: var(--secondary-text-color);
-
-    @media (width >= 800px) {
-      padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      gap: var(--spacing-lg);
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .emergency-container {
-      background-color: var(--primary-darkest);
-      color: hsl(0deg 0% 100%);
-    }
+    border-radius: var(--radius-md);
+    min-height: 12rem;
   }
 
   .emergency-container-content-wrapper {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-lg);
-  }
-
-  .emergency-container-paragraph {
-    margin: 0 auto;
-    max-width: 60rem;
-    text-wrap: pretty;
-  }
-
-  .emergency-highlight {
-    font-weight: 700;
-    color: var(--secondary-text-color);
-    background-color: var(--accent-neutral);
-    padding: 0.01rem 0.1rem;
-    transition:
-      background-color 0.3s ease,
-      color 0.3s ease;
-    animation: highlight-pulse 5s ease-in-out infinite;
-  }
-
-  .emergency-highlight:hover {
-    background-color: rgb(237 130 72 / 25%);
-    color: var(--secondary-text-color);
-  }
-
-  @keyframes highlight-pulse {
-    0% {
-      background-color: var(--accent-neutral);
-    }
-
-    50% {
-      background-color: rgb(237 130 72 / 15%);
-    }
-
-    100% {
-      background-color: var(--accent-neutral);
-    }
+    gap: var(--spacing-xs);
+    flex: 1 1 20rem;
+    min-width: 0;
   }
 
   .button-wrapper {
-    @media (width >= 800px) {
-      display: flex;
-      justify-content: center;
-      margin-top: var(--spacing-md);
+    margin-top: var(--spacing-sm);
+  }
+
+  .emergency-container-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+  }
+
+  .emergency-right-panel {
+    display: grid;
+    place-items: center;
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1.25rem;
+    background: #ffffff29;
+    border: 1px solid #ffffff2e;
+    backdrop-filter: blur(8px);
+  }
+
+  .emergency-right-panel :global(svg) {
+    width: 3.2rem;
+    height: 3.2rem;
+    color: #fff;
+  }
+
+  .emergency-container-paragraph {
+    color: #ffffffbf;
+    max-width: 34rem;
+    margin: 0;
+  }
+
+  @media (width <= 768px) {
+    .emergency-container {
+      align-items: stretch;
+      padding: var(--spacing-3xl) var(--spacing-xl);
+    }
+
+    .emergency-container-right {
+      justify-content: flex-start;
+      margin-top: var(--spacing-lg);
+    }
+
+    .emergency-right-panel {
+      width: 5.5rem;
+      height: 5.5rem;
     }
   }
 </style>

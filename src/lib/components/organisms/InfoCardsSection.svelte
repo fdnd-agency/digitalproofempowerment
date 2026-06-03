@@ -1,41 +1,89 @@
 <script>
   import InformationCard from "../molecules/InformationCard.svelte";
-  import KeyIcon from "$lib/assets/svg/KeyIcon.svelte";
-  import CheckedIcon from "$lib/assets/svg/CheckedIcon.svelte";
-  import EyeIcon from "$lib/assets/svg/EyeIcon.svelte";
+  import ClipBoardIcon from "$lib/assets/svg/ClipBoardIcon.svelte";
+  import EmergencySection from "../molecules/EmergencySection.svelte";
+  import CameraIcon from "$lib/assets/svg/CameraIcon.svelte";
 </script>
 
 <div class="cards-section">
-  <InformationCard
-    Icon={KeyIcon}
-    className="custom-card"
-    cardTitle="Labor Exploitation of Migrant Workers"
-    cardSubText="In the Netherlands, many migrant workers especially from Eastern Europe face underpayment, excessive working hours, unsafe conditions, and dependency on employers for housing. Labor exploitation often occurs in agriculture, construction, logistics, and food processing sectors."
-  />
-  <InformationCard
-    Icon={EyeIcon}
-    className="custom-card"
-    cardTitle="Human Trafficking & Forced Labor"
-    cardSubText="Labor exploitation is recognized as a form of human trafficking under Dutch law. According to the Dutch National Rapporteur on Trafficking in Human Beings, hundreds of potential victims are identified each year, but many cases remain hidden due to fear, debt, or lack of awareness of rights."
-  />
-  <InformationCard
-    Icon={CheckedIcon}
-    className="custom-card"
-    cardTitle="Enforcement & Protection Measures"
-    cardSubText="The Netherlands Labour Authority monitors workplaces, investigates abuses, and can fine employers who violate labor laws. Victims of exploitation may receive legal protection, temporary residence permits, and support services through Dutch authorities and NGOs."
-  />
+  <h3>Immediate action</h3>
+  <div class="cards-section-grid">
+    <EmergencySection />
+
+    <InformationCard
+      backgroundColor="#212859"
+      backgroundColorDark="#212859"
+      cardTitle="New report"
+      cardSubText="Securely document an incident in real-time."
+      ctaText="start now"
+      ctaLink="evidence"
+      Icon={CameraIcon}
+    />
+
+    <!-- TODO: add fast clockin/out buttons -->
+    <InformationCard
+      className="wide-card"
+      backgroundColor="#6D73A9"
+      backgroundColorDark="#6D73A9"
+      cardTitle="Quickly log your hours"
+      cardSubText="Securely document an incident in real-time"
+      ctaText="clock in/out"
+      ctaLink="submit-proof"
+      Icon={ClipBoardIcon}
+    />
+  </div>
+</div>
+
+<div class="resources-section">
+  <h3>Resources</h3>
+  <div class="cards-section-grid">
+    <!-- <InformationCard
+      backgroundColor="#212859"
+      backgroundColorDark="#212859"
+      cardTitle="Track your case"
+      cardSubText="Stay informed with real-time updates on your case status."
+      ctaText="track now"
+      ctaLink="track-case"
+      Icon={CheckedIcon}
+    /> -->
+  </div>
 </div>
 
 <style>
   .cards-section {
-    padding: var(--spacing-sm);
-    display: flex;
+    font-family: var(--body-font);
+    padding: var(--spacing-3xl) 10% 0;
     justify-content: center;
   }
 
-  @media (width <= 768px) {
+  .resources-section {
+    font-family: var(--body-font);
+    padding: var(--spacing-xl) 10%;
+    justify-content: center;
+  }
+
+  @media (width <= 899px) {
     .cards-section {
-      flex-direction: column;
+      padding: var(--spacing-3xl) var(--spacing-lg);
+    }
+  }
+
+  @media (width <= 500px) {
+    .cards-section {
+      padding: var(--spacing-3xl) var(--spacing-md);
+    }
+  }
+
+  .cards-section-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-md);
+  }
+
+  @media (width <= 768px) {
+    .cards-section-grid {
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 </style>

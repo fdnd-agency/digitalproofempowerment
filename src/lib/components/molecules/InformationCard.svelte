@@ -1,16 +1,22 @@
 <script>
-  let { cardSubText, Icon, cardTitle, labels, className, backgroundColor, backgroundColorDark } =
-    $props();
+  import Link from "../atoms/Link.svelte";
+  let {
+    cardSubText,
+    Icon,
+    cardTitle,
+    labels,
+    className,
+    backgroundColor,
+    backgroundColorDark,
+    ctaText,
+    ctaLink,
+  } = $props();
 </script>
 
 <article
   class={className || "information-card"}
   style={`--card-bg: ${backgroundColor || "transparent"}; --card-bg-dark: ${backgroundColorDark || "transparent"}`}
 >
-  {#if Icon}
-    <Icon class="icon" />
-  {/if}
-
   <h2 class="card-paragraph">{cardTitle}</h2>
   <p class="card-sub-paragraph">{cardSubText}</p>
 
@@ -19,6 +25,18 @@
       {#each labels as label (label)}
         <span class="label">{label}</span>
       {/each}
+    </div>
+  {/if}
+
+  {#if ctaText}
+    <Link href="/{ctaLink}" className="emergency-link" text={ctaText} />
+  {/if}
+
+  {#if Icon}
+    <div class="emergency-container-right">
+      <div class="emergency-right-panel">
+        <Icon />
+      </div>
     </div>
   {/if}
 </article>
@@ -32,9 +50,10 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
-    color: var(--accent-dark);
+    color: white;
     transition: transform 0.3s ease-in-out;
     background-color: var(--card-bg);
+    position: relative;
   }
 
   .card-paragraph {
@@ -45,13 +64,13 @@
 
   .card-sub-paragraph {
     font-size: clamp(11px, 3vw, 13px);
-    color: var(--main-text-color);
+    color: #ffffff80;
     text-wrap: wrap;
   }
 
   .information-card:hover {
     color: var(--primary-neutral);
-    transform: scale(1.05) rotate(1deg);
+    transform: scale(1.02);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -76,6 +95,25 @@
     align-self: flex-start;
   }
 
+  .wide-card {
+    grid-column: span 2;
+  }
+
+  .emergency-container-right {
+    position: absolute;
+    right: -1rem;
+    bottom: -1.5rem;
+    opacity: 0.16;
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .emergency-right-panel :global(svg) {
+    width: 100%;
+    height: 100%;
+    color: white;
+  }
+
   .title-icon {
     font-weight: bolder;
     width: 100%;
@@ -85,45 +123,5 @@
     gap: var(--spacing-md);
     align-items: center;
     text-align: left;
-  }
-
-  .custom-card {
-    padding: var(--spacing-md);
-    border: var(--border);
-    border-radius: var(--radius-md);
-    margin: var(--spacing-md);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-    background-color: rgb(12 4 43 / 20%);
-    text-align: left;
-    font-size: clamp(14px, 3vw, 16px);
-    box-shadow: var(--box-shadow-webkit);
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .custom-card:nth-child(even) {
-    background-color: rgb(214 116 35 / 40%);
-  }
-
-  .custom-card > h2 {
-    font-size: clamp(14px, 3vw, 16px);
-  }
-
-  .custom-card:hover {
-    transform: scale(1.1) rotate(-2deg);
-    background-color: var(--secondary-lightest);
-  }
-
-  .custom-card:nth-child(even):hover {
-    background-color: rgb(197 91 5 / 70%);
-    transform: scale(1.1) rotate(2deg);
-  }
-
-  @media (width <= 899px) {
-    .custom-card:hover,
-    .custom-card:nth-child(even):hover {
-      transform: none;
-    }
   }
 </style>

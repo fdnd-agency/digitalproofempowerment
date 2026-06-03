@@ -12,6 +12,11 @@
 </a>
 
 <style>
+  .link {
+    display: inline-flex;
+    gap: var(--spacing-xs);
+  }
+
   .link:focus-visible {
     outline: 1px solid var(--accent-neutral);
   }
@@ -108,24 +113,26 @@
     }
   }
 
+  .nav-link.active {
+    background-color: var(--background-color-primary);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    color: var(--main-text-color);
+  }
+
   .emergency-link {
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-xs);
+    width: fit-content;
     border-radius: var(--radius-xs);
-    font-size: clamp(10px, 3vw, 14px);
-    font-weight: 550;
-    box-shadow: var(--box-shadow);
-    letter-spacing: 0.03rem;
+    text-decoration: none;
+    font-weight: 700;
     cursor: pointer;
     justify-self: flex-start;
-    background-color: var(--emergency-color);
-    color: var(--secondary-text-color);
+    background-color: var(--primary-lightest);
+    color: var(--primary-dark);
     padding: var(--spacing-xs);
 
     &:hover {
-      background-color: var(--main-background-color);
+      background-color: var(--primary-dark);
       color: var(--main-text-color);
     }
   }
