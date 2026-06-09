@@ -16,7 +16,7 @@
       cardTitle="New report"
       cardSubText="Securely document an incident in real-time."
       ctaText="start now"
-      ctaLink="evidence"
+      ctaLink="https://dpe.fonetic.studio/"
       Icon={CameraIcon}
     />
 

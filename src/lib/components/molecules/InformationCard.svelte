@@ -29,7 +29,11 @@
   {/if}
 
   {#if ctaText}
-    <Link href="/{ctaLink}" className="emergency-link" text={ctaText} />
+    <Link
+      href={ctaLink.startsWith("http") ? ctaLink : `/${ctaLink}`}
+      className="emergency-link"
+      text={ctaText}
+    />
   {/if}
 
   {#if Icon}
