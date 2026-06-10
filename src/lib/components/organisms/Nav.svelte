@@ -55,48 +55,56 @@
 </nav>
 
 <style>
-  nav {
-    position: relative;
-    font-family: var(--body-font);
+  @media only screen and (width > 768px) {
+    nav {
+      position: relative;
+      font-family: var(--body-font);
+    }
+
+    .nav-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      transition: transform 0.3s ease;
+      z-index: 1000;
+      background: hsl(206deg 45% 9%);
+    }
+
+    ul li {
+      list-style-type: none;
+    }
+
+    .nav-bar-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--spacing-md) var(--spacing-xl);
+      background: transparent;
+      position: sticky;
+      top: 0;
+      z-index: 100000;
+    }
+
+    .nav-list-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: var(--spacing-xl);
+      transition: transform 1s ease-in-out;
+      width: 100%;
+    }
+
+    .nav-item {
+      padding: var(--spacing-xs);
+    }
   }
 
-  .nav-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    transition: transform 0.3s ease;
-    z-index: 1000;
-    background: hsl(206deg 45% 9%);
-  }
-
-  ul li {
-    list-style-type: none;
-  }
-
-  .nav-bar-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: var(--spacing-md) var(--spacing-xl);
-    background: transparent;
-    position: sticky;
-    top: 0;
-    z-index: 100000;
-  }
-
-  .nav-list-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: var(--spacing-xl);
-    transition: transform 1s ease-in-out;
-    width: 100%;
-  }
-
-  .nav-item {
-    padding: var(--spacing-xs);
+  @media only screen and (width <= 768px) {
+    nav {
+      display: none;
+    }
   }
 </style>

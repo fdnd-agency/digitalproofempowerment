@@ -29,7 +29,12 @@
   {/if}
 
   {#if ctaText}
-    <Link href="/{ctaLink}" className="emergency-link" text={ctaText} />
+    <Link
+      href={ctaLink.startsWith("http") ? ctaLink : `/${ctaLink}`}
+      className="emergency-link"
+      rel="noopener noreferrer"
+      text={ctaText}
+    />
   {/if}
 
   {#if Icon}
@@ -106,6 +111,7 @@
     opacity: 0.16;
     width: 9rem;
     height: 9rem;
+    pointer-events: none;
   }
 
   .emergency-right-panel :global(svg) {
