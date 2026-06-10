@@ -101,6 +101,7 @@
       padding: var(--spacing-xs);
     }
   }
+
   @media only screen and (width <= 768px) {
     nav {
       display: none;
