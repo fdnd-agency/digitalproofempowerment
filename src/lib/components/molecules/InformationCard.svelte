@@ -32,6 +32,7 @@
     <Link
       href={ctaLink.startsWith("http") ? ctaLink : `/${ctaLink}`}
       className="emergency-link"
+      rel="noopener noreferrer"
       text={ctaText}
     />
   {/if}
@@ -110,6 +111,7 @@
     opacity: 0.16;
     width: 9rem;
     height: 9rem;
+    pointer-events: none;
   }
 
   .emergency-right-panel :global(svg) {
