@@ -27,7 +27,7 @@
     padding: var(--spacing-md);
   }
 
-  @media (min-width: 769px) {
+  @media (width >= 769px) {
     .href-link {
       grid-column: span 2;
     }

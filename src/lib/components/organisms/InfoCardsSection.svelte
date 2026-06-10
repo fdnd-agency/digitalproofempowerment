@@ -87,7 +87,7 @@
     margin-top: var(--spacing-md);
   }
 
-  @media (min-width: 769px) {
+  @media (width >= 769px) {
     .cards-section-grid {
       grid-template-columns: repeat(2, 1fr);
     }
