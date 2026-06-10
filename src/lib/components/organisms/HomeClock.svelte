@@ -19,12 +19,13 @@
       <legend class="visually-hidden">Clock in and out</legend>
 
       <label>
-        Enter your code
+        Enter your code<br />
+        (6c3f0bf5-14f3-4cec-801e-741a8887d862)
         <input
           type="text"
           name="submission_id"
           bind:value={$form.submission_id}
-          placeholder="Insert personal code"
+          placeholder="xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
         />
       </label>
 
@@ -121,7 +122,7 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    font-size: clamp(10px, 3vw, 14px);
+    font-size: clamp(10px, 3vw, 12px);
   }
 
   fieldset {
