@@ -5,7 +5,7 @@
   let { level = "h2" } = $props();
 </script>
 
-<a class="href-link" href="tel+112">
+<a class="href-link" href="tel:+112">
   <section class="emergency-container">
     <div class="emergency-container-content-wrapper">
       <Title headingText="Emergency services" className="emergency-container-title" {level} />
