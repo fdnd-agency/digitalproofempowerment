@@ -1,9 +1,8 @@
 <script>
-  import { Title, Link, PhoneIcon } from "$lib";
+  import { Title } from "$lib";
   import AsteriskIcon from "$lib/assets/svg/AsteriskIcon.svelte";
-  import LinkGroup from "./LinkGroup.svelte";
 
-  let { pageLabel, level = "h2" } = $props();
+  let { level = "h2" } = $props();
 </script>
 
 <a class="href-link" href="tel+112">

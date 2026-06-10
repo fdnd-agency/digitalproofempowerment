@@ -3,7 +3,6 @@
   import ClipBoardIcon from "$lib/assets/svg/ClipBoardIcon.svelte";
   import EmergencySection from "../molecules/EmergencySection.svelte";
   import CameraIcon from "$lib/assets/svg/CameraIcon.svelte";
-  import CheckedIcon from "$lib/assets/svg/CheckedIcon.svelte";
   import HomeClock from "./HomeClock.svelte";
 
   let { data } = $props();
