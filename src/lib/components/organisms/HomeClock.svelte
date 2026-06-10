@@ -94,7 +94,6 @@
 
   button {
     border: none;
-    width: fit-content;
     border-radius: var(--radius-xs);
     text-decoration: none;
     font-weight: 400;
@@ -129,6 +128,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
+    border: none;
   }
 
   .visually-hidden {
@@ -140,10 +140,6 @@
     position: absolute;
     white-space: nowrap;
     width: 1px;
-  }
-
-  fieldset {
-    border: none;
   }
 
   .emergency-container-right {
