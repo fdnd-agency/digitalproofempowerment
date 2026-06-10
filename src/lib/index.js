@@ -39,8 +39,6 @@ export { default as Favicon } from "$lib/assets/favicon.svg";
 
 // img
 export { default as HeaderBG } from "$lib/assets/img/HeaderBg.webp";
-export { default as Infographic } from "$lib/assets/img/Infographic.png";
-export { default as NoscriptImage } from "$lib/assets/img/NoscriptImage.webp";
 
 // Components
 export { default as Button } from "$lib/components/atoms/Button.svelte";
@@ -52,11 +50,8 @@ export { default as Footer } from "$lib/components/organisms/Footer.svelte";
 export { default as Profile } from "$lib/components/atoms/Profile.svelte";
 export { default as Header } from "$lib/components/organisms/Header.svelte";
 export { default as EmergencySection } from "$lib/components/molecules/EmergencySection.svelte";
-export { default as ReviewCard } from "$lib/components/molecules/ReviewCard.svelte";
 export { default as FileInput } from "$lib/components/atoms/FileInput.svelte";
-export { default as Form } from "$lib/components/molecules/Form.svelte";
 export { default as Text } from "$lib/components/atoms/Text.svelte";
-export { default as ContactForm } from "$lib/components/organisms/ContactForm.svelte";
 export { default as Label } from "$lib/components/atoms/Label.svelte";
 export { default as Input } from "$lib/components/atoms/Input.svelte";
 export { default as LocationSection } from "$lib/components/organisms/LocationSection.svelte";

@@ -1,7 +1,5 @@
 <script>
-  import { Title, Header, EmergencySection, Text, ContactForm, LocationSection } from "$lib";
-
-  let { data } = $props();
+  import { Title, Header, EmergencySection, Text } from "$lib";
 </script>
 
 <Header
@@ -24,15 +22,9 @@
                 we'll get back to you as soon as possible."
       />
     </div>
-
-    <ContactForm {data} />
   </section>
 
   <EmergencySection level="h2" />
-
-  <section class="location-container">
-    <LocationSection />
-  </section>
 </main>
 
 <style>
@@ -56,23 +48,5 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-lg);
-  }
-
-  /* maps */
-
-  .location-container {
-    padding: var(--spacing-3xl) var(--spacing-xl) var(--spacing-3xl);
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    color: var(--main-text-color);
-
-    @media (width >= 800px) {
-      padding: var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl) var(--spacing-3xl);
-      gap: var(--spacing-lg);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
-    }
   }
 </style>
