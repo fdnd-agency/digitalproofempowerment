@@ -13,8 +13,15 @@
 
 <Nav />
 
-{@render children()}
+<div class="content-wrapper">
+  {@render children()}
+</div>
 
 <MobileNavbar />
-
 <Footer />
+
+<style>
+  .content-wrapper {
+    padding-bottom: 10vh;
+  }
+</style>
