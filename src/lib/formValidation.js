@@ -14,3 +14,8 @@ export const proofSchema = z.object({
   houseNumber: z.string().optional(),
   postalCode: z.string().optional(),
 });
+
+export const clocking = z.object({
+  submission_id: z.string().uuid("Invalid code"),
+  action: z.enum(["in", "out"]),
+});

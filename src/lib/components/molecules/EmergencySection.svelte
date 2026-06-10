@@ -1,35 +1,75 @@
 <script>
-  import { Title, Link, PhoneIcon } from "$lib";
+  import { Title } from "$lib";
   import AsteriskIcon from "$lib/assets/svg/AsteriskIcon.svelte";
 
-  let { pageLabel, level = "h2" } = $props();
+  let { level = "h2" } = $props();
 </script>
 
-<section class="emergency-container">
-  <div class="emergency-container-content-wrapper">
-    <p class="emergency-container-paragraph">Emergency services</p>
-    <Title headingText="112" class="emergency-container-title" {level} />
-    <div class="button-wrapper">
-      <Link
-        href="tel:+112"
-        Icon={PhoneIcon}
-        className="emergency-link"
-        text="Call 112"
-        target="_self"
-      />
+<a class="href-link" href="tel:+112">
+  <section class="emergency-container">
+    <div class="emergency-container-content-wrapper">
+      <Title headingText="Emergency services" className="emergency-container-title" {level} />
+      <p class="emergency-container-paragraph">112</p>
     </div>
-  </div>
 
-  <div class="emergency-container-right">
     <div class="emergency-right-panel">
       <AsteriskIcon class="emergency-right-icon" />
     </div>
-  </div>
-</section>
+  </section>
+</a>
 
 <style>
+  .href-link {
+    text-decoration: none;
+    background: linear-gradient(90deg, hsl(7deg 76% 61%), hsl(7deg 47% 46%));
+    border-radius: var(--radius-md);
+    box-shadow: var(--box-shadow-webkit);
+    padding: var(--spacing-md);
+  }
+
+  @media (width >= 769px) {
+    .href-link {
+      grid-column: span 2;
+    }
+  }
+
   .emergency-container {
-    padding: var(--spacing-xl);
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-md);
+    justify-content: space-between;
+  }
+
+  .emergency-container-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .emergency-container-paragraph {
+    color: var(--secondary-text-color);
+    font-size: clamp(25px, 1.5vw, 28px);
+  }
+
+  .emergency-right-panel {
+    border-radius: var(--radius-md);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff29;
+    backdrop-filter: blur(8px);
+    align-self: center;
+    padding: var(--spacing-xxs);
+  }
+
+  /* 
+.href-link {
+  padding: 1rem;
+}
+
+
+  .emergency-container {
+    padding: var(--spacing-sm);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -62,8 +102,8 @@
   .emergency-right-panel {
     display: grid;
     place-items: center;
-    width: 6rem;
-    height: 6rem;
+    width: 5rem;
+    height: 5rem;
     border-radius: 1.25rem;
     background: #ffffff29;
     border: 1px solid #ffffff2e;
@@ -98,4 +138,5 @@
       height: 5.5rem;
     }
   }
+ */
 </style>

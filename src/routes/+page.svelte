@@ -1,10 +1,11 @@
 <script>
   import InfoCardsSection from "$lib/components/organisms/InfoCardsSection.svelte";
+  let { data } = $props();
 </script>
 
 <main>
   <section class="cards">
-    <InfoCardsSection />
+    <InfoCardsSection {data} />
   </section>
 </main>
 

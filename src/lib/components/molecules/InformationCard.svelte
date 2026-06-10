@@ -100,9 +100,9 @@
     align-self: flex-start;
   }
 
-  .wide-card {
+  /* .wide-card {
     grid-column: span 2;
-  }
+  } */
 
   .emergency-container-right {
     position: absolute;

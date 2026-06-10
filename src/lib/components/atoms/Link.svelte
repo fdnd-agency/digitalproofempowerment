@@ -124,12 +124,13 @@
     width: fit-content;
     border-radius: var(--radius-xs);
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 400;
     cursor: pointer;
     justify-self: flex-start;
     background-color: var(--primary-lightest);
     color: var(--primary-dark);
     padding: var(--spacing-xs);
+    font-size: clamp(10px, 3vw, 14px);
 
     &:hover {
       background-color: var(--primary-dark);
