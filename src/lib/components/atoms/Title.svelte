@@ -64,4 +64,11 @@
       font-size: clamp(20px, 3vw, 25px);
     }
   }
+
+  .emergency-container-title {
+    font-size: clamp(12px, 1.5vw, 16px);
+    color: #e4effc9c;
+    backdrop-filter: blur(1px);
+    font-family: var(--headline-font);
+  }
 </style>

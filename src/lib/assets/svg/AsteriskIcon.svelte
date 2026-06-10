@@ -1,7 +1,5 @@
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  width="24"
-  height="24"
   viewBox="0 0 24 24"
   fill="none"
   stroke="currentColor"
@@ -15,8 +13,9 @@
 <style>
   svg {
     flex-shrink: 0;
-    height: 80px;
-    width: 80px;
+    height: 40px;
+    width: 40px;
     display: block;
+    color: var(--background-color-secondary);
   }
 </style>
